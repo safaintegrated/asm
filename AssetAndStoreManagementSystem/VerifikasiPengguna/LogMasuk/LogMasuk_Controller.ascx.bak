@@ -1,0 +1,304 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LogMasuk_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.VerifikasiPengguna.LogMasuk.LogMasuk_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx1" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxCallbackPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxLoadingPanel" tagprefix="dx" %>
+
+<script>
+    function btnLogin_Click() {
+        if (txtUserId.GetText() != '' && txtPassword.GetText() != '') {
+            LoginLoadingPanel.SetText('Sistem sedang memeriksa maklumat pengguna sistem yang anda masukkan.  Sila tunggu sebentar');
+            LoginLoadingPanel.Show();
+        }
+        else {
+            SystemInfo_Label.SetText('Sila masukkan ID pengguna dan kata laluan terlebih dahulu.');
+            popupMsg.Show();
+            e.processOnServer(false);
+        }
+    }
+
+    function cbp_login_EndCallback(s, e) {
+        if (s.cpErrMsg == undefined)
+        { }
+        else
+        {
+            if (s.cpErrMsg.toString() == '')
+            { }
+            else
+            {
+                LoginLoadingPanel.Hide();
+                SystemInfo_Label.SetText(s.cpErrMsg.toString());
+
+                popupMsg.Show();
+            }
+        }
+    }
+
+    function InvalidUserIdPassword() {
+        SystemInfo_Label.SetText('ID Pengguna atau Kata Laluan yang dimasukkan tidak sah.<br>Klik butang Bantuan sekiranya anda memerlukan bantuan.');
+        popupMsg.Show();
+        okBtn.Focus();
+    }
+
+    function OldPass_CheckedChanged() {
+        if (OldPass.GetChecked())
+            NewPass.SetChecked(false);
+    }
+
+    function NewPass_CheckedChanged() {
+        if (NewPass.GetChecked())
+            OldPass.SetChecked(false);
+    }
+
+    function btnOkForgotPassword_Click() {
+        if (CheckUserIdEmail() && CheckOptions()) {
+            if (NewPass.GetChecked())
+                LoginLoadingPanel.SetText('Sistem sedang memeriksa rekod dan menjana kata laluan baharu untuk anda.  Sila tunggu');
+            else
+                LoginLoadingPanel.SetText('Sistem sedang memeriksa rekod dan mendapatkan semula kata laluan anda.  Sila tunggu');
+
+            cbp_ForgotPassword.PerformCallback();
+        }
+    }
+
+    function CheckUserIdEmail() {
+        if (forgot_Email.GetText().toString() == '') {
+            SystemInfo_Label.SetText('Sila masukkan Alamat Emel.');
+            popupMsg.Show();
+            okBtn.Focus();
+            return false;
+        }
+        else
+            return true;
+    }
+
+    function CheckOptions() {
+        if (!NewPass.GetChecked() && !OldPass.GetChecked()) {
+            SystemInfo_Label.SetText('Sila pilih salah satu kaedah bantuan.');
+            popupMsg.Show();
+            okBtn.Focus();
+            return false;
+        }
+        else
+            return true;
+    }
+
+    function cbp_ForgotPassword_BeginCallback()
+    { LoginLoadingPanel.Show(); }
+
+    function cbp_ForgotPassword_EndCallback(s, e) {
+        LoginLoadingPanel.Hide();
+        SystemInfo_Label.SetText(s.cpErrMsg.toString());
+        popupMsg.Show();
+        okBtn.Focus();
+    }
+</script>
+
+<dx:ASPxPopupControl ID="popupLogin" runat="server" AllowDragging="True" AutoUpdatePosition="True" ClientInstanceName="popupLogin" CloseAction="None" EnableClientSideAPI="True" HeaderText="Login Sistem" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowCloseButton="False" ShowOnPageLoad="True" Width="450px" Modal="True" Font-Names="Myriad Pro" Font-Size="Small">
+    <ClientSideEvents Init="function(s, e) {
+	txtUserId.Focus();
+}" />
+    <HeaderStyle HorizontalAlign="Center" />
+    <ContentCollection>
+<dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+    <table style="width:100%; vertical-align:top; text-align:left">
+        <tr>
+            <td>
+                <table style="width:100%; vertical-align:top; text-align:left">
+                    <tr>
+                        <td style="padding-top:8px; vertical-align:top;text-align:center;" colspan="3">
+                            <dx:ASPxImage ID="ASPxImage1" runat="server" ImageUrl="~/Public/Images/Logo/Login.jpg" ShowLoadingImage="True">
+                            </dx:ASPxImage>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:10%; padding-top:10px;">&nbsp;</td>
+                        <td style="width:80%; padding-top:10px;">
+                            <dx:ASPxFormLayout ID="loginForm" runat="server" ClientInstanceName="loginForm" Width="100%" Font-Names="Myriad Pro" Font-Size="Small">
+                                <Items>
+                                    <dx:LayoutItem ShowCaption="False">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                                                <dx:ASPxTextBox ID="txtUserId" runat="server" ClientInstanceName="txtUserId" EnableClientSideAPI="True" Width="100%" HorizontalAlign="Center">
+                                                </dx:ASPxTextBox>
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:LayoutItem ShowCaption="False">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                                                <dx:ASPxTextBox ID="txtPassword" runat="server" ClientInstanceName="txtPassword" EnableClientSideAPI="True" Password="True" Width="100%" HorizontalAlign="Center">
+                                                </dx:ASPxTextBox>
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                </Items>
+                            </dx:ASPxFormLayout>
+                        </td>
+                        <td style="width:10%; padding-top:10px;">&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <table style="width:100%; vertical-align:top; text-align:left">
+                    <tr>
+                        <td style="width:20%;">&nbsp;</td>
+                        <td style="width:30%; padding-right:5px;">
+                            <dx:ASPxButton ID="btnLogin" runat="server" AutoPostBack="False" ClientInstanceName="btnLogin" EnableClientSideAPI="True" Text="Login" Width="100%" OnClick="btnLogin_Click">
+                                <ClientSideEvents Click="function(s, e) {
+	btnLogin_Click();
+}" />
+                            </dx:ASPxButton>
+                        </td>
+                        <td style="width:30%; padding-left:5px;">
+                            <dx:ASPxButton ID="btnForgotPassword" runat="server" AutoPostBack="False" ClientInstanceName="btnForgotPassword" EnableClientSideAPI="True" Text="Bantuan" Width="100%">
+                                <ClientSideEvents Click="function(s, e) {
+	popupForgotPassword.Show();
+}" />
+                            </dx:ASPxButton>
+                        </td>
+                        <td style="width:20%;">&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+        </dx:PopupControlContentControl>
+</ContentCollection>
+</dx:ASPxPopupControl>
+
+<dx:ASPxPopupControl ID="popupForgotPassword" runat="server" AllowDragging="True" AllowResize="True" ClientInstanceName="popupForgotPassword" CloseAction="CloseButton" EnableClientSideAPI="True" HeaderText="Bantuan" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="500px" Font-Names="Myriad Pro" Font-Size="Small">
+    <HeaderImage Url="~/Public/Images/DialogBox/Help.png">
+    </HeaderImage>
+    <HeaderStyle ImageSpacing="8px" VerticalAlign="Middle" />
+    <ContentCollection>
+<dx:PopupControlContentControl ID="PopupControlContentControl2" runat="server">
+    <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%" Font-Names="Myriad Pro" Font-Size="Small">
+        <Items>
+            <dx:LayoutItem Caption="Alamat Emel">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
+                        <dx:ASPxTextBox ID="forgot_Email" runat="server" Width="90%" ClientInstanceName="forgot_Email" EnableClientSideAPI="True">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem Caption="Kaedah">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                        <table style="width:100%; vertical-align:top; text-align:left">
+                            <tr>
+                                <td style="width:50%; vertical-align:top; text-align:left">
+                                    <dx:ASPxRadioButton ID="OldPass" runat="server" ClientInstanceName="OldPass" EnableClientSideAPI="True" Text="Guna Kata Laluan Asal" Width="100%">
+                                        <ClientSideEvents CheckedChanged="function(s, e) {
+	OldPass_CheckedChanged();
+}" />
+                                    </dx:ASPxRadioButton>
+                                </td>
+                                <td style="width:50%; vertical-align:top; text-align:left">
+                                    <dx:ASPxRadioButton ID="NewPass" runat="server" ClientInstanceName="NewPass" EnableClientSideAPI="True" Text="Jana Kata Laluan Baharu" Width="100%">
+                                        <ClientSideEvents CheckedChanged="function(s, e) {
+	NewPass_CheckedChanged();
+}" />
+                                    </dx:ASPxRadioButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer5" runat="server">
+                        <table style="width:100%; vertical-align:top; text-align:left">
+                            <tr>
+                                <td style="width:30%; vertical-align:top; text-align:left; padding-top: 10px; padding-right: 5px;">
+                                    <dx:ASPxButton ID="btnOkForgotPassword" runat="server" AutoPostBack="False" ClientInstanceName="btnOkForgotPassword" Text="Ok" Width="100%">
+                                        <ClientSideEvents Click="function(s, e) {
+	btnOkForgotPassword_Click();
+}" />
+                                    </dx:ASPxButton>
+                                </td>
+                                <td style="width:70%; vertical-align:top; text-align:left; padding-top: 10px; padding-right: 5px;">
+                                    &nbsp;</td>
+                            </tr>
+                        </table>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+        </Items>
+    </dx:ASPxFormLayout>
+        </dx:PopupControlContentControl>
+</ContentCollection>
+</dx:ASPxPopupControl>
+
+
+        <dx:ASPxPopupControl ID="popupMsg" runat="server" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" ClientInstanceName="popupMsg" CloseAction="CloseButton" EnableClientSideAPI="True" HeaderText="Informasi Sistem" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="450px" Font-Names="Myriad Pro" Font-Size="Small">
+            <HeaderImage Url="~/Public/Images/DialogBox/Information.png">
+            </HeaderImage>
+            <HeaderStyle ImageSpacing="8px" VerticalAlign="Middle" />
+            <ContentCollection>
+<dx:popupcontrolcontentcontrol ID="Popupcontrolcontentcontrol3" runat="server">
+    <table style="width:100%; text-align:center;vertical-align:top;">
+        <tr>
+            <td>
+                <dx:aspxlabel ID="SystemInfo_Label" runat="server" ClientInstanceName="SystemInfo_Label" EnableClientSideAPI="True" EncodeHtml="False">
+                </dx:aspxlabel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <table style="width:100%; vertical-align:top; text-align:left;">
+                    <tr>
+                        <td style="width:35%"></td>
+                        <td style="width:30%">
+                            <dx:aspxbutton ID="okBtn" runat="server" AutoPostBack="False" ClientInstanceName="okBtn" Text="Ok" Width="100%">
+                                <ClientSideEvents Click="function(s, e) {
+	popupMsg.Hide();
+}" />
+                            </dx:aspxbutton>
+                        </td>
+                        <td style="width:35%"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+                </dx:popupcontrolcontentcontrol>
+</ContentCollection>
+        </dx:ASPxPopupControl>
+
+    
+    
+
+
+<dx:ASPxCallbackPanel ID="cbp_ForgotPassword" runat="server" ClientInstanceName="cbp_ForgotPassword" ClientVisible="False" Width="200px" OnCallback="cbp_ForgotPassword_Callback">
+    <ClientSideEvents BeginCallback="function(s, e) {
+	cbp_ForgotPassword_BeginCallback();
+}" EndCallback="function(s, e) {
+	cbp_ForgotPassword_EndCallback(s, e);
+}" />
+    <PanelCollection>
+<dx:PanelContent ID="PanelContent1" runat="server"></dx:PanelContent>
+</PanelCollection>
+</dx:ASPxCallbackPanel>
+<dx:ASPxLoadingPanel ID="LoginLoadingPanel" runat="server" ClientInstanceName="LoginLoadingPanel" Modal="True" Font-Names="Myriad Pro" Font-Size="Small">
+</dx:ASPxLoadingPanel>
+
+
+    
+    
+
+
+
+
+

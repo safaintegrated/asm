@@ -1,0 +1,314 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="KetuaPtj_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.Aset.LaporanKehilangan.KetuaPtj_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+
+
+
+
+
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="99%">
+    <Items>
+        <dx:LayoutGroup ColCount="2" CssClass="NoPad" GroupBoxDecoration="None" Width="100%">
+            <Items>
+                <dx:LayoutGroup Caption="Maklumat Pengadu" Width="50%">
+                    <Items>
+                        <dx:LayoutItem Caption="Nama" Width="100%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E17" runat="server" CssClass="TextBoxForName">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Pusat Tanggungjawab" Width="100%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E18" runat="server" CssClass="TextBoxPusatTanggungjawab">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="No. Telefon" Width="100%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E19" runat="server" CssClass="TextBoxForTel">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                    </Items>
+                </dx:LayoutGroup>
+                <dx:LayoutGroup Caption="Maklumat Kejadian" ColCount="3" Width="50%">
+                    <Items>
+                        <dx:LayoutItem Caption="Tarikh Kehilangan" Width="10%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxDateEdit ID="ASPxFormLayout1_E1" runat="server" CssClass="DateEditor">
+                                    </dx:ASPxDateEdit>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Lokasi Kehilangan" Width="85%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E2" runat="server" Width="100%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:EmptyLayoutItem Width="5%">
+                        </dx:EmptyLayoutItem>
+                        <dx:LayoutItem Caption="Punca Kehilangan" ColSpan="3" Width="100%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxMemo ID="ASPxFormLayout1_E3" runat="server" Rows="4" Width="100%">
+                                        <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                                    </dx:ASPxMemo>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                    </Items>
+                </dx:LayoutGroup>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Laporan Polis" ColCount="3" Width="100%">
+            <Items>
+                <dx:LayoutItem Caption="Tarikh Laporan" Width="10%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxDateEdit ID="ASPxFormLayout1_E4" runat="server" CssClass="DateEditor">
+                            </dx:ASPxDateEdit>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="No. Laporan" Width="15%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E5" runat="server" Width="170px" CssClass="TextBoxForId">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:EmptyLayoutItem Width="75%">
+                </dx:EmptyLayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup ColCount="2" GroupBoxDecoration="None" Width="100%">
+            <Items>
+                <dx:LayoutGroup Caption="Pegawai Bertanggungjawab" Width="60%">
+                    <Items>
+                        <dx:LayoutItem ShowCaption="False" Width="100%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxHyperLink ID="ASPxFormLayout1_E6" runat="server" Text="Pilih pegawai yang bertanggungjawab">
+                                    </dx:ASPxHyperLink>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Nama Pegawai" Width="100%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E7" runat="server" CssClass="TextBoxForName">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutGroup ColCount="3" CssClass="NoPad" GroupBoxDecoration="None" Width="100%">
+                            <Items>
+                                <dx:LayoutItem Caption="Jawatan" CssClass="NoPad" Width="15%">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer runat="server" CssClass="NoPad">
+                                            <dx:ASPxTextBox ID="ASPxFormLayout1_E8" runat="server" CssClass="TextBoxEmpDesignation">
+                                            </dx:ASPxTextBox>
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                                <dx:LayoutItem Caption="Taraf Jawatan" CssClass="NoPad" Width="15%">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer runat="server" CssClass="NoPad">
+                                            <dx:ASPxTextBox ID="ASPxFormLayout1_E9" runat="server" CssClass="TextBoxEmpDesignation">
+                                            </dx:ASPxTextBox>
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                                <dx:EmptyLayoutItem CssClass="NoPad" Width="70%">
+                                </dx:EmptyLayoutItem>
+                                <dx:LayoutItem Caption="Tindakan Ke Atas Pegawai" ColSpan="3" CssClass="NoPad" Width="100%">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer runat="server" CssClass="NoPad">
+                                            <dx:ASPxComboBox ID="ASPxFormLayout1_E10" runat="server" CssClass="ComboBoxOfficerPenaltyOptions">
+                                            </dx:ASPxComboBox>
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                            </Items>
+                            <ParentContainerStyle>
+                                <Paddings PaddingBottom="5px" PaddingLeft="0px" PaddingRight="0px" PaddingTop="0px" />
+                                <Border BorderStyle="None" />
+                                <BorderLeft BorderStyle="None" />
+                                <BorderRight BorderStyle="None" />
+                                <BorderBottom BorderStyle="None" />
+                            </ParentContainerStyle>
+                        </dx:LayoutGroup>
+                    </Items>
+                </dx:LayoutGroup>
+                <dx:LayoutGroup Caption="Surcaj &amp; Tindakan Tatatertib" ColCount="2" Width="40%">
+                    <Items>
+                        <dx:LayoutItem Caption="TIndakan Surcaj" Width="80%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E11" runat="server" Width="100%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Tarikh" Width="20%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxDateEdit ID="ASPxFormLayout1_E14" runat="server" CssClass="DateEditor">
+                                    </dx:ASPxDateEdit>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Tindakan Tatatertib" Width="80%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E15" runat="server" Width="100%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Tarikh" Width="20%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxDateEdit ID="ASPxFormLayout1_E16" runat="server" CssClass="DateEditor">
+                                    </dx:ASPxDateEdit>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                    </Items>
+                </dx:LayoutGroup>
+            </Items>
+            <ParentContainerStyle>
+                <Paddings PaddingBottom="5px" PaddingLeft="0px" PaddingRight="0px" PaddingTop="0px" />
+                <Border BorderStyle="None" />
+                <BorderLeft BorderStyle="None" />
+                <BorderRight BorderStyle="None" />
+                <BorderBottom BorderStyle="None" />
+            </ParentContainerStyle>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Anggaran Nilai Semasa Aset" Width="100%">
+            <Items>
+                <dx:LayoutItem ShowCaption="False">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxPageControl ID="ASPxPageControl1" runat="server" ActiveTabIndex="0" Width="100%">
+                                <TabPages>
+                                    <dx:TabPage Text="Senarai Aset Hilang">
+                                        <ContentCollection>
+                                            <dx:ContentControl runat="server">
+                                                <table style="width:100%">
+                                                    <tr>
+                                                        <td>
+                                                            <dx:ASPxHyperLink ID="ASPxHyperLink1" runat="server" Text="Carian Aset" Cursor="pointer">
+                                                            </dx:ASPxHyperLink>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="padding-top:10px;">
+                                                            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Width="100%">
+                                                                <Columns>
+                                                                    <dx:GridViewDataTextColumn Caption="No. Siri Pendaftaran" ShowInCustomizationForm="True" VisibleIndex="0" Width="15%">
+                                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="Jenama" ShowInCustomizationForm="True" VisibleIndex="4" Width="12%">
+                                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="Model" ShowInCustomizationForm="True" VisibleIndex="5" Width="12%">
+                                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="Tarikh Belian" ShowInCustomizationForm="True" VisibleIndex="6" Width="8%">
+                                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="Keterangan Aset" ShowInCustomizationForm="True" VisibleIndex="1" Width="37%">
+                                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="Harga Perolehan Asal" ShowInCustomizationForm="True" VisibleIndex="7" Width="8%">
+                                                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                    <dx:GridViewDataTextColumn Caption="Anggaran Nilai Semasa" ShowInCustomizationForm="True" VisibleIndex="9" Width="8%">
+                                                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
+                                                                        </CellStyle>
+                                                                    </dx:GridViewDataTextColumn>
+                                                                </Columns>
+                                                                <SettingsPager Visible="False">
+                                                                </SettingsPager>
+                                                                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                            </dx:ASPxGridView>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </dx:ContentControl>
+                                        </ContentCollection>
+                                    </dx:TabPage>
+                                    <dx:TabPage Text="Maklumat Terperinci Aset">
+                                        <ContentCollection>
+                                            <dx:ContentControl runat="server">
+                                            </dx:ContentControl>
+                                        </ContentCollection>
+                                    </dx:TabPage>
+                                </TabPages>
+                            </dx:ASPxPageControl>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Pencegahan" ColCount="2" Width="100%">
+            <Items>
+                <dx:LayoutItem Caption="Langkah-Langkah Sedia Ada" Width="50%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E12" runat="server" Rows="4" Width="100%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Langkah-Langkah Pencegahan" Width="50%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E13" runat="server" Rows="4" Width="100%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+    </Items>
+    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+</dx:ASPxFormLayout>
+

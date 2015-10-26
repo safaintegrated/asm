@@ -1,0 +1,270 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Lokasi_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.PengurusanSistem.Lokasi.Lokasi_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxCallbackPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRibbon" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxLoadingPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxTabControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxClasses" tagprefix="dx" %>
+
+<%@ Register src="PTJ_Controller.ascx" tagname="PTJ_Controller" tagprefix="uc1" %>
+<%@ Register src="Department_Controller.ascx" tagname="Department_Controller" tagprefix="uc2" %>
+<%@ Register src="Building_Controller.ascx" tagname="Building_Controller" tagprefix="uc3" %>
+<%@ Register src="Floor_Controller.ascx" tagname="Floor_Controller" tagprefix="uc4" %>
+<%@ Register src="Space_Controller.ascx" tagname="Space_Controller" tagprefix="uc5" %>
+
+<%@ Register src="AuditTrail_Controller.ascx" tagname="AuditTrail_Controller" tagprefix="uc6" %>
+
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+<script src="Js_Lokasi.js" type="text/javascript"></script>
+
+<dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Lokasi" Width="100%">
+    <HeaderImage Url="~/Public/Images/Screen/Lokasi.png">
+    </HeaderImage>
+    <HeaderStyle ImageSpacing="8px" />
+    <PanelCollection>
+<dx:PanelContent runat="server">
+    <table style="width:100%">
+        <tr>
+            <td>
+                <dx:ASPxRibbon ID="MainRibbon" runat="server" ShowFileTab="False" ClientInstanceName="MainRibbon" Width="100%">
+    <Tabs>
+        <dx:RibbonTab Name="Utama" Text="Utama">
+            <Groups>
+                <dx:RibbonGroup Text="Pengurusan Rekod" Name="Pengurusan Rekod">
+                    <Items>
+                        <dx:RibbonButtonItem BeginGroup="True" Name="Kemaskini" Size="Large" Text="Kemaskini">
+                            <LargeImage IconID="edit_edit_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tambah" Size="Large" Text="Tambah">
+                            <LargeImage IconID="actions_add_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Simpan" Size="Large" Text="Simpan">
+                            <LargeImage IconID="save_save_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Hantar" Size="Large" Text="Hantar">
+                            <LargeImage IconID="mail_send_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Padam" Size="Large" Text="Padam">
+                            <LargeImage IconID="edit_delete_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Batal" Size="Large" Text="Batal">
+                            <LargeImage IconID="actions_deletelist_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Cetak" Size="Large" Text="Cetak">
+                            <LargeImage IconID="print_print_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Carian" Size="Large" Text="Carian">
+                            <LargeImage IconID="find_find_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Audit" Size="Large" Text="Audit">
+                            <LargeImage IconID="arrange_bringtofrontoftext_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tutup" Size="Large" Text="Tutup">
+                            <LargeImage IconID="actions_close_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Lampiran" Text="Muatnaik">
+            <Groups>
+                <dx:RibbonGroup Name="Muatnaik" Text="">
+                    <Items>
+                        <dx:RibbonButtonItem Size="Large" Text="Lampiran" Name="Lampiran">
+                            <LargeImage IconID="mail_attachment_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Gambar" Size="Large" Text="Gambar">
+                            <LargeImage IconID="content_image_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Impot" Size="Large" Text="Import">
+                            <LargeImage IconID="actions_download_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Laporan" Text="Laporan">
+            <Groups>
+                <dx:RibbonGroup>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Kelulusan" Text="Kelulusan">
+            <Groups>
+                <dx:RibbonGroup>
+                    <Items>
+                        <dx:RibbonButtonItem Name="Lulus" Size="Large" Text="Lulus">
+                            <LargeImage IconID="actions_apply_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Kuiri" Size="Large" Text="Kuiri">
+                            <LargeImage IconID="support_knowledgebasearticle_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+    </Tabs>
+    <Styles>
+        <Item Width="70px">
+        </Item>
+    </Styles>
+                    <ClientSideEvents CommandExecuted="function(s, e) {
+	MainRibbon_CommandExecuted(s, e);
+}" />
+</dx:ASPxRibbon>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <dx:ASPxPageControl ID="PageControl" runat="server" ActiveTabIndex="0" Width="100%" ClientInstanceName="PageControl" EnableClientSideAPI="True">
+                    <TabPages>
+                        <dx:TabPage Text="Pusat Tanggungjawab">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <uc1:PTJ_Controller ID="PTJ_Controller1" runat="server" />
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:TabPage>
+                        <dx:TabPage Text="Pusat, Bahagian &amp; Jabatan">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <uc2:Department_Controller ID="Department_Controller1" runat="server" />
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:TabPage>
+                        <dx:TabPage Text="Bangunan">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <uc3:Building_Controller ID="Building_Controller1" runat="server" />
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:TabPage>
+                        <dx:TabPage Text="Aras">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <uc4:Floor_Controller ID="Floor_Controller1" runat="server" />
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:TabPage>
+                        <dx:TabPage Text="Ruang">
+                            <ContentCollection>
+                                <dx:ContentControl runat="server">
+                                    <uc5:Space_Controller ID="Space_Controller1" runat="server" />
+                                </dx:ContentControl>
+                            </ContentCollection>
+                        </dx:TabPage>
+                    </TabPages>
+                    <ClientSideEvents ActiveTabChanged="function(s, e) {
+	PageControl_ActiveTabChanged(s, e);
+}" />
+                </dx:ASPxPageControl>
+            </td>
+        </tr>
+    </table>
+        </dx:PanelContent>
+</PanelCollection>
+</dx:ASPxRoundPanel>
+
+<dx:ASPxPopupControl ID="popupMsg" runat="server" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" ClientInstanceName="popupMsg" CloseAction="CloseButton" EnableClientSideAPI="True" HeaderText="Informasi Sistem" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="450px"  >
+            <HeaderImage Url="~/Public/Images/DialogBox/Information.png">
+            </HeaderImage>
+            <HeaderStyle ImageSpacing="8px" VerticalAlign="Middle" />
+            <ContentCollection>
+<dx:popupcontrolcontentcontrol ID="Popupcontrolcontentcontrol3" runat="server">
+    <table style="width:100%; text-align:center;vertical-align:top;">
+        <tr>
+            <td>
+                <dx:aspxlabel ID="popupMsg_Label" runat="server" ClientInstanceName="popupMsg_Label" EnableClientSideAPI="True" EncodeHtml="False">
+                </dx:aspxlabel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <table style="width:100%; vertical-align:top; text-align:left;">
+                    <tr>
+                        <td style="width:35%"></td>
+                        <td style="width:30%; text-align:center; vertical-align:middle;">
+                            <dx:aspxbutton ID="popupMsg_BtnOk" runat="server" AutoPostBack="False" ClientInstanceName="popupMsg_BtnOk" Text="Ok" Width="100px">
+                                <ClientSideEvents Click="function(s, e) {
+	popupMsg.Hide();
+}" />
+                            </dx:aspxbutton>
+                        </td>
+                        <td style="width:35%"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+                </dx:popupcontrolcontentcontrol>
+</ContentCollection>
+        </dx:ASPxPopupControl>
+
+
+<dx:ASPxPopupControl ID="popupDeleteConfirmation" runat="server" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" ClientInstanceName="popupDeleteConfirmation" CloseAction="CloseButton" EnableClientSideAPI="True" HeaderText="Pastikan Tindakan Anda" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="450px"  >
+            <HeaderImage Url="~/Public/Images/DialogBox/Error.png">
+            </HeaderImage>
+            <HeaderStyle ImageSpacing="8px" VerticalAlign="Middle" />
+            <ContentCollection>
+<dx:popupcontrolcontentcontrol ID="Popupcontrolcontentcontrol4" runat="server">
+    <table style="width:100%; text-align:center;vertical-align:top;">
+        <tr>
+            <td>
+                <dx:aspxlabel ID="popupDeleteConfirmation_Label" runat="server" ClientInstanceName="popupDeleteConfirmation_Label" EnableClientSideAPI="True" EncodeHtml="False" Text="Anda pasti untuk memadam rekod ini?">
+                </dx:aspxlabel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <table style="width:100%; vertical-align:top; text-align:left;">
+                    <tr>
+                        <td style="width:15%"></td>
+                        <td style="width:35%; text-align:right; vertical-align:middle; padding-right:6px;">
+                            <dx:aspxbutton ID="popupDeleteConfirmation_BtnOk" runat="server" AutoPostBack="False" ClientInstanceName="popupDeleteConfirmation_BtnOk" Text="Ok" Width="100px">
+                                <ClientSideEvents Click="function(s, e) {
+	Location_ProceedWithDelete();
+}" />
+                            </dx:aspxbutton>
+                        </td>
+                         <td style="width:35%; text-align:left; vertical-align:middle; padding-left:6px;">
+                            <dx:aspxbutton ID="popupDeleteConfirmation_BtnCancel" runat="server" AutoPostBack="False" ClientInstanceName="popupDeleteConfirmation_BtnCancel" Text="Batal" Width="100px">
+                                <ClientSideEvents Click="function(s, e) {
+	popupDeleteConfirmation.Hide();
+}" />
+                            </dx:aspxbutton>
+                        </td>
+                        <td style="width:15%"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+                </dx:popupcontrolcontentcontrol>
+</ContentCollection>
+        </dx:ASPxPopupControl>
+<dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="LoadingPanel" Modal="True">
+</dx:ASPxLoadingPanel>
+<uc6:AuditTrail_Controller ID="AuditTrail_Controller1" runat="server" />
+

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewElement>
+  <SAGA>
+    <ODBCDriverName>IBM INFORMIX ODBC DRIVER</ODBCDriverName>
+    <HostName>192.168.168.8</HostName>
+    <ServerName>ol_csmsaga82tcp</ServerName>
+    <ServiceName>21300</ServiceName>
+    <Protocol>onsoctcp</Protocol>
+    <DatabaseName>upnm82gst</DatabaseName>
+    <UserId>acct</UserId>
+    <Password>acct123</Password>
+    <ClientLocale>en_US.CP1252</ClientLocale>
+    <DatabaseLocale>en_US.819</DatabaseLocale>
+  </SAGA>
+</NewElement>

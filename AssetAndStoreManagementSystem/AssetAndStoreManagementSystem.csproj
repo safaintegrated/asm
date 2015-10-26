@@ -1,0 +1,2651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80BF22CD-4413-4FAC-B266-5C3022106595}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AssetAndStoreManagementSystem</RootNamespace>
+    <AssemblyName>AssetAndStoreManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.SpellChecker.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxHtmlEditor.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxScheduler.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxSpellChecker.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.ASPxThemes.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.2.Web, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Xml\EmailXML.xml" />
+    <Content Include="App_Data\Xml\SAGA.xml" />
+    <Content Include="App_Data\Xml\SAGAselectCmd.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\Xml\SagaVmWareConnection.xml" />
+    <Content Include="App_Data\Xml\SMP.xml" />
+    <Content Include="Aset\AduanKerosakan\AduanKerosakan_Controller.ascx" />
+    <Content Include="Aset\AduanKerosakan\Index.aspx" />
+    <Content Include="Aset\AduanKerosakan\Tab_Aduan.ascx" />
+    <Content Include="Aset\AduanKerosakan\Tab_AliranKerja_Controller.ascx" />
+    <Content Include="Aset\AduanKerosakan\Tab_PegawaiAset.ascx" />
+    <Content Include="Aset\Barcodes\2XWB2T3DRA0Logo.png" />
+    <Content Include="Aset\Images\1.jpg" />
+    <Content Include="Aset\Images\2.jpg" />
+    <Content Include="Aset\Images\3.jpeg" />
+    <Content Include="Aset\Images\4.jpg" />
+    <Content Include="Aset\KemaskiniAsetPelupusan\Index.aspx" />
+    <Content Include="Aset\KemaskiniAsetPelupusan\KemaskiniAsetPelupusan_Controller.ascx" />
+    <Content Include="Aset\KemaskiniAsetPelupusan\Kemaskini_Controller.ascx" />
+    <Content Include="Aset\LaporanKehilangan\HasilSiasatan_Controller.ascx" />
+    <Content Include="Aset\LaporanKehilangan\Index.aspx" />
+    <Content Include="Aset\LaporanKehilangan\KetuaPtj_Controller.ascx" />
+    <Content Include="Aset\LaporanKehilangan\LaporanKehilangan_Controller.ascx" />
+    <Content Include="Aset\LaporanKehilangan\Laporan_Controller.ascx" />
+    <Content Include="Aset\LaporanKehilangan\Penyiasat_Controller.ascx" />
+    <Content Include="Aset\LaporanKehilangan\Tab_AliranKerja_Controller.ascx" />
+    <Content Include="Aset\LaporanKEWPA\KEWPA04\Index.aspx" />
+    <Content Include="Aset\LaporanKEWPA\KEWPA04\KEWPA04_Controller.ascx" />
+    <Content Include="Aset\LaporanKEWPA\KEWPA05\Index.aspx" />
+    <Content Include="Aset\LaporanKEWPA\KEWPA05\KEWPA05_Controller.ascx" />
+    <Content Include="Aset\Lelong\Index.aspx" />
+    <Content Include="Aset\Lelong\Lelong_Controller.ascx" />
+    <Content Include="Aset\Lelong\Tab_Maklumat.ascx" />
+    <Content Include="Aset\Pelupusan\Index.aspx" />
+    <Content Include="Aset\Pelupusan\Pelupusan_Controller.ascx" />
+    <Content Include="Aset\Pelupusan\Pelupusan_MaklumatPelupusan_Controller.ascx" />
+    <Content Include="Aset\Pelupusan\Pelupusan_Pemeriksaan_Controller.ascx" />
+    <Content Include="Aset\Pelupusan\Pelupusan_Perakuan_Controller.ascx" />
+    <Content Include="Aset\Pemeriksaan\Index.aspx" />
+    <Content Include="Aset\Pemeriksaan\Pemeriksaan_Controller.ascx" />
+    <Content Include="Aset\Pemeriksaan\Tab_AliranKerja.ascx" />
+    <Content Include="Aset\Pemeriksaan\Tab_HasilPemeriksaan_Controller.ascx" />
+    <Content Include="Aset\Pemeriksaan\Tab_Pemeriksaan_Controller.ascx" />
+    <Content Include="Aset\Pemeriksaan\WebUserControl1.ascx" />
+    <Content Include="Aset\Pendaftaran\Index.aspx" />
+    <Content Include="Aset\Pendaftaran\Lookup\Index.aspx" />
+    <Content Include="Aset\Pendaftaran\Lookup\Lookup_Controller.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_Accessories.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_Accounting.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_Controller.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_Location.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_MainInfo.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_Maintenance.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_Transfer.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_VehicleInfo.ascx" />
+    <Content Include="Aset\Pendaftaran\Pendaftaran_WriteOff.ascx" />
+    <Content Include="Aset\Penempatan\Index.aspx" />
+    <Content Include="Aset\Penempatan\Lookup\Index.aspx" />
+    <Content Include="Aset\Penempatan\Lookup\Lookup_Controller.ascx" />
+    <Content Include="Aset\Penempatan\Penempatan_Controller.ascx" />
+    <Content Include="Aset\Penempatan\Tab_Penempatan.ascx" />
+    <Content Include="Aset\Pinjaman\Index.aspx" />
+    <Content Include="Aset\Pinjaman\Pinjaman_Controller.ascx" />
+    <Content Include="Aset\Pinjaman\Tab_AliranKerja_Controller.ascx" />
+    <Content Include="Aset\Pinjaman\Tab_Pemulangan.ascx" />
+    <Content Include="Aset\Pinjaman\Tab_Pengeluaran.ascx" />
+    <Content Include="Aset\Pinjaman\Tab_Permohonan.ascx" />
+    <Content Include="Aset\SebutHarga\Index.aspx" />
+    <Content Include="Aset\SebutHarga\SebutHarga_Controller.ascx" />
+    <Content Include="Aset\SebutHarga\Tab_Maklumat.ascx" />
+    <Content Include="Aset\SusutNilai\Index.aspx" />
+    <Content Include="Aset\SusutNilai\SusutNilai_Controller.ascx" />
+    <Content Include="Aset\Tender\Index.aspx" />
+    <Content Include="Aset\Tender\Tab_Maklumat.ascx" />
+    <Content Include="Aset\Tender\Tender_Controller.ascx" />
+    <Content Include="Components\AttachementWindow\AttachmentWindow_Controller.ascx" />
+    <Content Include="Components\AttachementWindow\Index.aspx" />
+    <Content Include="Components\Ribbon\Index.aspx" />
+    <Content Include="Components\Ribbon\Ribbon_Controller.ascx" />
+    <Content Include="Components\UploadDocument\UploadDocument_Controller.ascx" />
+    <Content Include="Components\UploadImage\UploadImage_Controller.ascx" />
+    <Content Include="DocumentViewer\Viewer.aspx" />
+    <Content Include="LamanUtama\AssetSystem_Popup.ascx" />
+    <Content Include="LamanUtama\Icons\Calendar.png" />
+    <Content Include="LamanUtama\Icons\Chat.png" />
+    <Content Include="LamanUtama\Icons\Helpdesk.png" />
+    <Content Include="LamanUtama\Icons\MyTask.png" />
+    <Content Include="LamanUtama\Icons\OnlineManual.png" />
+    <Content Include="LamanUtama\Index.aspx" />
+    <Content Include="LamanUtama\Index_Controller.ascx" />
+    <Content Include="LamanUtama\Kewpa_Popup.ascx" />
+    <Content Include="LamanUtama\Kewps_Popup.ascx" />
+    <Content Include="LamanUtama\LaporanEksekutif_Popup.ascx" />
+    <Content Include="LamanUtama\StoreSystem_Popup.ascx" />
+    <Content Include="LamanUtama\SysAdmin_Popup.ascx" />
+    <Content Include="PenggunaSistem\Kalendar\Index.aspx" />
+    <Content Include="PenggunaSistem\Kalendar\Kalendar_Controller.ascx" />
+    <Content Include="PenggunaSistem\Manual\Index.aspx" />
+    <Content Include="PenggunaSistem\Manual\Manual_Controller.ascx" />
+    <Content Include="PenggunaSistem\Tugasan\Index.aspx" />
+    <Content Include="PenggunaSistem\Tugasan\Tugasan_Controller.ascx" />
+    <Content Include="PengurusanSistem\Buletin\Buletin_Controller.ascx" />
+    <Content Include="PengurusanSistem\Buletin\Index.aspx" />
+    <Content Include="PengurusanSistem\Emel\Emel_Controller.ascx" />
+    <Content Include="PengurusanSistem\Emel\Index.aspx" />
+    <Content Include="PengurusanSistem\Emel\Js_Emel.js" />
+    <Content Include="PengurusanSistem\Kakitangan\Index.aspx" />
+    <Content Include="PengurusanSistem\Kakitangan\Kakitangan_Controller.ascx" />
+    <Content Include="PengurusanSistem\KumpulanPenggunaSistem\AuditTrail_Controller.ascx" />
+    <Content Include="PengurusanSistem\KumpulanPenggunaSistem\Index.aspx" />
+    <Content Include="PengurusanSistem\KumpulanPenggunaSistem\KumpulanPengguna_Controller.ascx" />
+    <Content Include="PengurusanSistem\Lokasi\AuditTrail_Controller.ascx" />
+    <Content Include="PengurusanSistem\Lokasi\Building_Controller.ascx" />
+    <Content Include="PengurusanSistem\Lokasi\Department_Controller.ascx" />
+    <Content Include="PengurusanSistem\Lokasi\Floor_Controller.ascx" />
+    <Content Include="PengurusanSistem\Lokasi\Index.aspx" />
+    <Content Include="PengurusanSistem\Lokasi\Lokasi_Controller.ascx" />
+    <Content Include="PengurusanSistem\Lokasi\PTJ_Controller.ascx" />
+    <Content Include="PengurusanSistem\Lokasi\Space_Controller.ascx" />
+    <Content Include="PengurusanSistem\Organisasi\AuditTrail_Controller.ascx" />
+    <Content Include="PengurusanSistem\Organisasi\Index.aspx" />
+    <Content Include="PengurusanSistem\Organisasi\Js_Organisasi.js" />
+    <Content Include="PengurusanSistem\Organisasi\Organisasi_Controller.ascx" />
+    <Content Include="PengurusanSistem\PegawaiAset\Index.aspx" />
+    <Content Include="PengurusanSistem\PegawaiAset\PegawaiAset_Controller.ascx" />
+    <Content Include="PengurusanSistem\Pembekal\AuditTrail_Controller.ascx" />
+    <Content Include="PengurusanSistem\Pembekal\Index.aspx" />
+    <Content Include="PengurusanSistem\Pembekal\Pembekal_Controller.ascx" />
+    <Content Include="PengurusanSistem\PenggunaSistem\AuditTrail_Controller.ascx" />
+    <Content Include="PengurusanSistem\PenggunaSistem\Index.aspx" />
+    <Content Include="PengurusanSistem\PenggunaSistem\Js_PenggunaSistem.js" />
+    <Content Include="PengurusanSistem\PenggunaSistem\PenggunaSistem_Controller.ascx" />
+    <Content Include="PengurusanSistem\PenggunaSistem\PenggunaSistem_PopupManager.ascx" />
+    <Content Include="PengurusanSistem\Saga\Index.aspx" />
+    <Content Include="PengurusanSistem\Saga\Js_Saga.js" />
+    <Content Include="PengurusanSistem\Saga\Saga_Controller.ascx" />
+    <Content Include="Public\Css\AspxCss.css" />
+    <Content Include="Public\Css\FormsCss.css" />
+    <Content Include="Public\Css\StartCss.css" />
+    <Content Include="Public\Images\Backdrop\PageBackgroundImage.jpg" />
+    <Content Include="Public\Images\Backdrop\StartBackground.jpg" />
+    <Content Include="Public\Images\DialogBox\ConfigWndow.png" />
+    <Content Include="Public\Images\DialogBox\Help.png" />
+    <Content Include="Public\Images\DialogBox\Lookup.png" />
+    <Content Include="Public\Images\DialogBox\TestEmailConfig.png" />
+    <Content Include="Public\Images\FileTypes\image.png" />
+    <Content Include="Public\Images\FileTypes\page_white_acrobat.png" />
+    <Content Include="Public\Images\FileTypes\page_white_excel.png" />
+    <Content Include="Public\Images\FileTypes\page_white_word.png" />
+    <Content Include="Public\Images\FormIcons\FormLookupIcon.png" />
+    <Content Include="Public\Images\GridIcons\GridDelete.png" />
+    <Content Include="Public\Images\GridIcons\GridUpload.png" />
+    <Content Include="Public\Images\GridIcons\GridView.png" />
+    <Content Include="Public\Images\Logo\Logo.png" />
+    <Content Include="Public\Images\Others\BuletinDefaulImage.png" />
+    <Content Include="Public\Images\Others\Report.png" />
+    <Content Include="Public\Images\Others\Search.png" />
+    <Content Include="Public\Images\Report\Rpt_SystemUserGroup.png" />
+    <Content Include="Public\Images\Screen\AssetRegistration.png" />
+    <Content Include="Public\Images\Screen\AssetRelocation.png" />
+    <Content Include="Public\Images\Screen\Auction.png" />
+    <Content Include="Public\Images\Screen\Belian.png" />
+    <Content Include="Public\Images\Screen\Buletin.png" />
+    <Content Include="Public\Images\Screen\BuletinAdministration.png" />
+    <Content Include="Public\Images\Screen\Calendar.png" />
+    <Content Include="Public\Images\Screen\CategorySubcategory.png" />
+    <Content Include="Public\Images\Screen\checkstok.png" />
+    <Content Include="Public\Images\Screen\daftarstok.png" />
+    <Content Include="Public\Images\Screen\DamageReport.png" />
+    <Content Include="Public\Images\Screen\Depreciation.png" />
+    <Content Include="Public\Images\Screen\DestroyAcknowledgement.png" />
+    <Content Include="Public\Images\Screen\DestroyCert.png" />
+    <Content Include="Public\Images\Screen\Emel.png" />
+    <Content Include="Public\Images\Screen\Kakitangan.png" />
+    <Content Include="Public\Images\Screen\file.png" />
+    <Content Include="Public\Images\Screen\FinalReportOfLostAsset.png" />
+    <Content Include="Public\Images\Screen\GRN.png" />
+    <Content Include="Public\Images\Screen\hapus.png" />
+    <Content Include="Public\Images\Screen\Inspection.png" />
+    <Content Include="Public\Images\Screen\InspectionOfficer.png" />
+    <Content Include="Public\Images\Screen\InstructionToVerifier.png" />
+    <Content Include="Public\Images\Screen\LaporanKehilangan.png" />
+    <Content Include="Public\Images\Screen\KemaskiniAsetPelupusan.png" />
+    <Content Include="Public\Images\Screen\lantikanpeg.png" />
+    <Content Include="Public\Images\Screen\lantikpegpemverifikasi.png" />
+    <Content Include="Public\Images\Screen\LembagaPemeriksa.png" />
+    <Content Include="Public\Images\Screen\Lokasi.png" />
+    <Content Include="Public\Images\Screen\lupus.png" />
+    <Content Include="Public\Images\Screen\MyTask.png" />
+    <Content Include="Public\Images\Screen\OnlineManual.png" />
+    <Content Include="Public\Images\Screen\out.png" />
+    <Content Include="Public\Images\Screen\PegawaiAset.png" />
+    <Content Include="Public\Images\Screen\PelarasanStok.png" />
+    <Content Include="Public\Images\Screen\Pelupusan.png" />
+    <Content Include="Public\Images\Screen\Pembekal.png" />
+    <Content Include="Public\Images\Screen\PemeriksaanStok.png" />
+    <Content Include="Public\Images\Screen\PengeluaranStokKeStorPTJ.png" />
+    <Content Include="Public\Images\Screen\PeopleGroup.png" />
+    <Content Include="Public\Images\Screen\PerakuanAmbilAlih.png" />
+    <Content Include="Public\Images\Screen\PermohonanStok.png" />
+    <Content Include="Public\Images\Screen\Pinjaman.png" />
+    <Content Include="Public\Images\Screen\Placement.png" />
+    <Content Include="Public\Images\Screen\Laporan.png" />
+    <Content Include="Public\Images\Screen\SAGA.png" />
+    <Content Include="Public\Images\Screen\SMP.png" />
+    <Content Include="Public\Images\Screen\Stock.png" />
+    <Content Include="Public\Images\Screen\StockRequest.png" />
+    <Content Include="Public\Images\Screen\stok_in.png" />
+    <Content Include="Public\Images\Screen\stor.png" />
+    <Content Include="Public\Images\Screen\Store.png" />
+    <Content Include="Public\Images\Screen\Susutnilai.png" />
+    <Content Include="Public\Images\Screen\PenggunaSistem.png" />
+    <Content Include="Public\Images\Backdrop\PageBackground.jpg" />
+    <Content Include="Public\Images\DialogBox\Audit.png" />
+    <Content Include="Public\Images\DialogBox\Error.png" />
+    <Content Include="Public\Images\DialogBox\Information.png" />
+    <Content Include="Public\Images\DialogBox\Password.png" />
+    <Content Include="Public\Images\Screen\Organisasi.png" />
+    <Content Include="Public\Images\Screen\KumpulanPenggunaSistem.png" />
+    <Content Include="Public\Images\Screen\Tender.png" />
+    <Content Include="Public\Images\Screen\Transfer.png" />
+    <Content Include="Public\Images\Screen\UpdateDestroyedAsset.png" />
+    <Content Include="Public\Images\Screen\Utility.png" />
+    <Content Include="Public\Images\Screen\verifiksi.png" />
+    <Content Include="Public\Images\StartMenu\AssetManagementSystem.png" />
+    <Content Include="Public\Images\StartMenu\Dashboard.png" />
+    <Content Include="Public\Images\StartMenu\DefaultLogo.png" />
+    <Content Include="Public\Images\StartMenu\DivBackground.png" />
+    <Content Include="Public\Images\StartMenu\ExecutiveReports.png" />
+    <Content Include="Public\Images\StartMenu\HelpDeskIcon.png" />
+    <Content Include="Public\Images\StartMenu\InstantMesagingIcon.png" />
+    <Content Include="Public\Images\StartMenu\PersonalCalendarIcon.png" />
+    <Content Include="Public\Images\StartMenu\PurchaseRequisition.png" />
+    <Content Include="Public\Images\StartMenu\RoundAndBlack.png" />
+    <Content Include="Public\Images\StartMenu\spacer.png" />
+    <Content Include="Public\Images\StartMenu\StoreManagementSystem.png" />
+    <Content Include="Public\Images\StartMenu\SystemAdministrator.png" />
+    <Content Include="Public\Images\StartMenu\UserManalIcon.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Add.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Audit.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Cancel.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Delete.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Edit.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Exit.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Print.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Save.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Search.png" />
+    <Content Include="Public\Images\Toolbar\Disabled\Submit.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Add.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Audit.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Cancel.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Delete.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Edit.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Exit.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Print.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Save.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Search.png" />
+    <Content Include="Public\Images\Toolbar\Enabled\Submit.png" />
+    <Content Include="Public\Scripts\userinfo.js" />
+    <Content Include="Report\Index.aspx" />
+    <Content Include="Report\Viewer\Index.aspx" />
+    <Content Include="Report\Viewer\Viewer_Controller.ascx" />
+    <Content Include="SharedControls\AuditTrailOneTable\AuditTrailOneTable_Controller.ascx" />
+    <Content Include="SharedControls\EmployeeLookup_SingleRecord\EmployeeLookup_SingleRecord_Controller.ascx" />
+    <Content Include="SharedControls\EmployeeLookup_SingleRecord\Index.aspx" />
+    <Content Include="SharedControls\LookupPegawaiAset\Index.aspx" />
+    <Content Include="SharedControls\LookupPegawaiAset\LookupPegawaiAset_Controller.ascx" />
+    <Content Include="SharedControls\Lookup_KodBidang\Lookup_KodBidang_Controller.ascx" />
+    <Content Include="SharedControls\Lookup_Vendor\LookupVendor_Controller.ascx" />
+    <Content Include="Shared\KategoriSubKategori\Index.aspx" />
+    <Content Include="Shared\KategoriSubKategori\KategoriSubKategori_Controller.ascx" />
+    <Content Include="Shared\KategoriSubKategori\KategoriSubKategori_PopupManager.ascx" />
+    <Content Include="Shared\LembagaPemeriksa\Index.aspx" />
+    <Content Include="Shared\LembagaPemeriksa\LembagaPemeriksa_Controller.ascx" />
+    <Content Include="Shared\LembagaPemeriksa\Lookup\Index.aspx" />
+    <Content Include="Shared\LembagaPemeriksa\Lookup\Lookup_Controller.ascx" />
+    <Content Include="Shared\PermohonanBelian\Index.aspx" />
+    <Content Include="Shared\PermohonanBelian\PermohonanBelian_Controller.ascx" />
+    <Content Include="Shared\PermohonanBelian\PermohonanBelian_PopupNewAsset.ascx" />
+    <Content Include="Shared\PermohonanBelian\PermohonanBelian_PrHeader.ascx" />
+    <Content Include="Shared\PermohonanBelian\PermohonanBelian_TabItem.ascx" />
+    <Content Include="Shared\PurchaseRequest\Index.aspx" />
+    <Content Include="Shared\PurchaseRequest\PermohonanBelian_Controller.ascx" />
+    <Content Include="Shared\PurchaseRequest\PermohonanBelian_PopupNewAsset.ascx" />
+    <Content Include="Shared\PurchaseRequest\PermohonanBelian_PrHeader.ascx" />
+    <Content Include="Shared\PurchaseRequest\PermohonanBelian_TabItem.ascx" />
+    <Content Include="Shared\PurchaseRequest\purchaserequest.js" />
+    <Content Include="Shared\TerimaanBarang\Index.aspx" />
+    <Content Include="Shared\TerimaanBarang\Js_TerimaanBarang.js" />
+    <Content Include="Shared\TerimaanBarang\Lookup\Index.aspx" />
+    <Content Include="Shared\TerimaanBarang\Lookup\Lookup_Controller.ascx" />
+    <Content Include="Shared\TerimaanBarang\Tab_AliranKerja_Controller.ascx" />
+    <Content Include="Shared\TerimaanBarang\Tab_SenaraiItem_Controller.ascx" />
+    <Content Include="Shared\TerimaanBarang\Tab_SenaraiSemak_Controller.ascx" />
+    <Content Include="Shared\TerimaanBarang\Tab_TerimaanBarang_Controller.ascx" />
+    <Content Include="Shared\TerimaanBarang\TerimaanBarang_Controller.ascx" />
+    <Content Include="TestGenerateQR\Index.aspx" />
+    <Content Include="Stor\DaftarStok\DaftarStok_Controller.ascx" />
+    <Content Include="Stor\DaftarStok\Index.aspx" />
+    <Content Include="Stor\DaftarStok\Tab_MaklumatStok.ascx" />
+    <Content Include="Stor\DaftarStok\Tab_SenaraiStok.ascx" />
+    <Content Include="Stor\HapusKiraStok\HapusKiraStok_Controller.ascx" />
+    <Content Include="Stor\HapusKiraStok\Index.aspx" />
+    <Content Include="Stor\LantikanPegPemverifikasi\Index.aspx" />
+    <Content Include="Stor\LantikanPegPemverifikasi\LantikanPegPemverifikasi_Controller.ascx" />
+    <Content Include="Stor\LaporanTahunan\Index.aspx" />
+    <Content Include="Stor\LaporanTahunan\LaporanTahunan_Controller.ascx" />
+    <Content Include="Stor\PelarasanStok\Index.aspx" />
+    <Content Include="Stor\PelarasanStok\PelarasanStok_Controller.ascx" />
+    <Content Include="Stor\PelupusanStok\Index.aspx" />
+    <Content Include="Stor\PelupusanStok\PelupusanStok_Controller.ascx" />
+    <Content Include="Stor\PemeriksaanStok\Index.aspx" />
+    <Content Include="Stor\PemeriksaanStok\PemeriksaanStok_Controller.ascx" />
+    <Content Include="Stor\PemeriksaanStok\Tab_AliranKerja.ascx" />
+    <Content Include="Stor\PemeriksaanStok\Tab_Info.ascx" />
+    <Content Include="Stor\PemeriksaanStok\Tab_Pemeriksaan.ascx" />
+    <Content Include="Stor\PemeriksaanStok\Tab_Verifikasi.ascx" />
+    <Content Include="Stor\PengeluaranKeStorPTJ\Index.aspx" />
+    <Content Include="Stor\PengeluaranKeStorPTJ\PengeluaranKeStorPTJ_Controller.ascx" />
+    <Content Include="Stor\PengeluaranStok\Index.aspx" />
+    <Content Include="Stor\PengeluaranStok\PengeluaranStokNew_Controller.ascx" />
+    <Content Include="Stor\PerakuanAmbilAlih\Index.aspx" />
+    <Content Include="Stor\PerakuanAmbilAlih\PerakuanAmbilAlih_Controller.ascx" />
+    <Content Include="Stor\PermohonanStok\Index.aspx" />
+    <Content Include="Stor\PermohonanStok\PermohonanStok_Controller.ascx" />
+    <Content Include="Stor\PermohonanStok\Tab_AliranKerja.ascx" />
+    <Content Include="Stor\PermohonanStok\Tab_Pengeluaran.ascx" />
+    <Content Include="Stor\PermohonanStok\Tab_Permohonan.ascx" />
+    <Content Include="Stor\Stok\Index.aspx" />
+    <Content Include="Stor\Stok\Stok_Controller.ascx" />
+    <Content Include="Stor\Stor\Index.aspx" />
+    <Content Include="Stor\Stor\Stor_Controller.ascx" />
+    <Content Include="Upload\DefaultOrgImage.png" />
+    <Content Include="Upload\SystemUsers\DefaultSystemUser.png" />
+    <Content Include="Utility\Index.aspx" />
+    <Content Include="Utility\Utility_Controller.ascx" />
+    <Content Include="Utility\WebForm1.aspx" />
+    <Content Include="VerifikasiPengguna\LogMasuk\Index.aspx" />
+    <Content Include="VerifikasiPengguna\LogMasuk\LogMasuk_Controller.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aset\AduanKerosakan\AduanKerosakan_Controller.ascx.cs">
+      <DependentUpon>AduanKerosakan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\AduanKerosakan_Controller.ascx.designer.cs">
+      <DependentUpon>AduanKerosakan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Tab_Aduan.ascx.cs">
+      <DependentUpon>Tab_Aduan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Tab_Aduan.ascx.designer.cs">
+      <DependentUpon>Tab_Aduan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Tab_AliranKerja_Controller.ascx.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Tab_AliranKerja_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Tab_PegawaiAset.ascx.cs">
+      <DependentUpon>Tab_PegawaiAset.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\AduanKerosakan\Tab_PegawaiAset.ascx.designer.cs">
+      <DependentUpon>Tab_PegawaiAset.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\KemaskiniAsetPelupusan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\KemaskiniAsetPelupusan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\KemaskiniAsetPelupusan\KemaskiniAsetPelupusan_Controller.ascx.cs">
+      <DependentUpon>KemaskiniAsetPelupusan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\KemaskiniAsetPelupusan\KemaskiniAsetPelupusan_Controller.ascx.designer.cs">
+      <DependentUpon>KemaskiniAsetPelupusan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\KemaskiniAsetPelupusan\Kemaskini_Controller.ascx.cs">
+      <DependentUpon>Kemaskini_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\KemaskiniAsetPelupusan\Kemaskini_Controller.ascx.designer.cs">
+      <DependentUpon>Kemaskini_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\kewpadata\kewpa_dataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>kewpa_dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\HasilSiasatan_Controller.ascx.cs">
+      <DependentUpon>HasilSiasatan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\HasilSiasatan_Controller.ascx.designer.cs">
+      <DependentUpon>HasilSiasatan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\KetuaPtj_Controller.ascx.cs">
+      <DependentUpon>KetuaPtj_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\KetuaPtj_Controller.ascx.designer.cs">
+      <DependentUpon>KetuaPtj_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\LaporanKehilangan_Controller.ascx.cs">
+      <DependentUpon>LaporanKehilangan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\LaporanKehilangan_Controller.ascx.designer.cs">
+      <DependentUpon>LaporanKehilangan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Laporan_Controller.ascx.cs">
+      <DependentUpon>Laporan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Laporan_Controller.ascx.designer.cs">
+      <DependentUpon>Laporan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Penyiasat_Controller.ascx.cs">
+      <DependentUpon>Penyiasat_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Penyiasat_Controller.ascx.designer.cs">
+      <DependentUpon>Penyiasat_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Tab_AliranKerja_Controller.ascx.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKehilangan\Tab_AliranKerja_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA02\Rpt_KEWPA02.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA02\Rpt_KEWPA02.Designer.cs">
+      <DependentUpon>Rpt_KEWPA02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA03\Rpt_KEWPA03.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA03\Rpt_KEWPA03.Designer.cs">
+      <DependentUpon>Rpt_KEWPA03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\KEWPA04_Controller.ascx.cs">
+      <DependentUpon>KEWPA04_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\KEWPA04_Controller.ascx.designer.cs">
+      <DependentUpon>KEWPA04_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\N_KEWPA4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\N_KEWPA4.Designer.cs">
+      <DependentUpon>N_KEWPA4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\Rpt_KEWPA04.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA04\Rpt_KEWPA04.Designer.cs">
+      <DependentUpon>Rpt_KEWPA04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\KEWPA05_Controller.ascx.cs">
+      <DependentUpon>KEWPA05_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\KEWPA05_Controller.ascx.designer.cs">
+      <DependentUpon>KEWPA05_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\N_KEWPA5.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\N_KEWPA5.Designer.cs">
+      <DependentUpon>N_KEWPA5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\Rpt_KEWPA05.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA05\Rpt_KEWPA05.Designer.cs">
+      <DependentUpon>Rpt_KEWPA05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA06\Rpt_KEWPA06.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA06\Rpt_KEWPA06.Designer.cs">
+      <DependentUpon>Rpt_KEWPA06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA07\Rpt_KEWPA07.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA07\Rpt_KEWPA07.Designer.cs">
+      <DependentUpon>Rpt_KEWPA07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA08\Rpt_KEWPA08.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA08\Rpt_KEWPA08.Designer.cs">
+      <DependentUpon>Rpt_KEWPA08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA09\Rpt_KEWPA09.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Aset\LaporanKEWPA\KEWPA09\Rpt_KEWPA09.Designer.cs">
+      <DependentUpon>Rpt_KEWPA09.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Lelong\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Lelong\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Lelong\Lelong_Controller.ascx.cs">
+      <DependentUpon>Lelong_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Lelong\Lelong_Controller.ascx.designer.cs">
+      <DependentUpon>Lelong_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Lelong\Tab_Maklumat.ascx.cs">
+      <DependentUpon>Tab_Maklumat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Lelong\Tab_Maklumat.ascx.designer.cs">
+      <DependentUpon>Tab_Maklumat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_Controller.ascx.cs">
+      <DependentUpon>Pelupusan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_Controller.ascx.designer.cs">
+      <DependentUpon>Pelupusan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_MaklumatPelupusan_Controller.ascx.cs">
+      <DependentUpon>Pelupusan_MaklumatPelupusan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_MaklumatPelupusan_Controller.ascx.designer.cs">
+      <DependentUpon>Pelupusan_MaklumatPelupusan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_Pemeriksaan_Controller.ascx.cs">
+      <DependentUpon>Pelupusan_Pemeriksaan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_Pemeriksaan_Controller.ascx.designer.cs">
+      <DependentUpon>Pelupusan_Pemeriksaan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_Perakuan_Controller.ascx.cs">
+      <DependentUpon>Pelupusan_Perakuan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pelupusan\Pelupusan_Perakuan_Controller.ascx.designer.cs">
+      <DependentUpon>Pelupusan_Perakuan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Pemeriksaan_Controller.ascx.cs">
+      <DependentUpon>Pemeriksaan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Pemeriksaan_Controller.ascx.designer.cs">
+      <DependentUpon>Pemeriksaan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Tab_AliranKerja.ascx.cs">
+      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Tab_AliranKerja.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Tab_HasilPemeriksaan_Controller.ascx.cs">
+      <DependentUpon>Tab_HasilPemeriksaan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Tab_HasilPemeriksaan_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_HasilPemeriksaan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Tab_Pemeriksaan_Controller.ascx.cs">
+      <DependentUpon>Tab_Pemeriksaan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\Tab_Pemeriksaan_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_Pemeriksaan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pemeriksaan\WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Lookup\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Lookup\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Lookup\Lookup_Controller.ascx.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Lookup\Lookup_Controller.ascx.designer.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Accessories.ascx.cs">
+      <DependentUpon>Pendaftaran_Accessories.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Accessories.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_Accessories.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Accounting.ascx.cs">
+      <DependentUpon>Pendaftaran_Accounting.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Accounting.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_Accounting.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Controller.ascx.cs">
+      <DependentUpon>Pendaftaran_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Controller.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Location.ascx.cs">
+      <DependentUpon>Pendaftaran_Location.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Location.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_Location.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_MainInfo.ascx.cs">
+      <DependentUpon>Pendaftaran_MainInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_MainInfo.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_MainInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Maintenance.ascx.cs">
+      <DependentUpon>Pendaftaran_Maintenance.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Maintenance.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_Maintenance.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Transfer.ascx.cs">
+      <DependentUpon>Pendaftaran_Transfer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_Transfer.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_Transfer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_VehicleInfo.ascx.cs">
+      <DependentUpon>Pendaftaran_VehicleInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_VehicleInfo.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_VehicleInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_WriteOff.ascx.cs">
+      <DependentUpon>Pendaftaran_WriteOff.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pendaftaran\Pendaftaran_WriteOff.ascx.designer.cs">
+      <DependentUpon>Pendaftaran_WriteOff.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Lookup\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Lookup\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Lookup\Lookup_Controller.ascx.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Lookup\Lookup_Controller.ascx.designer.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Penempatan_Controller.ascx.cs">
+      <DependentUpon>Penempatan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Penempatan_Controller.ascx.designer.cs">
+      <DependentUpon>Penempatan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Tab_Penempatan.ascx.cs">
+      <DependentUpon>Tab_Penempatan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Penempatan\Tab_Penempatan.ascx.designer.cs">
+      <DependentUpon>Tab_Penempatan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Pinjaman_Controller.ascx.cs">
+      <DependentUpon>Pinjaman_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Pinjaman_Controller.ascx.designer.cs">
+      <DependentUpon>Pinjaman_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_AliranKerja_Controller.ascx.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_AliranKerja_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_Pemulangan.ascx.cs">
+      <DependentUpon>Tab_Pemulangan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_Pemulangan.ascx.designer.cs">
+      <DependentUpon>Tab_Pemulangan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_Pengeluaran.ascx.cs">
+      <DependentUpon>Tab_Pengeluaran.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_Pengeluaran.ascx.designer.cs">
+      <DependentUpon>Tab_Pengeluaran.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_Permohonan.ascx.cs">
+      <DependentUpon>Tab_Permohonan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Pinjaman\Tab_Permohonan.ascx.designer.cs">
+      <DependentUpon>Tab_Permohonan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\SebutHarga\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\SebutHarga\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\SebutHarga\SebutHarga_Controller.ascx.cs">
+      <DependentUpon>SebutHarga_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\SebutHarga\SebutHarga_Controller.ascx.designer.cs">
+      <DependentUpon>SebutHarga_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\SebutHarga\Tab_Maklumat.ascx.cs">
+      <DependentUpon>Tab_Maklumat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\SebutHarga\Tab_Maklumat.ascx.designer.cs">
+      <DependentUpon>Tab_Maklumat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\SusutNilai\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\SusutNilai\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\SusutNilai\SusutNilai_Controller.ascx.cs">
+      <DependentUpon>SusutNilai_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\SusutNilai\SusutNilai_Controller.ascx.designer.cs">
+      <DependentUpon>SusutNilai_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Tender\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Tender\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Tender\Tab_Maklumat.ascx.cs">
+      <DependentUpon>Tab_Maklumat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Tender\Tab_Maklumat.ascx.designer.cs">
+      <DependentUpon>Tab_Maklumat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aset\Tender\Tender_Controller.ascx.cs">
+      <DependentUpon>Tender_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aset\Tender\Tender_Controller.ascx.designer.cs">
+      <DependentUpon>Tender_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="InMemoryContextInitializer.cs" />
+    <Compile Include="Components\AttachementWindow\AttachmentWindow_Controller.ascx.cs">
+      <DependentUpon>AttachmentWindow_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\AttachementWindow\AttachmentWindow_Controller.ascx.designer.cs">
+      <DependentUpon>AttachmentWindow_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\AttachementWindow\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\AttachementWindow\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Ribbon\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Ribbon\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Ribbon\Ribbon_Controller.ascx.cs">
+      <DependentUpon>Ribbon_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Ribbon\Ribbon_Controller.ascx.designer.cs">
+      <DependentUpon>Ribbon_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UploadDocument\UploadDocument_Controller.ascx.cs">
+      <DependentUpon>UploadDocument_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\UploadDocument\UploadDocument_Controller.ascx.designer.cs">
+      <DependentUpon>UploadDocument_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UploadImage\UploadImage_Controller.ascx.cs">
+      <DependentUpon>UploadImage_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\UploadImage\UploadImage_Controller.ascx.designer.cs">
+      <DependentUpon>UploadImage_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DbSet.cs" />
+    <Compile Include="DocumentViewer\Index.ashx.cs">
+      <DependentUpon>Index.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentViewer\Viewer.aspx.cs">
+      <DependentUpon>Viewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DocumentViewer\Viewer.aspx.designer.cs">
+      <DependentUpon>Viewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="Entity\AssetType.cs" />
+    <Compile Include="Entity\AuditLog.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\Checklist.cs" />
+    <Compile Include="Entity\Component.cs" />
+    <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\EntityBase.cs" />
+    <Compile Include="Entity\GoodReceiveNote.cs" />
+    <Compile Include="Entity\KenyataanJualanLelonganStokAlih.cs" />
+    <Compile Include="Entity\KenyataanTawaranSebutharga.cs" />
+    <Compile Include="Entity\KenyataanTawaranTender.cs" />
+    <Compile Include="Entity\LaporanKehilangan.cs" />
+    <Compile Include="Entity\LaporanLembagaPemeriksa.cs" />
+    <Compile Include="Entity\Ledger.cs" />
+    <Compile Include="Entity\LedgerItem.cs" />
+    <Compile Include="Entity\Location.cs" />
+    <Compile Include="Entity\Pelupusan.cs" />
+    <Compile Include="Entity\PelupusanDetail.cs" />
+    <Compile Include="Entity\Pemeriksaan.cs" />
+    <Compile Include="Entity\PemeriksaanDetail.cs" />
+    <Compile Include="Entity\Penempatan.cs" />
+    <Compile Include="Entity\PermohonanStok.cs" />
+    <Compile Include="Entity\ProcessState.cs" />
+    <Compile Include="Entity\ProcessStatus.cs" />
+    <Compile Include="Entity\ProcessType.cs" />
+    <Compile Include="Entity\ProcurementCategory.cs" />
+    <Compile Include="Entity\ProcurementMethod.cs" />
+    <Compile Include="Entity\ProcurementType.cs" />
+    <Compile Include="Entity\Project.cs" />
+    <Compile Include="Entity\ProjectIte.cs" />
+    <Compile Include="Entity\PuDeliveryAddress.cs" />
+    <Compile Include="Entity\PurchaseRequest.cs" />
+    <Compile Include="Entity\PurchaseRequestItem.cs" />
+    <Compile Include="Entity\PurchaseType.cs" />
+    <Compile Include="Entity\PusatTanggungjawab.cs" />
+    <Compile Include="Entity\Requestor.cs" />
+    <Compile Include="Entity\SijilPengesahanPemusnahanStokAlih.cs" />
+    <Compile Include="Entity\Stock.cs" />
+    <Compile Include="Entity\StockRegistration.cs" />
+    <Compile Include="Entity\Stor.cs" />
+    <Compile Include="Entity\SubCategory.cs" />
+    <Compile Include="Entity\Supplier.cs" />
+    <Compile Include="Entity\TaxCodeSaga.cs" />
+    <Compile Include="Entity\TimeTimeOffset.cs" />
+    <Compile Include="Entity\UnitOfMeasurement.cs" />
+    <Compile Include="Entity\UtemInfo.cs" />
+    <Compile Include="Entity\Workflow.cs" />
+    <Compile Include="IDescribableEntity.cs" />
+    <Compile Include="InMemoryContext.cs" />
+    <Compile Include="LamanUtama\AssetSystem_Popup.ascx.cs">
+      <DependentUpon>AssetSystem_Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\AssetSystem_Popup.ascx.designer.cs">
+      <DependentUpon>AssetSystem_Popup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LamanUtama\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LamanUtama\Index_Controller.ascx.cs">
+      <DependentUpon>Index_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\Index_Controller.ascx.designer.cs">
+      <DependentUpon>Index_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LamanUtama\Kewpa_Popup.ascx.cs">
+      <DependentUpon>Kewpa_Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\Kewpa_Popup.ascx.designer.cs">
+      <DependentUpon>Kewpa_Popup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LamanUtama\Kewps_Popup.ascx.cs">
+      <DependentUpon>Kewps_Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\Kewps_Popup.ascx.designer.cs">
+      <DependentUpon>Kewps_Popup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LamanUtama\LaporanEksekutif_Popup.ascx.cs">
+      <DependentUpon>LaporanEksekutif_Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\LaporanEksekutif_Popup.ascx.designer.cs">
+      <DependentUpon>LaporanEksekutif_Popup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LamanUtama\StoreSystem_Popup.ascx.cs">
+      <DependentUpon>StoreSystem_Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\StoreSystem_Popup.ascx.designer.cs">
+      <DependentUpon>StoreSystem_Popup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="LamanUtama\SysAdmin_Popup.ascx.cs">
+      <DependentUpon>SysAdmin_Popup.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LamanUtama\SysAdmin_Popup.ascx.designer.cs">
+      <DependentUpon>SysAdmin_Popup.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AssetTypeModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\ChecklistModel.cs" />
+    <Compile Include="Models\ComponentModel.cs" />
+    <Compile Include="Models\LedgerItemModel.cs" />
+    <Compile Include="Models\LedgerModel.cs" />
+    <Compile Include="Models\ProcessTypeModel.cs" />
+    <Compile Include="Models\ProcurementCategoryModel.cs" />
+    <Compile Include="Models\ProcurementMethodModel.cs" />
+    <Compile Include="Models\ProcurementTypeModel.cs" />
+    <Compile Include="Models\ProjectItemModel.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\PuDeliveryAddressModel.cs" />
+    <Compile Include="Models\PurchaseRequestModel.cs" />
+    <Compile Include="Models\PurchaseTypeModel.cs" />
+    <Compile Include="Models\RequestorModel.cs" />
+    <Compile Include="Models\SubCategoryModel.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
+    <Compile Include="Models\TaxCodeSagaModel.cs" />
+    <Compile Include="Models\UnitOfMeasurementModel.cs" />
+    <Compile Include="Models\UtemInfoModel.cs" />
+    <Compile Include="Models\WorkflowModel.cs" />
+    <Compile Include="PenggunaSistem\Kalendar\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenggunaSistem\Kalendar\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PenggunaSistem\Kalendar\Kalendar_Controller.ascx.cs">
+      <DependentUpon>Kalendar_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenggunaSistem\Kalendar\Kalendar_Controller.ascx.designer.cs">
+      <DependentUpon>Kalendar_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PenggunaSistem\Manual\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenggunaSistem\Manual\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PenggunaSistem\Manual\Manual_Controller.ascx.cs">
+      <DependentUpon>Manual_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenggunaSistem\Manual\Manual_Controller.ascx.designer.cs">
+      <DependentUpon>Manual_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PenggunaSistem\Tugasan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenggunaSistem\Tugasan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PenggunaSistem\Tugasan\Tugasan_Controller.ascx.cs">
+      <DependentUpon>Tugasan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PenggunaSistem\Tugasan\Tugasan_Controller.ascx.designer.cs">
+      <DependentUpon>Tugasan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Buletin\Buletin_Controller.ascx.cs">
+      <DependentUpon>Buletin_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Buletin\Buletin_Controller.ascx.designer.cs">
+      <DependentUpon>Buletin_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Buletin\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Buletin\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Buletin\Rpt_Buletin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Buletin\Rpt_Buletin.Designer.cs">
+      <DependentUpon>Rpt_Buletin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Emel\Emel_Controller.ascx.cs">
+      <DependentUpon>Emel_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Emel\Emel_Controller.ascx.designer.cs">
+      <DependentUpon>Emel_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Emel\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Emel\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Kakitangan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Kakitangan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Kakitangan\Kakitangan_Controller.ascx.cs">
+      <DependentUpon>Kakitangan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Kakitangan\Kakitangan_Controller.ascx.designer.cs">
+      <DependentUpon>Kakitangan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Kakitangan\Rpt_Kakitangan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Kakitangan\Rpt_Kakitangan.Designer.cs">
+      <DependentUpon>Rpt_Kakitangan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\AuditTrail_Controller.ascx.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\AuditTrail_Controller.ascx.designer.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\KumpulanPengguna_Controller.ascx.cs">
+      <DependentUpon>KumpulanPengguna_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\KumpulanPengguna_Controller.ascx.designer.cs">
+      <DependentUpon>KumpulanPengguna_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\Rpt_Detail_KumpulanPenggunaSistem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\Rpt_Detail_KumpulanPenggunaSistem.Designer.cs">
+      <DependentUpon>Rpt_Detail_KumpulanPenggunaSistem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\Rpt_KumpulanPenggunaSistem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\KumpulanPenggunaSistem\Rpt_KumpulanPenggunaSistem.Designer.cs">
+      <DependentUpon>Rpt_KumpulanPenggunaSistem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\AuditTrail_Controller.ascx.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\AuditTrail_Controller.ascx.designer.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Building_Controller.ascx.cs">
+      <DependentUpon>Building_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Building_Controller.ascx.designer.cs">
+      <DependentUpon>Building_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Department_Controller.ascx.cs">
+      <DependentUpon>Department_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Department_Controller.ascx.designer.cs">
+      <DependentUpon>Department_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Floor_Controller.ascx.cs">
+      <DependentUpon>Floor_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Floor_Controller.ascx.designer.cs">
+      <DependentUpon>Floor_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Lokasi_Controller.ascx.cs">
+      <DependentUpon>Lokasi_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Lokasi_Controller.ascx.designer.cs">
+      <DependentUpon>Lokasi_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\PTJ_Controller.ascx.cs">
+      <DependentUpon>PTJ_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\PTJ_Controller.ascx.designer.cs">
+      <DependentUpon>PTJ_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_Building.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_Building.Designer.cs">
+      <DependentUpon>Rpt_Building.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_Floor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_Floor.Designer.cs">
+      <DependentUpon>Rpt_Floor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_FPJB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_FPJB.Designer.cs">
+      <DependentUpon>Rpt_FPJB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_PTJ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_PTJ.Designer.cs">
+      <DependentUpon>Rpt_PTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_Space.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Rpt_Space.Designer.cs">
+      <DependentUpon>Rpt_Space.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Space_Controller.ascx.cs">
+      <DependentUpon>Space_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Lokasi\Space_Controller.ascx.designer.cs">
+      <DependentUpon>Space_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Organisasi\AuditTrail_Controller.ascx.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Organisasi\AuditTrail_Controller.ascx.designer.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Organisasi\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Organisasi\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Organisasi\Organisasi_Controller.ascx.cs">
+      <DependentUpon>Organisasi_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Organisasi\Organisasi_Controller.ascx.designer.cs">
+      <DependentUpon>Organisasi_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PegawaiAset\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PegawaiAset\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PegawaiAset\PegawaiAset_Controller.ascx.cs">
+      <DependentUpon>PegawaiAset_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PegawaiAset\PegawaiAset_Controller.ascx.designer.cs">
+      <DependentUpon>PegawaiAset_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PegawaiAset\Rpt_PegawaiAset.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PegawaiAset\Rpt_PegawaiAset.Designer.cs">
+      <DependentUpon>Rpt_PegawaiAset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\AuditTrail_Controller.ascx.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\AuditTrail_Controller.ascx.designer.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\Pembekal_Controller.ascx.cs">
+      <DependentUpon>Pembekal_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\Pembekal_Controller.ascx.designer.cs">
+      <DependentUpon>Pembekal_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\Rpt_Pembekal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Pembekal\Rpt_Pembekal.Designer.cs">
+      <DependentUpon>Rpt_Pembekal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\AuditTrail_Controller.ascx.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\AuditTrail_Controller.ascx.designer.cs">
+      <DependentUpon>AuditTrail_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\PenggunaSistem_Controller.ascx.cs">
+      <DependentUpon>PenggunaSistem_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\PenggunaSistem_Controller.ascx.designer.cs">
+      <DependentUpon>PenggunaSistem_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\PenggunaSistem_PopupManager.ascx.cs">
+      <DependentUpon>PenggunaSistem_PopupManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\PenggunaSistem_PopupManager.ascx.designer.cs">
+      <DependentUpon>PenggunaSistem_PopupManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\Rpt_PenggunaSistem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\PenggunaSistem\Rpt_PenggunaSistem.Designer.cs">
+      <DependentUpon>Rpt_PenggunaSistem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Saga\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Saga\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PengurusanSistem\Saga\Saga_Controller.ascx.cs">
+      <DependentUpon>Saga_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PengurusanSistem\Saga\Saga_Controller.ascx.designer.cs">
+      <DependentUpon>Saga_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Dataset\ReportDs1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDs1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\KedudukanSemasaAsetAlih\KedudukanSemasaAsetAlih.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\KedudukanSemasaAsetAlih\KedudukanSemasaAsetAlih.Designer.cs">
+      <DependentUpon>KedudukanSemasaAsetAlih.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\KedudukanStokSukuTahun\LaporanKedudukanStokSukuTahun.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\KedudukanStokSukuTahun\LaporanKedudukanStokSukuTahun.Designer.cs">
+      <DependentUpon>LaporanKedudukanStokSukuTahun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\LaporanPengurusanAsetAlihUniversiti\LaporanPengurusanAsetAlihUniversiti.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\LaporanPengurusanAsetAlihUniversiti\LaporanPengurusanAsetAlihUniversiti.Designer.cs">
+      <DependentUpon>LaporanPengurusanAsetAlihUniversiti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\LaporanPengurusanStorUniversiti\LaporanPengurusanStorUni.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\LaporanPengurusanStorUniversiti\LaporanPengurusanStorUni.Designer.cs">
+      <DependentUpon>LaporanPengurusanStorUni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\LaporanPeruntukan\LaporanPeruntukan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\LaporanPeruntukan\LaporanPeruntukan.Designer.cs">
+      <DependentUpon>LaporanPeruntukan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanKehilanganAset\RingkasanLaporanKehilangan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanKehilanganAset\RingkasanLaporanKehilangan.Designer.cs">
+      <DependentUpon>RingkasanLaporanKehilangan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanKehilanganStok\RingkasanLaporanKehilanganStok.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanKehilanganStok\RingkasanLaporanKehilanganStok.Designer.cs">
+      <DependentUpon>RingkasanLaporanKehilanganStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanPelupusanStok\RingkasanLaporanPelupusanStok.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanPelupusanStok\RingkasanLaporanPelupusanStok.Designer.cs">
+      <DependentUpon>RingkasanLaporanPelupusanStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanStok\RingkasanLaporanKedudukanStok.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanStok\RingkasanLaporanKedudukanStok.Designer.cs">
+      <DependentUpon>RingkasanLaporanKedudukanStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanTahunanHMI\RingkasanLaporanTahunanHMI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanTahunanHMI\RingkasanLaporanTahunanHMI.Designer.cs">
+      <DependentUpon>RingkasanLaporanTahunanHMI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanVerifikasi\RingkasanLaporanPemeriksaanStok.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanLaporanVerifikasi\RingkasanLaporanPemeriksaanStok.Designer.cs">
+      <DependentUpon>RingkasanLaporanPemeriksaanStok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanPelupusan\RingkasanPelupusanTahunan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanPelupusan\RingkasanPelupusanTahunan.Designer.cs">
+      <DependentUpon>RingkasanPelupusanTahunan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanPemeriksaanHMI\RingkasanPemeriksaanHMI.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanPemeriksaanHMI\RingkasanPemeriksaanHMI.Designer.cs">
+      <DependentUpon>RingkasanPemeriksaanHMI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanPenyelenggaraan\RingkasanPenyelenggaraan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LaporanEksekutif\RingkasanPenyelenggaraan\RingkasanPenyelenggaraan.Designer.cs">
+      <DependentUpon>RingkasanPenyelenggaraan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Buletin\Buletin.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Buletin\Buletin.Designer.cs">
+      <DependentUpon>Buletin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Building.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Building.Designer.cs">
+      <DependentUpon>Building.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Department.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Department.Designer.cs">
+      <DependentUpon>Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Floor.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Floor.Designer.cs">
+      <DependentUpon>Floor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\PTJ.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\PTJ.Designer.cs">
+      <DependentUpon>PTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Space.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\Lokasi\Space.Designer.cs">
+      <DependentUpon>Space.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\PegawaiAset\PegawaiAset.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\PegawaiAset\PegawaiAset.Designer.cs">
+      <DependentUpon>PegawaiAset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\PenggunaSistem\PS_Detail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\PenggunaSistem\PS_Detail.Designer.cs">
+      <DependentUpon>PS_Detail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\PenggunaSistem\PS_Header.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\PenggunaSistem\PS_Header.Designer.cs">
+      <DependentUpon>PS_Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PengurusanSistem\PengurusanSistemDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PengurusanSistemDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\PrintLabel\PrintLabel_Report.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\PrintLabel\PrintLabel_Report.Designer.cs">
+      <DependentUpon>PrintLabel_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Viewer\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Viewer\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Viewer\Viewer_Controller.ascx.cs">
+      <DependentUpon>Viewer_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Viewer\Viewer_Controller.ascx.designer.cs">
+      <DependentUpon>Viewer_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedControls\AuditTrailOneTable\AuditTrailOneTable_Controller.ascx.cs">
+      <DependentUpon>AuditTrailOneTable_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedControls\AuditTrailOneTable\AuditTrailOneTable_Controller.ascx.designer.cs">
+      <DependentUpon>AuditTrailOneTable_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedControls\EmployeeLookup_SingleRecord\EmployeeLookup_SingleRecord_Controller.ascx.cs">
+      <DependentUpon>EmployeeLookup_SingleRecord_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedControls\EmployeeLookup_SingleRecord\EmployeeLookup_SingleRecord_Controller.ascx.designer.cs">
+      <DependentUpon>EmployeeLookup_SingleRecord_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedControls\EmployeeLookup_SingleRecord\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedControls\EmployeeLookup_SingleRecord\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedControls\LookupPegawaiAset\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedControls\LookupPegawaiAset\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedControls\LookupPegawaiAset\LookupPegawaiAset_Controller.ascx.cs">
+      <DependentUpon>LookupPegawaiAset_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedControls\LookupPegawaiAset\LookupPegawaiAset_Controller.ascx.designer.cs">
+      <DependentUpon>LookupPegawaiAset_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedControls\Lookup_KodBidang\Lookup_KodBidang_Controller.ascx.cs">
+      <DependentUpon>Lookup_KodBidang_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedControls\Lookup_KodBidang\Lookup_KodBidang_Controller.ascx.designer.cs">
+      <DependentUpon>Lookup_KodBidang_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SharedControls\Lookup_Vendor\LookupVendor_Controller.ascx.cs">
+      <DependentUpon>LookupVendor_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SharedControls\Lookup_Vendor\LookupVendor_Controller.ascx.designer.cs">
+      <DependentUpon>LookupVendor_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\KategoriSubKategori\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\KategoriSubKategori\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\KategoriSubKategori\KategoriSubKategori_Controller.ascx.cs">
+      <DependentUpon>KategoriSubKategori_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\KategoriSubKategori\KategoriSubKategori_Controller.ascx.designer.cs">
+      <DependentUpon>KategoriSubKategori_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\KategoriSubKategori\KategoriSubKategori_PopupManager.ascx.cs">
+      <DependentUpon>KategoriSubKategori_PopupManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\KategoriSubKategori\KategoriSubKategori_PopupManager.ascx.designer.cs">
+      <DependentUpon>KategoriSubKategori_PopupManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\LembagaPemeriksa_Controller.ascx.cs">
+      <DependentUpon>LembagaPemeriksa_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\LembagaPemeriksa_Controller.ascx.designer.cs">
+      <DependentUpon>LembagaPemeriksa_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\Lookup\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\Lookup\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\Lookup\Lookup_Controller.ascx.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\LembagaPemeriksa\Lookup\Lookup_Controller.ascx.designer.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_Controller.ascx.cs">
+      <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_Controller.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PopupNewAsset.ascx.cs">
+      <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PopupNewAsset.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PrHeader.ascx.cs">
+      <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PrHeader.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_TabItem.ascx.cs">
+      <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_TabItem.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_Controller.ascx.cs">
+      <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_Controller.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PopupNewAsset.ascx.cs">
+      <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PopupNewAsset.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PrHeader.ascx.cs">
+      <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PrHeader.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_TabItem.ascx.cs">
+      <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\PermohonanBelian_TabItem.ascx.designer.cs">
+      <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Lookup\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Lookup\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Lookup\Lookup_Controller.ascx.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Lookup\Lookup_Controller.ascx.designer.cs">
+      <DependentUpon>Lookup_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_AliranKerja_Controller.ascx.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_AliranKerja_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_SenaraiItem_Controller.ascx.cs">
+      <DependentUpon>Tab_SenaraiItem_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_SenaraiItem_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_SenaraiItem_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_SenaraiSemak_Controller.ascx.cs">
+      <DependentUpon>Tab_SenaraiSemak_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_SenaraiSemak_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_SenaraiSemak_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_TerimaanBarang_Controller.ascx.cs">
+      <DependentUpon>Tab_TerimaanBarang_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\Tab_TerimaanBarang_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_TerimaanBarang_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\TerimaanBarang_Controller.ascx.cs">
+      <DependentUpon>TerimaanBarang_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\TerimaanBarang\TerimaanBarang_Controller.ascx.designer.cs">
+      <DependentUpon>TerimaanBarang_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="TestGenerateQR\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestGenerateQR\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\DaftarStok_Controller.ascx.cs">
+      <DependentUpon>DaftarStok_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\DaftarStok_Controller.ascx.designer.cs">
+      <DependentUpon>DaftarStok_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\Tab_MaklumatStok.ascx.cs">
+      <DependentUpon>Tab_MaklumatStok.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\Tab_MaklumatStok.ascx.designer.cs">
+      <DependentUpon>Tab_MaklumatStok.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\Tab_SenaraiStok.ascx.cs">
+      <DependentUpon>Tab_SenaraiStok.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\DaftarStok\Tab_SenaraiStok.ascx.designer.cs">
+      <DependentUpon>Tab_SenaraiStok.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\HapusKiraStok\HapusKiraStok_Controller.ascx.cs">
+      <DependentUpon>HapusKiraStok_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\HapusKiraStok\HapusKiraStok_Controller.ascx.designer.cs">
+      <DependentUpon>HapusKiraStok_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\HapusKiraStok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\HapusKiraStok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LantikanPegPemverifikasi\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\LantikanPegPemverifikasi\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LantikanPegPemverifikasi\LantikanPegPemverifikasi_Controller.ascx.cs">
+      <DependentUpon>LantikanPegPemverifikasi_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\LantikanPegPemverifikasi\LantikanPegPemverifikasi_Controller.ascx.designer.cs">
+      <DependentUpon>LantikanPegPemverifikasi_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS01\kewps1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS01\kewps1.Designer.cs">
+      <DependentUpon>kewps1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS02\kewps2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS02\kewps2.Designer.cs">
+      <DependentUpon>kewps2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3.Designer.cs">
+      <DependentUpon>kewps3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3b.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3b.Designer.cs">
+      <DependentUpon>kewps3b.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS04\kewps4.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS04\kewps4.Designer.cs">
+      <DependentUpon>kewps4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS05\kewps5.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS05\kewps5.Designer.cs">
+      <DependentUpon>kewps5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS06\kewps6.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS06\kewps6.Designer.cs">
+      <DependentUpon>kewps6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS07\kewps7.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS07\kewps7.Designer.cs">
+      <DependentUpon>kewps7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS08\kewps8.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS08\kewps8.Designer.cs">
+      <DependentUpon>kewps8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS09\kewps9.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS09\kewps9.Designer.cs">
+      <DependentUpon>kewps9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS10\kewps10.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS10\kewps10.Designer.cs">
+      <DependentUpon>kewps10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS11\kewps11.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS11\kewps11.Designer.cs">
+      <DependentUpon>kewps11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS12\kewps12.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS12\kewps12.Designer.cs">
+      <DependentUpon>kewps12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS13\kewps13.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS13\kewps13.Designer.cs">
+      <DependentUpon>kewps13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS14\kewps14.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS14\kewps14.Designer.cs">
+      <DependentUpon>kewps14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS15\kewps15.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS15\kewps15.Designer.cs">
+      <DependentUpon>kewps15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS16\kewps16.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS16\kewps16.Designer.cs">
+      <DependentUpon>kewps16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS17\kewpa17.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS17\kewpa17.Designer.cs">
+      <DependentUpon>kewpa17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS18\kewps18.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS18\kewps18.Designer.cs">
+      <DependentUpon>kewps18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS19\kewps19.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS19\kewps19.Designer.cs">
+      <DependentUpon>kewps19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS20\kewps20.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS20\kewps20.Designer.cs">
+      <DependentUpon>kewps20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS21\kewps21.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS21\kewps21.Designer.cs">
+      <DependentUpon>kewps21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS22\kewps22.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanKEWPS\KEWPS22\kewps22.Designer.cs">
+      <DependentUpon>kewps22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanTahunan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanTahunan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\LaporanTahunan\LaporanTahunan_Controller.ascx.cs">
+      <DependentUpon>LaporanTahunan_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\LaporanTahunan\LaporanTahunan_Controller.ascx.designer.cs">
+      <DependentUpon>LaporanTahunan_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PelarasanStok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PelarasanStok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PelarasanStok\PelarasanStok_Controller.ascx.cs">
+      <DependentUpon>PelarasanStok_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PelarasanStok\PelarasanStok_Controller.ascx.designer.cs">
+      <DependentUpon>PelarasanStok_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PelupusanStok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PelupusanStok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PelupusanStok\PelupusanStok_Controller.ascx.cs">
+      <DependentUpon>PelupusanStok_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PelupusanStok\PelupusanStok_Controller.ascx.designer.cs">
+      <DependentUpon>PelupusanStok_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\PemeriksaanStok_Controller.ascx.cs">
+      <DependentUpon>PemeriksaanStok_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\PemeriksaanStok_Controller.ascx.designer.cs">
+      <DependentUpon>PemeriksaanStok_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_AliranKerja.ascx.cs">
+      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_AliranKerja.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_Info.ascx.cs">
+      <DependentUpon>Tab_Info.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_Info.ascx.designer.cs">
+      <DependentUpon>Tab_Info.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_Pemeriksaan.ascx.cs">
+      <DependentUpon>Tab_Pemeriksaan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_Pemeriksaan.ascx.designer.cs">
+      <DependentUpon>Tab_Pemeriksaan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_Verifikasi.ascx.cs">
+      <DependentUpon>Tab_Verifikasi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PemeriksaanStok\Tab_Verifikasi.ascx.designer.cs">
+      <DependentUpon>Tab_Verifikasi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PengeluaranKeStorPTJ\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PengeluaranKeStorPTJ\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PengeluaranKeStorPTJ\PengeluaranKeStorPTJ_Controller.ascx.cs">
+      <DependentUpon>PengeluaranKeStorPTJ_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PengeluaranKeStorPTJ\PengeluaranKeStorPTJ_Controller.ascx.designer.cs">
+      <DependentUpon>PengeluaranKeStorPTJ_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PengeluaranStok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PengeluaranStok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PengeluaranStok\PengeluaranStokNew_Controller.ascx.cs">
+      <DependentUpon>PengeluaranStokNew_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PengeluaranStok\PengeluaranStokNew_Controller.ascx.designer.cs">
+      <DependentUpon>PengeluaranStokNew_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PerakuanAmbilAlih\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PerakuanAmbilAlih\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PerakuanAmbilAlih\PerakuanAmbilAlih_Controller.ascx.cs">
+      <DependentUpon>PerakuanAmbilAlih_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PerakuanAmbilAlih\PerakuanAmbilAlih_Controller.ascx.designer.cs">
+      <DependentUpon>PerakuanAmbilAlih_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\PermohonanStok_Controller.ascx.cs">
+      <DependentUpon>PermohonanStok_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\PermohonanStok_Controller.ascx.designer.cs">
+      <DependentUpon>PermohonanStok_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Tab_AliranKerja.ascx.cs">
+      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Tab_AliranKerja.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Tab_Pengeluaran.ascx.cs">
+      <DependentUpon>Tab_Pengeluaran.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Tab_Pengeluaran.ascx.designer.cs">
+      <DependentUpon>Tab_Pengeluaran.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Tab_Permohonan.ascx.cs">
+      <DependentUpon>Tab_Permohonan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\PermohonanStok\Tab_Permohonan.ascx.designer.cs">
+      <DependentUpon>Tab_Permohonan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\Stok\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\Stok\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\Stok\Stok_Controller.ascx.cs">
+      <DependentUpon>Stok_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\Stok\Stok_Controller.ascx.designer.cs">
+      <DependentUpon>Stok_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\Stor\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\Stor\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stor\Stor\Stor_Controller.ascx.cs">
+      <DependentUpon>Stor_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stor\Stor\Stor_Controller.ascx.designer.cs">
+      <DependentUpon>Stor_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Utility_Controller.ascx.cs">
+      <DependentUpon>Utility_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\Utility_Controller.ascx.designer.cs">
+      <DependentUpon>Utility_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utility\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerifikasiPengguna\LogMasuk\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifikasiPengguna\LogMasuk\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerifikasiPengguna\LogMasuk\LogMasuk_Controller.ascx.cs">
+      <DependentUpon>LogMasuk_Controller.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerifikasiPengguna\LogMasuk\LogMasuk_Controller.ascx.designer.cs">
+      <DependentUpon>LogMasuk_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Aset\kewpadata\kewpa_dataset.xsc">
+      <DependentUpon>kewpa_dataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Aset\kewpadata\kewpa_dataset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>kewpa_dataset.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Aset\kewpadata\kewpa_dataset.xss">
+      <DependentUpon>kewpa_dataset.xsd</DependentUpon>
+    </Content>
+    <Content Include="Report\Dataset\ReportDs1.xsc">
+      <DependentUpon>ReportDs1.xsd</DependentUpon>
+    </Content>
+    <Content Include="DocumentViewer\Index.ashx" />
+    <Content Include="asset.safa.com.my.snk" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\AmsPub.pubxml" />
+    <None Include="Properties\PublishProfiles\AmsPublish.pubxml" />
+    <None Include="Report\Dataset\ReportDs1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDs1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\Dataset\ReportDs1.xss">
+      <DependentUpon>ReportDs1.xsd</DependentUpon>
+    </Content>
+    <Content Include="Report\PengurusanSistem\PengurusanSistemDataset.xsc">
+      <DependentUpon>PengurusanSistemDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Report\PengurusanSistem\PengurusanSistemDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PengurusanSistemDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Report\PengurusanSistem\PengurusanSistemDataset.xss">
+      <DependentUpon>PengurusanSistemDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\UploadTemp\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA01\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA10\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA11\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA12\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA13\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA14\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA15\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA16\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA17\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA18\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA19\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA20\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA21\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA22\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA23\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA24\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA25\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA26\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA27\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA28\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA29\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA30\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA31\" />
+    <Folder Include="Aset\LaporanKEWPA\KEWPA32\" />
+    <Folder Include="Public\ImagesUpload\" />
+    <Folder Include="Public\XML\" />
+    <Folder Include="SharedControls\AuditTrailTwoTables\" />
+    <Folder Include="SharedControls\EmployeeLookup_MultipleRecord\" />
+    <Folder Include="Shared\Jenis\" />
+    <Folder Include="VerifikasiPengguna\LogKeluar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Aset\LaporanKEWPA\KEWPA04\N_KEWPA4.resx">
+      <DependentUpon>N_KEWPA4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aset\LaporanKEWPA\KEWPA04\Rpt_KEWPA04.resx">
+      <DependentUpon>Rpt_KEWPA04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aset\LaporanKEWPA\KEWPA05\N_KEWPA5.resx">
+      <DependentUpon>N_KEWPA5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aset\LaporanKEWPA\KEWPA05\Rpt_KEWPA05.resx">
+      <DependentUpon>Rpt_KEWPA05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aset\LaporanKEWPA\KEWPA07\Rpt_KEWPA07.resx">
+      <DependentUpon>Rpt_KEWPA07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aset\LaporanKEWPA\KEWPA08\Rpt_KEWPA08.resx">
+      <DependentUpon>Rpt_KEWPA08.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Aset\LaporanKEWPA\KEWPA09\Rpt_KEWPA09.resx">
+      <DependentUpon>Rpt_KEWPA09.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Buletin\Rpt_Buletin.resx">
+      <DependentUpon>Rpt_Buletin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Kakitangan\Rpt_Kakitangan.resx">
+      <DependentUpon>Rpt_Kakitangan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\KumpulanPenggunaSistem\Rpt_Detail_KumpulanPenggunaSistem.resx">
+      <DependentUpon>Rpt_Detail_KumpulanPenggunaSistem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\KumpulanPenggunaSistem\Rpt_KumpulanPenggunaSistem.resx">
+      <DependentUpon>Rpt_KumpulanPenggunaSistem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Lokasi\Rpt_Building.resx">
+      <DependentUpon>Rpt_Building.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Lokasi\Rpt_Floor.resx">
+      <DependentUpon>Rpt_Floor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Lokasi\Rpt_FPJB.resx">
+      <DependentUpon>Rpt_FPJB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Lokasi\Rpt_PTJ.resx">
+      <DependentUpon>Rpt_PTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Lokasi\Rpt_Space.resx">
+      <DependentUpon>Rpt_Space.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\PegawaiAset\Rpt_PegawaiAset.resx">
+      <DependentUpon>Rpt_PegawaiAset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\Pembekal\Rpt_Pembekal.resx">
+      <DependentUpon>Rpt_Pembekal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PengurusanSistem\PenggunaSistem\Rpt_PenggunaSistem.resx">
+      <DependentUpon>Rpt_PenggunaSistem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Report\LaporanEksekutif\KedudukanSemasaAsetAlih\KedudukanSemasaAsetAlih.resx">
+      <DependentUpon>KedudukanSemasaAsetAlih.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\KedudukanStokSukuTahun\LaporanKedudukanStokSukuTahun.resx">
+      <DependentUpon>LaporanKedudukanStokSukuTahun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\LaporanPengurusanAsetAlihUniversiti\LaporanPengurusanAsetAlihUniversiti.resx">
+      <DependentUpon>LaporanPengurusanAsetAlihUniversiti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\LaporanPengurusanStorUniversiti\LaporanPengurusanStorUni.resx">
+      <DependentUpon>LaporanPengurusanStorUni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\LaporanPeruntukan\LaporanPeruntukan.resx">
+      <DependentUpon>LaporanPeruntukan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanLaporanKehilanganAset\RingkasanLaporanKehilangan.resx">
+      <DependentUpon>RingkasanLaporanKehilangan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanLaporanKehilanganStok\RingkasanLaporanKehilanganStok.resx">
+      <DependentUpon>RingkasanLaporanKehilanganStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanLaporanPelupusanStok\RingkasanLaporanPelupusanStok.resx">
+      <DependentUpon>RingkasanLaporanPelupusanStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanLaporanStok\RingkasanLaporanKedudukanStok.resx">
+      <DependentUpon>RingkasanLaporanKedudukanStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanLaporanTahunanHMI\RingkasanLaporanTahunanHMI.resx">
+      <DependentUpon>RingkasanLaporanTahunanHMI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanLaporanVerifikasi\RingkasanLaporanPemeriksaanStok.resx">
+      <DependentUpon>RingkasanLaporanPemeriksaanStok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanPelupusan\RingkasanPelupusanTahunan.resx">
+      <DependentUpon>RingkasanPelupusanTahunan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanPemeriksaanHMI\RingkasanPemeriksaanHMI.resx">
+      <DependentUpon>RingkasanPemeriksaanHMI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\LaporanEksekutif\RingkasanPenyelenggaraan\RingkasanPenyelenggaraan.resx">
+      <DependentUpon>RingkasanPenyelenggaraan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\Buletin\Buletin.resx">
+      <DependentUpon>Buletin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\Lokasi\Building.resx">
+      <DependentUpon>Building.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\Lokasi\Department.resx">
+      <DependentUpon>Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\Lokasi\Floor.resx">
+      <DependentUpon>Floor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\Lokasi\PTJ.resx">
+      <DependentUpon>PTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\Lokasi\Space.resx">
+      <DependentUpon>Space.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\PegawaiAset\PegawaiAset.resx">
+      <DependentUpon>PegawaiAset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\PenggunaSistem\PS_Detail.resx">
+      <DependentUpon>PS_Detail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PengurusanSistem\PenggunaSistem\PS_Header.resx">
+      <DependentUpon>PS_Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\PrintLabel\PrintLabel_Report.resx">
+      <DependentUpon>PrintLabel_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS01\kewps1.resx">
+      <DependentUpon>kewps1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS02\kewps2.resx">
+      <DependentUpon>kewps2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS03\kewps3.resx">
+      <DependentUpon>kewps3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS03\kewps3b.resx">
+      <DependentUpon>kewps3b.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS04\kewps4.resx">
+      <DependentUpon>kewps4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS05\kewps5.resx">
+      <DependentUpon>kewps5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS06\kewps6.resx">
+      <DependentUpon>kewps6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS07\kewps7.resx">
+      <DependentUpon>kewps7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS08\kewps8.resx">
+      <DependentUpon>kewps8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS09\kewps9.resx">
+      <DependentUpon>kewps9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS10\kewps10.resx">
+      <DependentUpon>kewps10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS11\kewps11.resx">
+      <DependentUpon>kewps11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS12\kewps12.resx">
+      <DependentUpon>kewps12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS13\kewps13.resx">
+      <DependentUpon>kewps13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS14\kewps14.resx">
+      <DependentUpon>kewps14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS15\kewps15.resx">
+      <DependentUpon>kewps15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS16\kewps16.resx">
+      <DependentUpon>kewps16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS17\kewpa17.resx">
+      <DependentUpon>kewpa17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS18\kewps18.resx">
+      <DependentUpon>kewps18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS19\kewps19.resx">
+      <DependentUpon>kewps19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS20\kewps20.resx">
+      <DependentUpon>kewps20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS21\kewps21.resx">
+      <DependentUpon>kewps21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS22\kewps22.resx">
+      <DependentUpon>kewps22.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6a7cd84f-23f4-4551-b39e-345daec1eab7}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>asset.safa.com.my.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8578/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

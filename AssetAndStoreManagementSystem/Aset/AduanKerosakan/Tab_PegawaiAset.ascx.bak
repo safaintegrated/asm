@@ -1,0 +1,52 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Tab_PegawaiAset.ascx.cs" Inherits="AssetAndStoreManagementSystem.Aset.AduanKerosakan.Tab_PegawaiAset" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
+    <Items>
+        <dx:LayoutGroup Caption="Pengesahan Pegawai Aset" ColCount="2" Width="100%">
+            <Items>
+                <dx:LayoutItem Caption="Nama" ColSpan="2" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E1" runat="server" CssClass="TextBoxForName">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Pengesahan" Width="20%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxComboBox ID="ASPxFormLayout1_E2" runat="server" CssClass="VerificationCombobox">
+                            </dx:ASPxComboBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Syor" Width="80%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxComboBox ID="ASPxFormLayout1_E3" runat="server" CssClass="SyorCombobox">
+                            </dx:ASPxComboBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Komen &amp; Catatan" ColSpan="2" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E4" runat="server" Rows="3" Width="50%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+    </Items>
+    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+    <Paddings Padding="0px" />
+    <Border BorderStyle="None" />
+</dx:ASPxFormLayout>
+

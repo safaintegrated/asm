@@ -1,0 +1,337 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Emel_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.PengurusanSistem.Emel.Emel_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRibbon" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxCallbackPanel" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxLoadingPanel" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+<script src="Js_Emel.js" type="text/javascript"></script>
+
+<dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Emel" Width="100%">
+    <HeaderImage Url="~/Public/Images/Screen/Emel.png">
+    </HeaderImage>
+    <HeaderStyle ImageSpacing="8px" />
+    <PanelCollection>
+<dx:PanelContent runat="server">
+    <table style="width:100%;">
+        <tr>
+            <td><dx:ASPxRibbon ID="MainRibbon" runat="server" ShowFileTab="False" ClientInstanceName="MainRibbon" Width="100%">
+    <Tabs>
+        <dx:RibbonTab Name="Utama" Text="Utama">
+            <Groups>
+                <dx:RibbonGroup Text="Pengurusan Rekod" Name="Pengurusan Rekod">
+                    <Items>
+                        <dx:RibbonButtonItem BeginGroup="True" Name="Kemaskini" Size="Large" Text="Kemaskini">
+                            <LargeImage IconID="edit_edit_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tambah" Size="Large" Text="Tambah">
+                            <LargeImage IconID="actions_add_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Simpan" Size="Large" Text="Simpan">
+                            <LargeImage IconID="save_save_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Hantar" Size="Large" Text="Hantar">
+                            <LargeImage IconID="mail_send_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Padam" Size="Large" Text="Padam">
+                            <LargeImage IconID="edit_delete_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Batal" Size="Large" Text="Batal">
+                            <LargeImage IconID="actions_deletelist_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Cetak" Size="Large" Text="Cetak">
+                            <LargeImage IconID="print_print_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Carian" Size="Large" Text="Carian">
+                            <LargeImage IconID="find_find_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Audit" Size="Large" Text="Audit">
+                            <LargeImage IconID="arrange_bringtofrontoftext_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tutup" Size="Large" Text="Tutup">
+                            <LargeImage IconID="actions_close_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Lampiran" Text="Muatnaik">
+            <Groups>
+                <dx:RibbonGroup Name="Muatnaik" Text="">
+                    <Items>
+                        <dx:RibbonButtonItem Size="Large" Text="Lampiran" Name="Lampiran">
+                            <LargeImage IconID="mail_attachment_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Gambar" Size="Large" Text="Gambar">
+                            <LargeImage IconID="content_image_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Impot" Size="Large" Text="Import">
+                            <LargeImage IconID="actions_download_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Laporan" Text="Laporan">
+            <Groups>
+                <dx:RibbonGroup>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Kelulusan" Text="Kelulusan">
+            <Groups>
+                <dx:RibbonGroup>
+                    <Items>
+                        <dx:RibbonButtonItem Name="Lulus" Size="Large" Text="Lulus">
+                            <LargeImage IconID="actions_apply_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Kuiri" Size="Large" Text="Kuiri">
+                            <LargeImage IconID="support_knowledgebasearticle_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+    </Tabs>
+    <Styles>
+        <Item Width="70px">
+        </Item>
+    </Styles>
+                <ClientSideEvents CommandExecuted="function(s, e) {
+	MainRibbon_CommandExecuted(s, e);
+}" />
+</dx:ASPxRibbon></td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <dx:ASPxCallbackPanel ID="cbp" runat="server" ClientInstanceName="cbp" EnableCallbackAnimation="True" OnCallback="cbp_Callback" ShowLoadingPanel="False" ShowLoadingPanelImage="False" Width="100%">
+                    <ClientSideEvents EndCallback="function(s, e) {
+	cbp_EndCallback(s, e);
+}" />
+                    <panelcollection>
+                        <dx:PanelContent runat="server">
+                            <dx:ASPxFormLayout ID="MainForm" runat="server" Width="100%" ColCount="2">
+                                <Items>
+                                    <dx:LayoutGroup Caption="Konfigurasi Emel" Width="50%">
+                                        <GroupBoxStyle BackColor="Transparent"></GroupBoxStyle>
+                                        <Items>
+                                            <dx:LayoutItem Caption="Nama Pelayan Emel" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="HostName" runat="server" ClientInstanceName="HostName" CssClass="TextBoxForName" EnableClientSideAPI="True">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="Nama Penghantar Emel" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="SenderName" runat="server" ClientInstanceName="SenderName" CssClass="TextBoxForName" EnableClientSideAPI="True">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="ID Rangkaian" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="NetworkId" runat="server" ClientInstanceName="NetworkId" CssClass="TextBoxForName" EnableClientSideAPI="True">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="Kata Laluan" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="NetworkPasword" runat="server" ClientInstanceName="NetworkPasword" CssClass="TextBoxForId" EnableClientSideAPI="True" Password="True">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="No. Port" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="PortNumber" runat="server" ClientInstanceName="PortNumber" CssClass="TextBoxForPortNumber" EnableClientSideAPI="True">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="SSL" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxRadioButtonList ID="EnableSsl" runat="server" ClientInstanceName="EnableSsl" EnableClientSideAPI="True" RepeatDirection="Horizontal" ValueType="System.Boolean">
+                                                            <Items>
+                                                                <dx:ListEditItem Text="Digunakan" Value="True" />
+                                                                <dx:ListEditItem Text="Tidak Digunakan" Value="False" />
+                                                            </Items>
+                                                            <Border BorderStyle="None" />
+                                                        </dx:ASPxRadioButtonList>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="Pintas Pengesahan" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxRadioButtonList ID="BypassSecurityValidation" runat="server" ClientInstanceName="BypassSecurityValidation" EnableClientSideAPI="True" RepeatDirection="Horizontal" ValueType="System.Boolean">
+                                                            <Items>
+                                                                <dx:ListEditItem Text="Diperlukan" Value="True" />
+                                                                <dx:ListEditItem Text="Tidak Diperlukan" Value="False" />
+                                                            </Items>
+                                                            <Border BorderStyle="None" />
+                                                        </dx:ASPxRadioButtonList>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem ShowCaption="False">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxButton ID="MainFormBtnTest" runat="server" Text="Ujian" Width="100px" AutoPostBack="False" ClientInstanceName="MainFormBtnTest" EnableClientSideAPI="True">
+                                                            <ClientSideEvents Click="function(s, e) {
+	PopupTestEmailConfig.Show();
+}" />
+                                                        </dx:ASPxButton>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                        </Items>
+                                    </dx:LayoutGroup>
+                                    <dx:LayoutGroup Caption="Kemaskini Terakhir">
+                                        <Items>
+                                            <dx:LayoutItem Caption="Nama" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="LastModBy" runat="server" ClientEnabled="False" ClientInstanceName="LastModBy" CssClass="TextBoxForName" EnableClientSideAPI="True">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="Tarikh" Width="100%">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="LastModDate" runat="server" ClientEnabled="False" ClientInstanceName="LastModDate" EnableClientSideAPI="True" Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                        </Items>
+                                    </dx:LayoutGroup>
+                                </Items>
+                                <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+                                <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+                            </dx:ASPxFormLayout>
+                        </dx:PanelContent>
+                    </panelcollection>
+                </dx:ASPxCallbackPanel>
+            </td>
+        </tr>
+    </table>
+        </dx:PanelContent>
+</PanelCollection>
+</dx:ASPxRoundPanel>
+
+<dx:ASPxCallbackPanel ID="cbp_Test" runat="server" Width="200px" ClientInstanceName="cbp_Test" ClientVisible="False" OnCallback="cbp_Test_Callback" ShowLoadingPanel="False" ShowLoadingPanelImage="False">
+    <ClientSideEvents EndCallback="function(s, e) {
+	cbp_Test_EndCallback(s, e);
+}" />
+    <PanelCollection>
+<dx:PanelContent runat="server"></dx:PanelContent>
+</PanelCollection>
+</dx:ASPxCallbackPanel>
+
+
+<dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="LoadingPanel" Modal="True">
+</dx:ASPxLoadingPanel>
+
+
+
+<dx:ASPxPopupControl ID="PopupTestEmailConfig" runat="server" ClientInstanceName="PopupTestEmailConfig" EnableClientSideAPI="True" HeaderText="Uji Konfigurasi Emel" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="600px" PopupAnimationType="Fade">
+    <HeaderImage Url="~/Public/Images/DialogBox/TestEmailConfig.png">
+    </HeaderImage>
+    <ContentCollection>
+<dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+    <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
+        <Items>
+            <dx:LayoutItem Caption="Alamat Emel" Width="100%">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                        <dx:ASPxTextBox ID="testEmailAddress" ClientInstanceName="testEmailAddress" EnableClientSideAPI="true" runat="server" Width="100%">
+                        </dx:ASPxTextBox>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+            <dx:LayoutItem ShowCaption="False" Width="100%">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                        <dx:ASPxButton ID="btnTest" runat="server" Text="Hantar" Width="100px" AutoPostBack="False" ClientInstanceName="btnTest" EnableClientSideAPI="True">
+                            <ClientSideEvents Click="function(s, e) {
+	btnTest_Clicked();
+}" />
+                        </dx:ASPxButton>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+        </Items>
+        <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+        <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+    </dx:ASPxFormLayout>
+        </dx:PopupControlContentControl>
+</ContentCollection>
+</dx:ASPxPopupControl>
+
+
+
+
+<dx:ASPxPopupControl ID="popupMsg" runat="server" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" ClientInstanceName="popupMsg" CloseAction="CloseButton" EnableClientSideAPI="True" HeaderText="Informasi Sistem" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="450px" Font-Names="Myriad Pro" Font-Size="Small">
+            <HeaderImage Url="~/Public/Images/DialogBox/Information.png">
+            </HeaderImage>
+            <HeaderStyle ImageSpacing="8px" VerticalAlign="Middle" />
+            <ContentCollection>
+<dx:popupcontrolcontentcontrol ID="Popupcontrolcontentcontrol3" runat="server">
+    <table style="width:100%; text-align:center;vertical-align:top;">
+        <tr>
+            <td>
+                <dx:aspxlabel ID="popupMsg_Label" runat="server" ClientInstanceName="popupMsg_Label" EnableClientSideAPI="True" EncodeHtml="False">
+                </dx:aspxlabel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <table style="width:100%; vertical-align:top; text-align:left;">
+                    <tr>
+                        <td style="width:35%"></td>
+                        <td style="width:30%">
+                            <dx:aspxbutton ID="popupMsg_BtnOk" runat="server" AutoPostBack="False" ClientInstanceName="popupMsg_BtnOk" Text="Ok" Width="100%">
+                                <ClientSideEvents Click="function(s, e) {
+	popupMsg.Hide();
+}" />
+                            </dx:aspxbutton>
+                        </td>
+                        <td style="width:35%"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+                </dx:popupcontrolcontentcontrol>
+</ContentCollection>
+        </dx:ASPxPopupControl>

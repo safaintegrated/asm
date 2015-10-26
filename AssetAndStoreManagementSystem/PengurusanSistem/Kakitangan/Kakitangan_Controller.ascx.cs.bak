@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using DevExpress.Web.ASPxGridView;
+using DevExpress.Web.ASPxEditors;
+
+namespace AssetAndStoreManagementSystem.PengurusanSistem.Kakitangan
+{
+    public partial class Kakitangan_Controller : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridEmployee_HtmlDataCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableDataCellEventArgs e)
+        {
+            switch (e.DataColumn.FieldName)
+            {
+                case "EmployeeStatus": FormStatusComboBox(e.DataColumn.FieldName, e.VisibleIndex, e.CellValue); break;
+            }
+        }
+
+        void FormStatusComboBox(string FieldName, int RowIndex, object CellValue)
+        {
+            ASPxComboBox cb = (ASPxComboBox)GridEmployee.FindRowCellTemplateControl(RowIndex, GridEmployee.DataColumns[FieldName] as GridViewDataColumn, FieldName);
+
+            if (cb != null)
+            {
+                cb.SelectedItem = cb.Items.FindByValue(CellValue.ToString());
+                cb.ClientInstanceName = FieldName + "_" + RowIndex.ToString();
+            }
+        }
+
+        protected void GridEmployee_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
+        {
+            GridEmployee.DataBind();
+        }
+
+        protected void GridEmployee_AfterPerformCallback(object sender, ASPxGridViewAfterPerformCallbackEventArgs e)
+        {
+            if (SearchIndicator.Text == "0")
+            {
+                GridEmployee.FilterEnabled = false;
+                GridEmployee.FilterExpression = "";
+                GridEmployee.Settings.ShowFilterRow = false;
+                GridEmployee.Settings.ShowFilterRowMenu = false;
+            }
+            else
+            {
+                GridEmployee.FilterEnabled = true;
+                GridEmployee.Settings.ShowFilterRow = true;
+                GridEmployee.Settings.ShowFilterRowMenu = true;
+                //GridEmployee.DataColumns["CH_ContractNumber"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+                //GridEmployee.DataColumns["CH_VendorId"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+                //GridEmployee.DataColumns["PTJs"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+                //GridEmployee.DataColumns["CH_StartDate"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Equals;
+                //GridEmployee.DataColumns["CH_EndDate"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Equals;
+                //GridEmployee.DataColumns["Count"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Equals;
+                //GridEmployee.DataColumns["CH_StatusText"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewElement>
+  <SMP>
+    <ConnString>Data Source=172.16.2.14;Port=5004;UID=biosmp;PWD=biosmp2015;Database=stafdb;Max Pool Size=200;LoginTimeOut=3</ConnString>
+    <LastModBy>Zaini Binti Abdul Halim</LastModBy>
+    <LastModDate>16/06/2015 15:01:10</LastModDate>
+  </SMP>
+</NewElement>

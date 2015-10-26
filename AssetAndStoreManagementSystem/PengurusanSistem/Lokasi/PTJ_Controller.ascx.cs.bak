@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DevExpress.Web.ASPxEditors;
+using DevExpress.Web.ASPxGridView;
+using System.Configuration;
+using Core.PengurusanSistem;
+using System.Web.Security;
+
+namespace AssetAndStoreManagementSystem.PengurusanSistem.Lokasi
+{
+    public partial class PTJ_Controller : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cbp_SavePTJ_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e)
+        {
+            cbp_SavePTJ.JSProperties["cpMode"] = e.Parameter;
+
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+
+            if(!ticket.Expired)
+            {
+                try
+                {
+                    string DbErrMsg = PtjMethods.SP_SaveDelete_PusatTanggungjawab(PTJ_Name.Text.Trim(), PTJ_Code.Text.Trim(), PTJ_Id.Text, ticket.Name, e.Parameter);
+
+                    if (DbErrMsg == string.Empty)
+                    { cbp_SavePTJ.JSProperties["cpErrMsg"] = string.Empty; }
+                    else
+                    {
+                        string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                        errMsg = errMsg.Replace("BR", "<br><br>");
+                        cbp_SavePTJ.JSProperties["cpErrMsg"] = errMsg + " " + DbErrMsg; 
+                    }
+                }
+                catch (Exception err)
+                {
+                    string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                    errMsg = errMsg.Replace("BR", "<br><br>");
+                    cbp_SavePTJ.JSProperties["cpErrMsg"] = errMsg + " " + err; 
+                }
+            }
+            else
+                cbp_SavePTJ.JSProperties["cpErrMsg"] = "Session expired.";
+        }
+
+        protected void Grid_PTJ_HtmlDataCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableDataCellEventArgs e)
+        {
+            if (e.DataColumn.FieldName == "PTJ_Name")
+            {
+                ASPxHyperLink link = (ASPxHyperLink)Grid_PTJ.FindRowCellTemplateControl(e.VisibleIndex, Grid_PTJ.DataColumns["PTJ_Name"] as GridViewDataColumn, "PTJ_Name");
+
+                if (link != null)
+                {
+                    string PTJId = Grid_PTJ.GetRowValues(e.VisibleIndex, "PTJ_Id").ToString();
+                    string PTJName = Grid_PTJ.GetRowValues(e.VisibleIndex, "PTJ_Name").ToString();
+                    string PTJCode = Grid_PTJ.GetRowValues(e.VisibleIndex, "PTJ_Code").ToString();
+
+                    link.ClientInstanceName = "PTJ_Name_" + e.VisibleIndex.ToString();
+                    link.Text = e.CellValue.ToString();
+                    link.NavigateUrl = "javascript: PTJ_Selected('" + PTJId + "','" + PTJName + "','" + PTJCode + "');";
+                }
+            }
+        }
+
+        protected void Grid_PTJ_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
+        {
+            Grid_PTJ.DataBind();
+        }
+
+        protected void Grid_PTJ_AfterPerformCallback(object sender, ASPxGridViewAfterPerformCallbackEventArgs e)
+        {
+            if (PTJ_SearchMode.Text == "1")
+            {
+                Grid_PTJ.Settings.ShowFilterRow = true;
+                Grid_PTJ.Settings.ShowFilterRowMenu = true;
+                Grid_PTJ.DataColumns["PTJ_Name"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+                Grid_PTJ.DataColumns["PTJ_Code"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+            }
+            else
+            {
+                Grid_PTJ.Settings.ShowFilterRow = false;
+                Grid_PTJ.Settings.ShowFilterRowMenu = false;
+            }
+        }
+    }
+}

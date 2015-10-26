@@ -1,0 +1,130 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Tab_MaklumatTerimaanItem_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.Shared.TerimaanBarang.Tab_MaklumatTerimaanItem_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+
+<style>
+    .AddBottomPadding {
+        padding-bottom:15px;
+    }
+</style>
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="96%">
+    <Items>
+        <dx:LayoutItem Caption="Keterangan Barangan" Width="100%" CssClass="AddBottomPadding">
+            <LayoutItemNestedControlCollection>
+                <dx:LayoutItemNestedControlContainer runat="server" CssClass="AddBottomPadding">
+                    <dx:ASPxMemo ID="ASPxFormLayout1_E1" runat="server" Rows="3" Width="50%">
+                        <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                    </dx:ASPxMemo>
+                </dx:LayoutItemNestedControlContainer>
+            </LayoutItemNestedControlCollection>
+        </dx:LayoutItem>
+        <dx:LayoutGroup Caption="Kuantiti Dipesan, Diterima, Ditolak, Belum Diterima" ColCount="5" GroupBoxDecoration="HeadingLine" Width="100%">
+            <Items>
+                <dx:LayoutItem Caption="Unit Pengukuran" Width="100%" ColSpan="5">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E2" runat="server" Width="30%">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Dipesan" Width="20%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxSpinEdit ID="ASPxFormLayout1_E3" runat="server" AllowMouseWheel="False" EnableClientSideAPI="True" Width="100px">
+                                <SpinButtons ShowIncrementButtons="False">
+                                </SpinButtons>
+                            </dx:ASPxSpinEdit>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Diterima" Width="20%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxSpinEdit ID="ASPxFormLayout1_E4" runat="server" AllowMouseWheel="False" EnableClientSideAPI="True" Width="100px">
+                                <SpinButtons ShowIncrementButtons="False">
+                                </SpinButtons>
+                            </dx:ASPxSpinEdit>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Ditolak" Width="20%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxSpinEdit ID="ASPxFormLayout1_E6" runat="server" AllowMouseWheel="False" EnableClientSideAPI="True" Width="100px">
+                                <SpinButtons ShowIncrementButtons="False">
+                                </SpinButtons>
+                            </dx:ASPxSpinEdit>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Belum Terima" Width="20%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxSpinEdit ID="ASPxFormLayout1_E5" runat="server" AllowMouseWheel="False" EnableClientSideAPI="True" Width="100px">
+                                <SpinButtons ShowIncrementButtons="False">
+                                </SpinButtons>
+                            </dx:ASPxSpinEdit>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:EmptyLayoutItem Width="20%">
+                </dx:EmptyLayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Penyelenggaraan, Perihal Kerosakan &amp; Catatan" ColCount="2" GroupBoxDecoration="HeadingLine" Width="100%">
+            <Items>
+                <dx:LayoutItem Caption="Perlukan Penyelenggaraan?" ColSpan="2" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxRadioButtonList ID="ASPxFormLayout1_E7" runat="server" RepeatDirection="Horizontal" ValueType="System.Boolean">
+                                <Items>
+                                    <dx:ListEditItem Text="Ya" Value="True" />
+                                    <dx:ListEditItem Text="Tidak" Value="False" />
+                                </Items>
+                                <Border BorderStyle="None" />
+                            </dx:ASPxRadioButtonList>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Perihal Kerosakan" Width="50%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E8" runat="server" Rows="3" Width="100%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Catatan" Width="50%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E9" runat="server" Rows="3" Width="100%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutItem ShowCaption="False" Width="100%">
+            <LayoutItemNestedControlCollection>
+                <dx:LayoutItemNestedControlContainer runat="server">
+                    <dx:ASPxButton ID="ASPxFormLayout1_E10" runat="server" Text="Simpan" Width="100px">
+                    </dx:ASPxButton>
+                </dx:LayoutItemNestedControlContainer>
+            </LayoutItemNestedControlCollection>
+        </dx:LayoutItem>
+    </Items>
+    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+    <Paddings Padding="0px" />
+    <Border BorderStyle="None" />
+</dx:ASPxFormLayout>
+

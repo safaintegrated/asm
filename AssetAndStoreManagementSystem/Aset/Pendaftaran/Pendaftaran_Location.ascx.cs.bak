@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DevExpress.Web.ASPxGridView;
+
+namespace AssetAndStoreManagementSystem.Aset.Pendaftaran
+{
+    public partial class Pendaftaran_Location : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ASPxGridView2_HtmlRowPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableRowEventArgs e)
+        {
+            ASPxGridView ASPxGridView1 = (ASPxGridView)ASPxGridView2.FindDetailRowTemplateControl(e.VisibleIndex, "ASPxGridView1");
+
+            if (ASPxGridView1 != null)
+            {
+                Session["AssetInvId"] = null;
+                Session["AssetInvId"] = ASPxGridView2.GetRowValues(e.VisibleIndex, "AssetInvId").ToString();
+                ASPxGridView1.DataBind();
+            }
+        }
+
+        protected void ASPxGridView2_DataBound(object sender, EventArgs e)
+        {
+            ASPxGridView2.DetailRows.ExpandAllRows();
+        }
+    }
+}

@@ -1,0 +1,68 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Pendaftaran_ImageUpload.ascx.cs" Inherits="AssetAndStoreManagementSystem.Aset.Pendaftaran.Pendaftaran_ImageUpload" %>
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxCallbackPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v13.2, Version=13.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dx" %>
+<link href="../../Public/Css/Font.css" rel="stylesheet" />
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+<link href="../../Public/Css/MainCss.css" rel="stylesheet" />
+
+<table class="MainTableContainer">
+    <tr>
+        <td style="width:80%; vertical-align:top; text-align:left;padding:6px 6px 6px 6px;">
+    <dx:ASPxRoundPanel runat="server" HeaderText="Gambar Harta Modal / Inventori" Width="100%" CssClass="AppFont" ID="ASPxRoundPanel1"><PanelCollection>
+<dx:PanelContent runat="server">
+                <table class="MainTableContainer">
+                    <tr>
+                        <td style="width:100%; vertical-align:top; text-align:left;padding:6px 6px 6px 6px;">
+                            <dx:ASPxUploadControl ID="ASPxUploadControl1" runat="server" ShowProgressPanel="True" UploadMode="Auto" Width="400px">
+                            </dx:ASPxUploadControl>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:100%; vertical-align:top; text-align:left;padding:6px 6px 6px 6px;">
+                            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Width="60%">
+                                <Columns>
+                                    <dx:GridViewDataTextColumn Caption="Muatnaik Oleh" ShowInCustomizationForm="True" VisibleIndex="0" Width="40%">
+                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Tarikh Muatnaik" ShowInCustomizationForm="True" VisibleIndex="1" Width="15%" PropertiesTextEdit-DisplayFormatString="dd/MM/yyyy">
+                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Gambar" ShowInCustomizationForm="True" VisibleIndex="2" Width="40%">
+                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Gambar Utama" ShowInCustomizationForm="True" VisibleIndex="3" Width="5%">
+                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Center" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                </Columns>
+                                <SettingsBehavior AllowClientEventsOnLoad="False" AllowDragDrop="False" AllowFocusedRow="True" AllowGroup="False" AllowSort="False" />
+                                <SettingsPager Mode="ShowAllRecords" Visible="False">
+                                </SettingsPager>
+                                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                <Styles>
+                                    <AlternatingRow Enabled="True">
+                                    </AlternatingRow>
+                                </Styles>
+                            </dx:ASPxGridView>
+                        </td>
+                    </tr>
+                </table>
+
+            </dx:PanelContent>
+</PanelCollection>
+</dx:ASPxRoundPanel>
+
+        </td>
+        <td style="width:20%; vertical-align:top; text-align:left;padding:6px 6px 6px 6px;">&nbsp;</td>
+    </tr>
+</table>
+
+

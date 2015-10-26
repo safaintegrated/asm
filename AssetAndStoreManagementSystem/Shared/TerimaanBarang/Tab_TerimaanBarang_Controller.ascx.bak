@@ -1,0 +1,124 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Tab_TerimaanBarang_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.Shared.TerimaanBarang.Tab_TerimaanBarang_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxTabControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxClasses" tagprefix="dx" %>
+<%@ Register src="Tab_SenaraiItem_Controller.ascx" tagname="Tab_SenaraiItem_Controller" tagprefix="uc1" %>
+
+<%@ Register src="Tab_MaklumatTerimaanItem_Controller.ascx" tagname="Tab_MaklumatTerimaanItem_Controller" tagprefix="uc2" %>
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" ColCount="2" Width="100%">
+    <Items>
+        <dx:LayoutGroup Caption="Maklumat Pembekal" ColCount="3" ColSpan="2" Width="70%">
+            <Items>
+                <dx:LayoutItem Caption="No. PO" Width="18%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E6" runat="server" CssClass="TextBoxForId">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="No. Rujukan Pembekal" Width="18%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E7" runat="server" CssClass="TextBoxForId">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:EmptyLayoutItem Width="64%">
+                </dx:EmptyLayoutItem>
+                <dx:LayoutItem Caption="Nama Pembekal" ColSpan="3" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E1" runat="server" CssClass="TextBoxForName">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Alamat Pembekal" ColSpan="3" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E2" runat="server" Rows="4" CssClass="MemoBoxAlamatPembekal">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Maklumat Penghantaran &amp; Bungkusan" ColCount="3" ColSpan="2" Width="100%">
+            <Items>
+                <dx:LayoutItem Caption="Butiran Bungkusan" Width="33%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E8" runat="server" Rows="3" Width="100%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Butiran Penghantaran" Width="34%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E9" runat="server" Rows="3" Width="100%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Butiran Pengangkutan" Width="33%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxMemo ID="ASPxFormLayout1_E10" runat="server" Rows="3" Width="100%">
+                                <ClientSideEvents Init="function(s, e) {
+	s.GetInputElement().style.overflowY='hidden';
+}" />
+                            </dx:ASPxMemo>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Maklumat Item" ColSpan="2" Width="100%">
+            <Items>
+                <dx:LayoutItem ShowCaption="False" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxPageControl ID="ASPxPageControl1" runat="server" ActiveTabIndex="0" Width="100%">
+                                <TabPages>
+                                    <dx:TabPage Text="Senarai Item">
+                                        <ContentCollection>
+                                            <dx:ContentControl runat="server">
+                                                <uc1:Tab_SenaraiItem_Controller ID="Tab_SenaraiItem_Controller1" runat="server" />
+                                            </dx:ContentControl>
+                                        </ContentCollection>
+                                    </dx:TabPage>
+                                    <dx:TabPage Text="Maklumat Terimaan Item">
+                                        <ContentCollection>
+                                            <dx:ContentControl runat="server">
+                                                <uc2:Tab_MaklumatTerimaanItem_Controller ID="Tab_MaklumatTerimaanItem_Controller1" runat="server" />
+                                            </dx:ContentControl>
+                                        </ContentCollection>
+                                    </dx:TabPage>
+                                </TabPages>
+                            </dx:ASPxPageControl>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+    </Items>
+    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+    <Paddings Padding="0px" />
+    <Border BorderStyle="None" />
+</dx:ASPxFormLayout>
+

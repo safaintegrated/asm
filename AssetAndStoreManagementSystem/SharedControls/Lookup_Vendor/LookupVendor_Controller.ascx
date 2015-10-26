@@ -1,0 +1,75 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="LookupVendor_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.SharedControls.Lookup_Vendor.LookupVendor_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+
+
+<script>
+    function VendorSelected(VendorSagaCode)
+    {
+        GetVendorSagaCodeFormParentWindow(VendorSagaCode);
+    }
+</script>
+    <dx:ASPxPopupControl ID="PopupSearchVendor" runat="server" AllowDragging="True" ClientInstanceName="PopupSearchVendor" EnableClientSideAPI="True" HeaderText="Carian Pembekal" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="800px">
+        <HeaderImage Url="~/Public/Images/DialogBox/Lookup.png">
+        </HeaderImage>
+        <ContentCollection>
+<dx:PopupControlContentControl runat="server">
+    <dx:ASPxGridView ID="GridVendorLookup" runat="server" AutoGenerateColumns="False" ClientInstanceName="GridVendorLookup" DataSourceID="LookupVendorDs" KeyFieldName="SetVen_SAGACode" OnCustomCallback="GridVendorLookup_CustomCallback" OnHtmlDataCellPrepared="GridVendorLookup_HtmlDataCellPrepared" Width="100%">
+        <Columns>
+            <dx:GridViewDataTextColumn Caption="Kod Pembekal" FieldName="SetVen_SAGACode" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="1" Width="10%">
+                <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                <DataItemTemplate>
+                    <dx:ASPxHyperLink ID="SetVen_SAGACode" runat="server" Text="ASPxHyperLink">
+                    </dx:ASPxHyperLink>
+                </DataItemTemplate>
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Nama Pembekal" FieldName="SetVen_Name" ShowInCustomizationForm="True" VisibleIndex="2" Width="44%">
+                <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                  <DataItemTemplate>
+                    <dx:ASPxHyperLink ID="SetVen_Name" runat="server" Text="ASPxHyperLink">
+                    </dx:ASPxHyperLink>
+                </DataItemTemplate>
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVenAddress" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVen_Post" ShowInCustomizationForm="True" Visible="False" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVen_City" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVen_State" ShowInCustomizationForm="True" Visible="False" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVen_Person" ShowInCustomizationForm="True" Visible="False" VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVen_Phone" ShowInCustomizationForm="True" Visible="False" VisibleIndex="8">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVen_Fax" ShowInCustomizationForm="True" Visible="False" VisibleIndex="9">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SetVen_Email" ShowInCustomizationForm="True" Visible="False" VisibleIndex="10">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataCheckColumn Caption="Status Bumiputra" FieldName="BumiStat" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0" Width="6%">
+                <HeaderStyle HorizontalAlign="Center" VerticalAlign="Bottom" Wrap="True" />
+                <CellStyle HorizontalAlign="Center" VerticalAlign="Top" Wrap="True"></CellStyle>
+            </dx:GridViewDataCheckColumn>
+            <dx:GridViewDataTextColumn Caption="Senarai Kod Bidang" FieldName="KodBidang" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="11" Width="40%">
+                <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+            </dx:GridViewDataTextColumn>
+        </Columns>
+        <SettingsBehavior AllowFocusedRow="True" />
+        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+        <Styles>
+            <AlternatingRow Enabled="True">
+            </AlternatingRow>
+        </Styles>
+    </dx:ASPxGridView>
+    <asp:SqlDataSource ID="LookupVendorDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT * FROM [V_VendorAndKodBidangCode] ORDER BY [SetVen_SAGACode], [SetVen_Name]"></asp:SqlDataSource>
+            </dx:PopupControlContentControl>
+</ContentCollection>
+</dx:ASPxPopupControl>
+
+
+        
+
+

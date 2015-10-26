@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF1FA3A0-4241-4A22-AB40-276A5F7FC1D4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DbSet.cs" />
+    <Compile Include="Entity\AssetType.cs" />
+    <Compile Include="Entity\AuditLog.cs" />
+    <Compile Include="Entity\Category.cs" />
+    <Compile Include="Entity\Checklist.cs" />
+    <Compile Include="Entity\Component.cs" />
+    <Compile Include="Entity\Employee.cs" />
+    <Compile Include="Entity\EntityBase.cs" />
+    <Compile Include="Entity\GoodReceiveNote.cs" />
+    <Compile Include="Entity\KenyataanJualanLelonganStokAlih.cs" />
+    <Compile Include="Entity\KenyataanTawaranSebutharga.cs" />
+    <Compile Include="Entity\KenyataanTawaranTender.cs" />
+    <Compile Include="Entity\LaporanKehilangan.cs" />
+    <Compile Include="Entity\LaporanLembagaPemeriksa.cs" />
+    <Compile Include="Entity\Ledger.cs" />
+    <Compile Include="Entity\LedgerItem.cs" />
+    <Compile Include="Entity\Location.cs" />
+    <Compile Include="Entity\Pelupusan.cs" />
+    <Compile Include="Entity\PelupusanDetail.cs" />
+    <Compile Include="Entity\Pemeriksaan.cs" />
+    <Compile Include="Entity\PemeriksaanDetail.cs" />
+    <Compile Include="Entity\Penempatan.cs" />
+    <Compile Include="Entity\PermohonanStok.cs" />
+    <Compile Include="Entity\ProcessState.cs" />
+    <Compile Include="Entity\ProcessStatus.cs" />
+    <Compile Include="Entity\ProcessType.cs" />
+    <Compile Include="Entity\ProcurementCategory.cs" />
+    <Compile Include="Entity\ProcurementMethod.cs" />
+    <Compile Include="Entity\ProcurementType.cs" />
+    <Compile Include="Entity\Project.cs" />
+    <Compile Include="Entity\ProjectIte.cs" />
+    <Compile Include="Entity\PuDeliveryAddress.cs" />
+    <Compile Include="Entity\PurchaseRequest.cs" />
+    <Compile Include="Entity\PurchaseRequestItem.cs" />
+    <Compile Include="Entity\PurchaseType.cs" />
+    <Compile Include="Entity\PusatTanggungjawab.cs" />
+    <Compile Include="Entity\Requestor.cs" />
+    <Compile Include="Entity\SijilPengesahanPemusnahanStokAlih.cs" />
+    <Compile Include="Entity\Stock.cs" />
+    <Compile Include="Entity\StockRegistration.cs" />
+    <Compile Include="Entity\Stor.cs" />
+    <Compile Include="Entity\SubCategory.cs" />
+    <Compile Include="Entity\Supplier.cs" />
+    <Compile Include="Entity\TaxCodeSaga.cs" />
+    <Compile Include="Entity\TimeTimeOffset.cs" />
+    <Compile Include="Entity\UnitOfMeasurement.cs" />
+    <Compile Include="Entity\UtemInfo.cs" />
+    <Compile Include="Entity\Workflow.cs" />
+    <Compile Include="InMemoryContext.cs" />
+    <Compile Include="Models\AssetTypeModel.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\ChecklistModel.cs" />
+    <Compile Include="Models\ComponentModel.cs" />
+    <Compile Include="Models\LedgerItemModel.cs" />
+    <Compile Include="Models\LedgerModel.cs" />
+    <Compile Include="Models\ProcessTypeModel.cs" />
+    <Compile Include="Models\ProcurementCategoryModel.cs" />
+    <Compile Include="Models\ProcurementMethodModel.cs" />
+    <Compile Include="Models\ProcurementTypeModel.cs" />
+    <Compile Include="Models\ProjectItemModel.cs" />
+    <Compile Include="Models\ProjectModel.cs" />
+    <Compile Include="Models\PuDeliveryAddressModel.cs" />
+    <Compile Include="Models\PurchaseRequestModel.cs" />
+    <Compile Include="Models\PurchaseTypeModel.cs" />
+    <Compile Include="Models\RequestorModel.cs" />
+    <Compile Include="Models\SubCategoryModel.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
+    <Compile Include="Models\TaxCodeSagaModel.cs" />
+    <Compile Include="Models\UnitOfMeasurementModel.cs" />
+    <Compile Include="Models\UtemInfoModel.cs" />
+    <Compile Include="Models\WorkflowModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

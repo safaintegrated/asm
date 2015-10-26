@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="kewpa_dataset" targetNamespace="http://tempuri.org/kewpa_dataset.xsd" xmlns:mstns="http://tempuri.org/kewpa_dataset.xsd" xmlns="http://tempuri.org/kewpa_dataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="AMSDb_ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AMSDb_ConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.AMSDb_ConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="assetreportTableAdapter" GeneratorDataComponentClassName="assetreportTableAdapter" Name="assetreport" UserDataComponentName="assetreportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AMSDb_ConnectionString (Web.config)" DbObjectName="AMSDb.dbo.assetreport" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select *, sum(cost+purch+disposal) balcost, sum(accdepn+depn+disposaldepn) balaccdepn, sum(cost+purch+disposal-accdepn-depn-disposaldepn) nbv
+from assetreport
+group by [assetid]
+      ,[desc]
+      ,[cat]
+      ,[subcat]
+      ,[building]
+      ,[floor]
+      ,[unit]
+      ,[dept]
+      ,[room]
+      ,[purdate]
+      ,[cost]
+      ,[purch]
+      ,[disposal]
+      ,[accdepn]
+      ,[depn]
+      ,[disposaldepn]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="assetid" DataSetColumn="assetid" />
+              <Mapping SourceColumn="desc" DataSetColumn="desc" />
+              <Mapping SourceColumn="cat" DataSetColumn="cat" />
+              <Mapping SourceColumn="subcat" DataSetColumn="subcat" />
+              <Mapping SourceColumn="building" DataSetColumn="building" />
+              <Mapping SourceColumn="floor" DataSetColumn="floor" />
+              <Mapping SourceColumn="unit" DataSetColumn="unit" />
+              <Mapping SourceColumn="dept" DataSetColumn="dept" />
+              <Mapping SourceColumn="room" DataSetColumn="room" />
+              <Mapping SourceColumn="purdate" DataSetColumn="purdate" />
+              <Mapping SourceColumn="cost" DataSetColumn="cost" />
+              <Mapping SourceColumn="purch" DataSetColumn="purch" />
+              <Mapping SourceColumn="disposal" DataSetColumn="disposal" />
+              <Mapping SourceColumn="accdepn" DataSetColumn="accdepn" />
+              <Mapping SourceColumn="depn" DataSetColumn="depn" />
+              <Mapping SourceColumn="disposaldepn" DataSetColumn="disposaldepn" />
+              <Mapping SourceColumn="balcost" DataSetColumn="balcost" />
+              <Mapping SourceColumn="balaccdepn" DataSetColumn="balaccdepn" />
+              <Mapping SourceColumn="nbv" DataSetColumn="nbv" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ams_kewpa4TableAdapter" GeneratorDataComponentClassName="ams_kewpa4TableAdapter" Name="ams_kewpa4" UserDataComponentName="ams_kewpa4TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AMSDb_ConnectionString (Web.config)" DbObjectName="AMSDb.dbo.ams_kewpa4" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [ams_kewpa4] ([bil], [assetid], [desc], [purdate], [amount]) VALUES (@bil, @assetid, @desc, @purdate, @amount)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@bil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@assetid" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="assetid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@desc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="desc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@purdate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="purdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@amount" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from ams_kewpa4</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bil" DataSetColumn="bil" />
+              <Mapping SourceColumn="assetid" DataSetColumn="assetid" />
+              <Mapping SourceColumn="desc" DataSetColumn="desc" />
+              <Mapping SourceColumn="purdate" DataSetColumn="purdate" />
+              <Mapping SourceColumn="amount" DataSetColumn="amount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ams_kewpa5TableAdapter" GeneratorDataComponentClassName="ams_kewpa5TableAdapter" Name="ams_kewpa5" UserDataComponentName="ams_kewpa5TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AMSDb_ConnectionString (Web.config)" DbObjectName="AMSDb.dbo.ams_kewpa5" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [ams_kewpa5] ([bil], [assetid], [desc], [purdate], [amount]) VALUES (@bil, @assetid, @desc, @purdate, @amount)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@bil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@assetid" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="assetid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@desc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="desc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@purdate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="purdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@amount" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from ams_kewpa5</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bil" DataSetColumn="bil" />
+              <Mapping SourceColumn="assetid" DataSetColumn="assetid" />
+              <Mapping SourceColumn="desc" DataSetColumn="desc" />
+              <Mapping SourceColumn="purdate" DataSetColumn="purdate" />
+              <Mapping SourceColumn="amount" DataSetColumn="amount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ams_kewpa7TableAdapter" GeneratorDataComponentClassName="ams_kewpa7TableAdapter" Name="ams_kewpa7" UserDataComponentName="ams_kewpa7TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AMSDb_ConnectionString (Web.config)" DbObjectName="AMSDb.dbo.ams_kewpa7" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [ams_kewpa7] ([bil], [desc], [qty]) VALUES (@bil, @desc, @qty)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@bil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@desc" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="desc" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@qty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="qty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from ams_kewpa7</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bil" DataSetColumn="bil" />
+              <Mapping SourceColumn="desc" DataSetColumn="desc" />
+              <Mapping SourceColumn="qty" DataSetColumn="qty" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ams_kewpa8TableAdapter" GeneratorDataComponentClassName="ams_kewpa8TableAdapter" Name="ams_kewpa8" UserDataComponentName="ams_kewpa8TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AMSDb_ConnectionString (Web.config)" DbObjectName="AMSDb.dbo.ams_kewpa8" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [ams_kewpa8] ([bil], [dept], [kewpa2_qty], [kewpa2_amt], [kewpa3_qty], [kewpa3_amt]) VALUES (@bil, @dept, @kewpa2_qty, @kewpa2_amt, @kewpa3_qty, @kewpa3_amt)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@bil" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bil" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@dept" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="dept" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@kewpa2_qty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="kewpa2_qty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@kewpa2_amt" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="kewpa2_amt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@kewpa3_qty" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="kewpa3_qty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@kewpa3_amt" Precision="18" ProviderType="Decimal" Scale="0" Size="0" SourceColumn="kewpa3_amt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from ams_kewpa8</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="bil" DataSetColumn="bil" />
+              <Mapping SourceColumn="dept" DataSetColumn="dept" />
+              <Mapping SourceColumn="kewpa2_qty" DataSetColumn="kewpa2_qty" />
+              <Mapping SourceColumn="kewpa2_amt" DataSetColumn="kewpa2_amt" />
+              <Mapping SourceColumn="kewpa3_qty" DataSetColumn="kewpa3_qty" />
+              <Mapping SourceColumn="kewpa3_amt" DataSetColumn="kewpa3_amt" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="kewpa_dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="kewpa_dataset" msprop:Generator_UserDSName="kewpa_dataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="assetreport" msprop:Generator_TableClassName="assetreportDataTable" msprop:Generator_TableVarName="tableassetreport" msprop:Generator_TablePropName="assetreport" msprop:Generator_RowDeletingName="assetreportRowDeleting" msprop:Generator_RowChangingName="assetreportRowChanging" msprop:Generator_RowEvHandlerName="assetreportRowChangeEventHandler" msprop:Generator_RowDeletedName="assetreportRowDeleted" msprop:Generator_UserTableName="assetreport" msprop:Generator_RowChangedName="assetreportRowChanged" msprop:Generator_RowEvArgName="assetreportRowChangeEvent" msprop:Generator_RowClassName="assetreportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="assetid" msprop:Generator_ColumnVarNameInTable="columnassetid" msprop:Generator_ColumnPropNameInRow="assetid" msprop:Generator_ColumnPropNameInTable="assetidColumn" msprop:Generator_UserColumnName="assetid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc" msprop:Generator_ColumnVarNameInTable="columndesc" msprop:Generator_ColumnPropNameInRow="desc" msprop:Generator_ColumnPropNameInTable="descColumn" msprop:Generator_UserColumnName="desc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cat" msprop:Generator_ColumnVarNameInTable="columncat" msprop:Generator_ColumnPropNameInRow="cat" msprop:Generator_ColumnPropNameInTable="catColumn" msprop:Generator_UserColumnName="cat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="subcat" msprop:Generator_ColumnVarNameInTable="columnsubcat" msprop:Generator_ColumnPropNameInRow="subcat" msprop:Generator_ColumnPropNameInTable="subcatColumn" msprop:Generator_UserColumnName="subcat" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="building" msprop:Generator_ColumnVarNameInTable="columnbuilding" msprop:Generator_ColumnPropNameInRow="building" msprop:Generator_ColumnPropNameInTable="buildingColumn" msprop:Generator_UserColumnName="building" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="floor" msprop:Generator_ColumnVarNameInTable="columnfloor" msprop:Generator_ColumnPropNameInRow="floor" msprop:Generator_ColumnPropNameInTable="floorColumn" msprop:Generator_UserColumnName="floor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="unit" msprop:Generator_ColumnVarNameInTable="columnunit" msprop:Generator_ColumnPropNameInRow="unit" msprop:Generator_ColumnPropNameInTable="unitColumn" msprop:Generator_UserColumnName="unit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dept" msprop:Generator_ColumnVarNameInTable="columndept" msprop:Generator_ColumnPropNameInRow="dept" msprop:Generator_ColumnPropNameInTable="deptColumn" msprop:Generator_UserColumnName="dept" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="room" msprop:Generator_ColumnVarNameInTable="columnroom" msprop:Generator_ColumnPropNameInRow="room" msprop:Generator_ColumnPropNameInTable="roomColumn" msprop:Generator_UserColumnName="room" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="purdate" msprop:Generator_ColumnVarNameInTable="columnpurdate" msprop:Generator_ColumnPropNameInRow="purdate" msprop:Generator_ColumnPropNameInTable="purdateColumn" msprop:Generator_UserColumnName="purdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cost" msprop:Generator_ColumnVarNameInTable="columncost" msprop:Generator_ColumnPropNameInRow="cost" msprop:Generator_ColumnPropNameInTable="costColumn" msprop:Generator_UserColumnName="cost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="purch" msprop:Generator_ColumnVarNameInTable="columnpurch" msprop:Generator_ColumnPropNameInRow="purch" msprop:Generator_ColumnPropNameInTable="purchColumn" msprop:Generator_UserColumnName="purch" type="xs:decimal" minOccurs="0" />
+              <xs:element name="disposal" msprop:Generator_ColumnVarNameInTable="columndisposal" msprop:Generator_ColumnPropNameInRow="disposal" msprop:Generator_ColumnPropNameInTable="disposalColumn" msprop:Generator_UserColumnName="disposal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="accdepn" msprop:Generator_ColumnVarNameInTable="columnaccdepn" msprop:Generator_ColumnPropNameInRow="accdepn" msprop:Generator_ColumnPropNameInTable="accdepnColumn" msprop:Generator_UserColumnName="accdepn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="depn" msprop:Generator_ColumnVarNameInTable="columndepn" msprop:Generator_ColumnPropNameInRow="depn" msprop:Generator_ColumnPropNameInTable="depnColumn" msprop:Generator_UserColumnName="depn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="disposaldepn" msprop:Generator_ColumnVarNameInTable="columndisposaldepn" msprop:Generator_ColumnPropNameInRow="disposaldepn" msprop:Generator_ColumnPropNameInTable="disposaldepnColumn" msprop:Generator_UserColumnName="disposaldepn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="balcost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnbalcost" msprop:Generator_ColumnPropNameInRow="balcost" msprop:Generator_ColumnPropNameInTable="balcostColumn" msprop:Generator_UserColumnName="balcost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="balaccdepn" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnbalaccdepn" msprop:Generator_ColumnPropNameInRow="balaccdepn" msprop:Generator_ColumnPropNameInTable="balaccdepnColumn" msprop:Generator_UserColumnName="balaccdepn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="nbv" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnbv" msprop:Generator_ColumnPropNameInRow="nbv" msprop:Generator_ColumnPropNameInTable="nbvColumn" msprop:Generator_UserColumnName="nbv" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ams_kewpa4" msprop:Generator_TableClassName="ams_kewpa4DataTable" msprop:Generator_TableVarName="tableams_kewpa4" msprop:Generator_RowChangedName="ams_kewpa4RowChanged" msprop:Generator_TablePropName="ams_kewpa4" msprop:Generator_RowDeletingName="ams_kewpa4RowDeleting" msprop:Generator_RowChangingName="ams_kewpa4RowChanging" msprop:Generator_RowEvHandlerName="ams_kewpa4RowChangeEventHandler" msprop:Generator_RowDeletedName="ams_kewpa4RowDeleted" msprop:Generator_RowClassName="ams_kewpa4Row" msprop:Generator_UserTableName="ams_kewpa4" msprop:Generator_RowEvArgName="ams_kewpa4RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bil" msprop:Generator_ColumnVarNameInTable="columnbil" msprop:Generator_ColumnPropNameInRow="bil" msprop:Generator_ColumnPropNameInTable="bilColumn" msprop:Generator_UserColumnName="bil" type="xs:int" minOccurs="0" />
+              <xs:element name="assetid" msprop:Generator_ColumnVarNameInTable="columnassetid" msprop:Generator_ColumnPropNameInRow="assetid" msprop:Generator_ColumnPropNameInTable="assetidColumn" msprop:Generator_UserColumnName="assetid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc" msprop:Generator_ColumnVarNameInTable="columndesc" msprop:Generator_ColumnPropNameInRow="desc" msprop:Generator_ColumnPropNameInTable="descColumn" msprop:Generator_UserColumnName="desc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="purdate" msprop:Generator_ColumnVarNameInTable="columnpurdate" msprop:Generator_ColumnPropNameInRow="purdate" msprop:Generator_ColumnPropNameInTable="purdateColumn" msprop:Generator_UserColumnName="purdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="amount" msprop:Generator_ColumnVarNameInTable="columnamount" msprop:Generator_ColumnPropNameInRow="amount" msprop:Generator_ColumnPropNameInTable="amountColumn" msprop:Generator_UserColumnName="amount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ams_kewpa5" msprop:Generator_TableClassName="ams_kewpa5DataTable" msprop:Generator_TableVarName="tableams_kewpa5" msprop:Generator_RowChangedName="ams_kewpa5RowChanged" msprop:Generator_TablePropName="ams_kewpa5" msprop:Generator_RowDeletingName="ams_kewpa5RowDeleting" msprop:Generator_RowChangingName="ams_kewpa5RowChanging" msprop:Generator_RowEvHandlerName="ams_kewpa5RowChangeEventHandler" msprop:Generator_RowDeletedName="ams_kewpa5RowDeleted" msprop:Generator_RowClassName="ams_kewpa5Row" msprop:Generator_UserTableName="ams_kewpa5" msprop:Generator_RowEvArgName="ams_kewpa5RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bil" msprop:Generator_ColumnVarNameInTable="columnbil" msprop:Generator_ColumnPropNameInRow="bil" msprop:Generator_ColumnPropNameInTable="bilColumn" msprop:Generator_UserColumnName="bil" type="xs:int" minOccurs="0" />
+              <xs:element name="assetid" msprop:Generator_ColumnVarNameInTable="columnassetid" msprop:Generator_ColumnPropNameInRow="assetid" msprop:Generator_ColumnPropNameInTable="assetidColumn" msprop:Generator_UserColumnName="assetid" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="desc" msprop:Generator_ColumnVarNameInTable="columndesc" msprop:Generator_ColumnPropNameInRow="desc" msprop:Generator_ColumnPropNameInTable="descColumn" msprop:Generator_UserColumnName="desc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="purdate" msprop:Generator_ColumnVarNameInTable="columnpurdate" msprop:Generator_ColumnPropNameInRow="purdate" msprop:Generator_ColumnPropNameInTable="purdateColumn" msprop:Generator_UserColumnName="purdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="amount" msprop:Generator_ColumnVarNameInTable="columnamount" msprop:Generator_ColumnPropNameInRow="amount" msprop:Generator_ColumnPropNameInTable="amountColumn" msprop:Generator_UserColumnName="amount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ams_kewpa7" msprop:Generator_TableClassName="ams_kewpa7DataTable" msprop:Generator_TableVarName="tableams_kewpa7" msprop:Generator_TablePropName="ams_kewpa7" msprop:Generator_RowDeletingName="ams_kewpa7RowDeleting" msprop:Generator_RowChangingName="ams_kewpa7RowChanging" msprop:Generator_RowEvHandlerName="ams_kewpa7RowChangeEventHandler" msprop:Generator_RowDeletedName="ams_kewpa7RowDeleted" msprop:Generator_UserTableName="ams_kewpa7" msprop:Generator_RowChangedName="ams_kewpa7RowChanged" msprop:Generator_RowEvArgName="ams_kewpa7RowChangeEvent" msprop:Generator_RowClassName="ams_kewpa7Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bil" msprop:Generator_ColumnVarNameInTable="columnbil" msprop:Generator_ColumnPropNameInRow="bil" msprop:Generator_ColumnPropNameInTable="bilColumn" msprop:Generator_UserColumnName="bil" type="xs:int" minOccurs="0" />
+              <xs:element name="desc" msprop:Generator_ColumnVarNameInTable="columndesc" msprop:Generator_ColumnPropNameInRow="desc" msprop:Generator_ColumnPropNameInTable="descColumn" msprop:Generator_UserColumnName="desc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ams_kewpa8" msprop:Generator_TableClassName="ams_kewpa8DataTable" msprop:Generator_TableVarName="tableams_kewpa8" msprop:Generator_TablePropName="ams_kewpa8" msprop:Generator_RowDeletingName="ams_kewpa8RowDeleting" msprop:Generator_RowChangingName="ams_kewpa8RowChanging" msprop:Generator_RowEvHandlerName="ams_kewpa8RowChangeEventHandler" msprop:Generator_RowDeletedName="ams_kewpa8RowDeleted" msprop:Generator_UserTableName="ams_kewpa8" msprop:Generator_RowChangedName="ams_kewpa8RowChanged" msprop:Generator_RowEvArgName="ams_kewpa8RowChangeEvent" msprop:Generator_RowClassName="ams_kewpa8Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="bil" msprop:Generator_ColumnVarNameInTable="columnbil" msprop:Generator_ColumnPropNameInRow="bil" msprop:Generator_ColumnPropNameInTable="bilColumn" msprop:Generator_UserColumnName="bil" type="xs:int" minOccurs="0" />
+              <xs:element name="dept" msprop:Generator_ColumnVarNameInTable="columndept" msprop:Generator_ColumnPropNameInRow="dept" msprop:Generator_ColumnPropNameInTable="deptColumn" msprop:Generator_UserColumnName="dept" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="kewpa2_qty" msprop:Generator_ColumnVarNameInTable="columnkewpa2_qty" msprop:Generator_ColumnPropNameInRow="kewpa2_qty" msprop:Generator_ColumnPropNameInTable="kewpa2_qtyColumn" msprop:Generator_UserColumnName="kewpa2_qty" type="xs:int" minOccurs="0" />
+              <xs:element name="kewpa2_amt" msprop:Generator_ColumnVarNameInTable="columnkewpa2_amt" msprop:Generator_ColumnPropNameInRow="kewpa2_amt" msprop:Generator_ColumnPropNameInTable="kewpa2_amtColumn" msprop:Generator_UserColumnName="kewpa2_amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="kewpa3_qty" msprop:Generator_ColumnVarNameInTable="columnkewpa3_qty" msprop:Generator_ColumnPropNameInRow="kewpa3_qty" msprop:Generator_ColumnPropNameInTable="kewpa3_qtyColumn" msprop:Generator_UserColumnName="kewpa3_qty" type="xs:int" minOccurs="0" />
+              <xs:element name="kewpa3_amt" msprop:Generator_ColumnVarNameInTable="columnkewpa3_amt" msprop:Generator_ColumnPropNameInRow="kewpa3_amt" msprop:Generator_ColumnPropNameInTable="kewpa3_amtColumn" msprop:Generator_UserColumnName="kewpa3_amt" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

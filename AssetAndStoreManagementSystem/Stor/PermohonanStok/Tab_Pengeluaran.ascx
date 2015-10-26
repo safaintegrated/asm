@@ -1,0 +1,89 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Tab_Pengeluaran.ascx.cs" Inherits="AssetAndStoreManagementSystem.Stor.PermohonanStok.Tab_Pengeluaran" %>
+<%@ Register assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+
+
+<style>
+    .AddTopPadding 
+    {
+        padding-top:15px;
+    }
+</style>
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="96%">
+    <Items>
+        <dx:LayoutGroup Caption="Senarai Pengeluaran Stok" Width="100%">
+            <Items>
+                <dx:LayoutItem ShowCaption="False" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Width="100%">
+                                <Columns>
+                                    <dx:GridViewDataTextColumn Caption="Kod Stok" ShowInCustomizationForm="True" VisibleIndex="0" Width="15%">
+                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Keterangan" ShowInCustomizationForm="True" VisibleIndex="1" Width="50%">
+                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Unit Pengukuran" ShowInCustomizationForm="True" VisibleIndex="2" Width="15%">
+                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Kuantiti Dipohon" ShowInCustomizationForm="True" VisibleIndex="3" Width="10%">
+                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Kuantiti Dikeluarkan" ShowInCustomizationForm="True" VisibleIndex="4" Width="10%">
+                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                </Columns>
+                            </dx:ASPxGridView>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Perakuan" Width="100%">
+            <Items>
+                <dx:LayoutItem ShowCaption="False" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxCheckBox ID="ASPxFormLayout1_E1" runat="server" CheckState="Unchecked" Text="Saya mengaku bahawa maklumat pengeluaran stok ini adalah benar.">
+                            </dx:ASPxCheckBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem ShowCaption="False" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxButton ID="ASPxFormLayout1_E2" runat="server" Text="Ok" Width="100px">
+                            </dx:ASPxButton>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Nama Pegawai" Width="100%" CssClass="AddTopPadding">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server" CssClass="AddTopPadding">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E3" runat="server" ClientEnabled="False" CssClass="TextBoxForName">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Tarikh" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer runat="server">
+                            <dx:ASPxDateEdit ID="ASPxFormLayout1_E4" runat="server" ClientEnabled="False" CssClass="DateEditorInForm">
+                            </dx:ASPxDateEdit>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+    </Items>
+    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+</dx:ASPxFormLayout>
+

@@ -1,0 +1,379 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using DevExpress.Web.ASPxGridView;
+using DevExpress.Web.ASPxEditors;
+using Core.PengurusanSistem;
+using System.Configuration;
+using System.Web.Security;
+
+using Core.Shared;
+using Core.Utility;
+
+namespace AssetAndStoreManagementSystem.Shared.KategoriSubKategori
+{
+    public partial class KategoriSubKategori_Controller : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+                Page.ClientScript.RegisterStartupScript(this.GetType(), "OnLoad", "OnPageLoad();", true);
+        }
+
+        protected void DetailAuditGrid_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
+        {
+
+        }
+
+        protected void cbp_SubCatInfo_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e)
+        {
+            string[] paramx = e.Parameter.Split('*');
+
+            cbp_SubCatInfo.JSProperties["cpMode"] = paramx[0].ToString();
+
+            switch (paramx[0].ToString())
+            {
+                case "LOAD": LoadSubCat(); break;
+                case "ADD": AddSubCat(); break;
+                case "DELETE": RemoveSubCat(paramx[1].ToString()); break;
+                case "NEW": NewSubCatListing(); break;
+            }
+        }
+
+        void LoadSubCat()
+        {
+            DataTable TVP = new DataTable();
+            string errProcess = string.Empty;
+
+            try
+            {
+                if (CatId.Text != "")
+                    errProcess = KategoriSubKategoriMethods.Load_SubCategori(ref TVP, CatId.Text);
+                else
+                    FormSubCatTVP(ref TVP);
+
+                if (errProcess == string.Empty)
+                {
+                    BindSubCatGrid(ref TVP);
+                    cbp_SubCatInfo.JSProperties["cpErrMsg"] = string.Empty;
+                }
+                else
+                {
+                    string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                    errMsg = errMsg.Replace("BR", "<br><br>");
+                    cbp_SubCatInfo.JSProperties["cpErrMsg"] = errMsg + " " + errProcess;
+                }
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_SubCatInfo.JSProperties["cpErrMsg"] = errMsg + " " + err;
+            }
+            finally
+            { TVP.Dispose(); }
+        }
+
+        void AddSubCat()
+        {
+            DataTable TVP = new DataTable();
+
+            try
+            {
+                FormSubCatTVP(ref TVP);
+                SaveSubCatGrid(ref TVP);
+                AddNewSubCatRow(ref TVP);
+                BindSubCatGrid(ref TVP);
+                cbp_SubCatInfo.JSProperties["cpErrMsg"] = string.Empty;
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_SubCatInfo.JSProperties["cpErrMsg"] = errMsg + " " + err;
+            }
+            finally
+            { TVP.Dispose(); }
+        }
+
+        void RemoveSubCat(string SubCatIdToRemove)
+        {
+            DataTable TVP = new DataTable();
+
+            try
+            {
+                FormSubCatTVP(ref TVP);
+                SaveSubCatGrid(ref TVP);
+                RemoveSubCatRow(ref TVP, SubCatIdToRemove);
+                BindSubCatGrid(ref TVP);
+                cbp_SubCatInfo.JSProperties["cpErrMsg"] = string.Empty;
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_SubCatInfo.JSProperties["cpErrMsg"] = errMsg + " " + err;
+            }
+            finally
+            { TVP.Dispose(); }
+        }
+
+        void NewSubCatListing()
+        {
+            DataTable TVP = new DataTable();
+
+            try
+            {
+                FormSubCatTVP(ref TVP);
+                BindSubCatGrid(ref TVP);
+                cbp_SubCatInfo.JSProperties["cpErrMsg"] = string.Empty;
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_SubCatInfo.JSProperties["cpErrMsg"] = errMsg + " " + err;
+            }
+            finally
+            { TVP.Dispose(); }
+        }
+
+        void FormSubCatTVP(ref DataTable Dt)
+        {
+            DataColumn CatId = Dt.Columns.Add("CatId", typeof(Int32));
+            DataColumn SubCatId = Dt.Columns.Add("SubCatId", typeof(Int32));
+            DataColumn SubCatName = Dt.Columns.Add("SubCatName", typeof(String));
+            DataColumn SubCatCode = Dt.Columns.Add("SubCatCode", typeof(String));
+            DataColumn SubCatGL = Dt.Columns.Add("SubCatGL", typeof(String));
+            DataColumn SubCatProjectCode = Dt.Columns.Add("SubCatProjectCode", typeof(String));
+            Dt.AcceptChanges();
+        }
+
+        void SaveSubCatGrid(ref DataTable Dt)
+        {
+            for (int i = 0; i < GridSubCatList.VisibleRowCount; i++)
+            {
+                DataRow Dr = Dt.NewRow();
+
+                if (CatId.Text == "")
+                    Dr["CatId"] = DBNull.Value;
+                else
+                    Dr["CatId"] = Convert.ToInt32(CatId.Text);
+
+                Dr["SubCatId"] = Convert.ToInt32(GridSubCatList.GetRowValues(i, "SubCatId"));
+                Dr["SubCatName"] = GetGridTextBoxValue(i, "SubCatName");
+                Dr["SubCatCode"] = GetGridTextBoxValue(i, "SubCatCode");
+                Dr["SubCatGL"] = GetGridTextBoxValue(i, "SubCatGL");
+                Dr["SubCatProjectCode"] = GetGridTextBoxValue(i, "SubCatProjectCode");
+                Dt.Rows.Add(Dr);
+            }
+
+            Dt.AcceptChanges();
+        }
+
+        string GetGridTextBoxValue(int RowIndex, string FieldName)
+        {
+            ASPxTextBox text = (ASPxTextBox)GridSubCatList.FindRowCellTemplateControl(RowIndex, GridSubCatList.DataColumns[FieldName] as GridViewDataColumn, FieldName);
+
+            if (text != null)
+                return text.Text.Trim();
+            else
+                return string.Empty;
+        }
+
+        void AddNewSubCatRow(ref DataTable Dt)
+        {
+            DataRow Dr = Dt.NewRow();
+
+            if (CatId.Text == "")
+                Dr["CatId"] = DBNull.Value;
+            else
+                Dr["CatId"] = Convert.ToInt32(CatId.Text);
+
+            Dr["SubCatId"] = SortingNumberMethod.FormNextSortingId(ref Dt, "SubCatId");
+            Dr["SubCatName"] = DBNull.Value;
+            Dr["SubCatCode"] = DBNull.Value;
+            Dr["SubCatGL"] = DBNull.Value;
+            Dr["SubCatProjectCode"] = DBNull.Value;
+
+            Dt.Rows.Add(Dr);
+            Dt.AcceptChanges();
+        }
+
+        void RemoveSubCatRow(ref DataTable Dt, string SubCatIdToRemove)
+        {
+            DataRow[] Drs = Dt.Select("SubCatId = " + SubCatIdToRemove.ToString());
+
+            if (Drs.Length == 1)
+                Dt.Rows.Remove(Drs[0]);
+            
+            Dt.AcceptChanges();
+        }
+
+        protected void cbp_CatInfo_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e)
+        {
+            DataTable TVP = new DataTable();
+
+            try
+            {
+                if (CatId.Text == "")
+                {
+                }
+                else
+                {
+                    string err = KategoriSubKategoriMethods.Load_Categori(ref TVP, CatId.Text);
+
+                    if (err == "")
+                    {
+                        CatType.Value = Convert.ToInt32(TVP.Rows[0]["CatType"]);
+                        CatName.Text = TVP.Rows[0]["CatName"].ToString();
+                        CatCode.Text = TVP.Rows[0]["CatCode"].ToString();
+                        cbp_CatInfo.JSProperties["cpErrMsg"] = string.Empty;
+                    }
+                    else
+                    {
+                        string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                        errMsg = errMsg.Replace("BR", "<br><br>");
+                        cbp_CatInfo.JSProperties["cpErrMsg"] = errMsg + " " + err;
+                    }
+                }
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_CatInfo.JSProperties["cpErrMsg"] = errMsg + " " + err;
+            }
+            finally
+            { TVP.Dispose(); }
+        }
+
+        void BindSubCatGrid(ref DataTable Dt)
+        {
+            GridSubCatList.DataSource = Dt;
+            GridSubCatList.KeyFieldName = "SubCatId";
+            GridSubCatList.DataBind();
+        }
+
+        protected void GridSubCatList_HtmlDataCellPrepared(object sender, ASPxGridViewTableDataCellEventArgs e)
+        {
+            if (e.DataColumn.FieldName == "SubCatId")
+            {
+                ASPxHyperLink SubCatId = (ASPxHyperLink)GridSubCatList.FindRowCellTemplateControl(e.VisibleIndex, GridSubCatList.DataColumns["SubCatId"] as GridViewDataColumn, "SubCatId");
+
+                if (SubCatId != null)
+                {
+                    SubCatId.ClientInstanceName = "SubCatId_" + e.VisibleIndex.ToString();
+                    SubCatId.NavigateUrl = "javascript: RemoveSubCat("+ GridSubCatList.GetRowValues(e.VisibleIndex,"SubCatId").ToString()+");";
+                }
+            }
+            else
+            {
+                ASPxTextBox text = (ASPxTextBox)GridSubCatList.FindRowCellTemplateControl(e.VisibleIndex, GridSubCatList.DataColumns[e.DataColumn.FieldName] as GridViewDataColumn, e.DataColumn.FieldName);
+
+                if (text != null)
+                {
+                    text.ClientInstanceName = e.DataColumn.FieldName + "_" + e.VisibleIndex.ToString();
+                    text.Text = e.CellValue.ToString();
+                }
+            }
+        }
+
+        protected void cbp_Save_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e)
+        {
+            cbp_Save.JSProperties["cpMode"] = e.Parameter;
+
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+
+            if (!ticket.Expired)
+            {
+                DataTable HeaderTVP = new DataTable();
+                DataTable DetailTVP = new DataTable();
+
+                try
+                {
+                    FormHeaderTVP(ref HeaderTVP);
+                    PopulateHeaderTVP(ref HeaderTVP);
+                    FormSubCatTVP(ref DetailTVP);
+                    SaveSubCatGrid(ref DetailTVP);
+                    AlterDetailTVP(ref DetailTVP);
+
+                    string err = KategoriSubKategoriMethods.SP_SaveDelete_CategorySubCategory(ref HeaderTVP, ref DetailTVP, CatId.Text, ticket.Name, e.Parameter);
+
+                    if (err == "")
+                    {
+                        if (e.Parameter == "SAVE")
+                        {
+                            string CategoryId = string.Empty;
+                            KategoriSubKategoriMethods.GetCatId(ref CategoryId,CatName.Text.Trim());
+                            cbp_Save.JSProperties["cpCatId"] = CategoryId;
+                        }
+
+                        cbp_Save.JSProperties["cpErrMsg"] = string.Empty;
+                    }
+                    else
+                    {
+                        string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                        errMsg = errMsg.Replace("BR", "<br><br>");
+                        cbp_Save.JSProperties["cpErrMsg"] = errMsg + " " + err;
+                    }
+                }
+                catch (Exception err)
+                {
+                    string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                    errMsg = errMsg.Replace("BR", "<br><br>");
+                    cbp_Save.JSProperties["cpErrMsg"] = errMsg + " " + err;
+                }
+                finally
+                { HeaderTVP.Dispose(); DetailTVP.Dispose(); }
+            }
+            else
+                cbp_Save.JSProperties["cpErrMsg"] = "Session Expired.";
+        }
+
+        void FormHeaderTVP(ref DataTable TVP)
+        {
+            DataColumn CatId = TVP.Columns.Add("CatId", typeof(Int32));
+            DataColumn CatType = TVP.Columns.Add("CatType", typeof(Int32));
+            DataColumn CatName = TVP.Columns.Add("CatName", typeof(String));
+            DataColumn CatCode = TVP.Columns.Add("CatCode", typeof(String));
+            TVP.AcceptChanges();
+        }
+
+        void PopulateHeaderTVP(ref DataTable Dt)
+        {
+            DataRow Dr = Dt.NewRow();
+
+            if (CatId.Text == "")
+                Dr["CatId"] = DBNull.Value;
+            else
+                Dr["CatId"] = Convert.ToInt32(CatId.Text);
+
+            Dr["CatType"] = Convert.ToInt32(CatType.Value);
+            Dr["CatName"] = CatName.Text.Trim();
+            Dr["CatCode"] = CatCode.Text.Trim();
+
+            Dt.Rows.Add(Dr);
+            Dt.AcceptChanges();
+
+        }
+
+        void AlterDetailTVP(ref DataTable Dt)
+        {
+            DataRow[] Drs = Dt.Select("SubCatId <= 0");
+           
+            for (int i = 0; i < Drs.Length; i++)
+            {
+                Drs[i]["SubCatId"] = DBNull.Value;
+            }
+
+            Dt.AcceptChanges();
+        }
+    }
+}

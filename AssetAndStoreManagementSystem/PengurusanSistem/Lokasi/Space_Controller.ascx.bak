@@ -1,0 +1,236 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Space_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.PengurusanSistem.Lokasi.Space_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxCallbackPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRibbon" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxLoadingPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxTabControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxClasses" tagprefix="dx" %>
+
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+
+<script>
+    function AuditMode_SpaceTab() {
+        PopupAuditTrail.SetHeaderText('Senarai Audit Ruang');
+        AuditTrailType.SetText('4');
+        GridAuditListing.PerformCallback();
+        GridAuditDetails.PerformCallback();
+        PopupAuditTrail.Show();
+    }
+
+    function SearchMode_SpaceTab() {
+        if (Space_SearchMode.GetText() == '0') {
+            Space_SearchMode.SetText('1');
+            Grid_Space.PerformCallback();
+        }
+        else {
+            Space_SearchMode.SetText('0');
+            Grid_Space.ClearFilter();
+            Grid_Space.PerformCallback();
+        }
+    }
+
+    function AddMode_SpaceTab() {
+        ClearSpaceForm();
+        Space_ScreenMode.SetText('2');
+        EnableDisableSpaceForm('true');
+        Grid_Space_EnableDisabled('false');
+        ManageMainRibbonUtamaTab('false', 'false', 'true', 'false', 'true', 'true', 'false', 'false', 'false', 'true');
+    }
+
+    function DeleteMode_SpaceTab() {
+        popupDeleteConfirmation.Show();
+        popupDeleteConfirmation_Label.SetText('Padam rekod Ruang ini?<br>Anda pasti?');
+        popupDeleteConfirmation_BtnOk.Focus();
+    }
+
+    function DeleteConfirmation_SpaceTab() {
+        LoadingPanel.SetText('Sistem sedang memadam rekod Ruang.  Sila tunggu sebentar..');
+        LoadingPanel.Show();
+        cbp_SaveSpace.PerformCallback('DELETE');
+    }
+
+    function cbp_SaveSpace_EndCallback(s, e) {
+        popupDeleteConfirmation.Hide();
+        LoadingPanel.Hide();
+
+        if (s.cpErrMsg.toString() != '') {
+            popupMsg_Label.SetText(s.cpErrMsg.toString());
+            popupMsg.Show();
+            popupMsg_BtnOk.Focus();
+        }
+        else {
+            Space_ScreenMode.SetText('0');
+            ClearSpaceForm();
+            EnableDisableSpaceForm('false');
+            Grid_Space_EnableDisabled('true');
+            ManageMainRibbonUtamaTab('false', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true');
+
+            if (s.cpMode.toString() == 'SAVE')
+            { popupMsg_Label.SetText('Rekod Ruang telah berjaya disimpan.'); }
+            else
+            { popupMsg_Label.SetText('Rekod Ruang telah berjaya dipadam.'); }
+
+            Grid_Space.PerformCallback();
+            popupMsg.Show();
+            popupMsg_BtnOk.Focus();
+        }
+    }
+
+    function SaveMode_SpaceTab() {
+        if (Space_Name.GetText() == '' || Space_Code.GetText() == '') {
+            popupMsg_Label.SetText('Pastikan semua maklumat Ruang diisi terlebih dahulu.<br>Sila semak dan cuba sekali lagi.');
+            popupMsg.Show();
+            popupMsg_BtnOk.Focus();
+        }
+        else {
+            LoadingPanel.SetText('Sistem sedang menyimpan maklumat Ruang.  Sila tunggu sebentar..');
+            LoadingPanel.Show();
+            cbp_SaveSpace.PerformCallback('SAVE');
+        }
+    }
+
+    function CancelMode_SpaceTab() {
+        Space_ScreenMode.SetText('0');
+        ClearSpaceForm();
+        EnableDisableSpaceForm('false');
+        Grid_Space_EnableDisabled('true');
+        ManageMainRibbonUtamaTab('false', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true');
+    }
+
+    function EditMode_SpaceTab() {
+        Space_ScreenMode.SetText('2');
+        EnableDisableSpaceForm('true');
+        Grid_Space_EnableDisabled('false');
+        ManageMainRibbonUtamaTab('false', 'false', 'true', 'false', 'true', 'true', 'false', 'false', 'false', 'true');
+    }
+
+    function Grid_Space_EnableDisabled(Enabled) {
+        var Space_Name;
+
+        for (var i = 0; i < Grid_Space.GetVisibleRowsOnPage() ; i++) {
+            Space_Name = ASPxClientControl.GetControlCollection().GetByName('Space_Name_' + i.toString());
+
+            if (Enabled == 'true') {
+                Space_Name.SetEnabled(true);
+            }
+            else {
+                Space_Name.SetEnabled(false);
+            }
+        }
+
+    }
+
+    function Space_Selected(id, name, code) {
+        Space_Id.SetText(id.toString());
+        Space_Name.SetText(name.toString());
+        Space_Code.SetText(code.toString());
+        ManageMainRibbonUtamaTab('true', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true');
+        Space_ScreenMode.SetText('1');
+    }
+
+    function EnableDisableSpaceForm(EnableDisable) {
+        if (EnableDisable == 'true') {
+            Space_Id.SetEnabled(true);
+            Space_Name.SetEnabled(true);
+            Space_Code.SetEnabled(true);
+        }
+        else {
+            Space_Id.SetEnabled(false);
+            Space_Name.SetEnabled(false);
+            Space_Code.SetEnabled(false);
+        }
+    }
+
+    function ClearSpaceForm() {
+        Space_Id.SetText('');
+        Space_Name.SetText('');
+        Space_Code.SetText('');
+    }
+</script>
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" ColCount="2" Width="100%">
+                                        <Items>
+                                            <dx:LayoutGroup Caption="Maklumat Ruang" Width="50%">
+                                                <Items>
+                                                    <dx:LayoutItem Caption="Nama">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                                                                <dx:ASPxTextBox ID="Space_Name" ClientInstanceName="Space_Name" EnableClientSideAPI="true" runat="server" CssClass="TextBoxForName" MaxLength="200">
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="Kod">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                                                                <dx:ASPxTextBox ID="Space_Code" ClientInstanceName="Space_Code" EnableClientSideAPI="true" runat="server" CssClass="TextBoxForId" MaxLength="50">
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem ShowCaption="False">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
+                                                                <dx:ASPxTextBox ID="Space_Id" ClientInstanceName="Space_Id" EnableClientSideAPI="true" runat="server" Width="170px" ClientVisible="false">
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                </Items>
+                                            </dx:LayoutGroup>
+                                            <dx:LayoutGroup Caption="Senarai Ruang" Width="50%">
+                                                <Items>
+                                                    <dx:LayoutItem ShowCaption="False">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                                                                <dx:ASPxGridView ID="Grid_Space" runat="server" AutoGenerateColumns="False" ClientInstanceName="Grid_Space" DataSourceID="Space_Ds" KeyFieldName="Space_Id" Width="100%" OnHtmlDataCellPrepared="Grid_Space_HtmlDataCellPrepared" OnCustomCallback="Grid_Space_CustomCallback" OnAfterPerformCallback="Grid_Space_AfterPerformCallback">
+                                                                    <Columns>
+                                                                        <dx:GridViewDataTextColumn Caption="Kod" FieldName="Space_Code" ShowInCustomizationForm="True" VisibleIndex="1" Width="15%">
+                                                                        </dx:GridViewDataTextColumn>
+                                                                        <dx:GridViewDataTextColumn Caption="Nama" FieldName="Space_Name" ShowInCustomizationForm="True" VisibleIndex="0" Width="85%">
+                                                                            <DataItemTemplate>
+                                                                                <dx:ASPxHyperLink ID="Space_Name" runat="server" EnableClientSideAPI="True" Text="ASPxHyperLink" />
+                                                                            </DataItemTemplate>
+                                                                        </dx:GridViewDataTextColumn>
+                                                                        <dx:GridViewDataTextColumn FieldName="Space_Id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                                            <EditFormSettings Visible="False" />
+                                                                        </dx:GridViewDataTextColumn>
+                                                                    </Columns>
+                                                                    <SettingsBehavior AllowFocusedRow="True" />
+                                                                    <SettingsPager Mode="ShowAllRecords">
+                                                                    </SettingsPager>
+                                                                    <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                                    <Styles>
+                                                                        <AlternatingRow Enabled="True">
+                                                                        </AlternatingRow>
+                                                                    </Styles>
+                                                                </dx:ASPxGridView>
+                                                                <asp:SqlDataSource ID="Space_Ds" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT [Space_Code], [Space_Name], [Space_Id] FROM [Space] ORDER BY [Space_Code]"></asp:SqlDataSource>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                </Items>
+                                            </dx:LayoutGroup>
+                                        </Items>
+                                        <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+                                        <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+                                    </dx:ASPxFormLayout>
+<dx:ASPxTextBox ID="Space_ScreenMode" runat="server" ClientInstanceName="Space_ScreenMode" Text="0" Width="170px" ClientVisible="false">
+</dx:ASPxTextBox>
+<dx:ASPxTextBox ID="Space_SearchMode" runat="server" ClientInstanceName="Space_SearchMode" Text="0" Width="170px" ClientVisible="false">
+</dx:ASPxTextBox>
+<dx:ASPxCallbackPanel ID="cbp_SaveSpace" runat="server" ClientInstanceName="cbp_SaveSpace" ClientVisible="False" OnCallback="cbp_SaveSpace_Callback" ShowLoadingPanel="False" ShowLoadingPanelImage="False" Width="200px">
+    <ClientSideEvents EndCallback="function(s, e) {
+	cbp_SaveSpace_EndCallback(s, e);
+}" />
+    <PanelCollection>
+<dx:PanelContent ID="PanelContent1" runat="server"></dx:PanelContent>
+</PanelCollection>
+</dx:ASPxCallbackPanel>

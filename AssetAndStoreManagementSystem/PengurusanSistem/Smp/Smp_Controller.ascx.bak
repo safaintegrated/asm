@@ -1,0 +1,252 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Smp_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.PengurusanSistem.Smp.Smp_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRibbon" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+
+<dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Sistem Maklumat Pekerja (SMP)" Width="100%">
+    <HeaderImage Url="~/Public/Images/Screen/SMP.png">
+    </HeaderImage>
+    <HeaderStyle ImageSpacing="8px" />
+    <PanelCollection>
+<dx:PanelContent runat="server">
+    <table style="width:100%">
+        <tr>
+            <td><dx:ASPxRibbon ID="MainRibbon" runat="server" ShowFileTab="False" ClientInstanceName="MainRibbon" Width="100%">
+    <Tabs>
+        <dx:RibbonTab Name="Utama" Text="Utama">
+            <Groups>
+                <dx:RibbonGroup Text="Pengurusan Rekod" Name="Pengurusan Rekod">
+                    <Items>
+                        <dx:RibbonButtonItem BeginGroup="True" Name="Kemaskini" Size="Large" Text="Kemaskini">
+                            <LargeImage IconID="edit_edit_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tambah" Size="Large" Text="Tambah">
+                            <LargeImage IconID="actions_add_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Simpan" Size="Large" Text="Simpan">
+                            <LargeImage IconID="save_save_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Hantar" Size="Large" Text="Hantar">
+                            <LargeImage IconID="mail_send_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Padam" Size="Large" Text="Padam">
+                            <LargeImage IconID="edit_delete_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Batal" Size="Large" Text="Batal">
+                            <LargeImage IconID="actions_deletelist_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Cetak" Size="Large" Text="Cetak">
+                            <LargeImage IconID="print_print_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Carian" Size="Large" Text="Carian">
+                            <LargeImage IconID="find_find_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Audit" Size="Large" Text="Audit">
+                            <LargeImage IconID="arrange_bringtofrontoftext_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tutup" Size="Large" Text="Tutup">
+                            <LargeImage IconID="actions_close_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Lampiran" Text="Muatnaik">
+            <Groups>
+                <dx:RibbonGroup Name="Muatnaik" Text="">
+                    <Items>
+                        <dx:RibbonButtonItem Size="Large" Text="Lampiran" Name="Lampiran">
+                            <LargeImage IconID="mail_attachment_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Gambar" Size="Large" Text="Gambar">
+                            <LargeImage IconID="content_image_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Impot" Size="Large" Text="Import">
+                            <LargeImage IconID="actions_download_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Laporan" Text="Laporan">
+            <Groups>
+                <dx:RibbonGroup>
+                    <Items>
+                        <dx:RibbonButtonItem Name="KEW.PA-1" Size="Large" Text="KEW.PA-1">
+                            <LargeImage IconID="reports_report_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Kelulusan" Text="Kelulusan">
+            <Groups>
+                <dx:RibbonGroup>
+                    <Items>
+                        <dx:RibbonButtonItem Name="Lulus" Size="Large" Text="Lulus">
+                            <LargeImage IconID="actions_apply_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Kuiri" Size="Large" Text="Kuiri">
+                            <LargeImage IconID="support_knowledgebasearticle_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+    </Tabs>
+    <Styles>
+        <Item Width="70px">
+        </Item>
+    </Styles>
+</dx:ASPxRibbon>
+</td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" ColCount="3" Width="100%">
+                    <Items>
+                        <dx:LayoutItem Caption="Nama ODBC" Width="40%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxComboBox ID="cb_DsnDrivers" runat="server" Width="90%">
+                                    </dx:ASPxComboBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Nama Pangkalan Data" Width="40%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E6" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:EmptyLayoutItem Width="2px">
+                        </dx:EmptyLayoutItem>
+                        <dx:LayoutItem Caption="IP Pelayan" Width="40%">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E2" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Nama Pelayan">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E3" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:EmptyLayoutItem>
+                        </dx:EmptyLayoutItem>
+                        <dx:LayoutItem Caption="Nama Servis">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E4" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Protokol">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxComboBox ID="ASPxFormLayout1_E5" runat="server" Width="90%">
+                                        <Items>
+                                    <dx:ListEditItem Text="olipcnmp" Value="olipcnmp" />
+                                    <dx:ListEditItem Text="olsocspx" Value="olsocspx" />
+                                    <dx:ListEditItem Text="olsoctcp" Value="olsoctcp" />
+                                    <dx:ListEditItem Text="onipcnmp" Value="onipcnmp" />
+                                    <dx:ListEditItem Text="onsocspx" Value="onsocspx" />
+                                    <dx:ListEditItem Text="onsoctcp" Value="onsoctcp" />
+                                    <dx:ListEditItem Text="seipcpip" Value="seipcpip" />
+                                    <dx:ListEditItem Text="sesocspx" Value="sesocspx" />
+                                    <dx:ListEditItem Text="sesoctcp" Value="sesoctcp" />
+                                </Items>
+                                    </dx:ASPxComboBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:EmptyLayoutItem>
+                        </dx:EmptyLayoutItem>
+                        <dx:LayoutItem Caption="ID Pangkalan Data">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E7" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Kata Laluan Pangkalan Data">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E8" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:EmptyLayoutItem>
+                        </dx:EmptyLayoutItem>
+                        <dx:LayoutItem Caption="Client Locale">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E9" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem Caption="Database Locale">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                    <dx:ASPxTextBox ID="ASPxFormLayout1_E10" runat="server" Width="90%">
+                                    </dx:ASPxTextBox>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:EmptyLayoutItem>
+                        </dx:EmptyLayoutItem>
+                        <dx:LayoutItem ColSpan="3" ShowCaption="False">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server">
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                        <dx:LayoutItem ColSpan="3" CssClass="DbTestButton" ShowCaption="False">
+                            <LayoutItemNestedControlCollection>
+                                <dx:LayoutItemNestedControlContainer runat="server" CssClass="DbTestButton">
+                                    <dx:ASPxButton ID="ASPxFormLayout1_E11" runat="server" Text="Ujian" Width="100px">
+                                    </dx:ASPxButton>
+                                </dx:LayoutItemNestedControlContainer>
+                            </LayoutItemNestedControlCollection>
+                        </dx:LayoutItem>
+                    </Items>
+                    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+                    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+                </dx:ASPxFormLayout>
+            </td>
+        </tr>
+    </table>
+        </dx:PanelContent>
+</PanelCollection>
+</dx:ASPxRoundPanel>
+

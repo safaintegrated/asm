@@ -1,0 +1,386 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SusutNilai_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.Aset.SusutNilai.SusutNilai_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRibbon" tagprefix="dx" %>
+
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+
+<script>
+    function MainRibbon_CommandExecuted(s, e) {
+        switch (e.item.name) {
+            case 'Kemaskini': KemaskiniClicked(); break;
+            case 'Lulus': LulusClicked(); break;
+            case 'Kuiri': KuiriClicked(); break;
+            case 'Tutup': TutupClicked(); break;
+            case 'Tambah': TambahClicked(); break;
+            case 'Simpan': SimpanClicked(); break;
+            case 'Hantar': HantarClicked(); break;
+            case 'Padam': PadamClicked(); break;
+            case 'Batal': BatalCicked(); break;
+            case 'Cetak': CetakClicked(); break;
+            case 'Carian': CarianClicked(); break;
+            case 'Audit': AuditClicked(); break;
+            case 'Lampiran': LampiranClicked(); break;
+            case 'Gambar': GambarClicked(); break;
+            case 'Impot': ImpotClicked(); break;
+        }
+    }
+
+    function LulusClicked()
+    { }
+
+    function KuiriClicked()
+    { }
+
+    function KemaskiniClicked()
+    { }
+
+    function TambahClicked()
+    { }
+
+    function SimpanClicked()
+    { }
+
+    function HantarClicked()
+    { }
+
+    function PadamClicked()
+    { }
+
+    function BatalCicked()
+    { }
+
+    function CetakClicked()
+    { }
+
+    function CarianClicked()
+    { }
+
+    function AuditClicked()
+    { }
+
+    function TutupClicked()
+    { }
+
+    function LampiranClicked()
+    { }
+
+    function GambarClicked()
+    { }
+
+    function ImpotClicked()
+    { }
+</script>
+
+<dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Susutnilai" Width="100%">
+    <HeaderImage Url="~/Public/Images/Screen/Susutnilai.png">
+    </HeaderImage>
+    <HeaderStyle ImageSpacing="8px" />
+    <PanelCollection>
+<dx:PanelContent runat="server">
+    <table style="width:100%; vertical-align:top; text-align:left;">
+        <tr>
+            <td colspan="2"  style="width:100%; vertical-align:top; text-align:left;"><dx:ASPxRibbon ID="MainRibbon" runat="server" ShowFileTab="False" ClientInstanceName="MainRibbon" Width="100%">
+    <Tabs>
+        <dx:RibbonTab Name="Utama" Text="Utama">
+            <Groups>
+                <dx:RibbonGroup Text="Pengurusan Rekod" Name="Pengurusan Rekod">
+                    <Items>
+                        <dx:RibbonButtonItem BeginGroup="True" Name="Kemaskini" Size="Large" Text="Kemaskini">
+                            <LargeImage IconID="edit_edit_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tambah" Size="Large" Text="Tambah">
+                            <LargeImage IconID="actions_add_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Simpan" Size="Large" Text="Simpan">
+                            <LargeImage IconID="save_save_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Hantar" Size="Large" Text="Hantar">
+                            <LargeImage IconID="mail_send_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Padam" Size="Large" Text="Padam">
+                            <LargeImage IconID="edit_delete_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Batal" Size="Large" Text="Batal">
+                            <LargeImage IconID="actions_deletelist_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Cetak" Size="Large" Text="Cetak">
+                            <LargeImage IconID="print_print_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Carian" Size="Large" Text="Carian">
+                            <LargeImage IconID="find_find_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Audit" Size="Large" Text="Audit">
+                            <LargeImage IconID="arrange_bringtofrontoftext_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tutup" Size="Large" Text="Tutup">
+                            <LargeImage IconID="actions_close_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Lampiran" Text="Muatnaik">
+            <Groups>
+                <dx:RibbonGroup Name="Muatnaik" Text="">
+                    <Items>
+                        <dx:RibbonButtonItem Size="Large" Text="Lampiran" Name="Lampiran">
+                            <LargeImage IconID="mail_attachment_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Gambar" Size="Large" Text="Gambar">
+                            <LargeImage IconID="content_image_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Impot" Size="Large" Text="Import">
+                            <LargeImage IconID="actions_download_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Laporan" Text="Laporan">
+            <Groups>
+                <dx:RibbonGroup>
+                    
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Kelulusan" Text="Kelulusan">
+            <Groups>
+                <dx:RibbonGroup>
+                    <Items>
+                        <dx:RibbonButtonItem Name="Lulus" Size="Large" Text="Lulus">
+                            <LargeImage IconID="actions_apply_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Kuiri" Size="Large" Text="Kuiri">
+                            <LargeImage IconID="support_knowledgebasearticle_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+    </Tabs>
+    <Styles>
+        <Item Width="70px">
+        </Item>
+    </Styles>
+    <ClientSideEvents CommandExecuted="function(s, e) {
+	MainRibbon_CommandExecuted(s, e);
+}" />
+</dx:ASPxRibbon></td>
+        </tr>
+         <tr>
+            <td style="width:80%; vertical-align:top; text-align:left; padding-top:10px;">
+                <dx:ASPxFormLayout ID="ASPxFormLayout2" runat="server" Width="100%">
+                    <Items>
+                        <dx:LayoutGroup Caption="Maklumat Susutnilai" ColCount="3" Width="100%">
+                            <Items>
+                                <dx:LayoutGroup Caption="Susutnilai Sebelum" Width="15%">
+                                    <Items>
+                                        <dx:LayoutItem Caption="Tahun" Width="100%">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxSpinEdit ID="ASPxSpinEdit1" runat="server" AllowMouseWheel="False" Number="0">
+                                                        <SpinButtons ShowIncrementButtons="False">
+                                                        </SpinButtons>
+                                                    </dx:ASPxSpinEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Bulan" Width="100%">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" Width="100%">
+                                                        <Items>
+                                                            <dx:ListEditItem Text="Januari" Value="1" />
+                                                            <dx:ListEditItem Text="Febuari" Value="2" />
+                                                            <dx:ListEditItem Text="Mac" Value="3" />
+                                                            <dx:ListEditItem Text="April" Value="4" />
+                                                            <dx:ListEditItem Text="Mei" Value="5" />
+                                                            <dx:ListEditItem Text="Jun" Value="6" />
+                                                            <dx:ListEditItem Text="Julai" Value="7" />
+                                                            <dx:ListEditItem Text="Ogos" Value="8" />
+                                                            <dx:ListEditItem Text="September" Value="9" />
+                                                            <dx:ListEditItem Text="Oktober" Value="10" />
+                                                            <dx:ListEditItem Text="November" Value="11" />
+                                                            <dx:ListEditItem Text="Disember" Value="12" />
+                                                        </Items>
+                                                    </dx:ASPxComboBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                    </Items>
+                                </dx:LayoutGroup>
+                                <dx:LayoutGroup Caption="Susutnilai Ini" Width="15%">
+                                    <Items>
+                                        <dx:LayoutItem Caption="Tahun" Width="100%">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxSpinEdit ID="ASPxSpinEdit2" runat="server" AllowMouseWheel="False" Number="0">
+                                                        <SpinButtons ShowIncrementButtons="False">
+                                                        </SpinButtons>
+                                                    </dx:ASPxSpinEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Bulan" Width="100%">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxComboBox ID="ASPxComboBox2" runat="server" Width="100%">
+                                                        <Items>
+                                                            <dx:ListEditItem Text="Januari" Value="1" />
+                                                            <dx:ListEditItem Text="Febuari" Value="2" />
+                                                            <dx:ListEditItem Text="Mac" Value="3" />
+                                                            <dx:ListEditItem Text="April" Value="4" />
+                                                            <dx:ListEditItem Text="Mei" Value="5" />
+                                                            <dx:ListEditItem Text="Jun" Value="6" />
+                                                            <dx:ListEditItem Text="Julai" Value="7" />
+                                                            <dx:ListEditItem Text="Ogos" Value="8" />
+                                                            <dx:ListEditItem Text="September" Value="9" />
+                                                            <dx:ListEditItem Text="Oktober" Value="10" />
+                                                            <dx:ListEditItem Text="November" Value="11" />
+                                                            <dx:ListEditItem Text="Disember" Value="12" />
+                                                        </Items>
+                                                    </dx:ASPxComboBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                    </Items>
+                                </dx:LayoutGroup>
+                                <dx:EmptyLayoutItem Width="70%">
+                                </dx:EmptyLayoutItem>
+                                <dx:LayoutItem ColSpan="3" ShowCaption="False" Width="100%">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer runat="server">
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                                <dx:LayoutItem ColSpan="3" ShowCaption="False" Width="100%">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer runat="server">
+                                            <dx:ASPxGridView ID="GridDepreciation" runat="server" AutoGenerateColumns="False" ClientInstanceName="GridDepreciation" Width="100%">
+                                                <Columns>
+                                                    <dx:GridViewDataTextColumn Caption="Kategori" FieldName="Category" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn Caption="ID Aset" FieldName="AssetId" ShowInCustomizationForm="True" VisibleIndex="2" Width="10%">
+                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn Caption="Keterangan" FieldName="Desc" ShowInCustomizationForm="True" VisibleIndex="3" Width="40%">
+                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataDateColumn Caption="Tarikh Belian" FieldName="PurchaseDate" ShowInCustomizationForm="True" VisibleIndex="4" Width="10%">
+                                                        <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy">
+                                                        </PropertiesDateEdit>
+                                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataDateColumn>
+                                                    <dx:GridViewDataTextColumn Caption="Nilai Belian" FieldName="Cost" ShowInCustomizationForm="True" VisibleIndex="5" Width="10%">
+                                                        <PropertiesTextEdit DisplayFormatString="n">
+                                                        </PropertiesTextEdit>
+                                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn Caption="Susut Nilai Terkumpul" FieldName="AccDep" ShowInCustomizationForm="True" VisibleIndex="6" Width="10%">
+                                                        <PropertiesTextEdit DisplayFormatString="n">
+                                                        </PropertiesTextEdit>
+                                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn Caption="Susut Nilai Bulan Semasa" FieldName="CurrentMonth" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="7" Width="10%">
+                                                        <PropertiesTextEdit DisplayFormatString="n">
+                                                        </PropertiesTextEdit>
+                                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn Caption="Nilai Buku Bersih" FieldName="NettBookValue" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="8" Width="10%">
+                                                        <PropertiesTextEdit DisplayFormatString="n">
+                                                        </PropertiesTextEdit>
+                                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Middle" Wrap="True">
+                                                        </CellStyle>
+                                                    </dx:GridViewDataTextColumn>
+                                                    <dx:GridViewDataTextColumn FieldName="HeaderId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
+                                                    </dx:GridViewDataTextColumn>
+                                                </Columns>
+                                                <SettingsBehavior AllowDragDrop="False" AllowFocusedRow="True" AllowSort="False" AutoExpandAllGroups="True" />
+                                                <SettingsPager PageSize="1000" Visible="False">
+                                                </SettingsPager>
+                                                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                <Styles>
+                                                    <AlternatingRow Enabled="True">
+                                                    </AlternatingRow>
+                                                </Styles>
+                                            </dx:ASPxGridView>
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                            </Items>
+                        </dx:LayoutGroup>
+                    </Items>
+                    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+                    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+                </dx:ASPxFormLayout>
+             </td>
+            <td style="width:20%; vertical-align:top; text-align:left; padding-top:10px;">
+                <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
+                    <Items>
+                        <dx:LayoutGroup Caption="Rujukan">
+                            <Items>
+                                <dx:LayoutItem Caption="No. Rujukan">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer runat="server">
+                                            <dx:ASPxTextBox ID="ASPxFormLayout1_E1" runat="server">
+                                            </dx:ASPxTextBox>
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                                <dx:LayoutItem Caption="Tarikh">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer runat="server">
+                                            <dx:ASPxDateEdit ID="ASPxFormLayout1_E2" runat="server">
+                                            </dx:ASPxDateEdit>
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                            </Items>
+                        </dx:LayoutGroup>
+                    </Items>
+                    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+                    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+                </dx:ASPxFormLayout>
+             </td>
+        </tr>
+    </table>
+        </dx:PanelContent>
+</PanelCollection>
+</dx:ASPxRoundPanel>
+
+
+

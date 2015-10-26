@@ -1,0 +1,41 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Tab_AliranKerja_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.Shared.TerimaanBarang.Tab_AliranKerja_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
+    <Items>
+        <dx:LayoutGroup Caption="Senarai Aliran Kerja Untuk Transaksi Ini" CssClass="FormGroupBoxStyle" Width="100%">
+            <Items>
+                <dx:LayoutItem ShowCaption="False" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Width="100%">
+                                <Columns>
+                                    <dx:GridViewDataTextColumn Caption="Tarikh" ShowInCustomizationForm="True" VisibleIndex="0" Width="10%">
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Aliran Kerja" ShowInCustomizationForm="True" VisibleIndex="1" Width="15%">
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Status" ShowInCustomizationForm="True" VisibleIndex="2" Width="10%">
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Nota / Catatan" ShowInCustomizationForm="True" VisibleIndex="3" Width="65%">
+                                    </dx:GridViewDataTextColumn>
+                                </Columns>
+                                <SettingsPager Visible="False">
+                                </SettingsPager>
+                                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                            </dx:ASPxGridView>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+    </Items>
+    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+    <Paddings Padding="0px" />
+    <Border BorderStyle="None" />
+</dx:ASPxFormLayout>
+
+
+

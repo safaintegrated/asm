@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewElement>
+  <SelectStatement>
+    <Code>1</Code>
+    <Desc>Import all vendors from SAGA</Desc>
+    <Command>
+      select
+      apsu_suppid SetVen_SAGACode,
+      apsu_lname SetVen_Name,
+      apsp_postadd1 ||apsp_postadd2 ||apsp_postadd3 ||apsp_postadd4 SetVenAddress,
+      apsp_postcode SetVen_Post,
+      apsp_city SetVen_City,
+      apsp_state SetVen_State,
+      apsu_contact SetVen_Person,
+      apsu_phone SetVen_Phone,
+      apsu_fax SetVen_Fax,
+      apsu_email SetVen_Email,
+      apsu_acctno SetVen_AccountNumber
+      from ap_supplier,ap_suppostal
+      where apsu_suppid = apsp_suppid
+      and apsu_company=apsp_company
+      and apsu_company='HQ'
+    </Command>
+  </SelectStatement>
+  <SelectStatement>
+    <Code>2</Code>
+    <Desc>Lookup all project GL Code</Desc>
+    <Command>
+      select pcac_account,pcac_desc from pc_account
+    </Command>
+  </SelectStatement>
+  <SelectStatement>
+    <Code>3</Code>
+    <Desc>Lookup all VOT GL Code</Desc>
+    <Command>
+      select glac_account,glac_desc from gl_account where glac_account matches '*$$$*'
+    </Command>
+  </SelectStatement>
+  <SelectStatement>
+    <Code>4</Code>
+    <Desc>Get ALL Account codes</Desc>
+    <Command>
+      select glac_account,glac_desc from gl_account
+    </Command>
+  </SelectStatement>
+</NewElement>

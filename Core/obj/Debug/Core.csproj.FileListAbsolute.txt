@@ -1,0 +1,86 @@
+D:\Projects\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+D:\Projects\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+C:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+C:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+C:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+C:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+C:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+C:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+C:\Projects\Beetle\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+C:\Projects\Beetle\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+C:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+C:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+C:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+C:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+C:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+C:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+F:\Projects\Beetle\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+F:\Projects\Beetle\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+F:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+F:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+F:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+F:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+F:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+F:\Projects\Beetle\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\MK\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+D:\MK\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\MK\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\MK\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\MK\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\MK\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+D:\MK\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+D:\MK\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\20151009\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+D:\20151009\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\20151009\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\20151009\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\20151009\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\20151009\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+D:\20151009\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+D:\20151009\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\20151009 -Asset\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+D:\20151009 -Asset\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb

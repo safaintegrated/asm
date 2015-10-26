@@ -1,0 +1,236 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Department_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.PengurusanSistem.Lokasi.Department_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxCallbackPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRibbon" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxLoadingPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxTabControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxClasses" tagprefix="dx" %>
+
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+
+<script>
+    function AuditMode_DeptTab() {
+        PopupAuditTrail.SetHeaderText('Senarai Audit Pusat, Bahagian &amp; Jabatan');
+        AuditTrailType.SetText('1');
+        GridAuditListing.PerformCallback();
+        GridAuditDetails.PerformCallback();
+        PopupAuditTrail.Show();
+    }
+
+    function SearchMode_DeptTab() {
+        if (Dept_SearchMode.GetText() == '0') {
+            Dept_SearchMode.SetText('1');
+            Grid_Dept.PerformCallback();
+        }
+        else {
+            Dept_SearchMode.SetText('0');
+            Grid_Dept.ClearFilter();
+            Grid_Dept.PerformCallback();
+        }
+    }
+
+    function AddMode_DeptTab() {
+        ClearDeptForm();
+        Dept_ScreenMode.SetText('2');
+        EnableDisableDeptForm('true');
+        Grid_Dept_EnableDisabled('false');
+        ManageMainRibbonUtamaTab('false', 'false', 'true', 'false', 'true', 'true', 'false', 'false', 'false', 'true');
+    }
+
+    function DeleteMode_DeptTab() {
+        popupDeleteConfirmation.Show();
+        popupDeleteConfirmation_Label.SetText('Padam rekod Pusat, Bahagian &amp; Jabatan ini?<br>Anda pasti?');
+        popupDeleteConfirmation_BtnOk.Focus();
+    }
+
+    function DeleteConfirmation_DeptTab() {
+        LoadingPanel.SetText('Sistem sedang memadam rekod Pusat, Bahagian &amp; Jabatan.  Sila tunggu sebentar..');
+        LoadingPanel.Show();
+        cbp_SaveDept.PerformCallback('DELETE');
+    }
+
+    function cbp_SaveDept_EndCallback(s, e) {
+        popupDeleteConfirmation.Hide();
+        LoadingPanel.Hide();
+
+        if (s.cpErrMsg.toString() != '') {
+            popupMsg_Label.SetText(s.cpErrMsg.toString());
+            popupMsg.Show();
+            popupMsg_BtnOk.Focus();
+        }
+        else {
+            Dept_ScreenMode.SetText('0');
+            ClearDeptForm();
+            EnableDisableDeptForm('false');
+            Grid_Dept_EnableDisabled('true');
+            ManageMainRibbonUtamaTab('false', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true');
+
+            if (s.cpMode.toString() == 'SAVE')
+            { popupMsg_Label.SetText('Rekod Pusat, Bahagian &amp; Jabatan telah berjaya disimpan.'); }
+            else
+            { popupMsg_Label.SetText('Rekod Pusat, Bahagian &amp; Jabatan telah berjaya dipadam.'); }
+
+            Grid_Dept.PerformCallback();
+            popupMsg.Show();
+            popupMsg_BtnOk.Focus();
+        }
+    }
+
+    function SaveMode_DeptTab() {
+        if (Dept_Name.GetText() == '' || Dept_Code.GetText() == '') {
+            popupMsg_Label.SetText('Pastikan semua maklumat Dept diisi terlebih dahulu.<br>Sila semak dan cuba sekali lagi.');
+            popupMsg.Show();
+            popupMsg_BtnOk.Focus();
+        }
+        else {
+            LoadingPanel.SetText('Sistem sedang menyimpan maklumat Pusat, Bahagian & Jabatan.  Sila tunggu sebentar..');
+            LoadingPanel.Show();
+            cbp_SaveDept.PerformCallback('SAVE');
+        }
+    }
+
+    function CancelMode_DeptTab() {
+        Dept_ScreenMode.SetText('0');
+        ClearDeptForm();
+        EnableDisableDeptForm('false');
+        Grid_Dept_EnableDisabled('true');
+        ManageMainRibbonUtamaTab('false', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true');
+    }
+
+    function EditMode_DeptTab() {
+        Dept_ScreenMode.SetText('2');
+        EnableDisableDeptForm('true');
+        Grid_Dept_EnableDisabled('false');
+        ManageMainRibbonUtamaTab('false', 'false', 'true', 'false', 'true', 'true', 'false', 'false', 'false', 'true');
+    }
+
+    function Grid_Dept_EnableDisabled(Enabled) {
+        var Dept_Name;
+
+        for (var i = 0; i < Grid_Dept.GetVisibleRowsOnPage() ; i++) {
+            Dept_Name = ASPxClientControl.GetControlCollection().GetByName('Dept_Name_' + i.toString());
+
+            if (Enabled == 'true') {
+                Dept_Name.SetEnabled(true);
+            }
+            else {
+                Dept_Name.SetEnabled(false);
+            }
+        }
+
+    }
+
+    function Dept_Selected(id, name, code) {
+        Dept_Id.SetText(id.toString());
+        Dept_Name.SetText(name.toString());
+        Dept_Code.SetText(code.toString());
+        ManageMainRibbonUtamaTab('true', 'true', 'false', 'false', 'false', 'false', 'true', 'true', 'true', 'true');
+        Dept_ScreenMode.SetText('1');
+    }
+
+    function EnableDisableDeptForm(EnableDisable) {
+        if (EnableDisable == 'true') {
+            Dept_Id.SetEnabled(true);
+            Dept_Name.SetEnabled(true);
+            Dept_Code.SetEnabled(true);
+        }
+        else {
+            Dept_Id.SetEnabled(false);
+            Dept_Name.SetEnabled(false);
+            Dept_Code.SetEnabled(false);
+        }
+    }
+
+    function ClearDeptForm() {
+        Dept_Id.SetText('');
+        Dept_Name.SetText('');
+        Dept_Code.SetText('');
+    }
+</script>
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" ColCount="2" Width="100%">
+                                        <Items>
+                                            <dx:LayoutGroup Caption="Maklumat Pusat, Bahagian &amp; Jabatan" Width="50%">
+                                                <Items>
+                                                    <dx:LayoutItem Caption="Nama">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                                                                <dx:ASPxTextBox ID="Dept_Name" ClientInstanceName="Dept_Name" EnableClientSideAPI="true" runat="server" CssClass="TextBoxForName" MaxLength="200">
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem Caption="Kod">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                                                                <dx:ASPxTextBox ID="Dept_Code" ClientInstanceName="Dept_Code" EnableClientSideAPI="true" runat="server" CssClass="TextBoxForId" MaxLength="50">
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                    <dx:LayoutItem ShowCaption="False">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
+                                                                <dx:ASPxTextBox ID="Dept_Id" ClientInstanceName="Dept_Id" EnableClientSideAPI="true" runat="server" Width="170px"  ClientVisible="false">
+                                                                </dx:ASPxTextBox>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                </Items>
+                                            </dx:LayoutGroup>
+                                            <dx:LayoutGroup Caption="Senarai Pusat, Bahagian &amp; Jabatan" Width="50%">
+                                                <Items>
+                                                    <dx:LayoutItem ShowCaption="False">
+                                                        <LayoutItemNestedControlCollection>
+                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                                                                <dx:ASPxGridView ID="Grid_Dept" runat="server" AutoGenerateColumns="False" ClientInstanceName="Grid_Dept" DataSourceID="Dept_Ds" KeyFieldName="Dept_Id" Width="100%" OnHtmlDataCellPrepared="Grid_Dept_HtmlDataCellPrepared" OnCustomCallback="Grid_Dept_CustomCallback" OnAfterPerformCallback="Grid_Dept_AfterPerformCallback">
+                                                                    <Columns>
+                                                                        <dx:GridViewDataTextColumn Caption="Kod" FieldName="Dept_Code" ShowInCustomizationForm="True" VisibleIndex="1" Width="15%">
+                                                                        </dx:GridViewDataTextColumn>
+                                                                        <dx:GridViewDataTextColumn Caption="Nama" FieldName="Dept_Name" ShowInCustomizationForm="True" VisibleIndex="0" Width="85%">
+                                                                            <DataItemTemplate>
+                                                                                <dx:ASPxHyperLink ID="Dept_Name" runat="server" EnableClientSideAPI="True" Text="ASPxHyperLink" />
+                                                                            </DataItemTemplate>
+                                                                        </dx:GridViewDataTextColumn>
+                                                                        <dx:GridViewDataTextColumn FieldName="Dept_Id" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                                            <EditFormSettings Visible="False" />
+                                                                        </dx:GridViewDataTextColumn>
+                                                                    </Columns>
+                                                                    <SettingsBehavior AllowFocusedRow="True" />
+                                                                    <SettingsPager Mode="ShowAllRecords">
+                                                                    </SettingsPager>
+                                                                    <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                                                    <Styles>
+                                                                        <AlternatingRow Enabled="True">
+                                                                        </AlternatingRow>
+                                                                    </Styles>
+                                                                </dx:ASPxGridView>
+                                                                <asp:SqlDataSource ID="Dept_Ds" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT [Dept_Code], [Dept_Name], [Dept_Id] FROM [Department] ORDER BY [Dept_Code]"></asp:SqlDataSource>
+                                                            </dx:LayoutItemNestedControlContainer>
+                                                        </LayoutItemNestedControlCollection>
+                                                    </dx:LayoutItem>
+                                                </Items>
+                                            </dx:LayoutGroup>
+                                        </Items>
+                                        <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+                                        <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+                                    </dx:ASPxFormLayout>
+<dx:ASPxTextBox ID="Dept_ScreenMode" runat="server" ClientInstanceName="Dept_ScreenMode" Text="0" Width="170px" ClientVisible="false">
+</dx:ASPxTextBox>
+<dx:ASPxTextBox ID="Dept_SearchMode" runat="server" ClientInstanceName="Dept_SearchMode" Text="0" Width="170px" ClientVisible="false">
+</dx:ASPxTextBox>
+<dx:ASPxCallbackPanel ID="cbp_SaveDept" runat="server" ClientInstanceName="cbp_SaveDept" ClientVisible="False" OnCallback="cbp_SaveDept_Callback" ShowLoadingPanel="False" ShowLoadingPanelImage="False" Width="200px">
+    <ClientSideEvents EndCallback="function(s, e) {
+	cbp_SaveDept_EndCallback(s, e);
+}" />
+    <PanelCollection>
+<dx:PanelContent ID="PanelContent1" runat="server"></dx:PanelContent>
+</PanelCollection>
+</dx:ASPxCallbackPanel>

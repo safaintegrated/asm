@@ -1,0 +1,80 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Tab_SenaraiSemak_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.Shared.TerimaanBarang.Tab_SenaraiSemak_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+<style>
+    .AddBottomPadding {
+        padding-bottom:15px;
+    }
+</style>
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
+    <Items>
+        <dx:LayoutGroup Caption="Senarai Semak" Width="100%">
+            <Items>
+                <dx:LayoutItem ShowCaption="False">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                            <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Width="100%">
+                                <Columns>
+                                    <dx:GridViewDataTextColumn Caption="Semak" ShowInCustomizationForm="True" VisibleIndex="0" Width="3%">
+                                        <HeaderStyle HorizontalAlign="Center" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Center" VerticalAlign="Top" Wrap="True">
+                                        </CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Keterangan" ShowInCustomizationForm="True" VisibleIndex="1" Width="97%">
+                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                        </CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                </Columns>
+                            </dx:ASPxGridView>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+        <dx:LayoutGroup Caption="Perakuan" Width="100%">
+            <Items>
+                <dx:LayoutItem ShowCaption="False" Width="2%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                            <dx:ASPxCheckBox ID="ASPxFormLayout1_E1" runat="server" CheckState="Unchecked" Text="Saya mengaku bahawa semua senarai semak di atas (yang bertanda) telah diperiksa dan ianya benar.">
+                            </dx:ASPxCheckBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem ShowCaption="False" CssClass="AddBottomPadding">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server" CssClass="AddBottomPadding">
+                            <dx:ASPxButton ID="ASPxFormLayout1_E2" runat="server" Text="Semak" Width="100px">
+                            </dx:ASPxButton>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Nama" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                            <dx:ASPxTextBox ID="ASPxFormLayout1_E3" runat="server" ClientEnabled="False" CssClass="TextBoxForName">
+                            </dx:ASPxTextBox>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+                <dx:LayoutItem Caption="Tarikh" Width="100%">
+                    <LayoutItemNestedControlCollection>
+                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer5" runat="server">
+                            <dx:ASPxDateEdit ID="ASPxFormLayout1_E4" runat="server" ClientEnabled="False" CssClass="DateEditorInForm">
+                            </dx:ASPxDateEdit>
+                        </dx:LayoutItemNestedControlContainer>
+                    </LayoutItemNestedControlCollection>
+                </dx:LayoutItem>
+            </Items>
+        </dx:LayoutGroup>
+    </Items>
+    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+    <Paddings Padding="0px" />
+    <Border BorderStyle="None" />
+</dx:ASPxFormLayout>
+

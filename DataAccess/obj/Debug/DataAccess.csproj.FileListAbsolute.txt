@@ -1,0 +1,25 @@
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.dll.config
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.pdb
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\EntityFramework.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\EntityFramework.xml
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.pdb
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\Data.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\Data.pdb
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\Newtonsoft.Json.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\DataAccess\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.dll.config
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.pdb
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.pdb
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Programming\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.dll.config
+D:\Programming\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.dll
+D:\Programming\AssetAndStoreManagementSystem\DataAccess\bin\Debug\DataAccess.pdb
+D:\Programming\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.dll
+D:\Programming\AssetAndStoreManagementSystem\DataAccess\obj\Debug\DataAccess.pdb

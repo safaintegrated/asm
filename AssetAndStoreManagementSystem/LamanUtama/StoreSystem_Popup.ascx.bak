@@ -1,0 +1,360 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="StoreSystem_Popup.ascx.cs" Inherits="AssetAndStoreManagementSystem.LamanUtama.StoreSystem_Popup" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx1" %>
+
+<%@ Register src="Kewps_Popup.ascx" tagname="Kewps_Popup" tagprefix="uc1" %>
+
+<dx:ASPxPopupControl ID="popup_StoreSystem" runat="server" ShowHeader="False" Width="550px" ClientInstanceName="popup_StoreSystem" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" BackColor="Transparent" Modal="True" EnableTheming="False">
+    <ContentCollection>
+<dx:PopupControlContentControl runat="server">
+    <table style="width:100%;">
+        <tr>
+            <td>
+                <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" Width="100%" CornerRadius="10px" HeaderText="FAIL INDUK &amp; LAPORAN">
+                    <panelcollection>
+                        <dx:PanelContent runat="server">
+                            <table style="width: 500px;">
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink184" runat="server" ImageUrl="~/Public/Images/Screen/Store.png" NavigateUrl="~/Stor/Stor/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink185" runat="server" ImageUrl="~/Public/Images/Screen/CategorySubcategory.png" NavigateUrl="~/Shared/KategoriSubKategori/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink186" runat="server" ImageUrl="~/Public/Images/Screen/Stock.png" NavigateUrl="~/Stor/Stok/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="StoreReportImage" runat="server" ImageUrl="~/Public/Images/Screen/Laporan.png" NavigateUrl="javascript: popup_KewPs.Show();" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink187" runat="server" NavigateUrl="~/Stor/Stor/Index.aspx" Target="_blank" Text="Stor">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink188" runat="server" NavigateUrl="~/Shared/KategoriSubKategori/Index.aspx" Target="_blank" Text="Kategori &amp; Sub-Kategori">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink189" runat="server" NavigateUrl="~/Stor/Stok/Index.aspx" Target="_blank" Text="Stok">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="StoreReportLink" runat="server" NavigateUrl="javascript: popup_KewPs.Show();" Text="Laporan">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </dx:PanelContent>
+                    </panelcollection>
+                </dx:ASPxRoundPanel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:8px;">
+                <dx:ASPxRoundPanel ID="ASPxRoundPanel2" runat="server" CornerRadius="10px" HeaderText="PERMOHONAN &amp; PENDAFTARAN" Width="100%">
+                    <panelcollection>
+                        <dx:PanelContent runat="server">
+                            <table style="width: 500px;">
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        &nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink191" runat="server" ImageUrl="~/Public/Images/Screen/GRN.png" Target="_blank" Text="ASPxHyperLink" NavigateUrl="~/Shared/TerimaanBarang/Index.aspx">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink192" runat="server" ImageUrl="~/Public/Images/Screen/Inspection.png" NavigateUrl="~/Stor/DaftarStok/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink193" runat="server" ImageUrl="~/Public/Images/Screen/StockRequest.png" NavigateUrl="~/Stor/PermohonanStok/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink194" runat="server" ImageUrl="~/Public/Images/Screen/DamageReport.png" NavigateUrl="~/Stor/PengeluaranKeStorPTJ/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        &nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink196" runat="server" Target="_blank" Text="Terimaan Barang (GRN)" NavigateUrl="~/Shared/TerimaanBarang/Index.aspx">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink197" runat="server" NavigateUrl="~/Stor/DaftarStok/Index.aspx" Target="_blank" Text="Pendaftaran">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                     <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                         <dx:ASPxHyperLink ID="ASPxHyperLink198" runat="server" NavigateUrl="~/Stor/PermohonanStok/Index.aspx" Target="_blank" Text="Permohonan Stok">
+                                         </dx:ASPxHyperLink>
+                                    </td>
+                                     <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                         <dx:ASPxHyperLink ID="ASPxHyperLink199" runat="server" NavigateUrl="~/Stor/PengeluaranKeStorPTJ/Index.aspx" Target="_blank" Text="Pengeluaran ke Stor PTJ">
+                                         </dx:ASPxHyperLink>
+                                    </td>
+                                </tr>
+                            </table>
+                        </dx:PanelContent>
+                    </panelcollection>
+                </dx:ASPxRoundPanel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:8px;">
+                <dx:ASPxRoundPanel ID="ASPxRoundPanel3" runat="server" CornerRadius="10px" HeaderText="PEMERIKSAAN &amp; VERIFIKASI" Width="100%">
+                    <panelcollection>
+                        <dx:PanelContent runat="server">
+                            <table style="width: 500px;">
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink200" runat="server" ImageUrl="~/Public/Images/Screen/InspectionOfficer.png" NavigateUrl="~/Shared/LembagaPemeriksa/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink202" runat="server" ImageUrl="~/Public/Images/Screen/Inspection.png" NavigateUrl="~/Stor/PemeriksaanStok/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        &nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        &nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink204" runat="server" NavigateUrl="~/Shared/LembagaPemeriksa/Index.aspx" Target="_blank" Text="Lembaga Pemeriksa">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink206" runat="server" NavigateUrl="~/Stor/PemeriksaanStok/Index.aspx" Target="_blank" Text="Pemeriksaan Stok">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        &nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        &nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </dx:PanelContent>
+                    </panelcollection>
+                </dx:ASPxRoundPanel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:8px;">
+                <dx:ASPxRoundPanel ID="ASPxRoundPanel4" runat="server" CornerRadius="10px" HeaderText="AMBIL ALIH, PELARASAN, PELUPUSAN &amp; HAPUSKIRA" Width="100%">
+                    <panelcollection>
+                        <dx:PanelContent runat="server">
+                            <table style="width: 500px;">
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink208" runat="server" ImageUrl="~/Public/Images/Screen/Transfer.png" NavigateUrl="~/Stor/PerakuanAmbilAlih/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink209" runat="server" ImageUrl="~/Public/Images/Screen/Transfer.png" NavigateUrl="~/Stor/PelarasanStok/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink210" runat="server" ImageUrl="~/Public/Images/Screen/Transfer.png" NavigateUrl="~/Stor/PelupusanStok/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink211" runat="server" NavigateUrl="~/Stor/PerakuanAmbilAlih/Index.aspx" Target="_blank" Text="Perakuan Ambil Alih">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink212" runat="server" NavigateUrl="~/Stor/PelarasanStok/Index.aspx" Target="_blank" Text="Pelarasan Stok">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">
+                                        <dx:ASPxHyperLink ID="ASPxHyperLink213" runat="server" NavigateUrl="~/Stor/PelupusanStok/Index.aspx" Target="_blank" Text="Pelupusan">
+                                        </dx:ASPxHyperLink>
+                                    </td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                    <td style="width: 100px; vertical-align: middle; text-align: center; padding: 4px 4px 4px 4px;">&nbsp;</td>
+                                </tr>
+                            </table>
+                        </dx:PanelContent>
+                    </panelcollection>
+                </dx:ASPxRoundPanel>
+            </td>
+        </tr>
+    </table>
+        </dx:PopupControlContentControl>
+</ContentCollection>
+    <border borderstyle="None"></border>
+</dx:ASPxPopupControl>
+<uc1:Kewps_Popup ID="Kewps_Popup1" runat="server" />
+    <dx:ASPxFormLayout runat="server" ShowItemCaptionColon="False" Width="100%" BackColor="WhiteSmoke" ID="ASPxFormLayout1"><Items>
+<dx:LayoutGroup GroupBoxDecoration="None" CssClass="SubMenuGroupBox" Caption="Sub-Menu Pentadbir Sistem" ShowCaption="False" Width="100%"><Items>
+<dx:LayoutGroup ColCount="4" GroupBoxDecoration="HeadingLine" Caption="Fail Induk Dan Laporan" Width="100%">
+<GroupBoxStyle>
+<Caption BackColor="Transparent" Font-Bold="True"></Caption>
+</GroupBoxStyle>
+<Items>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="Kategori dan Sub-Kategori" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                         <dx:ASPxHyperLink ID="ASPxHyperLink214" runat="server" ImageUrl="~/Public/Images/Screen/CategorySubcategory.png" NavigateUrl="~/Shared/KategoriSubKategori/Index.aspx" Target="_blank" Text="ASPxHyperLink">
+                                         </dx:ASPxHyperLink>
+
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="Stor" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                        <dx:ASPxHyperLink ID="AssetReportImage0" runat="server" ClientInstanceName="AssetReportImage" EnableClientSideAPI="True" ImageUrl="~/Public/Images/Screen/Laporan.png" NavigateUrl="javascript: popup_KewPa.Show();" Text="ASPxHyperLink">
+                                        </dx:ASPxHyperLink>
+
+                                       
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+    <dx:LayoutItem Caption="Stok" Width="25%">
+        <LayoutItemNestedControlCollection>
+            <dx:LayoutItemNestedControlContainer runat="server">
+                <dx:ASPxHyperLink ID="ASPxFormLayout1_E1" runat="server" Text="ASPxHyperLink">
+                </dx:ASPxHyperLink>
+            </dx:LayoutItemNestedControlContainer>
+        </LayoutItemNestedControlCollection>
+    </dx:LayoutItem>
+    <dx:LayoutItem Caption="Laporan" Width="25%">
+        <LayoutItemNestedControlCollection>
+            <dx:LayoutItemNestedControlContainer runat="server">
+                <dx:ASPxHyperLink ID="ASPxFormLayout1_E2" runat="server" Text="ASPxHyperLink">
+                </dx:ASPxHyperLink>
+            </dx:LayoutItemNestedControlContainer>
+        </LayoutItemNestedControlCollection>
+    </dx:LayoutItem>
+</Items>
+</dx:LayoutGroup>
+<dx:LayoutGroup ColCount="6" GroupBoxDecoration="HeadingLine" Caption="Fail Induk" Width="100%">
+<GroupBoxStyle>
+<Caption BackColor="Transparent" Font-Bold="True"></Caption>
+</GroupBoxStyle>
+<Items>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="Kakitangan" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                        <dx:ASPxHyperLink runat="server" ImageUrl="~/Public/Images/Screen/Kakitangan.png" NavigateUrl="~/PengurusanSistem/Kakitangan/Index.aspx" Target="_blank" ID="ASPxFormLayout1_E8"></dx:ASPxHyperLink>
+
+                                       
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="Pembekal" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                         <dx:ASPxHyperLink runat="server" ImageUrl="~/Public/Images/Screen/Pembekal.png" NavigateUrl="~/PengurusanSistem/Pembekal/Index.aspx" Target="_blank" ID="ASPxFormLayout1_E7"></dx:ASPxHyperLink>
+
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="Lokasi" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                        <dx:ASPxHyperLink runat="server" ImageUrl="~/Public/Images/Screen/Lokasi.png" NavigateUrl="~/PengurusanSistem/Lokasi/Index.aspx" Target="_blank" ID="ASPxFormLayout1_E6"></dx:ASPxHyperLink>
+
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="Pegawai Aset" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                         <dx:ASPxHyperLink runat="server" ImageUrl="~/Public/Images/Screen/PegawaiAset.png" NavigateUrl="~/PengurusanSistem/PegawaiAset/Index.aspx" Target="_blank" ID="ASPxFormLayout1_E5"></dx:ASPxHyperLink>
+
+                                       
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+</Items>
+</dx:LayoutGroup>
+<dx:LayoutGroup ColCount="6" GroupBoxDecoration="HeadingLine" Caption="Antaramuka Sistem &amp; Emel" Width="100%">
+<GroupBoxStyle>
+<Caption BackColor="Transparent" Font-Bold="True"></Caption>
+</GroupBoxStyle>
+<Items>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="SAGA" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                         <dx:ASPxHyperLink runat="server" ImageUrl="~/Public/Images/Screen/SAGA.png" NavigateUrl="~/PengurusanSistem/Saga/Index.aspx" Target="_blank" ID="ASPxFormLayout1_E9"></dx:ASPxHyperLink>
+
+                                        
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="SMP" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                       <dx:ASPxHyperLink runat="server" ImageUrl="~/Public/Images/Screen/SMP.png" NavigateUrl="~/PengurusanSistem/Smp/Index.aspx" Target="_blank" ID="ASPxFormLayout1_E10"></dx:ASPxHyperLink>
+
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+<dx:LayoutItem CssClass="ImageFormAlignment" Caption="Emel" Width="25%"><LayoutItemNestedControlCollection>
+<dx:LayoutItemNestedControlContainer runat="server">
+                                        <dx:ASPxHyperLink runat="server" ImageUrl="~/Public/Images/Screen/Emel.png" NavigateUrl="~/PengurusanSistem/Emel/Index.aspx" Target="_blank" ID="ASPxFormLayout1_E11"></dx:ASPxHyperLink>
+
+                                    </dx:LayoutItemNestedControlContainer>
+</LayoutItemNestedControlCollection>
+
+<CaptionStyle CssClass="WrapFormCaption"></CaptionStyle>
+</dx:LayoutItem>
+<dx:EmptyLayoutItem Width="25%"></dx:EmptyLayoutItem>
+</Items>
+</dx:LayoutGroup>
+    <dx:LayoutGroup ColCount="4" GroupBoxDecoration="HeadingLine" Width="100%">
+    </dx:LayoutGroup>
+</Items>
+
+<ParentContainerStyle>
+<Paddings Padding="0px"></Paddings>
+
+<Border BorderStyle="None"></Border>
+
+<BorderLeft BorderStyle="None"></BorderLeft>
+
+<BorderRight BorderStyle="None"></BorderRight>
+
+<BorderBottom BorderStyle="None"></BorderBottom>
+</ParentContainerStyle>
+</dx:LayoutGroup>
+</Items>
+
+<SettingsItems VerticalAlign="Top" HorizontalAlign="Center"></SettingsItems>
+
+<SettingsItemCaptions Location="Bottom" HorizontalAlign="Center" VerticalAlign="Top"></SettingsItemCaptions>
+</dx:ASPxFormLayout>
+
+        

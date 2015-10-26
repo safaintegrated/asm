@@ -1,0 +1,204 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Buletin_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.PengurusanSistem.Buletin.Buletin_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRoundPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxMenu" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxFormLayout" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxEditors" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxPopupControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxGridView" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxCallbackPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxUploadControl" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxRibbon" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxLoadingPanel" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxHtmlEditor.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxHtmlEditor" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.ASPxSpellChecker.v14.1, Version=14.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.ASPxSpellChecker" tagprefix="dx" %>
+
+<link href="../../Public/Css/FormsCss.css" rel="stylesheet" />
+
+<dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Buletin" Width="100%">
+    <HeaderImage Url="~/Public/Images/Screen/Buletin.png">
+    </HeaderImage>
+    <HeaderStyle ImageSpacing="8px" />
+    <PanelCollection>
+<dx:PanelContent ID="PanelContent1" runat="server">
+    <table style="width:100%;">
+        <tr>
+            <td>
+               <dx:ASPxRibbon ID="MainRibbon" runat="server" ShowFileTab="False" ClientInstanceName="MainRibbon" Width="100%">
+    <Tabs>
+        <dx:RibbonTab Name="Utama" Text="Utama">
+            <Groups>
+                <dx:RibbonGroup Text="Pengurusan Rekod" Name="Pengurusan Rekod">
+                    <Items>
+                        <dx:RibbonButtonItem BeginGroup="True" Name="Kemaskini" Size="Large" Text="Kemaskini">
+                            <LargeImage IconID="edit_edit_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tambah" Size="Large" Text="Tambah">
+                            <LargeImage IconID="actions_add_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Simpan" Size="Large" Text="Simpan">
+                            <LargeImage IconID="save_save_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Hantar" Size="Large" Text="Hantar">
+                            <LargeImage IconID="mail_send_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Padam" Size="Large" Text="Padam">
+                            <LargeImage IconID="edit_delete_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Batal" Size="Large" Text="Batal">
+                            <LargeImage IconID="actions_deletelist_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Cetak" Size="Large" Text="Cetak">
+                            <LargeImage IconID="print_print_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Carian" Size="Large" Text="Carian">
+                            <LargeImage IconID="find_find_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Audit" Size="Large" Text="Audit">
+                            <LargeImage IconID="arrange_bringtofrontoftext_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Tutup" Size="Large" Text="Tutup">
+                            <LargeImage IconID="actions_close_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Lampiran" Text="Muatnaik">
+            <Groups>
+                <dx:RibbonGroup Name="Muatnaik" Text="">
+                    <Items>
+                        <dx:RibbonButtonItem Size="Large" Text="Lampiran" Name="Lampiran">
+                            <LargeImage IconID="mail_attachment_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Gambar" Size="Large" Text="Gambar">
+                            <LargeImage IconID="content_image_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Impot" Size="Large" Text="Import">
+                            <LargeImage IconID="actions_download_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Laporan" Text="Laporan">
+            <Groups>
+                <dx:RibbonGroup>
+                    <Items>
+                        <dx:RibbonButtonItem Name="KEW.PA-1" Size="Large" Text="KEW.PA-1">
+                            <LargeImage IconID="reports_report_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+        <dx:RibbonTab Name="Kelulusan" Text="Kelulusan">
+            <Groups>
+                <dx:RibbonGroup>
+                    <Items>
+                        <dx:RibbonButtonItem Name="Lulus" Size="Large" Text="Lulus">
+                            <LargeImage IconID="actions_apply_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                        <dx:RibbonButtonItem Name="Kuiri" Size="Large" Text="Kuiri">
+                            <LargeImage IconID="support_knowledgebasearticle_32x32">
+                            </LargeImage>
+                        </dx:RibbonButtonItem>
+                    </Items>
+                </dx:RibbonGroup>
+            </Groups>
+        </dx:RibbonTab>
+    </Tabs>
+    <Styles>
+        <Item Width="70px">
+        </Item>
+    </Styles>
+</dx:ASPxRibbon>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <dx:ASPxFormLayout ID="ASPxFormLayout5" runat="server" Width="100%">
+                                    <Items>
+                                        <dx:LayoutGroup ColCount="3" GroupBoxDecoration="None" CssClass="NoPad">
+                                            <Items>
+                                                <dx:LayoutItem Caption="Tarikh Mula" Width="10%" CssClass="NoPad">
+                                                    <LayoutItemNestedControlCollection>
+                                                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server" CssClass="NoPad">
+                                                            <dx:ASPxDateEdit ID="ASPxFormLayout5_E2" runat="server">
+                                                            </dx:ASPxDateEdit>
+                                                        </dx:LayoutItemNestedControlContainer>
+                                                    </LayoutItemNestedControlCollection>
+                                                </dx:LayoutItem>
+                                                <dx:LayoutItem Caption="Tarikh Tamat" Width="10%" CssClass="NoPad">
+                                                    <LayoutItemNestedControlCollection>
+                                                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server" CssClass="NoPad">
+                                                            <dx:ASPxDateEdit ID="ASPxFormLayout5_E1" runat="server">
+                                                            </dx:ASPxDateEdit>
+                                                        </dx:LayoutItemNestedControlContainer>
+                                                    </LayoutItemNestedControlCollection>
+                                                </dx:LayoutItem>
+                                                <dx:EmptyLayoutItem Width="80%">
+                                                </dx:EmptyLayoutItem>
+                                            </Items>
+                                            <ParentContainerStyle>
+                            <Paddings PaddingLeft="0px" PaddingRight="0px" PaddingTop="0px" PaddingBottom="5px" />
+                            <Border BorderStyle="None" />
+                            <BorderLeft BorderStyle="None" />
+                            <BorderRight BorderStyle="None" />
+                            <BorderBottom BorderStyle="None" />
+                        </ParentContainerStyle>
+                                        </dx:LayoutGroup>
+                                        <dx:LayoutItem ShowCaption="False">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
+                                                    <dx:ASPxImage ID="ASPxFormLayout5_E3" runat="server" ShowLoadingImage="True" ImageUrl="~/Public/Images/Others/BuletinDefaulImage.png" ToolTip="klik untuk menukar imej buletin ini..">
+                                                    </dx:ASPxImage>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Tajuk Buletin">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                                                    <dx:ASPxTextBox ID="ASPxFormLayout5_E5" runat="server" Width="50%">
+                                                    </dx:ASPxTextBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Kandungan Buletin">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer5" runat="server">
+                                                    <dx:ASPxHtmlEditor ID="ASPxHtmlEditor1" runat="server" Width="100%">
+                                                    </dx:ASPxHtmlEditor>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                    </Items>
+                                    <SettingsItems HorizontalAlign="Left" VerticalAlign="Top" />
+                                    <SettingsItemCaptions HorizontalAlign="Left" Location="Top" VerticalAlign="Top" />
+                                </dx:ASPxFormLayout>
+            </td>
+        </tr>
+    </table>
+        </dx:PanelContent>
+</PanelCollection>
+</dx:ASPxRoundPanel>
+
+
+
+
+

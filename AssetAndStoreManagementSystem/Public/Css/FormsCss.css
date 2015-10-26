@@ -1,0 +1,454 @@
+﻿.FormLayoutItemAdd10pxTopPadding {
+    padding-top:10px;
+}
+
+.FormLayoutItemAdd15pxTopPadding {
+    padding-top:30px;
+}
+ 
+.myHyperlink
+{
+    color:orangered;
+    text-decoration:none;
+}
+a:hover
+{
+    color:darkblue;
+    text-decoration:underline;
+}
+a:visited {
+    color:orangered;
+    text-decoration:none;
+}
+
+a:active {
+    color:orangered;
+    text-decoration:none;
+}
+
+a:after {
+    color:orangered;
+    text-decoration:none;
+}
+
+.TabDivStyle {
+    width:100%;
+    margin:0px;
+    padding: 0px 0px 0px 0px;
+}
+
+.Reference_ReferenceNumber {
+    width:150px;
+}
+
+.Reference_Version{
+    width:100px;
+}
+
+.Reference_Date {
+    width:130px;
+}
+
+.Reference_Status {
+    width:150px;
+}
+
+.MainFormSecondRowLeftColumnAddTopPadding {
+    padding-top:10px;
+}
+
+.MainFormSecondRowRightColumnAddTopPadding {
+    padding-top:47px;
+}
+
+.MainFormSecondRowRightColumnAddTopPadding10px {
+    padding-top:10px;
+}
+
+.FormGroupBoxStyle {
+    padding:0px 0px 0px 0px;
+    margin:0;
+}
+
+
+.ComboBoxOfficerPenaltyOptions 
+{
+    width:180px;
+}
+.TextBoxEmpDesignation 
+{
+    width:180px;
+}
+.DbTestButton
+{
+    padding-top:8px;
+    margin:0;
+}
+ .NoPad 
+{
+    padding:0px 0px 0px 0px;
+    margin:0;
+}
+
+.DateEditor 
+{
+    width:130px;
+}
+.DateEditorInForm
+{
+    width:130px;
+}
+
+.TimeEditor 
+{
+    width:120px;
+}
+
+.TextboxNoDaftarStok
+{
+    width:170px;
+}
+
+.ComboBoxNoDaftarStok
+{
+    width:170px;
+}
+
+
+.highlight
+{
+    background-color:#99FF66;
+}
+
+.cls {
+text-align: center;
+}
+
+.cls_with_top_padding {
+text-align: center;
+padding-top: 10px;
+}
+
+.TextBoxForName 
+{
+    width:400px;
+}
+
+.TextBoxForStaffId
+{
+    width:150px;
+}
+
+.SpinEditForMoney 
+{
+    width:100px;
+}
+
+.TextBoxForCategoryName 
+{
+    width:300px;
+}
+
+.TextBoxForAddress
+{
+    width:400px;
+}
+
+.TextBoxForEmel
+{
+    width:400px;
+}
+
+.TextBoxForPoscode
+{
+    width:150px;
+}
+
+.TextBoxForCity
+{
+    width:300px;
+}
+
+.TextBoxForFax
+{
+    width:150px;
+}
+
+.TextBoxForTel
+{
+    width:150px;
+}
+
+.TextBoxForWebsite
+{
+    width:400px;
+}
+
+.ComboCategoriType
+{
+    width:130px;
+}
+
+.ComboBoxJenisPerolehan
+{
+    width:150px;
+}
+
+.ComboBoxKategoriPerolehan
+{
+    width:150px;
+}
+
+.ComboBoxKaedahPerolehan
+{
+    width:150px;
+}
+
+.TextBoxForState
+{
+    width:200px;
+}
+
+.TextBoxForId
+{
+    width:150px;
+}
+
+.TextBoxForTransactionId
+{
+    width:220px;
+}
+
+.TextBoxForPortNumber
+{
+    width:50px;
+}
+
+.TextBoxForGred
+{
+    width:150px;
+}
+
+.TextBoxForNoRujukan
+{
+    width:150px;
+}
+.TextBoxForPTJ
+{
+    width:180px;
+}
+.TextBoxForBangunan
+{
+    width:180px;
+}
+.TextBoxForRuang
+{
+    width:180px;
+}
+.TextBoxForAras
+{
+    width:180px;
+}
+.TextBoxForPusat
+{
+    width:180px;
+}
+.TextBoxForSubkategori
+{
+    width:180px;
+}
+
+.TextBoxForDepositTender
+{
+    width:180px;
+}
+.TextBoxForHargaSimpanan
+{
+    width:180px;
+}
+.TextBoxForMasa
+{
+    width:180px;
+}
+.TextBoxForTempat
+{
+    width:180px;
+}
+.ComboBoxForKumpulan
+{
+    width:150px;
+}
+.ComboBoxForKategori
+{
+    width:150px;
+}
+.ComboBoxForSubKategori
+{
+    width:150px;
+}
+.ComboBoxForUnitPengukuran
+{
+    width:150px;
+}
+.TextBoxForKuantiti 
+{
+    width:150px;
+}
+.TextBoxForUnit 
+{
+    width:150px;
+}
+.TextBoxForNamaJawatan
+{
+    width:250px;
+}
+.TextBoxForStatus
+{
+    width:90%;
+}
+.DropDownForNama
+{
+    width:300px;
+}
+.DropDownForPTJ
+{
+    width:400px;
+}
+.DropDownForSystemUserGroup
+{
+    width:300px;
+}
+.DropDownForStatus
+{
+    width:150px;
+}
+.TextBoxForNo
+{
+    width:150px;
+}
+.TextBoxForKuantiti
+{
+    width:150px;
+}
+.TextBoxForJustifikasi
+{
+    width:150px;
+}
+.ComboBoxForState
+{
+    width:250px;
+}
+.ComboBoxForPusatTanggungjawab
+{
+    width:400px;
+}
+.TextBoxPusatTanggungjawab
+{
+    width:400px;
+}
+.ComboBoxForDepartment
+{
+    width:250px;
+}
+.TextBoxForDepartment
+{
+    width:250px;
+}
+.ComboBoxForStatus
+{
+    width:150px;
+}
+.TextBoxForLokasiP
+{
+    width:150px;
+}
+.TextBoxForPenerima
+{
+    width:150px;
+}
+.TextBoxForNilai
+{
+    width:150px;
+}
+.TextBoxForJenis
+{
+    width:150px;
+}
+.TextBoxForTempatKehilangan
+{
+    width:300px;
+}
+.TextBoxForJenama
+{
+    width:150px;
+}
+
+.DropDownForJbtn
+{
+    width:200px;
+}
+
+.TextBoxForBuilding
+{
+    width:250px;
+}
+
+.ComboBoxForBuilding
+{
+    width:250px;
+}
+
+.TextboxForFloor
+{
+    width:250px;
+}
+.ComboboxForFloor
+{
+    width:250px;
+}
+.TextboxForSpace
+{
+    width:250px;
+}
+.ComboboxForSpace
+{
+    width:250px;
+}
+.TextBoxForNamaStor
+{
+    width:200px;
+}
+.ComboBoxForNamaStor
+{
+    width:250px;
+}
+.ComboBoxForNoDaftarStok
+{
+    width:150px;
+}
+.ComboBoxForNoNamaStok
+{
+    width:300px;
+}
+
+.SyorCombobox {
+    width:200px;
+}
+
+.VerificationCombobox {
+    width: 200px;
+}
+
+.InternalFormLayout
+{
+    padding: 0px;
+}
+
+.ComboBoxLembagaPemeriksa{
+    width: 300px;
+}
+
+.MemoBoxAlamatPembekal{
+    width: 400px;
+}
+

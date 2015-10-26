@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace AssetAndStoreManagementSystem.PenggunaSistem.Manual
+{
+    public partial class Manual_Controller : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            { Page.ClientScript.RegisterStartupScript(this.GetType(), "OnLoad", "OnPageLoad();", true); }
+        }   
+
+        protected void GridOnlineManual_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
+        {
+            GridOnlineManual.DataBind();
+        }
+
+        protected void GridOnlineManual_AfterPerformCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewAfterPerformCallbackEventArgs e)
+        {
+            if (filter.Text == "0")
+            {
+                GridOnlineManual.Settings.ShowFilterRow = false;
+                GridOnlineManual.Settings.ShowFilterRowMenu = false;
+            }
+            else
+            {
+                GridOnlineManual.Settings.ShowFilterRow = true;
+                GridOnlineManual.Settings.ShowFilterRowMenu = true;
+                GridOnlineManual.DataColumns["OM_Topic"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+                GridOnlineManual.DataColumns["OM_SubTopic"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+                GridOnlineManual.DataColumns["OM_Desc"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll.config
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\Data.pdb
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\EntityFramework.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\EntityFramework.xml
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.xml
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\obj\Debug\Data.dll
+D:\HAJEERA\ASSET UPNM\AssetAndStoreManagementSystem\Data\obj\Debug\Data.pdb
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll.config
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Data\bin\Debug\Data.pdb
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Data\obj\Debug\Data.dll
+D:\Programming\AssetAndStoreManagementSystem\AssetAndStoreManagementSystem\Data\obj\Debug\Data.pdb
+D:\20151009\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll.config
+D:\20151009\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll
+D:\20151009\AssetAndStoreManagementSystem\Data\bin\Debug\Data.pdb
+D:\20151009\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.dll
+D:\20151009\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.xml
+D:\20151009\AssetAndStoreManagementSystem\Data\obj\Debug\Data.dll
+D:\20151009\AssetAndStoreManagementSystem\Data\obj\Debug\Data.pdb
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll.config
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\bin\Debug\Data.pdb
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.dll
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.xml
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\obj\Debug\Data.dll
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\obj\Debug\Data.pdb
+D:\20151009 -Asset\AssetAndStoreManagementSystem\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+D:\Programming\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll.config
+D:\Programming\AssetAndStoreManagementSystem\Data\bin\Debug\Data.dll
+D:\Programming\AssetAndStoreManagementSystem\Data\bin\Debug\Data.pdb
+D:\Programming\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.dll
+D:\Programming\AssetAndStoreManagementSystem\Data\bin\Debug\Newtonsoft.Json.xml
+D:\Programming\AssetAndStoreManagementSystem\Data\obj\Debug\Data.dll
+D:\Programming\AssetAndStoreManagementSystem\Data\obj\Debug\Data.pdb

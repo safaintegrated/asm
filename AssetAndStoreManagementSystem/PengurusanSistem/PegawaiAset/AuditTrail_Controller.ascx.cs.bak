@@ -1,0 +1,57 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+//dev
+using DevExpress.Web.ASPxEditors;
+using DevExpress.Web.ASPxGridView;
+
+namespace AssetAndStoreManagementSystem.PengurusanSistem.PegawaiAset
+{
+    public partial class AuditTrail_Controller : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridAuditDetails_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e)
+        {
+            Session["CurrPegawaiAsetProcessId"] = e.Parameters;
+            GridAuditDetails.DataBind();
+        }
+
+        protected void AuditTrailDetailDs_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+            if (Session["CurrPegawaiAsetProcessId"] == null)
+                e.Command.Parameters["@ProcessId"].Value = DBNull.Value;
+            else
+                e.Command.Parameters["@ProcessId"].Value = Session["CurrPegawaiAsetProcessId"].ToString();
+        }
+
+        protected void GridAuditListing_HtmlDataCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableDataCellEventArgs e)
+        {
+            if (e.DataColumn.FieldName == "EmpName")
+            {
+                ASPxHyperLink EmpName = (ASPxHyperLink)GridAuditListing.FindRowCellTemplateControl(e.VisibleIndex, GridAuditListing.DataColumns["EmpName"] as GridViewDataColumn, "EmpName");
+
+                if (EmpName != null)
+                {
+                    string ProcessId = GridAuditListing.GetRowValues(e.VisibleIndex, "ProcessId").ToString();
+                    EmpName.ClientInstanceName = "EmpName_" + e.VisibleIndex.ToString();
+                    EmpName.Text = e.CellValue.ToString();
+                    EmpName.NavigateUrl = "javascript: AuditDetailSelected('" + ProcessId + "'); ";
+                }
+
+            }
+        }
+
+        protected void GridAuditListing_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
+        {
+            GridAuditListing.DataBind();
+        }
+    }
+}

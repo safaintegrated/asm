@@ -1,0 +1,244 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using DevExpress.Web.ASPxGridView;
+using DevExpress.Web.ASPxEditors;
+using Core.PengurusanSistem;
+using System.Configuration;
+using System.Web.Security;
+using Core.Shared;
+using Core.Email;
+
+namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian
+{
+    public partial class Tab_Permohonan : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cbp_Header_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e)
+        {
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+
+            if (!ticket.Expired)
+            {
+                cbp_Header.JSProperties["cpMode"] = e.Parameter;
+
+                switch (e.Parameter)
+                {
+                    case "ADD": LoadHeader(); break;
+                    case "LOAD": LoadHeader(); break;
+                    case "SAVE": SaveHeader(ticket.Name); break;
+                    case "POST": PostHeader(ticket.Name); break;
+                }
+            }
+            else
+            {
+                cbp_Header.JSProperties["cpErrMsg"] = "Session Expired.";
+            }
+        }
+
+        void LoadHeader()
+        {
+            DataTable Dt = new DataTable();
+
+            try
+            {
+                string ProcessId = DateTime.Now.ToString("yyMMdd-HHmmss");
+                string err = PermohonanBelianMethods.SP_PermohonanBelian_LoadHeader(ref Dt, TabPermohonan_ProcessId.Text, TabPermohonan_Revision.Text);
+
+                if (err == "")
+                {
+                    cbp_Header.JSProperties["cpErrMsg"] = string.Empty;
+
+                    NamaPemohon.Text = Dt.Rows[0]["NamaPemohon"].ToString();
+                    NamaPemohon.Enabled = false;
+
+                    if (Dt.Rows[0]["PRH_PtjId"].ToString() != "")
+                        PRH_PtjId.Value = Convert.ToInt32(Dt.Rows[0]["PRH_PtjId"]);
+                    else
+                        PRH_PtjId.Value = DBNull.Value;
+
+                    AllPtjAccess.Text = Dt.Rows[0]["AllPtjAccess"].ToString();
+
+                    if (Dt.Rows[0]["AllPtjAccess"].ToString() == "Ya")
+                        PRH_PtjId.Enabled = true;
+                    else
+                        PRH_PtjId.Enabled = false;
+
+                    PRH_EmpSysId.Text = Dt.Rows[0]["PRH_EmpSysId"].ToString();
+                    PRH_Purpose.Text = Dt.Rows[0]["PRH_Purpose"].ToString();
+
+                    PRH_SetVen_Name.DataBind();
+                    PRH_SetVen_Name.Value = Dt.Rows[0]["PRH_SetVen_Name"].ToString();
+
+                    PRH_VendorAddress.Text = Dt.Rows[0]["PRH_VendorAddress"].ToString();
+                    PRH_SetVen_SAGACode.Text = Dt.Rows[0]["PRH_SetVen_SAGACode"].ToString();
+
+                    if (Dt.Rows[0]["PRH_ProcurementITypeId"].ToString() != "")
+                        PRH_ProcurementITypeId.Value = Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementITypeId"]);
+                    else
+                        PRH_ProcurementITypeId.Value = DBNull.Value;
+
+                    if (Dt.Rows[0]["PRH_ProcurementMethodId"].ToString() != "")
+                        PRH_ProcurementMethodId.Value = Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementMethodId"]);
+                    else
+                        PRH_ProcurementMethodId.Value = DBNull.Value;
+
+                    if (Dt.Rows[0]["PRH_ProcurementCatId"].ToString() != "")
+                        PRH_ProcurementCatId.Value = Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementCatId"]);
+                    else
+                        PRH_ProcurementCatId.Value = DBNull.Value;
+
+                    TabPermohonan_Revision.Text = Dt.Rows[0]["PRH_Revision"].ToString();
+                }
+                else
+                {
+                    string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                    errMsg = errMsg.Replace("BR", "<br><br>");
+                    cbp_Header.JSProperties["cpErrMsg"] = errMsg + " " + err;
+                }
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_Header.JSProperties["cpErrMsg"] = errMsg + " " + err.Message;
+            }
+        }
+
+        void SaveHeader(string CurrUser)
+        {
+            DataTable Dt = new DataTable();
+            DataTable WfDt = new DataTable();
+
+            try
+            {
+                FormTVPHeader(ref Dt);
+                PopulateDt(ref Dt);
+
+                string err = PermohonanBelianMethods.SP_PermohonanBelian_SavePostHeader(CurrUser, TabPermohonan_ProcessId.Text, ref Dt, 0, ref WfDt, TabPermohonan_Revision.Text);
+
+                if (err == string.Empty)
+                {
+                    cbp_Header.JSProperties["cpErrMsg"] = string.Empty;
+                }
+                else
+                {
+                    string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                    errMsg = errMsg.Replace("BR", "<br><br>");
+                    cbp_Header.JSProperties["cpErrMsg"] = errMsg + " " + err;
+                }
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_Header.JSProperties["cpErrMsg"] = errMsg + " " + err.Message;
+            }
+        }
+
+        void PostHeader(string CurrUser)
+        {
+            DataTable Dt = new DataTable();
+            DataTable WfDt = new DataTable();
+
+            try
+            {
+                FormTVPHeader(ref Dt);
+                PopulateDt(ref Dt);
+
+                string err = PermohonanBelianMethods.SP_PermohonanBelian_SavePostHeader(CurrUser, TabPermohonan_ProcessId.Text, ref Dt, 1, ref WfDt, TabPermohonan_Revision.Text);
+
+                if (err == string.Empty)
+                {
+                    string ApplicantName = string.Empty;
+                    PenggunaSistemMethods.GetSystemUserName(ref ApplicantName, CurrUser);
+
+                    string EmailErr = SendMail.PermohonanPembelian_NotifyVerfier(ref WfDt, Server.MapPath(ConfigurationManager.AppSettings["EmailXmlFilePath"].ToString()), ApplicantName);
+
+                    if (EmailErr == string.Empty)
+                    {
+                        cbp_Header.JSProperties["cpErrMsg"] = string.Empty;
+
+                        string cpReceipient = string.Empty;
+
+                        for (int x = 0; x < WfDt.Rows.Count; x++)
+                        {
+                            if (cpReceipient != string.Empty)
+                                cpReceipient = cpReceipient + ", ";
+                            else
+                                cpReceipient = cpReceipient + WfDt.Rows[x]["EmployeeName"].ToString();
+                        }
+
+                        cbp_Header.JSProperties["cpReceipient"] = cpReceipient;
+                    }
+                    else
+                    {
+                        cbp_Header.JSProperties["cpErrMsg"] = "Permohonan Pembelian telah berjaya dihantar tetapi sistem menghadapi masalah untuk menghantar email-notis kepada pemeriksa.<br><br>Masalah: " + EmailErr;
+                    }
+                }
+                else
+                {
+                    string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                    errMsg = errMsg.Replace("BR", "<br><br>");
+                    cbp_Header.JSProperties["cpErrMsg"] = errMsg + " " + err;
+                }
+            }
+            catch (Exception err)
+            {
+                string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                errMsg = errMsg.Replace("BR", "<br><br>");
+                cbp_Header.JSProperties["cpErrMsg"] = errMsg + " " + err.Message;
+            }
+        }
+
+        void FormTVPHeader(ref DataTable Dt)
+        {
+            DataColumn PRH_ProcessId = Dt.Columns.Add("PRH_ProcessId", typeof(String));
+            DataColumn PRH_EmpSysId = Dt.Columns.Add("PRH_EmpSysId", typeof(Int32));
+            DataColumn PRH_PtjId = Dt.Columns.Add("PRH_PtjId", typeof(Int32));
+            DataColumn PRH_Purpose = Dt.Columns.Add("PRH_Purpose", typeof(String));
+            DataColumn PRH_SetVen_SAGACode = Dt.Columns.Add("PRH_SetVen_SAGACode", typeof(String));
+            DataColumn PRH_SetVen_Name = Dt.Columns.Add("PRH_SetVen_Name", typeof(String));
+            DataColumn PRH_VendorAddress = Dt.Columns.Add("PRH_VendorAddress", typeof(String));
+            DataColumn PRH_ProcurementITypeId = Dt.Columns.Add("PRH_ProcurementITypeId", typeof(Int32));
+            DataColumn PRH_ProcurementMethodId = Dt.Columns.Add("PRH_ProcurementMethodId", typeof(Int32));
+            DataColumn PRH_ProcurementCatId = Dt.Columns.Add("PRH_ProcurementCatId", typeof(Int32));
+            DataColumn PRH_PRnumber = Dt.Columns.Add("PRH_PRnumber", typeof(String));
+            DataColumn PRH_SubmissionDate = Dt.Columns.Add("PRH_SubmissionDate", typeof(DateTime));
+            DataColumn PRH_Status = Dt.Columns.Add("PRH_Status", typeof(Int32));
+            DataColumn PRH_Revision = Dt.Columns.Add("PRH_Revision", typeof(Int32));
+            Dt.AcceptChanges();
+        }
+
+        void PopulateDt(ref DataTable Dt)
+        {
+            DataRow Dr = Dt.NewRow();
+            Dr["PRH_ProcessId"] = TabPermohonan_ProcessId.Text;
+            Dr["PRH_EmpSysId"] = Convert.ToInt32(PRH_EmpSysId.Value);
+            Dr["PRH_PtjId"] = Convert.ToInt32(PRH_PtjId.Value);
+            Dr["PRH_Purpose"] = PRH_Purpose.Text.Trim();
+            Dr["PRH_SetVen_SAGACode"] = PRH_SetVen_SAGACode.Text;
+            Dr["PRH_SetVen_Name"] = PRH_SetVen_Name.Text;
+            Dr["PRH_VendorAddress"] = PRH_VendorAddress.Text;
+            Dr["PRH_ProcurementITypeId"] = Convert.ToInt32(PRH_ProcurementITypeId.Value);
+            Dr["PRH_ProcurementMethodId"] = Convert.ToInt32(PRH_ProcurementMethodId.Value);
+            Dr["PRH_ProcurementCatId"] = Convert.ToInt32(PRH_ProcurementCatId.Value);
+            Dr["PRH_PRnumber"] = DBNull.Value;
+            Dr["PRH_SubmissionDate"] = DBNull.Value;
+            Dr["PRH_Status"] = DBNull.Value;
+            Dr["PRH_Revision"] = DBNull.Value;
+            Dt.Rows.Add(Dr);
+            Dt.AcceptChanges();
+        }
+    }
+}

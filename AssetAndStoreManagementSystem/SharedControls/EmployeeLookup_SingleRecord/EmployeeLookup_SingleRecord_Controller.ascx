@@ -1,0 +1,74 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EmployeeLookup_SingleRecord_Controller.ascx.cs" Inherits="AssetAndStoreManagementSystem.SharedControls.EmployeeLookup_SingleRecord.EmployeeLookup_SingleRecord_Controller" %>
+<%@ Register assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+
+<script>
+    function SingleEmployeeSelected(EmpSysId, EmpId, EmpName)
+    {
+        var parent = window.parent;
+        parent.SetSelectedEmployee(EmpSysId, EmpId, EmpName);
+    }
+</script>
+
+
+<table style="width:100%;">
+    <tr>
+        <td>
+            <dx:ASPxLabel ID="ASPxLabel1" runat="server" EncodeHtml="False" Font-Italic="False" Text="Klik pada &lt;b&gt;Nama Pekerja&lt;/b&gt; untuk memilih rekod">
+            </dx:ASPxLabel>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding-top:10px;">
+            <dx:ASPxGridView ID="EmpGrid" runat="server" AutoGenerateColumns="False" ClientInstanceName="EmpGrid" DataSourceID="EmpDs" KeyFieldName="EmployeeSystemId" Width="100%" OnHtmlDataCellPrepared="EmpGrid_HtmlDataCellPrepared" EnableCallbackAnimation="True" OnDataBound="EmpGrid_DataBound">
+    <Columns>
+        <dx:GridViewDataTextColumn FieldName="EmployeeSystemId" ReadOnly="True" Visible="False" VisibleIndex="0">
+            <EditFormSettings Visible="False" />
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="ID Pekerja" FieldName="EmployeeId" VisibleIndex="2" Width="10%">
+            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Nama Pekerja" FieldName="EmployeeName" VisibleIndex="1" Width="30%">
+            <DataItemTemplate>
+                <dx:ASPxHyperLink ID="EmployeeName" runat="server" EnableClientSideAPI="True" Text="EmployeeName">
+                </dx:ASPxHyperLink>
+            </DataItemTemplate>
+            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Jawatan" FieldName="EmployeeDesignation" VisibleIndex="3" Width="15%">
+            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="EmployeeAddress" Visible="False" VisibleIndex="4">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="EmployeeNric" Visible="False" VisibleIndex="5">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Pusat Tanggungjawab" FieldName="EmployeePTJ" ReadOnly="True" VisibleIndex="6" Width="30%">
+            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Alamat Emel" FieldName="EmployeeEmail" VisibleIndex="7" Width="15%">
+            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="EmployeeStatus" ReadOnly="True" Visible="False" VisibleIndex="8">
+            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+        </dx:GridViewDataTextColumn>
+    </Columns>
+    <SettingsBehavior AllowFocusedRow="True" />
+    <SettingsLoadingPanel Mode="Disabled" />
+    <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+    <Styles>
+        <AlternatingRow Enabled="True">
+        </AlternatingRow>
+    </Styles>
+</dx:ASPxGridView>
+<asp:SqlDataSource ID="EmpDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT * FROM [V_Employee_PTJ] ORDER BY [EmployeeName]"></asp:SqlDataSource>
+        </td>
+    </tr>
+</table>
+
+

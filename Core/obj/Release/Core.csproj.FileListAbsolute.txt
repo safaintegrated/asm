@@ -1,0 +1,28 @@
+D:\Projects\AssetAndStoreManagementSystem\Core\bin\Release\Core.dll
+D:\Projects\AssetAndStoreManagementSystem\Core\bin\Release\Core.pdb
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Release\Core.dll
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Release\Core.pdb
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Release\Core.QRCode.QRcode_Report.resources
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Release\Core.csproj.GenerateResource.Cache
+D:\Projects\AssetAndStoreManagementSystem\Core\obj\Release\Core.dll.licenses
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\bin\Release\Core.dll
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\bin\Release\Core.pdb
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Release\Core.QRCode.QRcode_Report.resources
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Release\Core.csproj.GenerateResource.Cache
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Release\Core.dll.licenses
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Release\Core.dll
+F:\Projects\Saf Pilihan\AssetAndStoreManagementSystem\Core\obj\Release\Core.pdb
+D:\Programming\AssetAndStoreManagementSystem\Core\bin\Release\Core.dll
+D:\Programming\AssetAndStoreManagementSystem\Core\bin\Release\Core.pdb
+D:\Programming\AssetAndStoreManagementSystem\Core\bin\Release\Data.dll
+D:\Programming\AssetAndStoreManagementSystem\Core\bin\Release\Newtonsoft.Json.dll
+D:\Programming\AssetAndStoreManagementSystem\Core\bin\Release\Data.pdb
+D:\Programming\AssetAndStoreManagementSystem\Core\bin\Release\Newtonsoft.Json.xml
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Release\Core.csprojResolveAssemblyReference.cache
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Release\Core.QRCode.QRcode_Report.resources
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Release\Core.csproj.GenerateResource.Cache
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Release\Core.dll.licenses
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Release\Core.dll
+D:\Programming\AssetAndStoreManagementSystem\Core\obj\Release\Core.pdb

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NewElement>
+  <EMAIL>
+    <HostName>smtp.office365.com</HostName>
+    <PortNumber>587</PortNumber>
+    <SenderName>Pentadbir Sistem Pengurusan Aset Alih &amp; Inventori</SenderName>
+    <NetworkId>sysadmin@upnm.edu.my</NetworkId>
+    <NetworkPasword>sys@dmin15</NetworkPasword>
+    <EnableSsl>True</EnableSsl>
+    <BypassSecurityValidation>False</BypassSecurityValidation>
+    <LastModBy>Zaini Binti Abdul Halim</LastModBy>
+    <LastModDate>28/06/2015 15:53:08</LastModDate>
+  </EMAIL>
+</NewElement>

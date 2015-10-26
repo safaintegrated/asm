@@ -1,0 +1,95 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using DevExpress.Web.ASPxEditors;
+using DevExpress.Web.ASPxGridView;
+using System.Configuration;
+using Core.PengurusanSistem;
+using System.Web.Security;
+
+namespace AssetAndStoreManagementSystem.PengurusanSistem.Lokasi
+{
+    public partial class Building_Controller : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cbp_SaveBuild_Callback(object sender, DevExpress.Web.ASPxClasses.CallbackEventArgsBase e)
+        {
+            cbp_SaveBuild.JSProperties["cpMode"] = e.Parameter;
+
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+
+            if (!ticket.Expired)
+            {
+                try
+                {
+                    string DbErrMsg = BuildingMethods.SP_SaveDelete_Building(Build_Name.Text.Trim(), Build_Code.Text.Trim(), Build_Id.Text, ticket.Name, e.Parameter);
+
+                    if (DbErrMsg == string.Empty)
+                    { cbp_SaveBuild.JSProperties["cpErrMsg"] = string.Empty; }
+                    else
+                    {
+                        string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceDBError"].ToString();
+                        errMsg = errMsg.Replace("BR", "<br><br>");
+                        cbp_SaveBuild.JSProperties["cpErrMsg"] = errMsg + " " + DbErrMsg;
+                    }
+                }
+                catch (Exception err)
+                {
+                    string errMsg = ConfigurationManager.AppSettings["ErrorMessageStaringSentenceCaughtByExceptions"].ToString();
+                    errMsg = errMsg.Replace("BR", "<br><br>");
+                    cbp_SaveBuild.JSProperties["cpErrMsg"] = errMsg + " " + err;
+                }
+            }
+            else
+                cbp_SaveBuild.JSProperties["cpErrMsg"] = "Session expired.";
+        }
+
+        protected void Grid_Build_HtmlDataCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableDataCellEventArgs e)
+        {
+            if (e.DataColumn.FieldName == "Build_Name")
+            {
+                ASPxHyperLink link = (ASPxHyperLink)Grid_Build.FindRowCellTemplateControl(e.VisibleIndex, Grid_Build.DataColumns["Build_Name"] as GridViewDataColumn, "Build_Name");
+
+                if (link != null)
+                {
+                    string BuildId = Grid_Build.GetRowValues(e.VisibleIndex, "Build_Id").ToString();
+                    string BuildName = Grid_Build.GetRowValues(e.VisibleIndex, "Build_Name").ToString();
+                    string BuildCode = Grid_Build.GetRowValues(e.VisibleIndex, "Build_Code").ToString();
+
+                    link.ClientInstanceName = "Build_Name_" + e.VisibleIndex.ToString();
+                    link.Text = e.CellValue.ToString();
+                    link.NavigateUrl = "javascript: Build_Selected('" + BuildId + "','" + BuildName + "','" + BuildCode + "');";
+                }
+            }
+        }
+
+        protected void Grid_Build_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
+        {
+            Grid_Build.DataBind();
+        }
+
+        protected void Grid_Build_AfterPerformCallback(object sender, ASPxGridViewAfterPerformCallbackEventArgs e)
+        {
+            if (Build_SearchMode.Text == "1")
+            {
+                Grid_Build.Settings.ShowFilterRow = true;
+                Grid_Build.Settings.ShowFilterRowMenu = true;
+                Grid_Build.DataColumns["Build_Name"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+                Grid_Build.DataColumns["Build_Code"].Settings.AutoFilterCondition = DevExpress.Web.ASPxGridView.AutoFilterCondition.Contains;
+            }
+            else
+            {
+                Grid_Build.Settings.ShowFilterRow = false;
+                Grid_Build.Settings.ShowFilterRowMenu = false;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Configuration;
+
+//dev
+using DevExpress.Web.ASPxGridView;
+using DevExpress.Web.ASPxEditors;
+
+namespace AssetAndStoreManagementSystem.PengurusanSistem.KumpulanPenggunaSistem
+{
+    public partial class LookupSystemUserGroup_Controller : System.Web.UI.UserControl
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridSearchSystemUserGroup_HtmlDataCellPrepared(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewTableDataCellEventArgs e)
+        {
+            switch (e.DataColumn.FieldName)
+            {
+                case "UserDefinedId": FormHyperLink(e.VisibleIndex, e.DataColumn.FieldName, e.CellValue); break;
+                case "UserGroupName": FormHyperLink(e.VisibleIndex, e.DataColumn.FieldName, e.CellValue); break;
+            }
+        }
+
+        void FormHyperLink(int RowIndex, string FieldName, object CellValue)
+        {
+            ASPxHyperLink link = (ASPxHyperLink)GridSearchSystemUserGroup.FindRowCellTemplateControl(RowIndex, GridSearchSystemUserGroup.DataColumns[FieldName] as GridViewDataColumn, FieldName);
+
+            if (link != null)
+            {
+                string UserGroupId = GridSearchSystemUserGroup.GetRowValues(RowIndex, "UserGroupId").ToString();
+                link.ClientInstanceName = FieldName + "_" + RowIndex.ToString();
+                link.Text = CellValue.ToString();
+                link.NavigateUrl = "javascript: UserGroupSelected(" + UserGroupId + ");";
+            }
+        }
+
+        protected void GridSearchSystemUserGroup_CustomCallback(object sender, ASPxGridViewCustomCallbackEventArgs e)
+        {
+            GridSearchSystemUserGroup.DataBind();
+        }
+
+        protected void LookupSystemUserGroupDs_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+            e.Command.Parameters["@Org_Id"].Value = Convert.ToInt32(ConfigurationManager.AppSettings["OrgId"].ToString());
+        }
+    }
+}
