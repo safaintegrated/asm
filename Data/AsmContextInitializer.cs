@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-//    public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
+    //    public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
     //public class AsmContextInitializer : DropCreateDatabaseAlways<AsmContext>
     public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
     {
@@ -53,8 +53,25 @@ namespace Data
 
             InsertProcessType(context);
 
+            InsertSampleStockCategory(context);
+
             context.SaveChanges("system");
             base.Seed(context);
+        }
+
+        private void InsertSampleStockCategory(AsmContext context)
+        {
+
+            StockCategory c = new StockCategory{ Code="AT", Name="ALAT TULIS"};
+            context.StockCategoryList.Add(c);
+            StockSubCategory p1 =  new  StockSubCategory  { Code = "M", Name=  "MARKER", StockSubCategoryId=c.Id};
+            context.StockSubCategoryList.Add(p1);
+            StockSubCategory p2 =  new  StockSubCategory  { Code = "B", Name=  "BUKU", StockSubCategoryId=c.Id};
+            context.StockSubCategoryList.Add(p2);
+
+            StockType st = new StockType { Code = "AT0001", Name = "MARKER MERAH", StockSubCategoryId = p1.Id, StockCategoryId = c.Id };
+            context.StockTypeList.Add(st);
+
         }
 
         private static void InsertSampleAsset(AsmContext context)
@@ -70,7 +87,7 @@ namespace Data
 
         private void InsertProcessType(AsmContext context)
         {
-            context.ProcessTypes.Add(new ProcessType {  Code ="01", Description = "Permohonan Belian"});
+            context.ProcessTypes.Add(new ProcessType { Code = "01", Description = "Permohonan Belian" });
             context.ProcessTypes.Add(new ProcessType { Code = "02", Description = "Pendaftaran" });
         }
 
@@ -120,7 +137,7 @@ namespace Data
             //TODO: add for stor unit
 
         }
-       private static void InsertAssetType(AsmContext context)
+        private static void InsertAssetType(AsmContext context)
         {
             context.AssetTypes.Add(new AssetType { Code = "00001", Description = "TOWER" });
             context.AssetTypes.Add(new AssetType { Code = "00002", Description = "RACKMOUNT SERVER" });
