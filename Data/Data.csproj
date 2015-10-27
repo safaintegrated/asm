@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="AsmContext.cs" />
     <Compile Include="AsmContextInitializer.cs" />
+    <Compile Include="Entity\AssetInventory.cs" />
+    <Compile Include="Entity\AssetInvetoryComponent.cs" />
     <Compile Include="Entity\AssetType.cs" />
     <Compile Include="Entity\AuditLog.cs" />
     <Compile Include="Entity\Category.cs" />
@@ -102,6 +104,8 @@
     <Compile Include="Entity\PurchaseRequest.cs" />
     <Compile Include="Entity\PermohonanStok.cs" />
     <Compile Include="Map\PurchaseRequestMap.cs" />
+    <Compile Include="Models\AssetInventoryModel.cs" />
+    <Compile Include="Models\AssetInvetoryComponentModel.cs" />
     <Compile Include="Models\AssetTypeModel.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />

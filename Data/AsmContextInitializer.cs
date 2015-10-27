@@ -12,6 +12,7 @@ namespace Data
     {
         protected override void Seed(AsmContext context)
         {
+
             context.RequestorList.Add(new Requestor { Name = "BENDAHARI", Code = "BENDAHARI", Description = "BENDAHARI" });
             context.RequestorList.Add(new Requestor { Name = "DEKAN FSTP", Code = "DEKAN FSTP", Description = "DEKAN FSTP" });
             context.RequestorList.Add(new Requestor { Name = "DEKAN PERUBATAN", Code = "DEKAN PERUBATAN", Description = "DEKAN PERUBATAN" });
@@ -47,8 +48,22 @@ namespace Data
 
             InsertProcessType(context);
 
+            InsertSampleAssetData(context);
+
+
             context.SaveChanges("system");
             base.Seed(context);
+        }
+
+        private void InsertSampleAssetData(AsmContext context)
+        {
+            AssetInventory ai = new AssetInventory
+            {
+                Desc = "Dell PowerEdge R300 Rack-Mount Server",
+                RegistrationNumber = "UPNM.09/PICT/A0492",
+                PoNumber = "000727-00",
+            };
+            context.AssetInventoryList.Add(ai);
         }
 
         private void InsertProcessType(AsmContext context)

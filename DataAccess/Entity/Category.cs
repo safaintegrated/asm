@@ -13,4 +13,9 @@ namespace DataAccess.Entity
         public string VotCode { get; set; }
 
     }
+
+ 
+
+
+
 }

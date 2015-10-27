@@ -53,6 +53,8 @@ namespace Data
         public DbSet<ProjectItem> ProjectItemList { get; set; }
         public DbSet<Workflow> Workflows { get; set; }
         public DbSet<Checklist> Checklists { get; set; }
+        public DbSet<AssetInventory> AssetInventoryList { get; set; }
+        public DbSet<AssetInvetoryComponent> AssetInvetoryComponentList { get; set; }
         
         
         public int SaveChanges(string username)
