@@ -1,0 +1,20 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="AssetAndStoreManagementSystem.Stor.KenyataanJualanLelonganStokAlih.Index" %>
+
+<%@ Register Src="~/Stor/KenyataanJualanLelonganStokAlih/KenyataanJualanLelonganStokAlih_Controller.ascx" TagPrefix="uc1" TagName="KenyataanJualanLelonganStokAlih_Controller" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Kenyataan Jualan Lelongan Stok Alih</title>
+    <link href="../../Public/Css/AspxCss.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="MainDivCentered80Percent">
+        <uc1:KenyataanJualanLelonganStokAlih_Controller runat="server" ID="KenyataanJualanLelonganStokAlih_Controller" />
+    </div>
+    </form>
+</body>
+</html>

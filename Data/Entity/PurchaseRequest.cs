@@ -11,6 +11,7 @@ namespace Data.Entity
     {
         public string Description { get; set; }
         public string Instruction { get; set; }
+        public string ReferenceNumber { get; set; }
 
 
         public string RequesterId { get; set; }
@@ -38,14 +39,14 @@ namespace Data.Entity
         public string ProcessId { get; set; }
 
         public string PrNumber { get; set; }
-        public DataAccess.ProcessStatus Status { get; set; }
+        public ProcessStatus Status { get; set; }
 
         public string StatusName { get; set; }
         public PurchaseRequest()
         {
             RevisionNumber = 1;
             ProcessId = DateTime.Now.ToString("yyMMdd-HHmmss");
-            Status = DataAccess.ProcessStatus.New;
+            Status = ProcessStatus.New;
             StatusName = "Baru";
         }
 

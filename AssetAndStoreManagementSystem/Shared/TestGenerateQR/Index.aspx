@@ -1,0 +1,45 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="AssetAndStoreManagementSystem.Shared.TestGenerateQR.Index" %>
+
+<%@ Register assembly="DevExpress.Web.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+
+
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <script>
+        function QrCodeGenerationSuccess()
+        {
+            cbp_Print.PerformCallback();
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+        <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="QR Code Text:">
+        </dx:ASPxLabel>
+        <dx:ASPxTextBox ID="TxtCode" runat="server" Width="170px">
+        </dx:ASPxTextBox>
+        <br />
+        <dx:ASPxButton ID="ASPxButton1" runat="server" OnClick="ASPxButton1_Click" Text="Generate" Width="120px">
+        </dx:ASPxButton>
+    
+        <br />
+        <br />
+        <dx:ASPxButton ID="btnPrint" runat="server" OnClick="ASPxButton1_Click" Text="Print" Width="120px" ClientVisible="False" EnableClientSideAPI="True" AutoPostBack="False">
+            <ClientSideEvents Click="function(s, e) {
+	cbp_Print.PerformCallback();
+}" />
+        </dx:ASPxButton>
+    
+    </div>
+        <dx:ASPxCallbackPanel ID="cbp_Print" runat="server" ClientInstanceName="cbp_Print" ClientVisible="False" OnCallback="cbp_Print_Callback" Width="200px">
+        </dx:ASPxCallbackPanel>
+    </form>
+</body>
+</html>

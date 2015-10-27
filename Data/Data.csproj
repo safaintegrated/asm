@@ -70,6 +70,7 @@
     <Compile Include="Entity\GoodReceiveNote.cs" />
     <Compile Include="Entity\Ledger.cs" />
     <Compile Include="Entity\LedgerItem.cs" />
+    <Compile Include="Entity\MainRegistrationInfo.cs" />
     <Compile Include="Entity\ProcessType.cs" />
     <Compile Include="Entity\Project.cs" />
     <Compile Include="Entity\ProjectIte.cs" />
@@ -111,8 +112,10 @@
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\ChecklistModel.cs" />
     <Compile Include="Models\ComponentModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LedgerModel.cs" />
     <Compile Include="Models\LedgerItemModel.cs" />
+    <Compile Include="Models\MainRegistrationInfoModel.cs" />
     <Compile Include="Models\ProcessTypeModel.cs" />
     <Compile Include="Models\ProcurementCategoryModel.cs" />
     <Compile Include="Models\ProcurementMethodModel.cs" />
@@ -120,6 +123,7 @@
     <Compile Include="Models\ProjectItemModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Models\PuDeliveryAddressModel.cs" />
+    <Compile Include="Models\PurchaseRequestItemModel.cs" />
     <Compile Include="Models\PurchaseRequestModel.cs" />
     <Compile Include="Models\PurchaseTypeModel.cs" />
     <Compile Include="Models\RequestorModel.cs" />

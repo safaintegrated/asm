@@ -8,6 +8,7 @@ namespace Data.Entity
 {
     public class PurchaseRequestItem : EntityBase
     {
+        public string PurchaseRequestId { get; set; }
         public string Description { get; set; }
         
         public string UnitOfMeasurementId { get; set; }

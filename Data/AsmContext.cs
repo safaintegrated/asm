@@ -55,7 +55,10 @@ namespace Data
         public DbSet<Checklist> Checklists { get; set; }
         public DbSet<AssetInventory> AssetInventoryList { get; set; }
         public DbSet<AssetInvetoryComponent> AssetInvetoryComponentList { get; set; }
-        
+           public DbSet<Employee> Employees { get; set; }
+        public DbSet<MainRegistrationInfo> MainRegistrationInfos { get; set; }
+        public DbSet<PurchaseRequestItem> PurchaseRequestItems { get; set; }
+
         
         public int SaveChanges(string username)
         {
