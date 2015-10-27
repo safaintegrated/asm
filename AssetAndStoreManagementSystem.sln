@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetAndStoreManagementSystem", "AssetAndStoreManagementSystem\AssetAndStoreManagementSystem.csproj", "{80BF22CD-4413-4FAC-B266-5C3022106595}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -15,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{E2A53E63-6CD9-4DD5-8D0A-8D531A0244FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{BF1FA3A0-4241-4A22-AB40-276A5F7FC1D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Stor", "Core.Stor\Core.Stor.csproj", "{2B49782F-1A63-4E57-A583-42904AB25D05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +44,10 @@ Global
 		{BF1FA3A0-4241-4A22-AB40-276A5F7FC1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF1FA3A0-4241-4A22-AB40-276A5F7FC1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF1FA3A0-4241-4A22-AB40-276A5F7FC1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B49782F-1A63-4E57-A583-42904AB25D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B49782F-1A63-4E57-A583-42904AB25D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B49782F-1A63-4E57-A583-42904AB25D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B49782F-1A63-4E57-A583-42904AB25D05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
