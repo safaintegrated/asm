@@ -1,25 +1,20 @@
 ﻿function btnSelectPurchaseType_Click(s, e) {
-    alert(CbPurchaseType.GetText());
     if (CbPurchaseType.GetText() == '') {
         popupMsg_Label.SetText('Sila pilih jenis pembelian terlebih dahulu.');
         popupMsg.Show();
     }
     else {
-        cbp_FormNextItemNumber.PerformCallback('1');
-        //switch (CbPurchaseType.GetValue().toString()) {
-        //    case "1": cbp_FormNextItemNumber.PerformCallback('1'); break;
-        //}
+        switch (CbPurchaseType.GetValue().toString()) {
+            case "1": cbp_FormNextItemNumber.PerformCallback('1'); break;
+        }
     }
 }
 
 
-
 function cbp_FormNextItemNumber_EndCallback(s, e) {
-    NewAssetMode(s.cpNextItemNumber.toString());
-    //alert(s.cpNextItemNumber);
-    //switch (s.cpPurchaseType.toString()) {
-    //    case "1": NewAssetMode(s.cpNextItemNumber.toString());
-    //}
+    switch (s.cpPurchaseType.toString()) {
+        case "1": NewAssetMode(s.cpNextItemNumber.toString());
+    }
 }
 
 function NewAssetMode(num) {
