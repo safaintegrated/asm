@@ -48,7 +48,7 @@ namespace AssetAndStoreManagementSystem.Stor.Stor
                 FormTVP(ref Dt);
                 PopulateTVP(ref Dt);
 
-                string DbErr = StorMethods.SP_Store_SaveDelete(ref Dt, CurrUser, Mode);
+                string DbErr = "";//StorMethods.SP_Store_SaveDelete(ref Dt, CurrUser, Mode);
 
                 if (DbErr == "")
                 { cbp.JSProperties["cpErrMsg"] = string.Empty; }

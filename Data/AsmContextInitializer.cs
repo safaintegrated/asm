@@ -41,6 +41,8 @@ namespace Data
 
             InsertAssetType(context);
 
+            InsertSampleAsset(context);
+
             InserSampleSuppliers(context);
 
             InsertUnitOfMeasurements(context);
@@ -55,7 +57,7 @@ namespace Data
             base.Seed(context);
         }
 
-        private static void InsertAssetType(AsmContext context)
+        private static void InsertSampleAsset(AsmContext context)
         {
             AssetInventory ai = new AssetInventory
             {
@@ -1847,58 +1849,58 @@ namespace Data
             context.AssetTypes.Add(new AssetType { Code = "01725", Description = "AIR PANCUT (FOUNTAIN)" });*/
         }
 
-        private static void InsertProcessType(AsmContext context)
-        {
-            context.ProcessTypes.Add(new ProcessType { Code = "01", Description = "Permohonan Belian" });
-            context.ProcessTypes.Add(new ProcessType { Code = "02", Description = "Pendaftaran" });
-        }
+        //private static void InsertProcessType(AsmContext context)
+        //{
+        //    context.ProcessTypes.Add(new ProcessType { Code = "01", Description = "Permohonan Belian" });
+        //    context.ProcessTypes.Add(new ProcessType { Code = "02", Description = "Pendaftaran" });
+        //}
 
-        private static void InsertPurchaseTypes(AsmContext context)
-        {
-            context.PurchaseTypes.Add(new PurchaseType { Code = "1", Name = "Aset Baharu" });
-            context.PurchaseTypes.Add(new PurchaseType { Code = "2", Name = "Alat Ganti" });
-            context.PurchaseTypes.Add(new PurchaseType { Code = "3", Name = "Penyelenggaraan" });
-            context.PurchaseTypes.Add(new PurchaseType { Code = "4", Name = "Lain-lain" });
-            context.PurchaseTypes.Add(new PurchaseType { Code = "5", Name = "Stok" });
-            context.PurchaseTypes.Add(new PurchaseType { Code = "6", Name = "Tambahan" });
-        }
+        //private static void InsertPurchaseTypes(AsmContext context)
+        //{
+        //    context.PurchaseTypes.Add(new PurchaseType { Code = "1", Name = "Aset Baharu" });
+        //    context.PurchaseTypes.Add(new PurchaseType { Code = "2", Name = "Alat Ganti" });
+        //    context.PurchaseTypes.Add(new PurchaseType { Code = "3", Name = "Penyelenggaraan" });
+        //    context.PurchaseTypes.Add(new PurchaseType { Code = "4", Name = "Lain-lain" });
+        //    context.PurchaseTypes.Add(new PurchaseType { Code = "5", Name = "Stok" });
+        //    context.PurchaseTypes.Add(new PurchaseType { Code = "6", Name = "Tambahan" });
+        //}
 
-        private void InsertCategories(AsmContext context)
-        {
-            Category a = new Category { Code = "14", Name = "Alat Kelengkapan Bekalan Air dan Elektrik", VotCode = "35700" };
-            context.Categories.Add(a);
-            context.SubCategories.Add(new SubCategory { Code = "36", CategoryId = a.Id, CategoryCode = a.Code, Name = "Alat Kelengkapan Bekalan Air", GlAsset = "35701", GlInventory = "35701", GlMaintenance = "35701", GlSpareParts = "35701" });
-            context.SubCategories.Add(new SubCategory { Code = "37", CategoryId = a.Id, CategoryCode = a.Code, Name = "Alat Kelengkapan Bekalan Elektrik", GlAsset = "35702", GlInventory = "35702", GlMaintenance = "35702", GlSpareParts = "35702" });
+        //private void InsertCategories(AsmContext context)
+        //{
+        //    Category a = new Category { Code = "14", Name = "Alat Kelengkapan Bekalan Air dan Elektrik", VotCode = "35700" };
+        //    context.Categories.Add(a);
+        //    context.SubCategories.Add(new SubCategory { Code = "36", CategoryId = a.Id, CategoryCode = a.Code, Name = "Alat Kelengkapan Bekalan Air", GlAsset = "35701", GlInventory = "35701", GlMaintenance = "35701", GlSpareParts = "35701" });
+        //    context.SubCategories.Add(new SubCategory { Code = "37", CategoryId = a.Id, CategoryCode = a.Code, Name = "Alat Kelengkapan Bekalan Elektrik", GlAsset = "35702", GlInventory = "35702", GlMaintenance = "35702", GlSpareParts = "35702" });
 
-            SubCategory scA = new SubCategory { Code = "119", CategoryId = a.Id, CategoryCode = a.Code, Name = "Alat Kelengkapan Bekalan Elektrik", GlAsset = "35702", GlInventory = "35702", GlMaintenance = "35702", GlSpareParts = "35702" };
-            context.SubCategories.Add(scA);
+        //    SubCategory scA = new SubCategory { Code = "119", CategoryId = a.Id, CategoryCode = a.Code, Name = "Alat Kelengkapan Bekalan Elektrik", GlAsset = "35702", GlInventory = "35702", GlMaintenance = "35702", GlSpareParts = "35702" };
+        //    context.SubCategories.Add(scA);
 
-            context.Categories.Add(new Category { Code = "11", Name = "Alat Kelengkapan Elektrik", VotCode = "35300" });
-            context.Categories.Add(new Category { Code = "10", Name = "Alat Kelengkapan Elektronik", VotCode = "35200" });
+        //    context.Categories.Add(new Category { Code = "11", Name = "Alat Kelengkapan Elektrik", VotCode = "35300" });
+        //    context.Categories.Add(new Category { Code = "10", Name = "Alat Kelengkapan Elektronik", VotCode = "35200" });
 
-            Category b = new Category { Code = "1", Name = "Bekalan Pejabat", VotCode = "27100" };
-            context.Categories.Add(b);
-            var b1 = new SubCategory { Code = "1", CategoryId = b.Id, CategoryCode = b.Code, Name = "Bekalan Pejabat Harta Tak Luak", GlAsset = "27106", GlInventory = "27106", GlMaintenance = "27106", GlSpareParts = "27106" };
-            context.SubCategories.Add(b1);
-            context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "1", Description = "TOWER" });
-            context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "2", Description = "RACKMOUNT SERVER" });
-            context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "3", Description = "STORAGE SERVER" });
-            context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "4", Description = "BLADE SERVER" });
+        //    Category b = new Category { Code = "1", Name = "Bekalan Pejabat", VotCode = "27100" };
+        //    context.Categories.Add(b);
+        //    var b1 = new SubCategory { Code = "1", CategoryId = b.Id, CategoryCode = b.Code, Name = "Bekalan Pejabat Harta Tak Luak", GlAsset = "27106", GlInventory = "27106", GlMaintenance = "27106", GlSpareParts = "27106" };
+        //    context.SubCategories.Add(b1);
+        //    context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "1", Description = "TOWER" });
+        //    context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "2", Description = "RACKMOUNT SERVER" });
+        //    context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "3", Description = "STORAGE SERVER" });
+        //    context.AssetTypes.Add(new AssetType { CategoryId = b.Id, CategoryCode = b.Code, SubCategoryId = b1.Id, SubCategoryCode = b1.Code, Code = "4", Description = "BLADE SERVER" });
 
-        }
+        //}
 
-        private void InsertUnitOfMeasurements(AsmContext context)
-        {
-            context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "1", Description = "Kilometer" });
-            context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "2", Description = "Kotak" });
-            context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "3", Description = "Liter" });
-            context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "4", Description = "Meter" });
-            context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "5", Description = "Palet" });
-            context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "6", Description = "Sentimeter" });
-            context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "7", Description = "Unit" });
-            //TODO: add for stor unit
+        //private void InsertUnitOfMeasurements(AsmContext context)
+        //{
+        //    context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "1", Description = "Kilometer" });
+        //    context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "2", Description = "Kotak" });
+        //    context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "3", Description = "Liter" });
+        //    context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "4", Description = "Meter" });
+        //    context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "5", Description = "Palet" });
+        //    context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "6", Description = "Sentimeter" });
+        //    context.UnitOfMeasurements.Add(new UnitOfMeasurement { Code = "7", Description = "Unit" });
+        //    //TODO: add for stor unit
 
-        }
+        //}
         private void InserSampleSuppliers(AsmContext context)
         {
             context.Suppliers.Add(new Supplier { Code = "A0000001", Name = "ABD RAHMAN RESOURCES SDN BHD", Address1 = "No41-3A Jln Celawi 6/19A                ", Address2 = "Seksyen 6 Kota Damansara                ", Address3 = "47510 Petaling Jaya                     ", Address4 = "Selangor                                ", Phone = "013-3312237         ", Fax = "03-61572237         ", Email = "NULL", Contact = "Abd Rahman Kassim", Status = "O", GlacControlCode = "M-IP-00-00-00-L12101          ", GlacDescription = "Pemiutang Pembekal                                ", CertificateNumber = "NULL", RegistrationReference = "NULL", StartDate = new DateTime(2000, 1, 1), EndDate = new DateTime(2000, 1, 1), VatRegstrionNo = "0", BumiStatus = "NULL" });

@@ -226,3 +226,7 @@ Core/obj/Debug/Core.dll
 Data/obj/Debug/Data.csproj.FileListAbsolute.txt
 *.pdb
 SAGApumper/bin/Debug/SAGApumper.exe
+Core/obj/Debug/Core.csproj.FileListAbsolute.txt
+*.cache
+Core/obj/Debug/Core.dll
+*.pdb
