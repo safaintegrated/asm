@@ -5,15 +5,28 @@
 <%@ Register src="~/Shared/PurchaseRequest/PermohonanBelian_TabItem.ascx" tagname="PermohonanBelian_TabItem" tagprefix="uc2" %>
 <%@ Register src="~/Shared/PurchaseRequest/PermohonanBelian_PopupNewAsset.ascx" tagname="PermohonanBelian_PopupNewAsset" tagprefix="uc3" %>
 
-<style type="text/css">
-    .DefaultMainContainerTable {
-        width: 100%;
-        vertical-align:top;
-        text-align:left;
-    }
-</style>
+<%@ Register src="Tab_SenaraiSemak_Controller.ascx" tagname="Tab_SenaraiSemak_Controller" tagprefix="uc4" %>
+<%@ Register src="Tab_AliranKerja_Controller.ascx" tagname="Tab_AliranKerja_Controller" tagprefix="uc5" %>
 
-<dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Permohonan Belian" ShowCollapseButton="true" Width="100%">
+<%--<script>
+
+    function Toolbar_PopupPr_ItemClick(s, e) {
+        switch (e.item.name) {
+            case "btnSearch": popupSearchMember.Show(); break;
+            case "btnPrintTransaction": popupPrintTransaction.Show(); break;
+            case "btnCancel": CancelMode(); break;
+            case "btnSave": SaveMode(); break;
+            case "btnEdit": EditMode(); break;
+            case "btnApprove": popupRecordVerification.Show(); break;
+        }
+    }
+
+    
+
+
+</script>--%>
+
+<dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Permohonan Belian" ShowCollapseButton="True" Width="100%">
     <PanelCollection>
 <dx:PanelContent runat="server">
     <table style="width:100%; vertical-align:top;text-align:left;">
@@ -58,49 +71,89 @@
         </tr>
         <tr>
             <td style="padding-top:10px;">
-                <dx:ASPxGridView ID="MainGrid" runat="server" AutoGenerateColumns="False" ClientInstanceName="MainGrid" DataSourceID="odsPurchaseRequest" Width="100%" OnCustomCallback="MainGrid_CustomCallback" OnHtmlDataCellPrepared="MainGrid_HtmlDataCellPrepared" KeyFieldName="Id">
+                <dx:ASPxCallbackPanel ID="ASPxCallbackPanel1" runat="server" Width="100%">
+                    <PanelCollection>
+                        <dx:PanelContent runat="server">
+                            <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" ColCount="3" Width="100%">
+                                <Items>
+                                    <dx:EmptyLayoutItem>
+                                    </dx:EmptyLayoutItem>
+                                    <dx:LayoutItem Caption="Nama Pegawai" Width="40%">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer runat="server">
+                                                <dx:ASPxTextBox ID="ASPxFormLayout1_E1" runat="server" Width="50%">
+                                                </dx:ASPxTextBox>
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:EmptyLayoutItem>
+                                    </dx:EmptyLayoutItem>
+                                    <dx:EmptyLayoutItem>
+                                    </dx:EmptyLayoutItem>
+                                    <dx:LayoutItem Caption="Pusat Tanggungjawab" Width="70%">
+                                        <LayoutItemNestedControlCollection>
+                                            <dx:LayoutItemNestedControlContainer runat="server">
+                                                <dx:ASPxTextBox ID="ASPxFormLayout1_E2" runat="server" Width="47%">
+                                                </dx:ASPxTextBox>
+                                            </dx:LayoutItemNestedControlContainer>
+                                        </LayoutItemNestedControlCollection>
+                                    </dx:LayoutItem>
+                                    <dx:EmptyLayoutItem>
+                                    </dx:EmptyLayoutItem>
+                                </Items>
+                            </dx:ASPxFormLayout>
+                        </dx:PanelContent>
+                    </PanelCollection>
+                </dx:ASPxCallbackPanel>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top:10px;">
+                <dx:ASPxGridView ID="MainGrid" runat="server" AutoGenerateColumns="False" ClientInstanceName="MainGrid" DataSourceID="odsPurchaseRequest" OnCustomCallback="MainGrid_CustomCallback" OnHtmlDataCellPrepared="MainGrid_HtmlDataCellPrepared" Width="100%">
                     <Columns>
-                        <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="0">
+                         <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="3" Caption="Perihal Belian" Width="50%">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Instruction" ShowInCustomizationForm="True" VisibleIndex="1">
+                        <dx:GridViewDataTextColumn FieldName="Instruction" ShowInCustomizationForm="True" VisibleIndex="0" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="RequesterId" ShowInCustomizationForm="True" VisibleIndex="2">
+                        <dx:GridViewDataTextColumn FieldName="ReferenceNumber" ShowInCustomizationForm="True" VisibleIndex="2" Caption="No. Rujukan" Width="5%">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="RequestorName" ShowInCustomizationForm="True" VisibleIndex="3">
+                        <dx:GridViewDataTextColumn FieldName="RequesterId" ShowInCustomizationForm="True" VisibleIndex="7" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ProcurementTypeId" ShowInCustomizationForm="True" VisibleIndex="4">
+                        <dx:GridViewDataTextColumn FieldName="RequestorName" ShowInCustomizationForm="True" VisibleIndex="5" Caption="Dimohon Oleh" Width="15%">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ProcurementTypeName" ShowInCustomizationForm="True" VisibleIndex="5">
+                        <dx:GridViewDataTextColumn FieldName="ProcurementTypeId" ShowInCustomizationForm="True" VisibleIndex="8" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ProcurementCategoryId" ShowInCustomizationForm="True" VisibleIndex="6">
+                        <dx:GridViewDataTextColumn FieldName="ProcurementTypeName" ShowInCustomizationForm="True" VisibleIndex="9" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ProcurementCategory" ShowInCustomizationForm="True" VisibleIndex="7">
+                        <dx:GridViewDataTextColumn FieldName="ProcurementCategoryId" ShowInCustomizationForm="True" VisibleIndex="10" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ProcurementMethodId" ShowInCustomizationForm="True" VisibleIndex="8">
+                        <dx:GridViewDataTextColumn FieldName="ProcurementCategory" ShowInCustomizationForm="True" VisibleIndex="11" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ProcurementMethod" ShowInCustomizationForm="True" VisibleIndex="9">
+                        <dx:GridViewDataTextColumn FieldName="ProcurementMethodId" ShowInCustomizationForm="True" VisibleIndex="12" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ReceiverId" ShowInCustomizationForm="True" VisibleIndex="10">
+                        <dx:GridViewDataTextColumn FieldName="ProcurementMethod" ShowInCustomizationForm="True" VisibleIndex="13" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="SupplierId" ShowInCustomizationForm="True" VisibleIndex="11">
+                        <dx:GridViewDataTextColumn FieldName="ReceiverId" ShowInCustomizationForm="True" VisibleIndex="14" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="SupplierName" ShowInCustomizationForm="True" VisibleIndex="12">
+                        <dx:GridViewDataTextColumn FieldName="SupplierId" ShowInCustomizationForm="True" VisibleIndex="15" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="RevisionNumber" ShowInCustomizationForm="True" VisibleIndex="13">
+                        <dx:GridViewDataTextColumn FieldName="SupplierName" ShowInCustomizationForm="True" VisibleIndex="4" Caption="Pembekal" Width="20%">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="ProcessId" ShowInCustomizationForm="True" VisibleIndex="14">
+                        <dx:GridViewDataTextColumn FieldName="RevisionNumber" ShowInCustomizationForm="True" VisibleIndex="16" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="PrNumber" ShowInCustomizationForm="True" VisibleIndex="15">
+                        <dx:GridViewDataTextColumn FieldName="ProcessId" ShowInCustomizationForm="True" VisibleIndex="17" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="StatusName" ShowInCustomizationForm="True" VisibleIndex="16">
+                        <dx:GridViewDataTextColumn FieldName="PrNumber" ShowInCustomizationForm="True" VisibleIndex="1" Caption="No. PO" Width="5%">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="17">
+                        <dx:GridViewDataTextColumn FieldName="StatusName" ShowInCustomizationForm="True" VisibleIndex="6" Caption="Status" Width="5%">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="18">
+                        <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="18" Visible="False">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="19" Visible="False">
                         </dx:GridViewDataCheckColumn>
-                        <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="19">
+                        <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="20" Visible="False">
                         </dx:GridViewDataTextColumn>
-                        <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="20">
+                        <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="21" Visible="False">
                         </dx:GridViewDataTextColumn>
                     </Columns>
                     <Settings ShowFilterRow="True" />
@@ -111,8 +164,8 @@
                         </AlternatingRow>
                     </Styles>
                 </dx:ASPxGridView>
-                <asp:ObjectDataSource ID="odsPurchaseRequest" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.PurchaseRequestModel"></asp:ObjectDataSource>
-                <asp:SqlDataSource ID="MainGridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" SelectCommand="SP_PR_Header_Listing" SelectCommandType="StoredProcedure" OnSelecting="MainGridDs_Selecting">
+                <asp:ObjectDataSource ID="odsPurchaseRequest" runat="server" SelectMethod="FindAll" TypeName="Data.Models.PurchaseRequestModel"></asp:ObjectDataSource>
+                <asp:SqlDataSource ID="MainGridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" OnSelecting="MainGridDs_Selecting" SelectCommand="SP_PR_Header_Listing" SelectCommandType="StoredProcedure">
                     <SelectParameters>
                         <asp:Parameter DefaultValue="530" Name="CurrUser" Type="Int32" />
                     </SelectParameters>
@@ -169,7 +222,7 @@
         </tr>
         <tr>
             <td style="padding-top:10px;">
-                <dx:ASPxPageControl ID="PageControl_PopupPr" runat="server" ActiveTabIndex="0" ClientInstanceName="PageControl_PopupPr" EnableClientSideAPI="True" Width="100%">
+                <dx:ASPxPageControl ID="PageControl_PopupPr" runat="server" ActiveTabIndex="2" ClientInstanceName="PageControl_PopupPr" EnableClientSideAPI="True" Width="100%">
                     <TabPages>
                         <dx:TabPage Text="Utama">
                             <ContentCollection>
@@ -190,12 +243,14 @@
                         <dx:TabPage Text="Senarai Semak">
                             <ContentCollection>
                                 <dx:ContentControl runat="server">
+                                    <uc4:Tab_SenaraiSemak_Controller ID="Tab_SenaraiSemak_Controller1" runat="server" />
                                 </dx:ContentControl>
                             </ContentCollection>
                         </dx:TabPage>
                         <dx:TabPage Text="Aliran Kerja">
                             <ContentCollection>
                                 <dx:ContentControl runat="server">
+                                    <uc5:Tab_AliranKerja_Controller ID="Tab_AliranKerja_Controller1" runat="server" />
                                 </dx:ContentControl>
                             </ContentCollection>
                         </dx:TabPage>
@@ -211,6 +266,59 @@
 
 <dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="LoadingPanel" Modal="True">
 </dx:ASPxLoadingPanel>
+
+
+<dx:ASPxPopupControl ID="popupRecordVerification" runat="server" ClientInstanceName="popupRecordVerification" CloseAction="CloseButton" EnableClientSideAPI="True" HeaderText="Kelulusan" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" ShowFooter="True" Width="504px" AllowDragging="True" Height="261px">
+    <HeaderStyle HorizontalAlign="Left" />
+    <FooterTemplate>
+        <div style="width:100%; text-align:center; padding-top:8px; padding-bottom:8px;">
+            <dx:ASPxButton ID="ASPxButton1" runat="server" AutoPostBack="false" Text="Diterima" Width="120px">
+                <ClientSideEvents Click="function(s, e) {
+	GiveVerdict('1');
+}" />
+            </dx:ASPxButton>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </FooterTemplate>
+    <ContentCollection>
+        <dx:PopupControlContentControl ID="PopupControlContentControl2" runat="server">
+            <dx:ASPxCallbackPanel ID="cbp_RecordVerification" runat="server" ClientInstanceName="cbp_RecordVerification" ShowLoadingPanel="False" ShowLoadingPanelImage="False" Width="100%">
+                <SettingsLoadingPanel Enabled="False" ShowImage="False" />
+                <ClientSideEvents EndCallback="function(s, e) {
+	cbp_RecordVerification_EndCallback(s, e);
+}" />
+                <PanelCollection>
+                    <dx:PanelContent ID="PanelContent2" runat="server">
+                        <dx:ASPxFormLayout ID="FormVerification" runat="server" Width="100%">
+                            <Items>
+                                <dx:LayoutGroup Caption="Pengesahan" ColCount="2">
+                                    <Items>
+                                        <dx:LayoutItem Caption="Komen Pemeriksa" ColSpan="2">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                                                    <dx:ASPxMemo ID="pCOMMENTS" runat="server" ClientInstanceName="pCOMMENTS" EnableClientSideAPI="True" Height="71px" Width="100%">
+                                                    </dx:ASPxMemo>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                    </Items>
+                                </dx:LayoutGroup>
+                                <dx:LayoutItem ShowCaption="False">
+                                    <LayoutItemNestedControlCollection>
+                                        <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                                            <dx:ASPxTextBox ID="pApprove" runat="server" ClientInstanceName="pApprove" ClientVisible="False" EnableClientSideAPI="True" Width="170px">
+                                            </dx:ASPxTextBox>
+                                        </dx:LayoutItemNestedControlContainer>
+                                    </LayoutItemNestedControlCollection>
+                                </dx:LayoutItem>
+                            </Items>
+                        </dx:ASPxFormLayout>
+                    </dx:PanelContent>
+                </PanelCollection>
+            </dx:ASPxCallbackPanel>
+        </dx:PopupControlContentControl>
+    </ContentCollection>
+</dx:ASPxPopupControl>
 
 
 <dx:ASPxPopupControl ID="popupMsg" runat="server" AllowDragging="True" AllowResize="True" AutoUpdatePosition="True" ClientInstanceName="popupMsg" CloseAction="CloseButton" EnableClientSideAPI="True" HeaderText="Informasi Sistem" Modal="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Width="450px">

@@ -13,7 +13,7 @@ using Core.Informix;
 using System.Data.SqlClient;
 using Core.Utility;
 using Core.Common;
-using DataAccess.Entity;
+using Data.Entity;
 
 namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 {
@@ -621,7 +621,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 Jumlah = Convert.ToInt32(NewAsset_GLAC_Value.Value)
             };
 
-            DataAccess.Models.LedgerItemModel.Add(li, ticket.Name);
+            Data.Models.LedgerItemModel.Add(li, ticket.Name);
             cbp_NewAsset_PopupGLDistibution.JSProperties["cpErrMsg"] = "";
 
             //cbp_NewAsset_PopupGLDistibution.JSProperties["cpErrMsg"] = PermohonanBelianMethods.SP_PR_GLDistribution(ref Dt, Mode);
@@ -680,7 +680,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             //Dr["PRPROJDIS_Value"] = Convert.ToDecimal(NewAsset_PCAC_Amount.Value);
 
 
-            DataAccess.Models.ProjectItemModel.Add(li, ticket.Name);
+            Data.Models.ProjectItemModel.Add(li, ticket.Name);
             cbp_NewAsset_PopupGLDistibution.JSProperties["cpErrMsg"] = "";
 
 

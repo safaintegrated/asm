@@ -31,6 +31,42 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxRibbon MainRibbon;
         
         /// <summary>
+        /// ASPxCallbackPanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel ASPxCallbackPanel1;
+        
+        /// <summary>
+        /// ASPxFormLayout1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
+        
+        /// <summary>
+        /// ASPxFormLayout1_E1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E1;
+        
+        /// <summary>
+        /// ASPxFormLayout1_E2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E2;
+        
+        /// <summary>
         /// MainGrid control.
         /// </summary>
         /// <remarks>
@@ -103,6 +139,24 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::AssetAndStoreManagementSystem.Shared.PurchaseRequest.PermohonanBelian_TabItem PermohonanBelian_TabItem1;
         
         /// <summary>
+        /// Tab_SenaraiSemak_Controller1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssetAndStoreManagementSystem.Shared.PurchaseRequest.Tab_SenaraiSemak_Controller Tab_SenaraiSemak_Controller1;
+        
+        /// <summary>
+        /// Tab_AliranKerja_Controller1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssetAndStoreManagementSystem.Shared.PurchaseRequest.Tab_AliranKerja_Controller Tab_AliranKerja_Controller1;
+        
+        /// <summary>
         /// LoadingPanel control.
         /// </summary>
         /// <remarks>
@@ -110,6 +164,87 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
+        
+        /// <summary>
+        /// popupRecordVerification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl popupRecordVerification;
+        
+        /// <summary>
+        /// PopupControlContentControl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl2;
+        
+        /// <summary>
+        /// cbp_RecordVerification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp_RecordVerification;
+        
+        /// <summary>
+        /// PanelContent2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PanelContent PanelContent2;
+        
+        /// <summary>
+        /// FormVerification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxFormLayout FormVerification;
+        
+        /// <summary>
+        /// LayoutItemNestedControlContainer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
+        
+        /// <summary>
+        /// pCOMMENTS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxMemo pCOMMENTS;
+        
+        /// <summary>
+        /// LayoutItemNestedControlContainer4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer4;
+        
+        /// <summary>
+        /// pApprove control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox pApprove;
         
         /// <summary>
         /// popupMsg control.

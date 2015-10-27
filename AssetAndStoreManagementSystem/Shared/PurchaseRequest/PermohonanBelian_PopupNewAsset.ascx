@@ -3,7 +3,7 @@
 
 
 <script>
-
+//
 </script>
 
 <dx:ASPxPopupControl ID="Popup_LineItem_NewAsset" runat="server" ClientInstanceName="Popup_LineItem_NewAsset" CloseAction="CloseButton" CloseAnimationType="Fade" EnableClientSideAPI="True" HeaderText="Permohonan Belian - Item Aset Baharu" MaxWidth="1200px" MinHeight="600px" MinWidth="700px" Modal="True" PopupAnimationType="Fade" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" AllowDragging="True" MaxHeight="700px" ScrollBars="Auto" ShowPageScrollbarWhenModal="True">
@@ -56,18 +56,17 @@
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
                                                         <dx:ASPxComboBox ID="NewAsset_PRI_UomId" runat="server" ClientInstanceName="NewAsset_PRI_UomId" DataSourceID="odsUnitMeasurement" EnableClientSideAPI="True" TextField="Description" ValueField="Id" Width="100%">
                                                         </dx:ASPxComboBox>
-                                                        <asp:ObjectDataSource ID="odsUnitMeasurement" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.UnitOfMeasurementModel"></asp:ObjectDataSource>
+                                                        <asp:ObjectDataSource ID="odsUnitMeasurement" runat="server" SelectMethod="FindAll" TypeName="Data.Models.UnitOfMeasurementModel"></asp:ObjectDataSource>
                                                         <asp:SqlDataSource ID="UOMds" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT [UomId], [UomDescription] FROM [MasterUnitOfMeasurement] ORDER BY [UomDescription]"></asp:SqlDataSource>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="Kategori" Width="20%">
+                                            <dx:LayoutItem Caption="Kategori">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
-                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_CatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_CatId" DataSourceID="odsCategory" EnableClientSideAPI="True" TextFormatString="{1} - ({2})" Width="100%">
+                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_CatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_CatId" DataSourceID="odsCategory">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
-                                                                <Settings ShowFilterRow="True" />
                                                             </GridViewProperties>
                                                             <Columns>
                                                                 <dx:GridViewDataTextColumn FieldName="Code" ShowInCustomizationForm="True" VisibleIndex="0">
@@ -85,22 +84,8 @@
                                                                 <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="6">
                                                                 </dx:GridViewDataTextColumn>
                                                             </Columns>
-                                                            <GridViewStyles>
-                                                                <AlternatingRow Enabled="True">
-                                                                </AlternatingRow>
-                                                            </GridViewStyles>
-                                                            <ClientSideEvents Init="function(s, e) {
-	s.GetGridView().SetWidth(550);
-}" ValueChanged="function(s, e) {
-	NewAsset_PRI_CatId_ValueChanged(s, e);
-}" />
                                                         </dx:ASPxGridLookup>
-                                                        <asp:ObjectDataSource ID="odsCategory" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.CategoryModel"></asp:ObjectDataSource>
-                                                        <asp:SqlDataSource ID="CatDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT [CatId], [CatName], [CatVot] FROM [Category] ORDER BY [CatName], [CatVot]">
-                                                            <SelectParameters>
-                                                                <asp:Parameter DefaultValue="1" Name="CatId" Type="Int32" />
-                                                            </SelectParameters>
-                                                        </asp:SqlDataSource>
+                                                        <asp:ObjectDataSource ID="odsCategory" runat="server" SelectMethod="FindAll" TypeName="Data.Models.CategoryModel"></asp:ObjectDataSource>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
@@ -147,7 +132,7 @@
 	NewAsset_PRI_SubCatId_ValueChanged(s, e);
 }" />
                                                         </dx:ASPxGridLookup>
-                                                        <asp:ObjectDataSource ID="odsSubCat" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.SubCategoryModel"></asp:ObjectDataSource>
+                                                        <asp:ObjectDataSource ID="odsSubCat" runat="server" SelectMethod="FindAll" TypeName="Data.Models.SubCategoryModel"></asp:ObjectDataSource>
                                                         <asp:SqlDataSource ID="SubCatDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" OnSelecting="SubCatDs_Selecting" SelectCommand="SELECT [SubCatId], [SubCatName], [SubCatGLAsset] FROM [SubCategory] WHERE ([CatId] = @CatId) ORDER BY [SubCatName], [SubCatGLAsset]">
                                                             <SelectParameters>
                                                                 <asp:Parameter DefaultValue="1" Name="CatId" Type="Int32" />
@@ -193,7 +178,7 @@
 	s.GetGridView().SetWidth(550);
 }" />
                                                         </dx:ASPxGridLookup>
-                                                        <asp:ObjectDataSource ID="odsTypes" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.AssetTypeModel"></asp:ObjectDataSource>
+                                                        <asp:ObjectDataSource ID="odsTypes" runat="server" SelectMethod="FindAll" TypeName="Data.Models.AssetTypeModel"></asp:ObjectDataSource>
                                                         <asp:SqlDataSource ID="TypeDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT [T_Id], [T_Desc] FROM [AssetStockType] WHERE (([T_CatId] = @T_CatId) AND ([T_SubCatId] = @T_SubCatId)) ORDER BY [T_Desc]">
                                                             <SelectParameters>
                                                                 <asp:Parameter Name="T_CatId" Type="Int32" />
@@ -221,16 +206,32 @@
 	NewAsset_PRI_TaxCode_ValueChanged(s, e);
 }" />
                                                         </dx:ASPxGridLookup>
-                                                        <asp:ObjectDataSource ID="odsTaxCode" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.TaxCodeSagaModel"></asp:ObjectDataSource>
+                                                        <asp:ObjectDataSource ID="odsTaxCode" runat="server" SelectMethod="FindAll" TypeName="Data.Models.TaxCodeSagaModel"></asp:ObjectDataSource>
                                                         <asp:SqlDataSource ID="PRI_TaxCodeDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_SAGAConnectionString %>" OnSelecting="PRI_TaxCodeDs_Selecting" SelectCommand="SP_UT_Taxtypeline" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="Tarikh Permohonan">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxDateEdit ID="Form_PermohonanBelian_LineItem_NewAsset_E1" runat="server">
+                                                        </dx:ASPxDateEdit>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="Tarikh Bekalan">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxDateEdit ID="Form_PermohonanBelian_LineItem_NewAsset_E2" runat="server">
+                                                        </dx:ASPxDateEdit>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
                                         </Items>
                                     </dx:LayoutGroup>
-                                    <dx:LayoutGroup Caption="Jumlah Kecil dan GST" ColCount="7" Width="100%">
+                                    <dx:LayoutGroup Caption="Jumlah Kecil dan GST" ColCount="6" Width="100%">
                                         <Items>
-                                            <dx:LayoutItem Caption="Kuantiti (A)" Width="16%">
+                                            <dx:LayoutItem Caption="Kuantiti " Width="16%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer7" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_PRI_Qty" runat="server" ClientInstanceName="NewAsset_PRI_Qty" DisplayFormatString="n0" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
@@ -243,7 +244,7 @@
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="Kos Seunit (B)" Width="16%">
+                                            <dx:LayoutItem Caption="Kos Seunit " Width="16%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer8" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_PRI_UnitPrice" runat="server" ClientInstanceName="NewAsset_PRI_UnitPrice" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
@@ -256,7 +257,7 @@
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="C = (A x B)" Width="16%">
+                                            <dx:LayoutItem Caption="Jumlah" Width="16%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer9" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_C" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_C" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
@@ -266,7 +267,7 @@
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="% GST (D)" Width="16%">
+                                            <dx:LayoutItem Caption="% GST " Width="16%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer10" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_PRI_TaxRate" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_PRI_TaxRate" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
@@ -276,7 +277,7 @@
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="E =(D x C)" Width="16%">
+                                            <dx:LayoutItem Caption="Jumlah Termasuk GST" Width="16%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer11" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_E" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_E" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
@@ -286,7 +287,7 @@
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="F = (C + E)" Width="16%">
+                                            <dx:LayoutItem Caption="Jumlah Keseluruhan" Width="16%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer12" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_F" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_F" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
@@ -296,8 +297,6 @@
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
-                                            <dx:EmptyLayoutItem Width="4%">
-                                            </dx:EmptyLayoutItem>
                                         </Items>
                                     </dx:LayoutGroup>
                                     <dx:LayoutGroup Caption="Komponen dan Aksesori" Width="100%">
@@ -436,7 +435,7 @@
                                                                     </Styles>
                                                                 </dx:ASPxGridView>
 
-                                                                <asp:ObjectDataSource ID="odsProjectItem" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.ProjectItemModel"></asp:ObjectDataSource>
+                                                                <asp:ObjectDataSource ID="odsProjectItem" runat="server" SelectMethod="FindAll" TypeName="Data.Models.ProjectItemModel"></asp:ObjectDataSource>
 
                                                                 <asp:SqlDataSource ID="NewAsset_ProjectDistributionGridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" SelectCommand="SELECT [PRPROJDIS_RowId], [PRPROJDIS_ProjectCode], [PRPROJDIS_Desc], [PRPROJDIS_Value] FROM [PR_ProjDistribution] WHERE (([PRPROJDIS_ProcessId] = @PRPROJDIS_ProcessId) AND ([PRPROJDIS_Rev] = @PRPROJDIS_Rev) AND ([PRPROJDIS_ItemNumber] = @PRPROJDIS_ItemNumber))" OnSelecting="NewAsset_ProjectDistributionGridDs_Selecting">
                                                                     <SelectParameters>
@@ -495,7 +494,7 @@
                                                                         </AlternatingRow>
                                                                     </Styles>
                                                                 </dx:ASPxGridView>
-                                                                <asp:ObjectDataSource ID="odsLedgerItemModel" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.LedgerItemModel"></asp:ObjectDataSource>
+                                                                <asp:ObjectDataSource ID="odsLedgerItemModel" runat="server" SelectMethod="FindAll" TypeName="Data.Models.LedgerItemModel"></asp:ObjectDataSource>
                                                                 <asp:SqlDataSource ID="NewAsset_GLDistGridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" OnSelecting="NewAsset_GLDistGridDs_Selecting" SelectCommand="SELECT [PRGLDIS_RowId], [PRGILDIS_GL_Type], [PRGLDIS_TransType], [PRGLDIS_GLCode], [PRGLDIS_Desc], [PRGLDIS_Value] FROM [PR_GLDistribution] WHERE (([PRGLDIS_ProcessId] = @PRGLDIS_ProcessId) AND ([PRGLDIS_Rev] = @PRGLDIS_Rev) AND ([PRGLDIS_ItemNumber] = @PRGLDIS_ItemNumber))">
                                                                     <SelectParameters>
                                                                         <asp:Parameter Name="PRGLDIS_ProcessId" Type="String" />
@@ -635,7 +634,7 @@
 	NewAsset_GLAC_Account_ValueChanged(s, e);
 }" />
                                     </dx:ASPxGridLookup>
-                                    <asp:ObjectDataSource ID="odsLedger" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.LedgerModel"></asp:ObjectDataSource>
+                                    <asp:ObjectDataSource ID="odsLedger" runat="server" SelectMethod="FindAll" TypeName="Data.Models.LedgerModel"></asp:ObjectDataSource>
                                     <asp:SqlDataSource ID="GL_AccountDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_SAGAConnectionString %>" OnSelecting="GL_AccountDs_Selecting" SelectCommand="SP_GL_Account" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                                 </dx:LayoutItemNestedControlContainer>
                             </LayoutItemNestedControlCollection>
@@ -731,7 +730,7 @@
 	s.GetGridView().SetWidth(550);
 }" />
                                     </dx:ASPxGridLookup>
-                                    <asp:ObjectDataSource ID="odsProject" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.ProjectModel"></asp:ObjectDataSource>
+                                    <asp:ObjectDataSource ID="odsProject" runat="server" SelectMethod="FindAll" TypeName="Data.Models.ProjectModel"></asp:ObjectDataSource>
                                     <asp:SqlDataSource ID="PC_AccountDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_SAGAConnectionString %>" SelectCommand="SP_PC_Account" SelectCommandType="StoredProcedure" OnSelecting="PC_AccountDs_Selecting"></asp:SqlDataSource>
                                 </dx:LayoutItemNestedControlContainer>
                             </LayoutItemNestedControlCollection>

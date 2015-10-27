@@ -148,15 +148,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsCategory;
         
         /// <summary>
-        /// CatDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource CatDs;
-        
-        /// <summary>
         /// LayoutItemNestedControlContainer4 control.
         /// </summary>
         /// <remarks>
@@ -263,6 +254,24 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource PRI_TaxCodeDs;
+        
+        /// <summary>
+        /// Form_PermohonanBelian_LineItem_NewAsset_E1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit Form_PermohonanBelian_LineItem_NewAsset_E1;
+        
+        /// <summary>
+        /// Form_PermohonanBelian_LineItem_NewAsset_E2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit Form_PermohonanBelian_LineItem_NewAsset_E2;
         
         /// <summary>
         /// LayoutItemNestedControlContainer7 control.

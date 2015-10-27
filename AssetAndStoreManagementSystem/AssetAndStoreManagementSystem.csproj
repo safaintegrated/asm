@@ -406,6 +406,8 @@
     <Content Include="Shared\PurchaseRequest\PermohonanBelian_PrHeader.ascx" />
     <Content Include="Shared\PurchaseRequest\PermohonanBelian_TabItem.ascx" />
     <Content Include="Shared\PurchaseRequest\purchaserequest.js" />
+    <Content Include="Shared\PurchaseRequest\Tab_AliranKerja_Controller.ascx" />
+    <Content Include="Shared\PurchaseRequest\Tab_SenaraiSemak_Controller.ascx" />
     <Content Include="Shared\TerimaanBarang\Index.aspx" />
     <Content Include="Shared\TerimaanBarang\Js_TerimaanBarang.js" />
     <Content Include="Shared\TerimaanBarang\Lookup\Index.aspx" />
@@ -1802,38 +1804,45 @@
     </Compile>
     <Compile Include="Shared\PurchaseRequest\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_Controller.ascx.cs">
       <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_Controller.ascx.designer.cs">
       <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PopupNewAsset.ascx.cs">
       <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PopupNewAsset.ascx.designer.cs">
       <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PrHeader.ascx.cs">
       <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_PrHeader.ascx.designer.cs">
       <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_TabItem.ascx.cs">
       <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\PermohonanBelian_TabItem.ascx.designer.cs">
       <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\Tab_AliranKerja_Controller.ascx.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\Tab_AliranKerja_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_AliranKerja_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\Tab_SenaraiSemak_Controller.ascx.cs">
+      <DependentUpon>Tab_SenaraiSemak_Controller.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Shared\PurchaseRequest\Tab_SenaraiSemak_Controller.ascx.designer.cs">
+      <DependentUpon>Tab_SenaraiSemak_Controller.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shared\TerimaanBarang\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

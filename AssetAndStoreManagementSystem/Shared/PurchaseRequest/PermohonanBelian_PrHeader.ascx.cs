@@ -1,4 +1,4 @@
-﻿using DataAccess.Entity;
+﻿using Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,7 +89,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 {
                     //FormTVP(ref Dt);
                     //PopulateTVP(ref Dt, ticket.Name);
-                    DataAccess.Entity.PurchaseRequest pr = new DataAccess.Entity.PurchaseRequest
+                    Data.Entity.PurchaseRequest pr = new Data.Entity.PurchaseRequest
 
                     {
                         Description = PRH_Purpose.Text.Trim(),
@@ -104,7 +104,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                         ReceiverId = PRH_PurchaserId.Value.ToString()
                     };
 
-                    DataAccess.Models.PurchaseRequestModel.Add(pr, ticket.Name);
+                    Data.Models.PurchaseRequestModel.Add(pr, ticket.Name);
 
                     //DbErr = PermohonanBelianMethods.SP_PR_Header_SaveSubmitCancel(ticket.Name, Mode, ref Dt, ref ReturnProcessId, ref ReturnRevNumber);
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnProcessId"] =  pr.ProcessId;
@@ -205,7 +205,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
             try
             {
-                DataAccess.Entity.PurchaseRequest pr = DataAccess.Models.PurchaseRequestModel.FindByProcessIdAndRevision(PRH_ProcessId.Text, PRH_Revision.Text);
+                Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindByProcessIdAndRevision(PRH_ProcessId.Text, PRH_Revision.Text);
                 if (pr == null)
                     throw new Exception("Not Found");
 
@@ -216,7 +216,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 PRH_ProcurementITypeId.Value = pr.ProcurementTypeId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementITypeId"]);
                 PRH_ProcurementCatId.Value = pr.ProcurementCategoryId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementCatId"]);
 
-                DataAccess.Entity.Supplier s = DataAccess.Models.SupplierModel.FindById(pr.SupplierId);
+                Data.Entity.Supplier s = Data.Models.SupplierModel.FindById(pr.SupplierId);
                 if (s == null)
                     throw new Exception("Not Found");
                 PRH_SupplierCode.Value = s.Id;// Dt.Rows[0]["PRH_SupplierCode"].ToString();
@@ -227,7 +227,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 PRH_SupplierGLCode.Text = s.GlacControlCode;// Dt.Rows[0]["PRH_SupplierGLCode"].ToString();
                 PRH_SupplierGLDesc.Text = s.GlacDescription;// Dt.Rows[0]["PRH_SupplierGLDesc"].ToString();
 
-                DataAccess.Entity.PuDeliveryAddress pda = DataAccess.Models.PuDeliveryAddressModel.FindById(pr.ReceiverId);
+                Data.Entity.PuDeliveryAddress pda = Data.Models.PuDeliveryAddressModel.FindById(pr.ReceiverId);
                 if (pda != null)
                 {
                     PRH_PurchaserId.Value = pda.Id;// Dt.Rows[0]["PRH_PurchaserId"].ToString();
