@@ -218,3 +218,11 @@ pip-log.txt
 packages/
 debug/
 obj/
+AssetAndStoreManagementSystem.v12.suo
+*.bak
+Core/obj/Debug/Core.csproj.FileListAbsolute.txt
+*.cache
+Core/obj/Debug/Core.dll
+Data/obj/Debug/Data.csproj.FileListAbsolute.txt
+*.pdb
+SAGApumper/bin/Debug/SAGApumper.exe
