@@ -8,6 +8,7 @@ namespace Data.Entity
 {
     public class Category : EntityBase
     {
+        //
         public string Code { get; set; }
         public string Name { get; set; }
         public string VotCode { get; set; }
