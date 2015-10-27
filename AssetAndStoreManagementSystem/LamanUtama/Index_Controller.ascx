@@ -134,7 +134,7 @@ ShowProfilePopup();
                         <table style="width:290px; vertical-align:top; text-align:left; padding:0px 0px 0px 0px;">
                             <tr>
                                 <td style="width:100%; vertical-align:top; text-align:center; padding:0px 0px 0px 0px; margin:0;">
-                                    <dx:ASPxHyperLink ID="ASPxHyperLink7" runat="server" ImageUrl="~/Public/Images/StartMenu/PurchaseRequisition.png" Cursor="pointer" NavigateUrl="~/Shared/PermohonanBelian/Index.aspx" Target="_blank" />
+                                    <dx:ASPxHyperLink ID="ASPxHyperLink7" runat="server" ImageUrl="~/Public/Images/StartMenu/PurchaseRequisition.png" Cursor="pointer" NavigateUrl="~/Shared/PurchaseRequest/Index.aspx" Target="_blank" />
                                 </td>
                             </tr>
                             <tr>
