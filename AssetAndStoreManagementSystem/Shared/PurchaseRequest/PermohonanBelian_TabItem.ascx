@@ -33,7 +33,7 @@
                                                     <dx:LayoutItem ColSpan="2" ShowCaption="False">
                                                         <LayoutItemNestedControlCollection>
                                                             <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
-                                                                <dx:ASPxGridView ID="TabItemGrid" runat="server" ClientInstanceName="TabItemGrid" OnCustomCallback="TabItemGrid_CustomCallback" Width="100%" AutoGenerateColumns="False" DataSourceID="odsPurchaseItem">
+                                                                <dx:ASPxGridView ID="TabItemGrid" runat="server" ClientInstanceName="TabItemGrid" Width="100%" AutoGenerateColumns="False" DataSourceID="odsPurchaseItem">
                                                                     <Columns>
                                                                         <dx:GridViewDataTextColumn FieldName="PurchaseRequestId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
                                                                         </dx:GridViewDataTextColumn>
@@ -150,99 +150,89 @@
     </FooterContentTemplate>
     <ContentCollection>
         <dx:PopupControlContentControl runat="server">
-            <dx:ASPxGridView ID="GridItemList" runat="server" AutoGenerateColumns="False" ClientInstanceName="GridItemList" DataSourceID="odsMainInfo" EnableCallbackAnimation="True" OnAfterPerformCallback="GridItemList_AfterPerformCallback" OnCustomCallback="GridItemList_CustomCallback" Width="100%">
+            <dx:ASPxGridView ID="GridItemList" runat="server" AutoGenerateColumns="False" ClientInstanceName="GridItemList" DataSourceID="odsMainInfo" EnableCallbackAnimation="True" Width="100%">
                 <Columns>
                     <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="0">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Specification" ShowInCustomizationForm="True" Visible="False" VisibleIndex="1">
+                    <dx:GridViewDataTextColumn FieldName="Specification" ShowInCustomizationForm="True" VisibleIndex="1">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="CategoryId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                    <dx:GridViewDataTextColumn FieldName="CategoryId" ShowInCustomizationForm="True" VisibleIndex="2">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="CategoryName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                    <dx:GridViewDataTextColumn FieldName="CategoryName" ShowInCustomizationForm="True" VisibleIndex="3">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="SubCategoryId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="4">
+                    <dx:GridViewDataTextColumn FieldName="SubCategoryId" ShowInCustomizationForm="True" VisibleIndex="4">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="SubCategoryName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                    <dx:GridViewDataTextColumn FieldName="SubCategoryName" ShowInCustomizationForm="True" VisibleIndex="5">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Type" ShowInCustomizationForm="True" Visible="False" VisibleIndex="6">
+                    <dx:GridViewDataTextColumn FieldName="Type" ShowInCustomizationForm="True" VisibleIndex="6">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Brand" ShowInCustomizationForm="True" Visible="False" VisibleIndex="7">
+                    <dx:GridViewDataTextColumn FieldName="Brand" ShowInCustomizationForm="True" VisibleIndex="7">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Model" ShowInCustomizationForm="True" Visible="False" VisibleIndex="8">
+                    <dx:GridViewDataTextColumn FieldName="Model" ShowInCustomizationForm="True" VisibleIndex="8">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Made" ShowInCustomizationForm="True" Visible="False" VisibleIndex="9">
+                    <dx:GridViewDataTextColumn FieldName="Made" ShowInCustomizationForm="True" VisibleIndex="9">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ManufacturingSerialNumber" ShowInCustomizationForm="True" Visible="False" VisibleIndex="10">
+                    <dx:GridViewDataTextColumn FieldName="ManufacturingSerialNumber" ShowInCustomizationForm="True" VisibleIndex="10">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn FieldName="WarrantyStart" ShowInCustomizationForm="True" Visible="False" VisibleIndex="11">
-                        <PropertiesDateEdit DisplayFormatString="">
-                        </PropertiesDateEdit>
+                    <dx:GridViewDataDateColumn FieldName="WarrantyStart" ShowInCustomizationForm="True" VisibleIndex="11">
                     </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataDateColumn FieldName="WarrantyEnd" ShowInCustomizationForm="True" Visible="False" VisibleIndex="12">
-                        <PropertiesDateEdit DisplayFormatString="">
-                        </PropertiesDateEdit>
+                    <dx:GridViewDataDateColumn FieldName="WarrantyEnd" ShowInCustomizationForm="True" VisibleIndex="12">
                     </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn FieldName="AssetTypeId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="13">
+                    <dx:GridViewDataTextColumn FieldName="AssetTypeId" ShowInCustomizationForm="True" VisibleIndex="13">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="AssetTypeName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="14">
+                    <dx:GridViewDataTextColumn FieldName="AssetTypeName" ShowInCustomizationForm="True" VisibleIndex="14">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="RegistrationNumber" ShowInCustomizationForm="True" VisibleIndex="15">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Status" ShowInCustomizationForm="True" Visible="False" VisibleIndex="16">
+                    <dx:GridViewDataTextColumn FieldName="Status" ShowInCustomizationForm="True" VisibleIndex="16">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="NasionalCode" ShowInCustomizationForm="True" Visible="False" VisibleIndex="17">
+                    <dx:GridViewDataTextColumn FieldName="NasionalCode" ShowInCustomizationForm="True" VisibleIndex="17">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="MaintenanceRequired" ShowInCustomizationForm="True" Visible="False" VisibleIndex="18">
+                    <dx:GridViewDataTextColumn FieldName="MaintenanceRequired" ShowInCustomizationForm="True" VisibleIndex="18">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="LoanApplicable" ShowInCustomizationForm="True" Visible="False" VisibleIndex="19">
+                    <dx:GridViewDataTextColumn FieldName="LoanApplicable" ShowInCustomizationForm="True" VisibleIndex="19">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="SupplierId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="20">
+                    <dx:GridViewDataTextColumn FieldName="SupplierId" ShowInCustomizationForm="True" VisibleIndex="20">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="SupplierName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="21">
+                    <dx:GridViewDataTextColumn FieldName="SupplierName" ShowInCustomizationForm="True" VisibleIndex="21">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="SupplierAddress" ShowInCustomizationForm="True" Visible="False" VisibleIndex="22">
+                    <dx:GridViewDataTextColumn FieldName="SupplierAddress" ShowInCustomizationForm="True" VisibleIndex="22">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ProcurementMethodId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="23">
+                    <dx:GridViewDataTextColumn FieldName="ProcurementMethodId" ShowInCustomizationForm="True" VisibleIndex="23">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="ProcurementMethodName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="24">
+                    <dx:GridViewDataTextColumn FieldName="ProcurementMethodName" ShowInCustomizationForm="True" VisibleIndex="24">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="PONumber" ShowInCustomizationForm="True" VisibleIndex="25">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataDateColumn FieldName="PODate" ShowInCustomizationForm="True" VisibleIndex="26">
-                        <PropertiesDateEdit DisplayFormatString="">
-                        </PropertiesDateEdit>
                     </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn FieldName="InvoiceNumber" ShowInCustomizationForm="True" Visible="False" VisibleIndex="27">
+                    <dx:GridViewDataTextColumn FieldName="InvoiceNumber" ShowInCustomizationForm="True" VisibleIndex="27">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="VoucherNumber" ShowInCustomizationForm="True" Visible="False" VisibleIndex="28">
+                    <dx:GridViewDataTextColumn FieldName="VoucherNumber" ShowInCustomizationForm="True" VisibleIndex="28">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn FieldName="VoucherDate" ShowInCustomizationForm="True" Visible="False" VisibleIndex="29">
-                        <PropertiesDateEdit DisplayFormatString="">
-                        </PropertiesDateEdit>
+                    <dx:GridViewDataDateColumn FieldName="VoucherDate" ShowInCustomizationForm="True" VisibleIndex="29">
                     </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn FieldName="GRNNumber" ShowInCustomizationForm="True" Visible="False" VisibleIndex="30">
+                    <dx:GridViewDataTextColumn FieldName="GRNNumber" ShowInCustomizationForm="True" VisibleIndex="30">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataDateColumn FieldName="GRNDate" ShowInCustomizationForm="True" Visible="False" VisibleIndex="31">
-                        <PropertiesDateEdit DisplayFormatString="">
-                        </PropertiesDateEdit>
+                    <dx:GridViewDataDateColumn FieldName="GRNDate" ShowInCustomizationForm="True" VisibleIndex="31">
                     </dx:GridViewDataDateColumn>
-                    <dx:GridViewDataTextColumn FieldName="DeliveryNumber" ShowInCustomizationForm="True" Visible="False" VisibleIndex="32">
+                    <dx:GridViewDataTextColumn FieldName="DeliveryNumber" ShowInCustomizationForm="True" VisibleIndex="32">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="33">
+                    <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementId" ShowInCustomizationForm="True" VisibleIndex="33">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="34">
+                    <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementName" ShowInCustomizationForm="True" VisibleIndex="34">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Qty" ShowInCustomizationForm="True" Visible="False" VisibleIndex="35">
+                    <dx:GridViewDataTextColumn FieldName="Qty" ShowInCustomizationForm="True" VisibleIndex="35">
                     </dx:GridViewDataTextColumn>
                     <dx:GridViewDataTextColumn FieldName="PurchasePrice" ShowInCustomizationForm="True" VisibleIndex="36">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" Visible="False" VisibleIndex="37">
+                    <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="37">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" Visible="False" VisibleIndex="38">
+                    <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="38">
                     </dx:GridViewDataCheckColumn>
-                    <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" Visible="False" VisibleIndex="39">
+                    <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="39">
                     </dx:GridViewDataTextColumn>
-                    <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" Visible="False" VisibleIndex="40">
+                    <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="40">
                     </dx:GridViewDataTextColumn>
                 </Columns>
                 <Settings ShowFilterRow="True" />
@@ -253,7 +243,7 @@
                     </AlternatingRow>
                 </Styles>
             </dx:ASPxGridView>
-            <asp:ObjectDataSource ID="odsMainInfo" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.MainRegistrationInfoModel"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="odsMainInfo" runat="server" SelectMethod="FindAll" TypeName="Data.Models.MainRegistrationInfoModel"></asp:ObjectDataSource>
         </dx:PopupControlContentControl>
     </ContentCollection>
 </dx:ASPxPopupControl>

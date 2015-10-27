@@ -22,12 +22,12 @@ namespace AssetAndStoreManagementSystem.Stor.PengeluaranStok {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// PengeluaranStokNew_Controller control.
+        /// PengeluaranStokController control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AssetAndStoreManagementSystem.Stor.PengeluaranStok.PengeluaranStok_ControllerNew PengeluaranStokNew_Controller;
+        protected global::AssetAndStoreManagementSystem.Stor.PengeluaranStok.PengeluaranStokController PengeluaranStokController;
     }
 }

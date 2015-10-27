@@ -64,8 +64,8 @@
                                 <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
                                     <dx:ASPxComboBox ID="cb_Year" runat="server" DataSourceID="YearDs" TextField="RECEIVEYEAR" ValueField="RECEIVEYEAR" ValueType="System.Int32" ClientInstanceName="cb_Year" EnableClientSideAPI="True">
                                     </dx:ASPxComboBox>
-                                    <asp:SqlDataSource ID="YearDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" SelectCommand="SELECT distinct([RECEIVEYEAR]) [RECEIVEYEAR]
-  FROM [AMSDb].[dbo].[V_AssetInventoryRegistration_MainInformation]
+                                    <asp:SqlDataSource ID="YearDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" SelectCommand="SELECT distinct([RECEIVEYEAR]) [RECEIVEYEAR]
+  FROM [AMS_DB].[dbo].[V_AssetInventoryRegistration_MainInformation]
   where [RECEIVEYEAR] IS NOT NULL
   order by [RECEIVEYEAR]"></asp:SqlDataSource>
                                 </dx:LayoutItemNestedControlContainer>
@@ -105,7 +105,7 @@
                     </Columns>
                     <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
                 </dx:ASPxGridView>
-                <asp:SqlDataSource ID="GridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" SelectCommand="select
+                <asp:SqlDataSource ID="GridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" SelectCommand="select
 [AIRMI_UniqueId]
 ,ROW_NUMBER() OVER(ORDER BY [AIRMI_RegistrationNumber]) as RowNum
 ,[AIRMI_RegistrationNumber]

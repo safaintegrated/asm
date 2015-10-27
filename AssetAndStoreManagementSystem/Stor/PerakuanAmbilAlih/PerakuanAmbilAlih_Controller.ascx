@@ -30,6 +30,60 @@
         }
     }
 
+    function FillStockInfo(Values)
+    {
+        alert(Values)
+        //Stock_Id.SetText(Values[0].toString());
+        alert('1')
+        Stock_RegisterNo.SetText(Values[0].toString());
+        alert('2')
+        Stock_Status.SetText(Values[1].toString());
+        alert('3')
+        Stock_Price.SetText(Values[2].toString());
+        alert('4')
+        Stock_Detail.SetText(Values[3].toString());
+        alert('5')
+        Stock_Suggestion.SetText(Values[4].toString());
+        
+        //Stock_Balance.SetText(Values[3].toString());
+       
+        
+        
+    }
+
+
+    function EmpGridLookup_RowClick(s,e)
+    {
+
+    }
+
+    function EmpGridLookupOnGetRoValues(values)
+    {
+        alert('6')
+        Stock_RegisterNo.SetText(Values);
+        alert('7')
+        Stock_Status.SetText(Values);
+        alert('8')
+        Stock_Price.SetText(Values);
+        alert('9')
+        Stock_Detail.SetText(Values);
+        //alert('3')
+        //Stock_Balance.SetText(Values);
+        alert('10')
+        Stock_QuantityRecord.SetText(Values);
+        
+    }
+
+   function LembagaPemeriksaSelected(U)
+    {
+       alert('TRY')
+       DaftarStor.SetText(Id.toString());
+       LoadingPanel.SetText('Sistem sedang membuka maklumat ambil alih yang dipilih. Sila tunggu..')
+       LoadingPanel.Show();
+       cbp.PerfomCallBack('LOAD')
+   }
+
+
     function LulusClicked()
     { }
 
@@ -75,6 +129,9 @@
     function ImpotClicked()
     { }
 </script>
+
+<p>
+    ==========</p>
 
 <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Perakuan Ambil-Alih" Width="100%">
     <HeaderImage Url="~/Public/Images/Screen/PerakuanAmbilAlih.png">
@@ -196,39 +253,88 @@
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
                         
-                        <dx:ASPxFormLayout ID="ASPxFormLayout3" runat="server" Width="100%">
+                        <dx:ASPxFormLayout ID="NamaPegawaiStorBaru" runat="server" Width="100%">
                             <Items>
                                 <dx:LayoutGroup Caption="Maklumat Pegawai Stor Semasa &amp; Baru" Width="100%">
                                     <Items>
-                                        <dx:LayoutItem Caption="Nama Stor" Width="100%">
+                                        <dx:LayoutItem Caption="No Daftar Stok">
                                             <LayoutItemNestedControlCollection>
                                                 <dx:LayoutItemNestedControlContainer runat="server">
-                                                    <dx:ASPxComboBox ID="ASPxFormLayout3_E1" runat="server" CssClass="ComboBoxForNamaStor">
-                                                    </dx:ASPxComboBox>
+                                                    <dx:ASPxGridLookup ID="Stock_RegisterNo" runat="server" AutoGenerateColumns="False" ClientInstanceName="Stock_RegisterNo" DataSourceID="SqlDataSourceSenaraiStok" KeyFieldName="Stock_Id" TextFormatString="{0}" EnableClientSideAPI="True">
+                                                        <GridViewProperties>
+                                                            <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
+                                                        </GridViewProperties>
+                                                        <Columns>
+                                                            <dx:GridViewDataTextColumn FieldName="Stock_Id" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="Stock_RegisterNo" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="Stock_Status" ShowInCustomizationForm="True" VisibleIndex="2">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="Stock_Price" ShowInCustomizationForm="True" VisibleIndex="3">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="Stock_QuantityRecord" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                            </dx:GridViewDataTextColumn>
+                                                        </Columns>
+                                                        <ClientSideEvents DropDown="function(s, e) {
+	s.GetGridView().SetWidth(650)
+}" Init="function(s, e) {
+	s.GetGridView().SetWidth(650)
+}" ValueChanged="function(s, e)
+ {
+	var GV=Stock_RegisterNo.GetGridView();
+GV.GetRowValues(GV.GetFocusedRowIndex(),'Stock_RegisterNo;Stock_Status;Stock_Price;Stock_Detail;Stock_QuantityRecord',FillStockInfo);
+}" />
+                                                    </dx:ASPxGridLookup>
+                                                    <asp:SqlDataSource ID="SqlDataSourceSenaraiStok" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_StockConnectionString %>" SelectCommand="Select [Stock_Id],[Stock_RegisterNo],[Stock_Status],[Stock_Price],[Stock_QuantityRecord] from [Stock] order by [Stock_RegisterNo]"></asp:SqlDataSource>
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
                                         </dx:LayoutItem>
-                                        <dx:LayoutItem Caption="Nama Pegawai Stor Semasa" Width="100%">
+                                        <dx:LayoutItem Caption="Status Pemeriksaan" Width="100%">
                                             <LayoutItemNestedControlCollection>
                                                 <dx:LayoutItemNestedControlContainer runat="server">
-                                                    <dx:ASPxTextBox ID="ASPxFormLayout3_E2" runat="server" CssClass="TextBoxForName">
+                                                    <dx:ASPxTextBox ID="Stock_Status" runat="server" ClientInstanceName="Stock_Status" OnTextChanged="Stock_Status_TextChanged" Width="170px" EnableClientSideAPI="True">
                                                     </dx:ASPxTextBox>
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
                                         </dx:LayoutItem>
-                                        <dx:LayoutItem ShowCaption="False" Width="100%" CssClass="FormLayoutItemAdd10pxTopPadding">
+                                        <dx:LayoutItem Caption="Harga Seunit">
                                             <LayoutItemNestedControlCollection>
                                                 <dx:LayoutItemNestedControlContainer runat="server">
-                                                    <dx:ASPxHyperLink ID="ASPxFormLayout3_E3" runat="server" CssClass="myHyperlink" EnableTheming="False" Text="Carian Pegawai Stor..">
-                                                    </dx:ASPxHyperLink>
+                                                    <dx:ASPxTextBox ID="Stock_Price" runat="server" ClientInstanceName="Stock_Price" OnTextChanged="Stock_Price_TextChanged" Width="170px" EnableClientSideAPI="True">
+                                                    </dx:ASPxTextBox>
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
                                         </dx:LayoutItem>
-                                        <dx:LayoutItem Caption="Nama Pegawai Stor Baru" Width="100%">
+                                        <dx:LayoutItem Caption="Keterangan Stok">
                                             <LayoutItemNestedControlCollection>
                                                 <dx:LayoutItemNestedControlContainer runat="server">
-                                                    <dx:ASPxTextBox ID="ASPxFormLayout3_E4" runat="server" CssClass="TextBoxForName" ClientEnabled="False">
+                                                    <dx:ASPxTextBox ID="Stock_Detail" runat="server" ClientInstanceName="Stock_Detail" OnTextChanged="Stock_Detail_TextChanged" Width="170px" EnableClientSideAPI="True" ClientVisible="False">
                                                     </dx:ASPxTextBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Kuantiti Direkod">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxTextBox ID="Stock_QuantityRecord" runat="server" ClientInstanceName="Stock_QuantityRecord" OnTextChanged="Stock_QuantityRecord_TextChanged" Width="170px" EnableClientSideAPI="True">
+                                                    </dx:ASPxTextBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Kuantiti Fizikal">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxSpinEdit ID="Stock_QuantityPhysical" runat="server" Number="0" ClientInstanceName="Stock_QuantityPhysical">
+                                                    </dx:ASPxSpinEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Catatan dan Cadangan">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxMemo ID="Stock_Suggestion" runat="server" Height="71px" Width="170px" ClientInstanceName="Stock_Suggestion">
+                                                    </dx:ASPxMemo>
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
                                         </dx:LayoutItem>
@@ -236,51 +342,82 @@
                                 </dx:LayoutGroup>
                                 <dx:LayoutGroup Caption="Senarai Stok Yang Diperiksa" Width="100%">
                                     <Items>
-                                        <dx:LayoutItem ShowCaption="False" Width="100%">
+                                        <dx:LayoutItem Caption="Nama Stor" CssClass="FormLayoutItemAdd10pxTopPadding" Width="100%">
                                             <LayoutItemNestedControlCollection>
                                                 <dx:LayoutItemNestedControlContainer runat="server">
-                                                    <dx:ASPxGridView ID="ASPxGridView8" runat="server" AutoGenerateColumns="False" Width="100%">
-                                <Columns>
-                                    <dx:GridViewDataTextColumn Caption="Kod Stok" ShowInCustomizationForm="True" VisibleIndex="0" Width="10%">
-                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Keterangan" ShowInCustomizationForm="True" VisibleIndex="1" Width="25%">
-                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Unit Pengukuran" ShowInCustomizationForm="True" VisibleIndex="2" Width="9%">
-                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Kuantiti Direkod" ShowInCustomizationForm="True" VisibleIndex="3" Width="10%">
-                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Kuantiti Fizikal" ShowInCustomizationForm="True" VisibleIndex="4" Width="10%">
-                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Status Pemeriksaan" ShowInCustomizationForm="True" VisibleIndex="5" Width="18%">
-                                         <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Cadangan" ShowInCustomizationForm="True" VisibleIndex="6" Width="18%">
-                                         <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                </Columns>
-                                                        <SettingsPager Visible="False">
-                                                        </SettingsPager>
-                                <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
-                            </dx:ASPxGridView>
+                                                    <dx:ASPxGridLookup ID="NamaStor" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" KeyFieldName="ST_StoreId" OnTextChanged="NamaStor_TextChanged" TextFormatString=" {1}">
+                                                        <GridViewProperties>
+                                                            <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
+                                                        </GridViewProperties>
+                                                        <Columns>
+                                                            <dx:GridViewDataTextColumn FieldName="ST_StoreId" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                                <EditFormSettings Visible="False" />
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="ST_StoreName" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="ST_StoreAdd1" ShowInCustomizationForm="True" VisibleIndex="2">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="ST_StoreAdd2" ShowInCustomizationForm="True" VisibleIndex="3">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="ST_StorePhoneNumber" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                            </dx:GridViewDataTextColumn>
+                                                        </Columns>
+                                                    </dx:ASPxGridLookup>
+                                                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_StockConnectionString %>" SelectCommand="Select [ST_StoreId],[ST_StoreName],[ST_StoreAdd1],[ST_StoreAdd2],[ST_StorePhoneNumber]from [Store] order by [ST_StoreName]"></asp:SqlDataSource>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Tarikh Laporan" Width="100%">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxDateEdit ID="TarikhLaporan" runat="server">
+                                                    </dx:ASPxDateEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Nama Pegawai Stor Semasa">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxGridLookup ID="NamaPegawaiStorSemasa" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" KeyFieldName="EmployeeSystemId" MultiTextSeparator="" OnTextChanged="NamaPegawaiStorSemasa_TextChanged" style="margin-top: 0px" TextFormatString="{2}">
+                                                        <GridViewProperties>
+                                                            <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
+                                                        </GridViewProperties>
+                                                        <Columns>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeSystemId" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                                <EditFormSettings Visible="False" />
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeId" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeName" ShowInCustomizationForm="True" VisibleIndex="2">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeDesignation" ShowInCustomizationForm="True" VisibleIndex="3">
+                                                            </dx:GridViewDataTextColumn>
+                                                        </Columns>
+                                                    </dx:ASPxGridLookup>
+                                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="Select [EmployeeSystemId],[EmployeeId],[EmployeeName],[EmployeeDesignation] from [Employee] order by [EmployeeName]"></asp:SqlDataSource>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Nama Pegawai Stor Baru" Width="100%">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxGridLookup ID="NamaPegawaiBaru" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource3" KeyFieldName="EmployeeSystemId" MultiTextSeparator="" TextFormatString="{2}">
+                                                        <GridViewProperties>
+                                                            <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
+                                                        </GridViewProperties>
+                                                        <Columns>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeSystemId" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                                <EditFormSettings Visible="False" />
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeId" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeName" ShowInCustomizationForm="True" VisibleIndex="2">
+                                                            </dx:GridViewDataTextColumn>
+                                                            <dx:GridViewDataTextColumn FieldName="EmployeeDesignation" ShowInCustomizationForm="True" VisibleIndex="3">
+                                                            </dx:GridViewDataTextColumn>
+                                                        </Columns>
+                                                    </dx:ASPxGridLookup>
+                                                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="select [EmployeeSystemId],[EmployeeId],[EmployeeName],[EmployeeDesignation] from [Employee] order by [EmployeeName] "></asp:SqlDataSource>
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
                                         </dx:LayoutItem>

@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="AssetAndStoreManagementSystem.Stor.Stok.Index" %>
 
-<%@ Register Src="~/Stor/Stok/Stok_Controller.ascx" TagPrefix="uc1" TagName="Stok_Controller" %>
-
+<%@ Register Src="~/Stor/Stok/JenisStok_Controller.ascx" TagPrefix="uc1" TagName="JenisStok_Controller" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +12,7 @@
 <body>
     <form id="form1" runat="server">
     <div class="MainDivCentered940px">
-        <uc1:Stok_Controller runat="server" id="Stok_Controller" />
+        <uc1:JenisStok_Controller runat="server" id="JenisStok_Controller" />
     </div>
     </form>
 </body>

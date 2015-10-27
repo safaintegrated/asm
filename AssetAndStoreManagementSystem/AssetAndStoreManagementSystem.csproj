@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,7 +19,10 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
-    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +42,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Core.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -48,6 +55,7 @@
     <Reference Include="DevExpress.DataAccess.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -100,22 +108,33 @@
     <Reference Include="DevExpress.XtraScheduler.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Sybase.AdoNet4.AseClient, Version=16.0.0.2, Culture=neutral, PublicKeyToken=95d94fac46c88e1e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Sybase.AdoNet4.AseClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Xml\EmailXML.xml" />
@@ -194,6 +213,12 @@
     <Content Include="Aset\Tender\Index.aspx" />
     <Content Include="Aset\Tender\Tab_Maklumat.ascx" />
     <Content Include="Aset\Tender\Tender_Controller.ascx" />
+    <Content Include="bin\AssetAndStoreManagementSystem.dll" />
+    <Content Include="bin\AssetAndStoreManagementSystem.pdb" />
+    <Content Include="bin\Core.dll" />
+    <Content Include="bin\Core.pdb" />
+    <Content Include="bin\SPThemeAssembly.dll" />
+    <Content Include="bin\Sybase.AdoNet4.AseClient.dll" />
     <Content Include="Components\AttachementWindow\AttachmentWindow_Controller.ascx" />
     <Content Include="Components\AttachementWindow\Index.aspx" />
     <Content Include="Components\Ribbon\Index.aspx" />
@@ -417,42 +442,7 @@
     <Content Include="Shared\TerimaanBarang\Tab_SenaraiSemak_Controller.ascx" />
     <Content Include="Shared\TerimaanBarang\Tab_TerimaanBarang_Controller.ascx" />
     <Content Include="Shared\TerimaanBarang\TerimaanBarang_Controller.ascx" />
-    <Content Include="TestGenerateQR\Index.aspx" />
-    <Content Include="Stor\DaftarStok\DaftarStok_Controller.ascx" />
-    <Content Include="Stor\DaftarStok\Index.aspx" />
-    <Content Include="Stor\DaftarStok\Tab_MaklumatStok.ascx" />
-    <Content Include="Stor\DaftarStok\Tab_SenaraiStok.ascx" />
-    <Content Include="Stor\HapusKiraStok\HapusKiraStok_Controller.ascx" />
-    <Content Include="Stor\HapusKiraStok\Index.aspx" />
-    <Content Include="Stor\LantikanPegPemverifikasi\Index.aspx" />
-    <Content Include="Stor\LantikanPegPemverifikasi\LantikanPegPemverifikasi_Controller.ascx" />
-    <Content Include="Stor\LaporanTahunan\Index.aspx" />
-    <Content Include="Stor\LaporanTahunan\LaporanTahunan_Controller.ascx" />
-    <Content Include="Stor\PelarasanStok\Index.aspx" />
-    <Content Include="Stor\PelarasanStok\PelarasanStok_Controller.ascx" />
-    <Content Include="Stor\PelupusanStok\Index.aspx" />
-    <Content Include="Stor\PelupusanStok\PelupusanStok_Controller.ascx" />
-    <Content Include="Stor\PemeriksaanStok\Index.aspx" />
-    <Content Include="Stor\PemeriksaanStok\PemeriksaanStok_Controller.ascx" />
-    <Content Include="Stor\PemeriksaanStok\Tab_AliranKerja.ascx" />
-    <Content Include="Stor\PemeriksaanStok\Tab_Info.ascx" />
-    <Content Include="Stor\PemeriksaanStok\Tab_Pemeriksaan.ascx" />
-    <Content Include="Stor\PemeriksaanStok\Tab_Verifikasi.ascx" />
-    <Content Include="Stor\PengeluaranKeStorPTJ\Index.aspx" />
-    <Content Include="Stor\PengeluaranKeStorPTJ\PengeluaranKeStorPTJ_Controller.ascx" />
-    <Content Include="Stor\PengeluaranStok\Index.aspx" />
-    <Content Include="Stor\PengeluaranStok\PengeluaranStokNew_Controller.ascx" />
-    <Content Include="Stor\PerakuanAmbilAlih\Index.aspx" />
-    <Content Include="Stor\PerakuanAmbilAlih\PerakuanAmbilAlih_Controller.ascx" />
-    <Content Include="Stor\PermohonanStok\Index.aspx" />
-    <Content Include="Stor\PermohonanStok\PermohonanStok_Controller.ascx" />
-    <Content Include="Stor\PermohonanStok\Tab_AliranKerja.ascx" />
-    <Content Include="Stor\PermohonanStok\Tab_Pengeluaran.ascx" />
-    <Content Include="Stor\PermohonanStok\Tab_Permohonan.ascx" />
-    <Content Include="Stor\Stok\Index.aspx" />
-    <Content Include="Stor\Stok\Stok_Controller.ascx" />
-    <Content Include="Stor\Stor\Index.aspx" />
-    <Content Include="Stor\Stor\Stor_Controller.ascx" />
+    <Content Include="Shared\TestGenerateQR\Index.aspx" />
     <Content Include="Upload\DefaultOrgImage.png" />
     <Content Include="Upload\SystemUsers\DefaultSystemUser.png" />
     <Content Include="Utility\Index.aspx" />
@@ -979,7 +969,6 @@
     <Compile Include="Aset\Tender\Tender_Controller.ascx.designer.cs">
       <DependentUpon>Tender_Controller.ascx</DependentUpon>
     </Compile>
-    <Compile Include="InMemoryContextInitializer.cs" />
     <Compile Include="Components\AttachementWindow\AttachmentWindow_Controller.ascx.cs">
       <DependentUpon>AttachmentWindow_Controller.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1022,7 +1011,6 @@
     <Compile Include="Components\UploadImage\UploadImage_Controller.ascx.designer.cs">
       <DependentUpon>UploadImage_Controller.ascx</DependentUpon>
     </Compile>
-    <Compile Include="DbSet.cs" />
     <Compile Include="DocumentViewer\Index.ashx.cs">
       <DependentUpon>Index.ashx</DependentUpon>
     </Compile>
@@ -1033,56 +1021,6 @@
     <Compile Include="DocumentViewer\Viewer.aspx.designer.cs">
       <DependentUpon>Viewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="EntityBase.cs" />
-    <Compile Include="Entity\AssetType.cs" />
-    <Compile Include="Entity\AuditLog.cs" />
-    <Compile Include="Entity\Category.cs" />
-    <Compile Include="Entity\Checklist.cs" />
-    <Compile Include="Entity\Component.cs" />
-    <Compile Include="Entity\Employee.cs" />
-    <Compile Include="Entity\EntityBase.cs" />
-    <Compile Include="Entity\GoodReceiveNote.cs" />
-    <Compile Include="Entity\KenyataanJualanLelonganStokAlih.cs" />
-    <Compile Include="Entity\KenyataanTawaranSebutharga.cs" />
-    <Compile Include="Entity\KenyataanTawaranTender.cs" />
-    <Compile Include="Entity\LaporanKehilangan.cs" />
-    <Compile Include="Entity\LaporanLembagaPemeriksa.cs" />
-    <Compile Include="Entity\Ledger.cs" />
-    <Compile Include="Entity\LedgerItem.cs" />
-    <Compile Include="Entity\Location.cs" />
-    <Compile Include="Entity\Pelupusan.cs" />
-    <Compile Include="Entity\PelupusanDetail.cs" />
-    <Compile Include="Entity\Pemeriksaan.cs" />
-    <Compile Include="Entity\PemeriksaanDetail.cs" />
-    <Compile Include="Entity\Penempatan.cs" />
-    <Compile Include="Entity\PermohonanStok.cs" />
-    <Compile Include="Entity\ProcessState.cs" />
-    <Compile Include="Entity\ProcessStatus.cs" />
-    <Compile Include="Entity\ProcessType.cs" />
-    <Compile Include="Entity\ProcurementCategory.cs" />
-    <Compile Include="Entity\ProcurementMethod.cs" />
-    <Compile Include="Entity\ProcurementType.cs" />
-    <Compile Include="Entity\Project.cs" />
-    <Compile Include="Entity\ProjectIte.cs" />
-    <Compile Include="Entity\PuDeliveryAddress.cs" />
-    <Compile Include="Entity\PurchaseRequest.cs" />
-    <Compile Include="Entity\PurchaseRequestItem.cs" />
-    <Compile Include="Entity\PurchaseType.cs" />
-    <Compile Include="Entity\PusatTanggungjawab.cs" />
-    <Compile Include="Entity\Requestor.cs" />
-    <Compile Include="Entity\SijilPengesahanPemusnahanStokAlih.cs" />
-    <Compile Include="Entity\Stock.cs" />
-    <Compile Include="Entity\StockRegistration.cs" />
-    <Compile Include="Entity\Stor.cs" />
-    <Compile Include="Entity\SubCategory.cs" />
-    <Compile Include="Entity\Supplier.cs" />
-    <Compile Include="Entity\TaxCodeSaga.cs" />
-    <Compile Include="Entity\TimeTimeOffset.cs" />
-    <Compile Include="Entity\UnitOfMeasurement.cs" />
-    <Compile Include="Entity\UtemInfo.cs" />
-    <Compile Include="Entity\Workflow.cs" />
-    <Compile Include="IDescribableEntity.cs" />
-    <Compile Include="InMemoryContext.cs" />
     <Compile Include="LamanUtama\AssetSystem_Popup.ascx.cs">
       <DependentUpon>AssetSystem_Popup.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1139,29 +1077,6 @@
     <Compile Include="LamanUtama\SysAdmin_Popup.ascx.designer.cs">
       <DependentUpon>SysAdmin_Popup.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Models\AssetTypeModel.cs" />
-    <Compile Include="Models\BaseModel.cs" />
-    <Compile Include="Models\CategoryModel.cs" />
-    <Compile Include="Models\ChecklistModel.cs" />
-    <Compile Include="Models\ComponentModel.cs" />
-    <Compile Include="Models\LedgerItemModel.cs" />
-    <Compile Include="Models\LedgerModel.cs" />
-    <Compile Include="Models\ProcessTypeModel.cs" />
-    <Compile Include="Models\ProcurementCategoryModel.cs" />
-    <Compile Include="Models\ProcurementMethodModel.cs" />
-    <Compile Include="Models\ProcurementTypeModel.cs" />
-    <Compile Include="Models\ProjectItemModel.cs" />
-    <Compile Include="Models\ProjectModel.cs" />
-    <Compile Include="Models\PuDeliveryAddressModel.cs" />
-    <Compile Include="Models\PurchaseRequestModel.cs" />
-    <Compile Include="Models\PurchaseTypeModel.cs" />
-    <Compile Include="Models\RequestorModel.cs" />
-    <Compile Include="Models\SubCategoryModel.cs" />
-    <Compile Include="Models\SupplierModel.cs" />
-    <Compile Include="Models\TaxCodeSagaModel.cs" />
-    <Compile Include="Models\UnitOfMeasurementModel.cs" />
-    <Compile Include="Models\UtemInfoModel.cs" />
-    <Compile Include="Models\WorkflowModel.cs" />
     <Compile Include="PenggunaSistem\Kalendar\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1907,395 +1822,12 @@
     <Compile Include="Shared\TerimaanBarang\TerimaanBarang_Controller.ascx.designer.cs">
       <DependentUpon>TerimaanBarang_Controller.ascx</DependentUpon>
     </Compile>
-    <Compile Include="TestGenerateQR\Index.aspx.cs">
+    <Compile Include="Shared\TestGenerateQR\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestGenerateQR\Index.aspx.designer.cs">
+    <Compile Include="Shared\TestGenerateQR\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\DaftarStok_Controller.ascx.cs">
-      <DependentUpon>DaftarStok_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\DaftarStok_Controller.ascx.designer.cs">
-      <DependentUpon>DaftarStok_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\Tab_MaklumatStok.ascx.cs">
-      <DependentUpon>Tab_MaklumatStok.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\Tab_MaklumatStok.ascx.designer.cs">
-      <DependentUpon>Tab_MaklumatStok.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\Tab_SenaraiStok.ascx.cs">
-      <DependentUpon>Tab_SenaraiStok.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\DaftarStok\Tab_SenaraiStok.ascx.designer.cs">
-      <DependentUpon>Tab_SenaraiStok.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\HapusKiraStok\HapusKiraStok_Controller.ascx.cs">
-      <DependentUpon>HapusKiraStok_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\HapusKiraStok\HapusKiraStok_Controller.ascx.designer.cs">
-      <DependentUpon>HapusKiraStok_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\HapusKiraStok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\HapusKiraStok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LantikanPegPemverifikasi\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\LantikanPegPemverifikasi\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LantikanPegPemverifikasi\LantikanPegPemverifikasi_Controller.ascx.cs">
-      <DependentUpon>LantikanPegPemverifikasi_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\LantikanPegPemverifikasi\LantikanPegPemverifikasi_Controller.ascx.designer.cs">
-      <DependentUpon>LantikanPegPemverifikasi_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS01\kewps1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS01\kewps1.Designer.cs">
-      <DependentUpon>kewps1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS02\kewps2.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS02\kewps2.Designer.cs">
-      <DependentUpon>kewps2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3.Designer.cs">
-      <DependentUpon>kewps3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3b.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS03\kewps3b.Designer.cs">
-      <DependentUpon>kewps3b.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS04\kewps4.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS04\kewps4.Designer.cs">
-      <DependentUpon>kewps4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS05\kewps5.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS05\kewps5.Designer.cs">
-      <DependentUpon>kewps5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS06\kewps6.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS06\kewps6.Designer.cs">
-      <DependentUpon>kewps6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS07\kewps7.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS07\kewps7.Designer.cs">
-      <DependentUpon>kewps7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS08\kewps8.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS08\kewps8.Designer.cs">
-      <DependentUpon>kewps8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS09\kewps9.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS09\kewps9.Designer.cs">
-      <DependentUpon>kewps9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS10\kewps10.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS10\kewps10.Designer.cs">
-      <DependentUpon>kewps10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS11\kewps11.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS11\kewps11.Designer.cs">
-      <DependentUpon>kewps11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS12\kewps12.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS12\kewps12.Designer.cs">
-      <DependentUpon>kewps12.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS13\kewps13.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS13\kewps13.Designer.cs">
-      <DependentUpon>kewps13.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS14\kewps14.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS14\kewps14.Designer.cs">
-      <DependentUpon>kewps14.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS15\kewps15.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS15\kewps15.Designer.cs">
-      <DependentUpon>kewps15.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS16\kewps16.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS16\kewps16.Designer.cs">
-      <DependentUpon>kewps16.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS17\kewpa17.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS17\kewpa17.Designer.cs">
-      <DependentUpon>kewpa17.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS18\kewps18.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS18\kewps18.Designer.cs">
-      <DependentUpon>kewps18.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS19\kewps19.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS19\kewps19.Designer.cs">
-      <DependentUpon>kewps19.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS20\kewps20.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS20\kewps20.Designer.cs">
-      <DependentUpon>kewps20.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS21\kewps21.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS21\kewps21.Designer.cs">
-      <DependentUpon>kewps21.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS22\kewps22.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanKEWPS\KEWPS22\kewps22.Designer.cs">
-      <DependentUpon>kewps22.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanTahunan\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanTahunan\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\LaporanTahunan\LaporanTahunan_Controller.ascx.cs">
-      <DependentUpon>LaporanTahunan_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\LaporanTahunan\LaporanTahunan_Controller.ascx.designer.cs">
-      <DependentUpon>LaporanTahunan_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PelarasanStok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PelarasanStok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PelarasanStok\PelarasanStok_Controller.ascx.cs">
-      <DependentUpon>PelarasanStok_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PelarasanStok\PelarasanStok_Controller.ascx.designer.cs">
-      <DependentUpon>PelarasanStok_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PelupusanStok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PelupusanStok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PelupusanStok\PelupusanStok_Controller.ascx.cs">
-      <DependentUpon>PelupusanStok_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PelupusanStok\PelupusanStok_Controller.ascx.designer.cs">
-      <DependentUpon>PelupusanStok_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\PemeriksaanStok_Controller.ascx.cs">
-      <DependentUpon>PemeriksaanStok_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\PemeriksaanStok_Controller.ascx.designer.cs">
-      <DependentUpon>PemeriksaanStok_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_AliranKerja.ascx.cs">
-      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_AliranKerja.ascx.designer.cs">
-      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_Info.ascx.cs">
-      <DependentUpon>Tab_Info.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_Info.ascx.designer.cs">
-      <DependentUpon>Tab_Info.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_Pemeriksaan.ascx.cs">
-      <DependentUpon>Tab_Pemeriksaan.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_Pemeriksaan.ascx.designer.cs">
-      <DependentUpon>Tab_Pemeriksaan.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_Verifikasi.ascx.cs">
-      <DependentUpon>Tab_Verifikasi.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PemeriksaanStok\Tab_Verifikasi.ascx.designer.cs">
-      <DependentUpon>Tab_Verifikasi.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PengeluaranKeStorPTJ\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PengeluaranKeStorPTJ\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PengeluaranKeStorPTJ\PengeluaranKeStorPTJ_Controller.ascx.cs">
-      <DependentUpon>PengeluaranKeStorPTJ_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PengeluaranKeStorPTJ\PengeluaranKeStorPTJ_Controller.ascx.designer.cs">
-      <DependentUpon>PengeluaranKeStorPTJ_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PengeluaranStok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PengeluaranStok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PengeluaranStok\PengeluaranStokNew_Controller.ascx.cs">
-      <DependentUpon>PengeluaranStokNew_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PengeluaranStok\PengeluaranStokNew_Controller.ascx.designer.cs">
-      <DependentUpon>PengeluaranStokNew_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PerakuanAmbilAlih\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PerakuanAmbilAlih\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PerakuanAmbilAlih\PerakuanAmbilAlih_Controller.ascx.cs">
-      <DependentUpon>PerakuanAmbilAlih_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PerakuanAmbilAlih\PerakuanAmbilAlih_Controller.ascx.designer.cs">
-      <DependentUpon>PerakuanAmbilAlih_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\PermohonanStok_Controller.ascx.cs">
-      <DependentUpon>PermohonanStok_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\PermohonanStok_Controller.ascx.designer.cs">
-      <DependentUpon>PermohonanStok_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Tab_AliranKerja.ascx.cs">
-      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Tab_AliranKerja.ascx.designer.cs">
-      <DependentUpon>Tab_AliranKerja.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Tab_Pengeluaran.ascx.cs">
-      <DependentUpon>Tab_Pengeluaran.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Tab_Pengeluaran.ascx.designer.cs">
-      <DependentUpon>Tab_Pengeluaran.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Tab_Permohonan.ascx.cs">
-      <DependentUpon>Tab_Permohonan.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\PermohonanStok\Tab_Permohonan.ascx.designer.cs">
-      <DependentUpon>Tab_Permohonan.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\Stok\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\Stok\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\Stok\Stok_Controller.ascx.cs">
-      <DependentUpon>Stok_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\Stok\Stok_Controller.ascx.designer.cs">
-      <DependentUpon>Stok_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\Stor\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\Stor\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Stor\Stor\Stor_Controller.ascx.cs">
-      <DependentUpon>Stor_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Stor\Stor\Stor_Controller.ascx.designer.cs">
-      <DependentUpon>Stor_Controller.ascx</DependentUpon>
     </Compile>
     <Compile Include="Utility\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -2356,10 +1888,8 @@
       <DependentUpon>ReportDs1.xsd</DependentUpon>
     </Content>
     <Content Include="DocumentViewer\Index.ashx" />
-    <Content Include="asset.safa.com.my.snk" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\AmsPub.pubxml" />
-    <None Include="Properties\PublishProfiles\AmsPublish.pubxml" />
     <None Include="Report\Dataset\ReportDs1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
@@ -2379,6 +1909,18 @@
     <Content Include="Report\PengurusanSistem\PengurusanSistemDataset.xss">
       <DependentUpon>PengurusanSistemDataset.xsd</DependentUpon>
     </Content>
+    <Content Include="Shared\TerimaanBarang\Tab_AliranKerja_Controller.ascx.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_AliranKerja_Controller.ascx.designer.cs.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_MaklumatTerimaanItem_Controller.ascx.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_MaklumatTerimaanItem_Controller.ascx.designer.cs.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_SenaraiItem_Controller.ascx.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_SenaraiItem_Controller.ascx.designer.cs.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_SenaraiSemak_Controller.ascx.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_SenaraiSemak_Controller.ascx.designer.cs.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_TerimaanBarang_Controller.ascx.bak" />
+    <Content Include="Shared\TerimaanBarang\Tab_TerimaanBarang_Controller.ascx.designer.cs.bak" />
+    <Content Include="Shared\TerimaanBarang\TerimaanBarang_Controller.ascx.bak" />
+    <Content Include="Shared\TerimaanBarang\TerimaanBarang_Controller.ascx.designer.cs.bak" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2550,80 +2092,11 @@
     <EmbeddedResource Include="Report\PrintLabel\PrintLabel_Report.resx">
       <DependentUpon>PrintLabel_Report.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS01\kewps1.resx">
-      <DependentUpon>kewps1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS02\kewps2.resx">
-      <DependentUpon>kewps2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS03\kewps3.resx">
-      <DependentUpon>kewps3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS03\kewps3b.resx">
-      <DependentUpon>kewps3b.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS04\kewps4.resx">
-      <DependentUpon>kewps4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS05\kewps5.resx">
-      <DependentUpon>kewps5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS06\kewps6.resx">
-      <DependentUpon>kewps6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS07\kewps7.resx">
-      <DependentUpon>kewps7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS08\kewps8.resx">
-      <DependentUpon>kewps8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS09\kewps9.resx">
-      <DependentUpon>kewps9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS10\kewps10.resx">
-      <DependentUpon>kewps10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS11\kewps11.resx">
-      <DependentUpon>kewps11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS12\kewps12.resx">
-      <DependentUpon>kewps12.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS13\kewps13.resx">
-      <DependentUpon>kewps13.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS14\kewps14.resx">
-      <DependentUpon>kewps14.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS15\kewps15.resx">
-      <DependentUpon>kewps15.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS16\kewps16.resx">
-      <DependentUpon>kewps16.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS17\kewpa17.resx">
-      <DependentUpon>kewpa17.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS18\kewps18.resx">
-      <DependentUpon>kewps18.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS19\kewps19.resx">
-      <DependentUpon>kewps19.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS20\kewps20.resx">
-      <DependentUpon>kewps20.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS21\kewps21.resx">
-      <DependentUpon>kewps21.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Stor\LaporanKEWPS\KEWPS22\kewps22.resx">
-      <DependentUpon>kewps22.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{6a7cd84f-23f4-4551-b39e-345daec1eab7}</Project>
-      <Name>Core</Name>
+    <ProjectReference Include="..\Core.Stor\Core.Stor.csproj">
+      <Project>{2b49782f-1a63-4e57-a583-42904ab25d05}</Project>
+      <Name>Core.Stor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{e2a53e63-6cd9-4dd5-8d0a-8d531a0244fa}</Project>
@@ -2633,12 +2106,6 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>asset.safa.com.my.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

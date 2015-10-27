@@ -9,7 +9,12 @@
         }
         else {
             switch (CbPurchaseType.GetValue().toString()) {
-                case "1": cbp_FormNextItemNumber.PerformCallback('1'); break;
+                case "1": cbp_FormNextItemNumber.PerformCallback('1'); break;   //Aset Baharu
+                case "2": cbp_FormNextItemNumber.PerformCallback('2'); break;   //Penyelenggaraan
+                case "3": cbp_FormNextItemNumber.PerformCallback('3'); break;   //Alat Ganti
+                case "4": cbp_FormNextItemNumber.PerformCallback('4'); break;   //Tambahan
+                case "5": cbp_FormNextItemNumber.PerformCallback('5'); break;   //Stok
+                case "6": cbp_FormNextItemNumber.PerformCallback('6'); break;   //Lain-lain
             }
         }
     }
@@ -20,7 +25,13 @@
     {
         switch (s.cpPurchaseType.toString())
         {
-            case "1": NewAssetMode(s.cpNextItemNumber.toString());
+            case "1": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Aset Baharu
+            case "2": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Penyelenggaraan
+            case "3": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Alat Ganti
+            case "4": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Tambahan
+            case "5": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Stok
+            case "6": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Lain-lain
+
         }
     }
 

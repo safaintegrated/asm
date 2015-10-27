@@ -1,7 +1,0 @@
-D:\Programming\AssetAndStoreManagementSystem\Data\bin\Release\Data.dll.config
-D:\Programming\AssetAndStoreManagementSystem\Data\bin\Release\Data.dll
-D:\Programming\AssetAndStoreManagementSystem\Data\bin\Release\Data.pdb
-D:\Programming\AssetAndStoreManagementSystem\Data\bin\Release\Newtonsoft.Json.dll
-D:\Programming\AssetAndStoreManagementSystem\Data\bin\Release\Newtonsoft.Json.xml
-D:\Programming\AssetAndStoreManagementSystem\Data\obj\Release\Data.dll
-D:\Programming\AssetAndStoreManagementSystem\Data\obj\Release\Data.pdb

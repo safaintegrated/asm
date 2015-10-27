@@ -121,7 +121,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "AMSDbConnectionString";
+            this.sqlDataSource1.ConnectionName = "AMS_DBConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
             customSqlQuery1.Name = "CustomSqlQuery";
             queryParameter1.Name = "ReceiveYear";

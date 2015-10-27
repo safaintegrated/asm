@@ -8,6 +8,7 @@ namespace Data.Entity
 {
     public class ProcurementCategory : EntityBase
     {
+        public string test { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
     }

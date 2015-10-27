@@ -426,7 +426,7 @@
                     </AlternatingRow>
                 </Styles>
             </dx:ASPxGridView>
-            <asp:SqlDataSource ID="SearchDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" SelectCommand="SELECT * FROM [V_LookupAssetAndInventoryReadyForDisposal] ORDER BY [AssInvRegNum]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SearchDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" SelectCommand="SELECT * FROM [V_LookupAssetAndInventoryReadyForDisposal] ORDER BY [AssInvRegNum]"></asp:SqlDataSource>
         </dx:PopupControlContentControl>
     </ContentCollection>
 </dx:ASPxPopupControl>

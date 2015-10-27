@@ -4,13 +4,17 @@
 
 <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" Width="96%">
     <Columns>
-        <dx:GridViewDataTextColumn Caption="Tarikh" VisibleIndex="0" Width="10%">
+        <dx:GridViewDataTextColumn Caption="Tarikh Pungutan" VisibleIndex="0" Width="10%">
         </dx:GridViewDataTextColumn>
         <dx:GridViewDataTextColumn Caption="Aliran Kerja" VisibleIndex="1" Width="15%">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn Caption="Status" VisibleIndex="2" Width="10%">
+        <dx:GridViewDataTextColumn Caption="Status " VisibleIndex="2" Width="10%">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn Caption="Nota / Catatan" VisibleIndex="3" Width="65%">
+        <dx:GridViewDataTextColumn Caption="Nota / Catatan" VisibleIndex="5" Width="65%">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Sebab-sebab ditolak" VisibleIndex="4">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn Caption="Kuantiti diluluskan" VisibleIndex="3">
         </dx:GridViewDataTextColumn>
     </Columns>
     <SettingsPager Visible="False">

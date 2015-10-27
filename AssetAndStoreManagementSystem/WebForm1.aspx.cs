@@ -1,4 +1,4 @@
-﻿using DataAccess.Entity;
+﻿using Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,26 +10,30 @@ namespace AssetAndStoreManagementSystem
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        private AsmContext db = new AsmContext();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
-        protected void ASPxButton1_Click(object sender, EventArgs e)
+        //int i = 0;
+        protected void Button1_Click(object sender, EventArgs e)
         {
-             
-            Category c = new Category
-            {
-                Code = ASPxTextBox1.Text,
-                Name = ASPxTextBox1.Text
+            //i++;
+            //PurchaseRequest pr = new PurchaseRequest
+            //{
+            //     PONumber = i.ToString(),
+            //     Details = i.ToString()
+            //};
+            //db.PurchaseRequest.Add(pr);
+            //db.SaveChanges();
+        }
 
-            };
-            DataAccess.Models.CategoryModel.Add(c, "test");
-
-            var list = DataAccess.Models.CategoryModel.FindAll();
-
-            ASPxGridView1.DataBind();
-
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+          //var pr =  db.PurchaseRequest.ToList();
+          //GridView1.DataSource = pr;
+          //GridView1.DataBind();
         }
     }
 }

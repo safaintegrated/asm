@@ -17,7 +17,7 @@ namespace AssetAndStoreManagementSystem.Stor.PengeluaranStok
             css.TagName = "style";
             css.Attributes.Add("type", "text/css");
 
-            string imageURL = "../../../../../../../../../../../../Public/Images/Backdrop/PageBackgroundImage.jpg";
+            string imageURL = "../../Public/Images/Backdrop/StartBackground.jpg";
 
             //Logic to determin imageURL goes here
 
@@ -30,6 +30,27 @@ namespace AssetAndStoreManagementSystem.Stor.PengeluaranStok
 
             base.OnInit(e);
         }
+
+        //protected override void OnInit(EventArgs e)
+        //{
+        //    // Define an Literal control.
+        //    HtmlGenericControl css = new HtmlGenericControl();
+        //    css.TagName = "style";
+        //    css.Attributes.Add("type", "text/css");
+
+        //    string imageURL = "../../../../../../../../../../../../Public/Images/Backdrop/PageBackgroundImage.jpg";
+
+        //    //Logic to determin imageURL goes here
+
+        //    //Update Tag
+        //    css.InnerHtml = @"body{background-image: url(" + imageURL + "); background-repeat:no-repeat; background-size:cover;}";
+
+
+        //    // Add the Tag to the Head section of the page.
+        //    Page.Header.Controls.Add(css);
+
+        //    base.OnInit(e);
+        //}
         protected void Page_Load(object sender, EventArgs e)
         {
 

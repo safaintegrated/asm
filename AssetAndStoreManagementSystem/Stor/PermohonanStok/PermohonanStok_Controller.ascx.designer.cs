@@ -31,6 +31,15 @@ namespace AssetAndStoreManagementSystem.Stor.PermohonanStok {
         protected global::DevExpress.Web.ASPxRibbon MainRibbon;
         
         /// <summary>
+        /// txtNewOrUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtNewOrUpdate;
+        
+        /// <summary>
         /// ASPxPageControl1 control.
         /// </summary>
         /// <remarks>
@@ -101,5 +110,50 @@ namespace AssetAndStoreManagementSystem.Stor.PermohonanStok {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E3;
+        
+        /// <summary>
+        /// psPermohonanStok control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl psPermohonanStok;
+        
+        /// <summary>
+        /// gvSearchPermohonanStok control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvSearchPermohonanStok;
+        
+        /// <summary>
+        /// dsPermohonaStokSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsPermohonaStokSearch;
+        
+        /// <summary>
+        /// cbp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp;
+        
+        /// <summary>
+        /// cbp_Report control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp_Report;
     }
 }

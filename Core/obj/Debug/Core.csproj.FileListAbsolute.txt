@@ -84,3 +84,11 @@ D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.csproj.Generate
 D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll.licenses
 D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.dll
 D:\Programming\AssetAndStoreManagementSystem\Core\obj\Debug\Core.pdb
+D:\github\asm\AssetAndStoreManagementSystem\bin\Core.dll
+D:\github\asm\AssetAndStoreManagementSystem\bin\Core.pdb
+D:\github\asm\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\github\asm\Core\obj\Debug\Core.QRCode.QRcode_Report.resources
+D:\github\asm\Core\obj\Debug\Core.csproj.GenerateResource.Cache
+D:\github\asm\Core\obj\Debug\Core.dll.licenses
+D:\github\asm\Core\obj\Debug\Core.dll
+D:\github\asm\Core\obj\Debug\Core.pdb

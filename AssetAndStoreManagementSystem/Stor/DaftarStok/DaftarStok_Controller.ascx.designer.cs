@@ -40,6 +40,15 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.ASPxPageControl ASPxPageControl1;
         
         /// <summary>
+        /// Tab_MaklumatStok1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AssetAndStoreManagementSystem.Stor.DaftarStok.Tab_MaklumatStok Tab_MaklumatStok1;
+        
+        /// <summary>
         /// Tab_SenaraiStok1 control.
         /// </summary>
         /// <remarks>
@@ -49,12 +58,84 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::AssetAndStoreManagementSystem.Stor.DaftarStok.Tab_SenaraiStok Tab_SenaraiStok1;
         
         /// <summary>
-        /// Tab_MaklumatStok1 control.
+        /// popupMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AssetAndStoreManagementSystem.Stor.DaftarStok.Tab_MaklumatStok Tab_MaklumatStok1;
+        protected global::DevExpress.Web.ASPxPopupControl popupMsg;
+        
+        /// <summary>
+        /// Popupcontrolcontentcontrol3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PopupControlContentControl Popupcontrolcontentcontrol3;
+        
+        /// <summary>
+        /// popupMsg_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel popupMsg_Label;
+        
+        /// <summary>
+        /// popupMsg_BtnOk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton popupMsg_BtnOk;
+        
+        /// <summary>
+        /// pcSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl pcSearch;
+        
+        /// <summary>
+        /// gvSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvSearch;
+        
+        /// <summary>
+        /// dsStockRegistration control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource dsStockRegistration;
+        
+        /// <summary>
+        /// cbp_Report control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp_Report;
+        
+        /// <summary>
+        /// cbp_Report2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp_Report2;
     }
 }

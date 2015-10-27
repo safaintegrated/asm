@@ -38,10 +38,20 @@
     { }
 
     function KemaskiniClicked()
-    { }
+    {
+        ManageMainRibbonUtamaTab('false', 'false', 'true', 'false', 'true', 'true', 'false', 'false', 'false', 'true');
+        //MainForm.SetEnabled(true);
+
+    }
 
     function TambahClicked()
-    { }
+    {
+        alert('1');
+        ManageMainRibbonUtamaTab('false', 'false', 'true', 'false', 'false', 'true', 'false', 'false', 'false', 'true');
+        alert('2')
+
+
+    }
 
     function SimpanClicked()
     { }
@@ -50,7 +60,10 @@
     { }
 
     function PadamClicked()
-    { }
+    {
+        popupDeleteConfirmation.Show();
+        popupDeleteConfirmation_BtnOk.Focus();
+    }
 
     function BatalCicked()
     { }
@@ -65,7 +78,10 @@
     { }
 
     function TutupClicked()
-    { }
+    {
+        window.close();
+        return true;
+    }
 
     function LampiranClicked()
     { }
@@ -75,6 +91,62 @@
 
     function ImpotClicked()
     { }
+
+    function ManageMainRibbonUtamaTab(Kemaskini, Tambah, Simpan, Hantar, Padam, Batal, Cetak, Carian, Audit, Tutup) {
+
+
+        if (Kemaskini == 'true')
+            MainRibbon.GetItemByName("Kemaskini").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Kemaskini").SetEnabled(false);
+
+        if (Tambah == 'true')
+            MainRibbon.GetItemByName("Tambah").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Tambah").SetEnabled(false);
+
+        if (Simpan == 'true')
+            MainRibbon.GetItemByName("Simpan").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Simpan").SetEnabled(false);
+
+        if (Hantar == 'true')
+            MainRibbon.GetItemByName("Hantar").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Hantar").SetEnabled(false);
+
+        if (Padam == 'true')
+            MainRibbon.GetItemByName("Padam").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Padam").SetEnabled(false);
+
+        if (Batal == 'true')
+            MainRibbon.GetItemByName("Batal").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Batal").SetEnabled(false);
+
+        if (Cetak == 'true')
+            MainRibbon.GetItemByName("Cetak").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Cetak").SetEnabled(false);
+
+        if (Carian == 'true')
+            MainRibbon.GetItemByName("Carian").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Carian").SetEnabled(false);
+
+        if (Audit == 'true')
+            MainRibbon.GetItemByName("Audit").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Audit").SetEnabled(false);
+
+        if (Tutup == 'true')
+            MainRibbon.GetItemByName("Tutup").SetEnabled(true);
+        else
+            MainRibbon.GetItemByName("Tutup").SetEnabled(false);
+    }
+
+
 </script>
 <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Pengeluaran Ke Stor PTJ" Width="100%">
     <HeaderImage Url="~/Public/Images/Screen/PengeluaranStokKeStorPTJ.png">

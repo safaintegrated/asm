@@ -40,58 +40,148 @@ namespace AssetAndStoreManagementSystem.Stor.PerakaunAmbilAlih {
         protected global::DevExpress.Web.ASPxRibbon MainRibbon;
         
         /// <summary>
-        /// ASPxFormLayout3 control.
+        /// NamaPegawaiStorBaru control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout3;
+        protected global::DevExpress.Web.ASPxFormLayout NamaPegawaiStorBaru;
         
         /// <summary>
-        /// ASPxFormLayout3_E1 control.
+        /// Stock_RegisterNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxFormLayout3_E1;
+        protected global::DevExpress.Web.ASPxGridLookup Stock_RegisterNo;
         
         /// <summary>
-        /// ASPxFormLayout3_E2 control.
+        /// SqlDataSourceSenaraiStok control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout3_E2;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceSenaraiStok;
         
         /// <summary>
-        /// ASPxFormLayout3_E3 control.
+        /// Stock_Status control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxHyperLink ASPxFormLayout3_E3;
+        protected global::DevExpress.Web.ASPxTextBox Stock_Status;
         
         /// <summary>
-        /// ASPxFormLayout3_E4 control.
+        /// Stock_Price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout3_E4;
+        protected global::DevExpress.Web.ASPxTextBox Stock_Price;
         
         /// <summary>
-        /// ASPxGridView8 control.
+        /// Stock_Detail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridView8;
+        protected global::DevExpress.Web.ASPxTextBox Stock_Detail;
+        
+        /// <summary>
+        /// Stock_QuantityRecord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox Stock_QuantityRecord;
+        
+        /// <summary>
+        /// Stock_QuantityPhysical control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxSpinEdit Stock_QuantityPhysical;
+        
+        /// <summary>
+        /// Stock_Suggestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxMemo Stock_Suggestion;
+        
+        /// <summary>
+        /// NamaStor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridLookup NamaStor;
+        
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        
+        /// <summary>
+        /// TarikhLaporan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit TarikhLaporan;
+        
+        /// <summary>
+        /// NamaPegawaiStorSemasa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridLookup NamaPegawaiStorSemasa;
+        
+        /// <summary>
+        /// SqlDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
+        /// <summary>
+        /// NamaPegawaiBaru control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridLookup NamaPegawaiBaru;
+        
+        /// <summary>
+        /// SqlDataSource3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
         
         /// <summary>
         /// ASPxFormLayout2 control.

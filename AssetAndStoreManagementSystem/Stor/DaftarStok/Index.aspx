@@ -9,6 +9,7 @@
 <head runat="server">
     <title>Pendaftaran Stok</title>
     <link href="../../Public/Css/AspxCss.css" rel="stylesheet" />
+    <script src="Js_StorDaftarStok.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">

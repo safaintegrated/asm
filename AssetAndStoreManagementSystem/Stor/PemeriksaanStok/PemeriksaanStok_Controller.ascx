@@ -204,7 +204,7 @@
             <dx:LayoutItem ShowCaption="False" Width="80%" CssClass="MainFormSecondRowLeftColumnAddTopPadding">
                 <LayoutItemNestedControlCollection>
                     <dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxPageControl ID="ASPxPageControl1" runat="server" AccessibilityCompliant="True" ActiveTabIndex="0" Width="100%">
+                        <dx:ASPxPageControl ID="ASPxPageControl1" runat="server" AccessibilityCompliant="True" ActiveTabIndex="1" Width="100%">
                             <TabPages>
                                 <dx:TabPage Text="Info">
                                     <ContentCollection>

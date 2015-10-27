@@ -13,6 +13,15 @@ namespace AssetAndStoreManagementSystem.Stor.PermohonanStok {
     public partial class Tab_Pengeluaran {
         
         /// <summary>
+        /// cbpKelulusan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbpKelulusan;
+        
+        /// <summary>
         /// ASPxFormLayout1 control.
         /// </summary>
         /// <remarks>
@@ -22,48 +31,111 @@ namespace AssetAndStoreManagementSystem.Stor.PermohonanStok {
         protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
         
         /// <summary>
-        /// ASPxGridView1 control.
+        /// txtKelulusanProcessId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
+        protected global::DevExpress.Web.ASPxTextBox txtKelulusanProcessId;
         
         /// <summary>
-        /// ASPxFormLayout1_E1 control.
+        /// txtKelulusanProcessIdTemp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCheckBox ASPxFormLayout1_E1;
+        protected global::DevExpress.Web.ASPxTextBox txtKelulusanProcessIdTemp;
         
         /// <summary>
-        /// ASPxFormLayout1_E2 control.
+        /// gvStokRequested control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxButton ASPxFormLayout1_E2;
+        protected global::DevExpress.Web.ASPxGridView gvStokRequested;
         
         /// <summary>
-        /// ASPxFormLayout1_E3 control.
+        /// dsStokRequested control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E3;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsStokRequested;
         
         /// <summary>
-        /// ASPxFormLayout1_E4 control.
+        /// txtKelulusanNama control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit ASPxFormLayout1_E4;
+        protected global::DevExpress.Web.ASPxTextBox txtKelulusanNama;
+        
+        /// <summary>
+        /// txtKelulusanEmpSysId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtKelulusanEmpSysId;
+        
+        /// <summary>
+        /// txtKelulusanJawatan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtKelulusanJawatan;
+        
+        /// <summary>
+        /// txtKelulusanJabatan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtKelulusanJabatan;
+        
+        /// <summary>
+        /// cbKelulusanTindakan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxComboBox cbKelulusanTindakan;
+        
+        /// <summary>
+        /// txtKelulusanKuantiti control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtKelulusanKuantiti;
+        
+        /// <summary>
+        /// btnLulus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnLulus;
+        
+        /// <summary>
+        /// btnTidakLulus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton btnTidakLulus;
     }
 }

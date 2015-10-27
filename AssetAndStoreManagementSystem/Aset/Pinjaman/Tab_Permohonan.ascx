@@ -571,7 +571,7 @@
             </AlternatingRow>
         </Styles>
     </dx:ASPxGridView>
-        <asp:SqlDataSource ID="SearchDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" SelectCommand="SP_PermohonanPinjaman_SearchAvailableAssetInventory" OnSelecting="SearchDs_Selecting" SelectCommandType="StoredProcedure">
+        <asp:SqlDataSource ID="SearchDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" SelectCommand="SP_PermohonanPinjaman_SearchAvailableAssetInventory" OnSelecting="SearchDs_Selecting" SelectCommandType="StoredProcedure">
             <SelectParameters>
                 <asp:Parameter DefaultValue="mk" Name="EmpId" Type="String" />
             </SelectParameters>

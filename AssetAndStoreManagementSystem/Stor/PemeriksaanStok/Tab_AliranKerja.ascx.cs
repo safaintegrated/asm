@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace AssetAndStoreManagementSystem.Stor.PemeriksaanStok
+namespace AssetAndStoreManagementSystem.Stor.VerifikasiStok
 {
     public partial class Tab_AliranKerja : System.Web.UI.UserControl
     {

@@ -49,7 +49,7 @@
                 </Styles>
 </dx:ASPxGridView>
 
-<asp:SqlDataSource ID="PenempatanDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" OnSelecting="PenempatanDs_Selecting" SelectCommand="SP_ListAllPenempatans" SelectCommandType="StoredProcedure">
+<asp:SqlDataSource ID="PenempatanDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" OnSelecting="PenempatanDs_Selecting" SelectCommand="SP_ListAllPenempatans" SelectCommandType="StoredProcedure">
     <SelectParameters>
         <asp:Parameter DefaultValue="642FA9FE-C287-48C6-818A-ADA1313D8066" Name="ParentId" Type="String" />
         <asp:Parameter DefaultValue="2" Name="ParentType" Type="Int32" />

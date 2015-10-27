@@ -112,13 +112,40 @@ namespace AssetAndStoreManagementSystem.Stor.PelarasanStok {
         protected global::DevExpress.Web.ASPxComboBox ASPxFormLayout3_E2;
         
         /// <summary>
+        /// ASPxFormLayout3_E3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit ASPxFormLayout3_E3;
+        
+        /// <summary>
+        /// ASPxFormLayout3_E4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit ASPxFormLayout3_E4;
+        
+        /// <summary>
         /// ASPxFormLayout3_E5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxMemo ASPxFormLayout3_E5;
+        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout3_E5;
+        
+        /// <summary>
+        /// ASPxFormLayout3_E6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout3_E6;
         
         /// <summary>
         /// LayoutItemNestedControlContainer7 control.

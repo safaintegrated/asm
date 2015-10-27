@@ -81,5 +81,5 @@
         </AlternatingRow>
     </Styles>
 </dx:ASPxGridView>
-<asp:SqlDataSource ID="LookupDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" SelectCommand="SELECT [AIRMI_RegistrationNumber], [AIRMI_Desc], [CatName], [SubCatName], [T_Desc], [AIRMI_Make], [AIRMI_Brand], [AIRMI_Model], [AIRMI_PoNumber], [AIRMI_ReceivedDate], [AIRMI_InvoiceNumber], [AIRMI_VoucherNumber], [AIRMI_GRNnumber], [AIRMI_PurchasePrice], [AIRMI_AssetInvType], [StatusName], [PTJ_Name], [AIRMI_UniqueId] FROM [V_LookupAssetInventory] ORDER BY [AIRMI_RegistrationNumber]"></asp:SqlDataSource>
+<asp:SqlDataSource ID="LookupDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" SelectCommand="SELECT [AIRMI_RegistrationNumber], [AIRMI_Desc], [CatName], [SubCatName], [T_Desc], [AIRMI_Make], [AIRMI_Brand], [AIRMI_Model], [AIRMI_PoNumber], [AIRMI_ReceivedDate], [AIRMI_InvoiceNumber], [AIRMI_VoucherNumber], [AIRMI_GRNnumber], [AIRMI_PurchasePrice], [AIRMI_AssetInvType], [StatusName], [PTJ_Name], [AIRMI_UniqueId] FROM [V_LookupAssetInventory] ORDER BY [AIRMI_RegistrationNumber]"></asp:SqlDataSource>
 

@@ -24,28 +24,28 @@ using AssetAndStoreManagementSystem.Report.LaporanEksekutif.RingkasanLaporanStok
 using AssetAndStoreManagementSystem.Report.LaporanEksekutif.RingkasanLaporanPelupusanStok;
 
 //Laporan Kew.Ps
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS22;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS21;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS20;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS19;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS18;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPA17;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS16;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS15;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS14;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS13;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS12;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS11;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS10;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS9;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS8;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS7;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS06;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS5;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS4;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS3;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS2;
-using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS1;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS22;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS21;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS20;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS19;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS18;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPA17;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS16;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS15;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS14;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS13;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS12;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS11;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS10;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS9;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS8;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS7;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS06;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS5;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS4;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS3;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS2;
+//using AssetAndStoreManagementSystem.Stor.LaporanKEWPS.KEWPS1;
 
 
 //Laporan Kew.Pa
@@ -97,28 +97,28 @@ namespace AssetAndStoreManagementSystem.Report.Viewer
                 case "RingkasanPemeriksaanHMI": Print_RingkasanPemeriksaanHMI(); break;
                 case "RingkasanPenyelenggaraan": Print_RingkasanPenyelenggaraan(); break;
 
-                case "KEW-PS1": Print_KEWPS1(); break;
-                case "KEW-PS2": Print_KEWPS2(); break;
-                case "KEW-PS3": Print_KEWPS3(); break;
-                case "KEW-PS4": Print_KEWPS4(); break;
-                case "KEW-PS5": Print_KEWPS5(); break;
-                case "KEW-PS6": Print_KEWPS6(); break;
-                case "KEW-PS7": Print_KEWPS7(); break;
-                case "KEW-PS8": Print_KEWPS8(); break;
-                case "KEW-PS9": Print_KEWPS9(); break;
-                case "KEW-PS10": Print_KEWPS10(); break;
-                case "KEW-PS11": Print_KEWPS11(); break;
-                case "KEW-PS12": Print_KEWPS12(); break;
-                case "KEW-PS13": Print_KEWPS13(); break;
-                case "KEW-PS14": Print_KEWPS14(); break;
-                case "KEW-PS15": Print_KEWPS15(); break;
-                case "KEW-PS16": Print_KEWPS16(); break;
-                case "KEW-PS17": Print_KEWPS17(); break;
-                case "KEW-PS18": Print_KEWPS18(); break;
-                case "KEW-PS19": Print_KEWPS19(); break;
-                case "KEW-PS20": Print_KEWPS20(); break;
-                case "KEW-PS21": Print_KEWPS21(); break;
-                case "KEW-PS22": Print_KEWPS22(); break;
+                //case "KEW-PS1": Print_KEWPS1(); break;
+                //case "KEW-PS2": Print_KEWPS2(); break;
+                //case "KEW-PS3": Print_KEWPS3(); break;
+                //case "KEW-PS4": Print_KEWPS4(); break;
+                //case "KEW-PS5": Print_KEWPS5(); break;
+                //case "KEW-PS6": Print_KEWPS6(); break;
+                //case "KEW-PS7": Print_KEWPS7(); break;
+                //case "KEW-PS8": Print_KEWPS8(); break;
+                //case "KEW-PS9": Print_KEWPS9(); break;
+                //case "KEW-PS10": Print_KEWPS10(); break;
+                //case "KEW-PS11": Print_KEWPS11(); break;
+                //case "KEW-PS12": Print_KEWPS12(); break;
+                //case "KEW-PS13": Print_KEWPS13(); break;
+                //case "KEW-PS14": Print_KEWPS14(); break;
+                //case "KEW-PS15": Print_KEWPS15(); break;
+                //case "KEW-PS16": Print_KEWPS16(); break;
+                //case "KEW-PS17": Print_KEWPS17(); break;
+                //case "KEW-PS18": Print_KEWPS18(); break;
+                //case "KEW-PS19": Print_KEWPS19(); break;
+                //case "KEW-PS20": Print_KEWPS20(); break;
+                //case "KEW-PS21": Print_KEWPS21(); break;
+                //case "KEW-PS22": Print_KEWPS22(); break;
 
                 //case "KEW-PA1": Print_KEWPA1(); break;
                 case "KEW-PA2": Print_KEWPA2(); break;
@@ -265,159 +265,159 @@ namespace AssetAndStoreManagementSystem.Report.Viewer
 
         #region LAPORAN KEW.PS
 
-        void Print_KEWPS1()
-        {
-            kewps1 rpt = new kewps1();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS1()
+        //{
+        //    kewps1 rpt = new kewps1();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS2()
-        {
-            kewps2 rpt = new kewps2();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS2()
+        //{
+        //    kewps2 rpt = new kewps2();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS3()
-        {
-            kewps3 rpt = new kewps3();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS3()
+        //{
+        //    kewps3 rpt = new kewps3();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS4()
-        {
-            kewps4 rpt = new kewps4();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS4()
+        //{
+        //    kewps4 rpt = new kewps4();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS5()
-        {
-            kewps5 rpt = new kewps5();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS5()
+        //{
+        //    kewps5 rpt = new kewps5();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS6()
-        {
-            kewps6 rpt = new kewps6();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS6()
+        //{
+        //    kewps6 rpt = new kewps6();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS7()
-        {
-            kewps7 rpt = new kewps7();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS7()
+        //{
+        //    kewps7 rpt = new kewps7();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS8()
-        {
-            kewps8 rpt = new kewps8();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS8()
+        //{
+        //    kewps8 rpt = new kewps8();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS9()
-        {
-            kewps9 rpt = new kewps9();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS9()
+        //{
+        //    kewps9 rpt = new kewps9();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS10()
-        {
-            kewps10 rpt = new kewps10();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS10()
+        //{
+        //    //kewps10 rpt = new kewps10();
+        //    //ReportViewer.Report = rpt;
+        //    //ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS11()
-        {
-            kewps11 rpt = new kewps11();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS11()
+        //{
+        //    kewps11 rpt = new kewps11();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS12()
-        {
-            kewps12 rpt = new kewps12();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS12()
+        //{
+        //    kewps12 rpt = new kewps12();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS13()
-        {
-            kewps13 rpt = new kewps13();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS13()
+        //{
+        //    kewps13 rpt = new kewps13();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS14()
-        {
-            kewps14 rpt = new kewps14();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS14()
+        //{
+        //    kewps14 rpt = new kewps14();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS15()
-        {
-            kewps15 rpt = new kewps15();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS15()
+        //{
+        //    kewps15 rpt = new kewps15();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS16()
-        {
-            kewps16 rpt = new kewps16();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS16()
+        //{
+        //    kewps16 rpt = new kewps16();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS17()
-        {
-            kewpa17 rpt = new kewpa17();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS17()
+        //{
+        //    kewpa17 rpt = new kewpa17();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS18()
-        {
-            kewps18 rpt = new kewps18();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS18()
+        //{
+        //    kewps18 rpt = new kewps18();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS19()
-        {
-            kewps19 rpt = new kewps19();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS19()
+        //{
+        //    kewps19 rpt = new kewps19();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS20()
-        {
-            kewps20 rpt = new kewps20();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS20()
+        //{
+        //    kewps20 rpt = new kewps20();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS21()
-        {
-            kewps21 rpt = new kewps21();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS21()
+        //{
+        //    kewps21 rpt = new kewps21();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
 
-        void Print_KEWPS22()
-        {
-            kewps22 rpt = new kewps22();
-            ReportViewer.Report = rpt;
-            ReportViewer.DataBind();
-        }
+        //void Print_KEWPS22()
+        //{
+        //    kewps22 rpt = new kewps22();
+        //    ReportViewer.Report = rpt;
+        //    ReportViewer.DataBind();
+        //}
         #endregion
 
         #region LAPORAN KEW.PA

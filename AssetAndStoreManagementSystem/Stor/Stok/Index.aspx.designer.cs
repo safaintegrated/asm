@@ -22,12 +22,12 @@ namespace AssetAndStoreManagementSystem.Stor.Stok {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Stok_Controller control.
+        /// JenisStok_Controller control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AssetAndStoreManagementSystem.Stor.Stok.Stok_Controller Stok_Controller;
+        protected global::AssetAndStoreManagementSystem.Stor.Stok.JenisStok_Controller JenisStok_Controller;
     }
 }

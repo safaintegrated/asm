@@ -483,7 +483,7 @@
                                                     </AlternatingRow>
                                                 </Styles>
                                             </dx:ASPxGridView>
-                                            <asp:SqlDataSource ID="SusutNilaiDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" SelectCommand="SP_ExecOrLoadSusutNilai" SelectCommandType="StoredProcedure" OnSelecting="SusutNilaiDs_Selecting" OnSelected="SusutNilaiDs_Selected">
+                                            <asp:SqlDataSource ID="SusutNilaiDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" SelectCommand="SP_ExecOrLoadSusutNilai" SelectCommandType="StoredProcedure" OnSelecting="SusutNilaiDs_Selecting" OnSelected="SusutNilaiDs_Selected">
                                                 <SelectParameters>
                                                     <asp:Parameter Direction="Output" Name="ExecType" Type="Int32" />
                                                     <asp:Parameter Direction="Output" Name="PrevYear" Type="Int32" />
@@ -672,7 +672,7 @@
             </AlternatingRow>
         </Styles>
     </dx:ASPxGridView>
-    <asp:SqlDataSource ID="SearchDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" SelectCommand="SELECT * FROM [V_AssetInventory_DepreciationHeader] ORDER BY [AIDH_RowId] DESC"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SearchDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" SelectCommand="SELECT * FROM [V_AssetInventory_DepreciationHeader] ORDER BY [AIDH_RowId] DESC"></asp:SqlDataSource>
         </dx:PopupControlContentControl>
 </ContentCollection>
 </dx:ASPxPopupControl>

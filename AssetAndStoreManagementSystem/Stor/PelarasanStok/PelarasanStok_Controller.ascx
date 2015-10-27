@@ -216,14 +216,35 @@
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
                                         </dx:LayoutItem>
-                                        <dx:LayoutItem Caption="Faktor-Faktor Pelarasan" Width="100%">
+                                        <dx:LayoutItem Caption="Tarikh Pelarasan">
                                             <LayoutItemNestedControlCollection>
                                                 <dx:LayoutItemNestedControlContainer runat="server">
-                                                    <dx:ASPxMemo ID="ASPxFormLayout3_E5" runat="server" Rows="3" Width="50%">
-                                                        <ClientSideEvents Init="function(s, e) {
-	s.GetInputElement().style.overflowY='hidden';
-}" />
-                                                    </dx:ASPxMemo>
+                                                    <dx:ASPxDateEdit ID="ASPxFormLayout3_E3" runat="server">
+                                                    </dx:ASPxDateEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Tarikh Kelulusan">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxDateEdit ID="ASPxFormLayout3_E4" runat="server">
+                                                    </dx:ASPxDateEdit>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Status">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxTextBox ID="ASPxFormLayout3_E5" runat="server" Width="170px">
+                                                    </dx:ASPxTextBox>
+                                                </dx:LayoutItemNestedControlContainer>
+                                            </LayoutItemNestedControlCollection>
+                                        </dx:LayoutItem>
+                                        <dx:LayoutItem Caption="Keterangan">
+                                            <LayoutItemNestedControlCollection>
+                                                <dx:LayoutItemNestedControlContainer runat="server">
+                                                    <dx:ASPxTextBox ID="ASPxFormLayout3_E6" runat="server" Width="170px">
+                                                    </dx:ASPxTextBox>
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
                                         </dx:LayoutItem>
@@ -241,28 +262,25 @@
                                         <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
                                         </CellStyle>
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Keterangan" ShowInCustomizationForm="True" VisibleIndex="1" Width="45%">
+                                    <dx:GridViewDataTextColumn Caption="Keterangan Stok" ShowInCustomizationForm="True" VisibleIndex="1" Width="45%">
                                         <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
                                         <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
                                         </CellStyle>
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Unit Pengukuran" ShowInCustomizationForm="True" VisibleIndex="2" Width="15%">
-                                        <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
+                                    <dx:GridViewDataTextColumn Caption="Kuantiti Semasa" ShowInCustomizationForm="True" VisibleIndex="2" Width="10%">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Kuantiti Semasa" ShowInCustomizationForm="True" VisibleIndex="3" Width="10%">
+                                    <dx:GridViewDataTextColumn Caption="Kuantiti Dilaraskan (+/-)" ShowInCustomizationForm="True" VisibleIndex="3" Width="10%">
                                         <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
                                         <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
                                         </CellStyle>
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Kuantiti Pelarasan" ShowInCustomizationForm="True" VisibleIndex="4" Width="10%">
-                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
-                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
-                                        </CellStyle>
-                                    </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Kuantiti Selepas Pelarasan" ShowInCustomizationForm="True" VisibleIndex="6" Width="10%">
+                                    <dx:GridViewDataTextColumn Caption="Kuantiti Selepas Pelarasan" ShowInCustomizationForm="True" VisibleIndex="5" Width="10%">
                                          <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                        <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
+                                        </CellStyle>
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn Caption="Sebab-Sebab Pelarasan" ShowInCustomizationForm="True" VisibleIndex="6" Width="10%">
+                                        <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
                                         <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
                                         </CellStyle>
                                     </dx:GridViewDataTextColumn>

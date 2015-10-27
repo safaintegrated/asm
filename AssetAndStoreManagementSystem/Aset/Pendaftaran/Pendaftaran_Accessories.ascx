@@ -175,7 +175,7 @@
                             </AlternatingRow>
                         </Styles>
                     </dx:ASPxGridView>
-                    <asp:SqlDataSource ID="ComponentDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" OnSelecting="ComponentDs_Selecting" SelectCommand="SP_ListAllComponents" SelectCommandType="StoredProcedure">
+                    <asp:SqlDataSource ID="ComponentDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" OnSelecting="ComponentDs_Selecting" SelectCommand="SP_ListAllComponents" SelectCommandType="StoredProcedure">
                         <SelectParameters>
                             <asp:Parameter DefaultValue="2799D5EC-6391-4001-A9E3-3C711483EC77" Name="ParentId" Type="String" />
                             <asp:Parameter DefaultValue="2" Name="ParentType" Type="Int32" />
@@ -233,7 +233,7 @@
 	s.GetGridView().SetWidth(AIC_ParentUniqueId.GetWidth());
 }" />
                                     </dx:ASPxGridLookup>
-                                    <asp:SqlDataSource ID="ParentDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMSDbConnectionString %>" OnSelecting="ParentDs_Selecting" SelectCommand="SP_PopulateComponentParentGridLookup" SelectCommandType="StoredProcedure">
+                                    <asp:SqlDataSource ID="ParentDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_DBConnectionString %>" OnSelecting="ParentDs_Selecting" SelectCommand="SP_PopulateComponentParentGridLookup" SelectCommandType="StoredProcedure">
                                         <SelectParameters>
                                             <asp:Parameter DefaultValue="2799D5EC-6391-4001-A9E3-3C711483EC77" Name="ParentId" Type="String" />
                                             <asp:Parameter DefaultValue="2" Name="ParentType" Type="Int32" />

@@ -13,13 +13,13 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
     public partial class Tab_MaklumatStok {
         
         /// <summary>
-        /// ASPxFormLayout1 control.
+        /// formLayout control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
+        protected global::DevExpress.Web.ASPxFormLayout formLayout;
         
         /// <summary>
         /// LayoutItemNestedControlContainer1 control.
@@ -31,103 +31,67 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
-        /// ASPxFormLayout1_E1 control.
+        /// glPtj control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxFormLayout1_E1;
+        protected global::DevExpress.Web.ASPxGridLookup glPtj;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer2 control.
+        /// dsPtj control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer2;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsPtj;
         
         /// <summary>
-        /// ASPxFormLayout1_E2 control.
+        /// glStore control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E2;
+        protected global::DevExpress.Web.ASPxGridLookup glStore;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer3 control.
+        /// dsStore control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer3;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsStore;
         
         /// <summary>
-        /// ASPxFormLayout1_E3 control.
+        /// glLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxFormLayout1_E3;
+        protected global::DevExpress.Web.ASPxGridLookup glLocation;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer4 control.
+        /// dsLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer4;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsLocation;
         
         /// <summary>
-        /// ASPxFormLayout1_E4 control.
+        /// txtStockRegId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxFormLayout1_E4;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer5;
-        
-        /// <summary>
-        /// ASPxFormLayout1_E5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxFormLayout1_E5;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer6;
-        
-        /// <summary>
-        /// ASPxFormLayout1_E6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxFormLayout1_E6;
+        protected global::DevExpress.Web.ASPxTextBox txtStockRegId;
         
         /// <summary>
         /// LayoutItemNestedControlContainer7 control.
@@ -139,13 +103,22 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer7;
         
         /// <summary>
-        /// ASPxFormLayout1_E7 control.
+        /// glStock control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E7;
+        protected global::DevExpress.Web.ASPxGridLookup glStock;
+        
+        /// <summary>
+        /// StockDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource StockDataSource;
         
         /// <summary>
         /// LayoutItemNestedControlContainer8 control.
@@ -157,13 +130,13 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer8;
         
         /// <summary>
-        /// ASPxFormLayout1_E8 control.
+        /// txtStockDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E8;
+        protected global::DevExpress.Web.ASPxTextBox txtStockDetail;
         
         /// <summary>
         /// LayoutItemNestedControlContainer9 control.
@@ -175,13 +148,13 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer9;
         
         /// <summary>
-        /// ASPxFormLayout1_E9 control.
+        /// txtStockGroup control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E9;
+        protected global::DevExpress.Web.ASPxTextBox txtStockGroup;
         
         /// <summary>
         /// LayoutItemNestedControlContainer10 control.
@@ -193,13 +166,13 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer10;
         
         /// <summary>
-        /// ASPxFormLayout1_E10 control.
+        /// txtStockMeasurement control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E10;
+        protected global::DevExpress.Web.ASPxTextBox txtStockMeasurement;
         
         /// <summary>
         /// LayoutItemNestedControlContainer11 control.
@@ -211,13 +184,22 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer11;
         
         /// <summary>
-        /// ASPxFormLayout1_E11 control.
+        /// txtStockCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E11;
+        protected global::DevExpress.Web.ASPxTextBox txtStockCategory;
+        
+        /// <summary>
+        /// txtStockSubCategory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtStockSubCategory;
         
         /// <summary>
         /// LayoutItemNestedControlContainer13 control.
@@ -229,93 +211,75 @@ namespace AssetAndStoreManagementSystem.Stor.DaftarStok {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer13;
         
         /// <summary>
-        /// ASPxFormLayout1_E12 control.
+        /// txtNoPkBppsBtb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxSpinEdit ASPxFormLayout1_E12;
+        protected global::DevExpress.Web.ASPxTextBox txtNoPkBppsBtb;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer14 control.
+        /// txtParasMenokok control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer14;
+        protected global::DevExpress.Web.ASPxTextBox txtParasMenokok;
         
         /// <summary>
-        /// ASPxFormLayout1_E13 control.
+        /// txtInTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxSpinEdit ASPxFormLayout1_E13;
+        protected global::DevExpress.Web.ASPxTextBox txtInTo;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer15 control.
+        /// txtInQuantityRequest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer15;
+        protected global::DevExpress.Web.ASPxTextBox txtInQuantityRequest;
         
         /// <summary>
-        /// ASPxFormLayout1_E15 control.
+        /// txtInQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxSpinEdit ASPxFormLayout1_E15;
+        protected global::DevExpress.Web.ASPxTextBox txtInQuantity;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer16 control.
+        /// txtInUnitPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer16;
+        protected global::DevExpress.Web.ASPxTextBox txtInUnitPrice;
         
         /// <summary>
-        /// ASPxFormLayout1_E16 control.
+        /// cbp_save control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxSpinEdit ASPxFormLayout1_E16;
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp_save;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer17 control.
+        /// LoadingPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer17;
-        
-        /// <summary>
-        /// ASPxFormLayout1_E17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxSpinEdit ASPxFormLayout1_E17;
-        
-        /// <summary>
-        /// ASPxGridView1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
+        protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
     }
 }

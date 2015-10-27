@@ -375,7 +375,7 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "AMSDbConnectionString";
+            this.sqlDataSource1.ConnectionName = "AMS_DBConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
             tableQuery1.FilterString = "[V_AssetInventoryRegistration_MainInformation.RECEIVEYEAR] = ?ReceiveYear And [V_" +
     "AssetInventoryRegistration_MainInformation.PTJ_SagaCode] = ?PtjSagaCode";

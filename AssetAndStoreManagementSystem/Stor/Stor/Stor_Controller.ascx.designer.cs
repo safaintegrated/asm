@@ -40,85 +40,103 @@ namespace AssetAndStoreManagementSystem.Stor.Stor {
         protected global::DevExpress.Web.ASPxCallbackPanel cbp;
         
         /// <summary>
-        /// ASPxFormLayout1 control.
+        /// MainForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
+        protected global::DevExpress.Web.ASPxFormLayout MainForm;
         
         /// <summary>
-        /// ST_StoreName control.
+        /// glPtj control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ST_StoreName;
+        protected global::DevExpress.Web.ASPxGridLookup glPtj;
         
         /// <summary>
-        /// ST_StorePTJId control.
+        /// dsPtj control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ST_StorePTJId;
+        protected global::System.Web.UI.WebControls.SqlDataSource dsPtj;
         
         /// <summary>
-        /// PtjDs control.
+        /// txtStoreName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource PtjDs;
+        protected global::DevExpress.Web.ASPxTextBox txtStoreName;
         
         /// <summary>
-        /// ST_StoreAdd1 control.
+        /// cbJenisStor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ST_StoreAdd1;
+        protected global::DevExpress.Web.ASPxComboBox cbJenisStor;
         
         /// <summary>
-        /// ST_StoreAdd2 control.
+        /// txtStoreId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ST_StoreAdd2;
+        protected global::DevExpress.Web.ASPxTextBox txtStoreId;
         
         /// <summary>
-        /// ST_StoreAdd3 control.
+        /// txtStoreAdd1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ST_StoreAdd3;
+        protected global::DevExpress.Web.ASPxTextBox txtStoreAdd1;
         
         /// <summary>
-        /// ST_StoreAdd4 control.
+        /// txtStoreAdd2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ST_StoreAdd4;
+        protected global::DevExpress.Web.ASPxTextBox txtStoreAdd2;
         
         /// <summary>
-        /// ST_StoreOfficerEmpSysId control.
+        /// txtStoreAdd3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup ST_StoreOfficerEmpSysId;
+        protected global::DevExpress.Web.ASPxTextBox txtStoreAdd3;
+        
+        /// <summary>
+        /// txtStoreAdd4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtStoreAdd4;
+        
+        /// <summary>
+        /// glEmployeeId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridLookup glEmployeeId;
         
         /// <summary>
         /// EmpDs control.
@@ -130,40 +148,67 @@ namespace AssetAndStoreManagementSystem.Stor.Stor {
         protected global::System.Web.UI.WebControls.SqlDataSource EmpDs;
         
         /// <summary>
-        /// EmployeeEmail control.
+        /// txtEmployeeName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox EmployeeEmail;
+        protected global::DevExpress.Web.ASPxTextBox txtEmployeeName;
         
         /// <summary>
-        /// ST_StorePhoneNumber control.
+        /// txtPhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ST_StorePhoneNumber;
+        protected global::DevExpress.Web.ASPxTextBox txtPhoneNumber;
         
         /// <summary>
-        /// ST_StoreId control.
+        /// txtEmployeeEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ST_StoreId;
+        protected global::DevExpress.Web.ASPxTextBox txtEmployeeEmail;
         
         /// <summary>
-        /// LoadingPanel control.
+        /// cbp_LocationInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp_LocationInfo;
+        
+        /// <summary>
+        /// MaklumatLokasi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxFormLayout MaklumatLokasi;
+        
+        /// <summary>
+        /// hlAddLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxHyperLink hlAddLocation;
+        
+        /// <summary>
+        /// gvLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvLocation;
         
         /// <summary>
         /// popupMsg control.
@@ -200,5 +245,113 @@ namespace AssetAndStoreManagementSystem.Stor.Stor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton popupMsg_BtnOk;
+        
+        /// <summary>
+        /// popupDeleteConfirmation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl popupDeleteConfirmation;
+        
+        /// <summary>
+        /// Popupcontrolcontentcontrol4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PopupControlContentControl Popupcontrolcontentcontrol4;
+        
+        /// <summary>
+        /// popupDeleteConfirmation_Label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLabel popupDeleteConfirmation_Label;
+        
+        /// <summary>
+        /// popupDeleteConfirmation_BtnOk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton popupDeleteConfirmation_BtnOk;
+        
+        /// <summary>
+        /// popupDeleteConfirmation_BtnCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton popupDeleteConfirmation_BtnCancel;
+        
+        /// <summary>
+        /// LoadingPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxLoadingPanel LoadingPanel;
+        
+        /// <summary>
+        /// PopupSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl PopupSearch;
+        
+        /// <summary>
+        /// PopupControlContentControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
+        
+        /// <summary>
+        /// GridSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView GridSearch;
+        
+        /// <summary>
+        /// Store control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Store;
+        
+        /// <summary>
+        /// cbp_Report control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbp_Report;
+        
+        /// <summary>
+        /// PopupAuditTrail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl PopupAuditTrail;
     }
 }

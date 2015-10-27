@@ -1,9 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="AssetAndStoreManagementSystem.Stor.PengeluaranStok.Index" %>
-
-<%@ Register Src="~/Stor/PengeluaranStok/PengeluaranStokNew_Controller.ascx" TagPrefix="uc1" TagName="PengeluaranStokNew_Controller" %>
-
-
-
+<%@ Register Src="~/Stor/PengeluaranStok/PengeluaranStokController.ascx" TagPrefix="uc1" TagName="PengeluaranStokController" %>
 
 
 <!DOCTYPE html>
@@ -12,12 +8,14 @@
 <head runat="server">
     <title></title>
     <link href="../../Public/Css/AspxCss.css" rel="stylesheet" />
+    <script src="Js_StorPengeluaranStok.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="MainDivCentered940px">
-             <uc1:PengeluaranStokNew_Controller runat="server" ID="PengeluaranStokNew_Controller" />
-    </div>
+        <div class="MainDivCentered80Percent">
+            <uc1:PengeluaranStokController runat="server" ID="PengeluaranStokController" />
+        </div>
     </form>
 </body>
 </html>
+

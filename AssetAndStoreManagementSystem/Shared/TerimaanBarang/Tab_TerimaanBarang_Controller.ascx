@@ -170,7 +170,7 @@
                             <dx:LayoutItem Caption="No. PO" Width="100%">
                                 <LayoutItemNestedControlCollection>
                                     <dx:LayoutItemNestedControlContainer runat="server">
-                                        <dx:ASPxGridLookup ID="GRNH_PrNumber" runat="server" AutoGenerateColumns="False" ClientInstanceName="GRNH_PrNumber" CssClass="TextBoxForId" DataSourceID="odsPR" EnableClientSideAPI="True" OnInit="GRNH_PrNumber_Init" TextFormatString="{1}" Width="100%" KeyFieldName="Id">
+                                        <dx:ASPxGridLookup ID="GRNH_PrNumber" runat="server" AutoGenerateColumns="False" ClientInstanceName="GRNH_PrNumber" CssClass="TextBoxForId" DataSourceID="odsPR" EnableClientSideAPI="True" OnInit="GRNH_PrNumber_Init" TextFormatString="{1}" Width="100%">
                                             <GridViewProperties>
                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
                                             </GridViewProperties>
@@ -178,47 +178,49 @@
 	PR_Selected();
 }" />
                                             <Columns>
-                                                <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="0" Visible="False">
+                                                <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="0">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="Instruction" ShowInCustomizationForm="True" VisibleIndex="1" Visible="False">
+                                                <dx:GridViewDataTextColumn FieldName="Instruction" ShowInCustomizationForm="True" VisibleIndex="1">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="RequesterId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                <dx:GridViewDataTextColumn FieldName="ReferenceNumber" ShowInCustomizationForm="True" VisibleIndex="2">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="RequestorName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                <dx:GridViewDataTextColumn FieldName="RequesterId" ShowInCustomizationForm="True" VisibleIndex="3">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ProcurementTypeId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="4">
+                                                <dx:GridViewDataTextColumn FieldName="RequestorName" ShowInCustomizationForm="True" VisibleIndex="4">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ProcurementTypeName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                <dx:GridViewDataTextColumn FieldName="ProcurementTypeId" ShowInCustomizationForm="True" VisibleIndex="5">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ProcurementCategoryId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="6">
+                                                <dx:GridViewDataTextColumn FieldName="ProcurementTypeName" ShowInCustomizationForm="True" VisibleIndex="6">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ProcurementCategory" ShowInCustomizationForm="True" Visible="False" VisibleIndex="7">
+                                                <dx:GridViewDataTextColumn FieldName="ProcurementCategoryId" ShowInCustomizationForm="True" VisibleIndex="7">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ProcurementMethodId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="8">
+                                                <dx:GridViewDataTextColumn FieldName="ProcurementCategory" ShowInCustomizationForm="True" VisibleIndex="8">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ProcurementMethod" ShowInCustomizationForm="True" Visible="False" VisibleIndex="9">
+                                                <dx:GridViewDataTextColumn FieldName="ProcurementMethodId" ShowInCustomizationForm="True" VisibleIndex="9">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ReceiverId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="10">
+                                                <dx:GridViewDataTextColumn FieldName="ProcurementMethod" ShowInCustomizationForm="True" VisibleIndex="10">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="SupplierId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="11">
+                                                <dx:GridViewDataTextColumn FieldName="ReceiverId" ShowInCustomizationForm="True" VisibleIndex="11">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn Caption="Nama Pembekal" FieldName="SupplierName" ShowInCustomizationForm="True" VisibleIndex="12">
+                                                <dx:GridViewDataTextColumn FieldName="SupplierId" ShowInCustomizationForm="True" VisibleIndex="12">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="RevisionNumber" ShowInCustomizationForm="True" Visible="False" VisibleIndex="13">
+                                                <dx:GridViewDataTextColumn FieldName="SupplierName" ShowInCustomizationForm="True" VisibleIndex="13">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="ProcessId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="14">
+                                                <dx:GridViewDataTextColumn FieldName="RevisionNumber" ShowInCustomizationForm="True" VisibleIndex="14">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn Caption="PO No" FieldName="PrNumber" ShowInCustomizationForm="True" VisibleIndex="15">
+                                                <dx:GridViewDataTextColumn FieldName="ProcessId" ShowInCustomizationForm="True" VisibleIndex="15">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="StatusName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="16">
+                                                <dx:GridViewDataTextColumn FieldName="PrNumber" ShowInCustomizationForm="True" VisibleIndex="16">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" Visible="False" VisibleIndex="17">
+                                                <dx:GridViewDataTextColumn FieldName="StatusName" ShowInCustomizationForm="True" VisibleIndex="17">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" Visible="False" VisibleIndex="18">
+                                                <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="18">
+                                                </dx:GridViewDataTextColumn>
+                                                <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="19">
                                                 </dx:GridViewDataCheckColumn>
-                                                <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" Visible="False" VisibleIndex="19">
+                                                <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="20">
                                                 </dx:GridViewDataTextColumn>
-                                                <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" Visible="False" VisibleIndex="20">
+                                                <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="21">
                                                 </dx:GridViewDataTextColumn>
                                             </Columns>
                                             <ClientSideEvents Init="function(s, e) {
@@ -227,7 +229,7 @@
 	GRNH_PrNumber_ValueChanged(s, e);
 }" />
                                         </dx:ASPxGridLookup>
-                                        <asp:ObjectDataSource ID="odsPR" runat="server" SelectMethod="FindAll" TypeName="DataAccess.Models.PurchaseRequestModel"></asp:ObjectDataSource>
+                                        <asp:ObjectDataSource ID="odsPR" runat="server" SelectMethod="FindAll" TypeName="Data.Models.PurchaseRequestModel"></asp:ObjectDataSource>
                                         <asp:SqlDataSource ID="PrDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" OnSelecting="PrDs_Selecting" SelectCommand="SP_GRN_LoadPrGridLookup" SelectCommandType="StoredProcedure">
                                             <SelectParameters>
                                                 <asp:Parameter Name="CurrUser" Type="Int32" />
