@@ -1,13 +1,11 @@
 ﻿using Data.Entity;
-using Data.Models;
-using Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssetAndStoreManagementSystem.Models
+namespace Data.Models
 {
 
     public class EmployeeModel : BaseModel<EmployeeModel>
@@ -38,6 +36,11 @@ namespace AssetAndStoreManagementSystem.Models
             _db.Employees.Remove(result.FirstOrDefault());
             _db.SaveChanges(user);
 
+        }
+
+        public static Employee FindByUserId(string userId)
+        {
+            return _db.Employees.Where(c => c.UserId == userId).FirstOrDefault();
         }
     }
 }

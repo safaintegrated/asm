@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>core.asset.safa.com.my.snk</AssemblyOriginatorKeyFile>
@@ -120,12 +120,6 @@
     <Compile Include="VerifikasiPengguna\LogMasuk\LogMasuk.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{e2a53e63-6cd9-4dd5-8d0a-8d531a0244fa}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="QRCode\QRcode_Report.resx">
       <DependentUpon>QRcode_Report.cs</DependentUpon>
@@ -133,6 +127,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="core.asset.safa.com.my.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{e2a53e63-6cd9-4dd5-8d0a-8d531a0244fa}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

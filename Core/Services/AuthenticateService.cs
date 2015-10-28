@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,30 @@ namespace Core.Services
 
         }
 
-        public void AuthenticateUser(string userId, string password)
+        public LoginStatus AuthenticateUser(string userId, string password, out Data.Entity.Employee e)
         {
+            e = null;
+
+            try
+            {
+                e = Data.Models.EmployeeModel.FindByUserId(userId);
+                if (e == null)
+                    return LoginStatus.NoRecord;
+
+                if (e.StatusCode != "1")
+                    return LoginStatus.InActive;
+
+                if (Core.Utility.EncryptDecryptMethod.DecryptString(e.Password, "UPNM") != password)
+                    return LoginStatus.InvalidPassword;
+
+                return LoginStatus.Success;
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return LoginStatus.Failed;
+
             //SqlConnection sqlConn = new SqlConnection();
             //SqlCommand sqlCmd = new SqlCommand();
             //SqlDataAdapter sqlAdap = new SqlDataAdapter();
@@ -61,4 +84,5 @@ namespace Core.Services
         }
 
     }
+
 }

@@ -42,10 +42,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Core.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -2097,6 +2093,10 @@
     <ProjectReference Include="..\Core.Stor\Core.Stor.csproj">
       <Project>{2b49782f-1a63-4e57-a583-42904ab25d05}</Project>
       <Name>Core.Stor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{6a7cd84f-23f4-4551-b39e-345daec1eab7}</Project>
+      <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{e2a53e63-6cd9-4dd5-8d0a-8d531a0244fa}</Project>

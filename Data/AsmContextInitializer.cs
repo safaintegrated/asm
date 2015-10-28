@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-//    public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
+    //    public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
     //public class AsmContextInitializer : DropCreateDatabaseAlways<AsmContext>
     public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
     {
@@ -51,8 +51,25 @@ namespace Data
 
             InsertProcessType(context);
 
+            InsertSampleUser(context);
+
             context.SaveChanges("system");
             base.Seed(context);
+        }
+
+        private void InsertSampleUser(AsmContext context)
+        {
+            //2	0002-07	Prof Wan Mahzom Binti Ahmad Shah	Wan Mahzom Binti Ahmad Shah	510605075444	mahzom@upnm.edu.my	019-2183136	762 2524	No 18, USJ 5/4,	Subang Jaya	NULL	NULL	4700	1167	VK6	1	Aktif	4	Kontrak	1	Akademik	1	01	Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs=	NULL	NULL	Pejabat Naib Canselor	NULL	NULL	Timbalan Pengarah Akademik
+
+            context.Employees.Add(new Employee
+            {
+                UserId = "0002-07",
+                 Salutation = "Prof Wan Mahzom Binti Ahmad Shah",
+                 FullName = "Wan Mahzom Binti Ahmad Shah",
+                 StatusCode = "1",
+                Password = "Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs="
+            });
+
         }
 
         private static void InsertAssetType(AsmContext context)
