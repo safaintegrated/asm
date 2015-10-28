@@ -12,6 +12,7 @@ namespace Data.Enum
         InvalidPassword,
         InActive,
         NoRecord,
-        Failed
+        Failed,
+        DatabaseError
     }
 }

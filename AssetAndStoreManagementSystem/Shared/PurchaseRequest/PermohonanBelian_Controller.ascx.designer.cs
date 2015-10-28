@@ -49,22 +49,31 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
         
         /// <summary>
-        /// ASPxFormLayout1_E1 control.
+        /// txtOfficerName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E1;
+        protected global::DevExpress.Web.ASPxTextBox txtOfficerName;
         
         /// <summary>
-        /// ASPxFormLayout1_E2 control.
+        /// txtPtjName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxFormLayout1_E2;
+        protected global::DevExpress.Web.ASPxTextBox txtPtjName;
+        
+        /// <summary>
+        /// txtPtjId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPtjId;
         
         /// <summary>
         /// MainGrid control.

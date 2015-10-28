@@ -74,32 +74,36 @@
                 <dx:ASPxCallbackPanel ID="ASPxCallbackPanel1" runat="server" Width="100%">
                     <PanelCollection>
                         <dx:PanelContent runat="server">
-                            <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" ColCount="3" Width="100%">
+                            <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" ColCount="2" Width="100%">
                                 <Items>
-                                    <dx:EmptyLayoutItem>
-                                    </dx:EmptyLayoutItem>
-                                    <dx:LayoutItem Caption="Nama Pegawai" Width="40%">
-                                        <LayoutItemNestedControlCollection>
-                                            <dx:LayoutItemNestedControlContainer runat="server">
-                                                <dx:ASPxTextBox ID="ASPxFormLayout1_E1" runat="server" Width="50%">
-                                                </dx:ASPxTextBox>
-                                            </dx:LayoutItemNestedControlContainer>
-                                        </LayoutItemNestedControlCollection>
-                                    </dx:LayoutItem>
-                                    <dx:EmptyLayoutItem>
-                                    </dx:EmptyLayoutItem>
-                                    <dx:EmptyLayoutItem>
-                                    </dx:EmptyLayoutItem>
-                                    <dx:LayoutItem Caption="Pusat Tanggungjawab" Width="70%">
-                                        <LayoutItemNestedControlCollection>
-                                            <dx:LayoutItemNestedControlContainer runat="server">
-                                                <dx:ASPxTextBox ID="ASPxFormLayout1_E2" runat="server" Width="47%">
-                                                </dx:ASPxTextBox>
-                                            </dx:LayoutItemNestedControlContainer>
-                                        </LayoutItemNestedControlCollection>
-                                    </dx:LayoutItem>
-                                    <dx:EmptyLayoutItem>
-                                    </dx:EmptyLayoutItem>
+                                    <dx:LayoutGroup Caption="Maklumat Pengguna" ColCount="2" ColSpan="2">
+                                        <Items>
+                                            <dx:LayoutItem Caption="Nama Pegawai" ColSpan="2">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="txtOfficerName" runat="server" Width="100%">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="Pusat Tanggungjawab" ColSpan="2">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="txtPtjName" runat="server" Width="100%">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                            <dx:LayoutItem Caption="PTJ Id" ColSpan="2">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
+                                                        <dx:ASPxTextBox ID="txtPtjId" runat="server" Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                        </Items>
+                                    </dx:LayoutGroup>
                                 </Items>
                             </dx:ASPxFormLayout>
                         </dx:PanelContent>

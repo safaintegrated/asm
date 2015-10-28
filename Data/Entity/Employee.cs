@@ -40,7 +40,7 @@ namespace Data.Entity
         public string TypeName { get; set; }
         public string UserType { get; set; }
         public string Password { get; set; }
-        public string PtjCodeName { get; set; }
+        public string PtjCode { get; set; }
         public string PtjName { get; set; }
         public string DesignationName { get; set; }
 

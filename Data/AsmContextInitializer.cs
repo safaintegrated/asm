@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace Data
 {
     //    public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
-    //public class AsmContextInitializer : DropCreateDatabaseAlways<AsmContext>
-    public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
+    public class AsmContextInitializer : DropCreateDatabaseAlways<AsmContext>
+    //public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
     {
         protected override void Seed(AsmContext context)
         {
@@ -39,6 +39,10 @@ namespace Data
             context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST1", Name = "STOR 1", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
             context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST2", Name = "STOR 2", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
 
+            InsertDepartments(context);
+
+            InsertPtj(context);
+
             InsertAssetType(context);
 
             InserSampleSuppliers(context);
@@ -53,8 +57,68 @@ namespace Data
 
             InsertSampleUser(context);
 
+            InsertSamplePurchaseRequest(context);
+
             context.SaveChanges("system");
             base.Seed(context);
+        }
+
+        private void InsertSamplePurchaseRequest(AsmContext context)
+        {
+            PurchaseRequest pr = new PurchaseRequest
+            {
+                PrNumber = "12345",
+                ReferenceNumber = DateTime.Now.ToString("yyMMdd-HHmmss"),
+                Description = "Membeli Komputer",
+                SupplierName = "Ajis Supplier",
+                RequestorName = "Haji Abu",
+                Status = ProcessStatus.New
+            };
+            context.PurchaseRequests.Add(pr);
+        }
+
+        private void InsertPtj(AsmContext context)
+        {
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "01", SmpCode = "0100", Code = "PNC", FullName = "Pejabat Naib Canselor", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "05", SmpCode = "0200", Code = "HEAA", FullName = "Pejabat Timbalan Naib Canselor (Akademik dan Antarabangsa", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "04", SmpCode = "0300", Code = "HEPA", FullName = "Pejabat Timbalan Naib Canselor (Hal Ehwal Pelajar dan Alumni)", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "08", SmpCode = "0400", Code = "JPP", FullName = "Jabatan Pembangunan dan Penyelenggaraan", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "02", SmpCode = "0500", Code = "JP", FullName = "Jabatan Pendaftar", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "03", SmpCode = "0600", Code = "JB", FullName = "Jabatan Bendahari", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "07", SmpCode = "0700", Code = "PERP", FullName = "Perpustakaan", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "19", SmpCode = "1000", Code = "PPPI", FullName = "Pusat Pengurusan Penyelidikan dan Inovasi", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "09", SmpCode = "4000", Code = "ASP", FullName = "Pusat Asasi Pertahanan", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "06", SmpCode = "4100", Code = "PTMK", FullName = "Pusat Teknologi Maklumat dan Komunikasi", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "14", SmpCode = "4400", Code = "PB", FullName = "Pusat Bahasa", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "15", SmpCode = "4500", Code = "BKK", FullName = "Pejabat Timbalan Naib Canselor (Jaringan Industri dan Hubungan Korporat)", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "18", SmpCode = "4800", Code = "BPA", FullName = "Bahagian Pengurusan Akademik", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "11", SmpCode = "6000", Code = "FSTP", FullName = "Fakulti Sains dan Teknologi Pertahanan", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "12", SmpCode = "6100", Code = "FPPP", FullName = "Fakulti Pengajian dan Pengurusan Siswazah", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "10", SmpCode = "6200", Code = "FKJ", FullName = "Fakulti Kejuruteraan", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "13", SmpCode = "6300", Code = "PPS", FullName = "Pusat Pengajian Siswazah", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "17", SmpCode = "6600", Code = "FPKP", FullName = "Fakulti Perubatan dan Kesihatan Pertahanan", });
+        }
+
+        private void InsertDepartments(AsmContext context)
+        {
+            context.Departments.Add(new Department { Code = "CODRAT", Name = "PUSAT PENYELIDIKAN DAN TEKNOLOGI PERTAHANAN " });
+            context.Departments.Add(new Department { Code = "CDISS", Name = "PUSAT PENGAJIAN PERTAHANAN DAN KESELAMATAN ANTARABANGSA " });
+            context.Departments.Add(new Department { Code = "PP", Name = "PUSAT PENERBITAN" });
+            context.Departments.Add(new Department { Code = "PJK", Name = "PUSAT JAMINAN KUALITI" });
+            context.Departments.Add(new Department { Code = "IPMO", Name = "PEJABAT PENGURUSAN PROGRAM INSTITUSI " });
+            context.Departments.Add(new Department { Code = "PI", Name = "PUSAT ISLAM" });
+            context.Departments.Add(new Department { Code = "PCS", Name = "PUSAT CYBER SECURITY" });
+            context.Departments.Add(new Department { Code = "BAD", Name = "BAHAGIAN AUDIT DALAM" });
+            context.Departments.Add(new Department { Code = "PPKDI", Name = "PUSAT PEMBANGUNAN KEUSAHAWANAN DAN INOVASI" });
+            context.Departments.Add(new Department { Code = "NIEED", Name = "INSTITUT PENGAJIANEKSEKUTIF UPNM" });
+            context.Departments.Add(new Department { Code = "UBAT", Name = "PUSAT PERUBATAN" });
+            context.Departments.Add(new Department { Code = "PGP", Name = "PUSAT GOVERNAN DAN PERUNDANGAN" });
+            context.Departments.Add(new Department { Code = "BK", Name = "BAHAGIAN KENDERAAN" });
+            context.Departments.Add(new Department { Code = "BSEL", Name = "BAHAGIAN KESELAMATAN" });
+            context.Departments.Add(new Department { Code = "PSUK", Name = "PUSAT SUKAN" });
+            context.Departments.Add(new Department { Code = "PSK", Name = "PUSAT SAINS KEJURULATIHAN" });
+            context.Departments.Add(new Department { Code = "PPA", Name = "PUSAT PEMBANGUNAN AKADEMIK" });
+            context.Departments.Add(new Department { Code = "PAB", Name = "PEJABAT ANTARABANGSA" });
         }
 
         private void InsertSampleUser(AsmContext context)
@@ -64,10 +128,13 @@ namespace Data
             context.Employees.Add(new Employee
             {
                 UserId = "0002-07",
-                 Salutation = "Prof Wan Mahzom Binti Ahmad Shah",
-                 FullName = "Wan Mahzom Binti Ahmad Shah",
-                 StatusCode = "1",
-                Password = "Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs="
+                Salutation = "Prof Wan Mahzom Binti Ahmad Shah",
+                FullName = "Wan Mahzom Binti Ahmad Shah",
+                StatusCode = "1",
+                Password = "Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs=",
+                PtjCode = "JB",
+                PtjName = "Jabatan Bendahari",
+                DesignationGrade = "",
             });
 
         }

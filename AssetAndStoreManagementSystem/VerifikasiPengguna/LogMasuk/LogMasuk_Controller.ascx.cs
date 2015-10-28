@@ -58,7 +58,10 @@ namespace AssetAndStoreManagementSystem.VerifikasiPengguna.LogMasuk
                         MoreThanOneRecordMode(); 
                         break;
                     case Data.Enum.LoginStatus.Failed:
-                         InactiveUserMode(); 
+                         DatabaseError(); 
+                         break;
+                    case Data.Enum.LoginStatus.DatabaseError:
+                         DatabaseError(); 
                          break;
                     default:
                         break;
@@ -137,6 +140,12 @@ namespace AssetAndStoreManagementSystem.VerifikasiPengguna.LogMasuk
         void InactiveUserMode()
         {
             ErrorPopupMessageBox_Label.Text = "ID Pengguna yang dimasukkan tidak aktif.<br>Sila hubungi unit pengurusan Portal Kehadiran Staf.";
+            ErrorPopupMessageBox.ShowOnPageLoad = true;
+        }
+
+        void DatabaseError()
+        {
+            ErrorPopupMessageBox_Label.Text = "Masalah pada paengkalan data.<br>Sila hubungi unit pengurusan sistem.";
             ErrorPopupMessageBox.ShowOnPageLoad = true;
         }
 

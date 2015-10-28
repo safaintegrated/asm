@@ -17,7 +17,6 @@ namespace Core.Services
         public LoginStatus AuthenticateUser(string userId, string password, out Data.Entity.Employee e)
         {
             e = null;
-
             try
             {
                 e = Data.Models.EmployeeModel.FindByUserId(userId);
@@ -34,6 +33,7 @@ namespace Core.Services
             }
             catch (Exception ex)
             {
+                return LoginStatus.DatabaseError;
             }
 
             return LoginStatus.Failed;

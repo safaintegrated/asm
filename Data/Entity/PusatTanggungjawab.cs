@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Data.Entity
 {
-    class PusatTanggungjawab
+    public class PusatTanggungjawab : EntityBase
     {
         //public int PTJId { get; set; }
-        public string PTJName { get; set; }
-        public string PTJSagaCode { get; set; }
+        public string FullName { get; set; }
+        public string SmpCode { get; set; }
+        public string SagaCode { get; set; }
+        public string MySpartaCode { get; set; }
+        public string Code { get; set; }
     }
 }

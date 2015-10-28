@@ -13,6 +13,20 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(!IsPostBack)
+            {
+                UpdateUserInfo();
+            }
+        }
+
+        private void UpdateUserInfo()
+        {
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+            var employee = Data.Models.EmployeeModel.FindByUserId(ticket.Name);
+            txtOfficerName.Text = employee.FullName;
+            txtPtjName.Text = employee.PtjName;
+            txtPtjId.Text = employee.PtjCode;
 
         }
 

@@ -56,8 +56,9 @@ namespace Data
         public DbSet<Employee> Employees { get; set; }
         public DbSet<MainRegistrationInfo> MainRegistrationInfos { get; set; }
         public DbSet<PurchaseRequestItem> PurchaseRequestItems { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<PusatTanggungjawab> PusatTanggungjawabList { get; set; }
 
-        
         public int SaveChanges(string username)
         {
             var userName = string.IsNullOrEmpty(username) ? "amir@fa-bigdata.com" : username;
