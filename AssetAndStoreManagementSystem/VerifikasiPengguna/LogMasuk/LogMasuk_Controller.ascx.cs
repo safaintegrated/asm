@@ -16,6 +16,8 @@ namespace AssetAndStoreManagementSystem.VerifikasiPengguna.LogMasuk
 {
     public partial class LogMasuk_Controller : System.Web.UI.UserControl
     {
+        Core.Services.AuthenticateService _auth = new Core.Services.AuthenticateService();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -38,17 +40,43 @@ namespace AssetAndStoreManagementSystem.VerifikasiPengguna.LogMasuk
 
             try
             {
-                LogMasukMethod.AuthenticateUser(txtUserId.Text, txtPassword.Text, ref ErrCode, ref ErrMsg, ref Dt);
-
-                if (ErrCode == 0)
-                { FormsAuthentication.RedirectFromLoginPage(Dt.Rows[0]["User_Id"].ToString(), false); }
-                else
+                //LogMasukMethod.AuthenticateUser(txtUserId.Text, txtPassword.Text, ref ErrCode, ref ErrMsg, ref Dt);
+                Data.Entity.Employee employee ;
+                var status = _auth.AuthenticateUser(txtUserId.Text, txtPassword.Text, out employee);
+                switch (status)
                 {
-                    if (ErrMsg != string.Empty)
-                    { DbCaughtByExceptionMode(ErrMsg); }
-                    else
-                    { LoadErrorMessage(ErrCode, ref Dt); }
+                    case Data.Enum.LoginStatus.Success:
+                        FormsAuthentication.RedirectFromLoginPage(employee.UserId, false);
+                        break;
+                    case Data.Enum.LoginStatus.InvalidPassword:
+                       InvalidPasswordMode(); 
+                       break;
+                    case Data.Enum.LoginStatus.InActive:
+                         InactiveUserMode(); 
+                         break;
+                    case Data.Enum.LoginStatus.NoRecord:
+                        MoreThanOneRecordMode(); 
+                        break;
+                    case Data.Enum.LoginStatus.Failed:
+                         InactiveUserMode(); 
+                         break;
+                    default:
+                        break;
                 }
+
+                //                case 5: InactiveUserMode(); break; //inactive user mode
+                //case 2: MoreThanOneRecordMode(); break; //more than 1 record for user
+                //case 1: InvalidPasswordMode(); break; //invalid password entered
+
+                //if (ErrCode == 0)
+                //{ FormsAuthentication.RedirectFromLoginPage(Dt.Rows[0]["User_Id"].ToString(), false); }
+                //else
+                //{
+                //    if (ErrMsg != string.Empty)
+                //    { DbCaughtByExceptionMode(ErrMsg); }
+                //    else
+                //    { LoadErrorMessage(ErrCode, ref Dt); }
+                //}
             }
             catch (Exception err)
             { LoginError(err.Message); }
@@ -72,7 +100,7 @@ namespace AssetAndStoreManagementSystem.VerifikasiPengguna.LogMasuk
 
         void LoginError(string ErrMsg)
         {
-            ErrorPopupMessageBox_Label.Text = "Login tidak berjaya.<br>Masalah: "+ErrMsg;
+            ErrorPopupMessageBox_Label.Text = "Login tidak berjaya.<br>Masalah: " + ErrMsg;
             ErrorPopupMessageBox.ShowOnPageLoad = true;
         }
 
