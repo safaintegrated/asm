@@ -238,23 +238,33 @@ function Toolbar_PopupPr_ItemClick(s, e) {
 }
 
 function Toolbar_SimpanClicked() {
-    if (
-        PRH_Purpose.GetText() == '' ||
-        PRH_RequestBy.GetText() == '' ||
-        PRH_ProcurementITypeId.GetText() == '' ||
-        PRH_ProcurementCatId.GetText() == '' ||
-        PRH_ProcurementMethodId.GetText() == '' ||
-        //PRH_PurchaserId.GetText() == '' || 
-        PRH_SupplierCode.GetText() == ''
-        ) {
-        popupMsg_Label.SetText('Semua medan perlu diisi terlebih dahulu.<br>Sila semak dan cuba sekali lagi.');
-        popupMsg.Show();
-    }
-    else {
+    //TODO: add validation before proceed with save
+    LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
+    LoadingPanel.Show();
+    cbp_PermohonanBelian_PrHeader.PerformCallback('SAVE');
+
+
+    //alert('saving');
+
+    //if (
+    //    PRH_Purpose.GetText() == '' ||
+    //    PRH_RequestBy.GetText() == '' ||
+    //    PRH_ProcurementITypeId.GetText() == '' ||
+    //    PRH_ProcurementCatId.GetText() == '' ||
+    //    PRH_ProcurementMethodId.GetText() == '' ||
+    //    //PRH_PurchaserId.GetText() == '' || 
+    //    PRH_SupplierCode.GetText() == ''
+    //    )
+    //{
+    //    popupMsg_Label.SetText('Semua medan perlu diisi terlebih dahulu.<br>Sila semak dan cuba sekali lagi.');
+    //    popupMsg.Show();
+    //}
+    //else {
+        //alert('saving');
         LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
         LoadingPanel.Show();
         cbp_PermohonanBelian_PrHeader.PerformCallback('SAVE');
-    }
+    //}
 }
 
 function Manage_Toolbar_PopupPr(btnEdit, btnSave, btnSubmit, btnCancel, btnWithdraw, btnApprove, btnReject) {
@@ -419,14 +429,14 @@ function FillPurchaserAddress(Values) {
 }
 
 function EnableDisableUtamaForm(EnableDisable) {
-    PRH_Purpose.SetEnabled(EnableDisable);
-    PRH_DeliveryInstruction.SetEnabled(EnableDisable);
-    PRH_RequestBy.SetEnabled(EnableDisable);
-    PRH_ProcurementITypeId.SetEnabled(EnableDisable);
-    PRH_ProcurementCatId.SetEnabled(EnableDisable);
-    PRH_ProcurementMethodId.SetEnabled(EnableDisable);
-    PRH_PurchaserId.SetEnabled(EnableDisable);
-    PRH_SupplierCode.SetEnabled(EnableDisable);
+    //PRH_Purpose.SetEnabled(EnableDisable);
+    //PRH_DeliveryInstruction.SetEnabled(EnableDisable);
+    //PRH_RequestBy.SetEnabled(EnableDisable);
+    //PRH_ProcurementITypeId.SetEnabled(EnableDisable);
+    //PRH_ProcurementCatId.SetEnabled(EnableDisable);
+    //PRH_ProcurementMethodId.SetEnabled(EnableDisable);
+    //PRH_PurchaserId.SetEnabled(EnableDisable);
+    //PRH_SupplierCode.SetEnabled(EnableDisable);
 }
 
 //** TO EASE FUNCTION CALLING.  TO BE REMOVED BEFORE LIVE

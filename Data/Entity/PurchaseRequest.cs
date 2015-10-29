@@ -9,14 +9,13 @@ namespace Data.Entity
 {
     public class PurchaseRequest : EntityBase
     {
+        //public virtual Employee Requestor { get; set; }
+        public string RequestorName { get; set; }
         public string Description { get; set; }
         public string Instruction { get; set; }
         public string ReferenceNumber { get; set; }
-
-
-        public string RequesterId { get; set; }
-        public UtemInfo Requestor { get; set; }
-        public string RequestorName { get; set; }
+        //public string RequesterId { get; set; }
+        //public UtemInfo Requestor { get; set; }
         public string ProcurementTypeId { get; set; }
         public string ProcurementTypeName { get; set; }
         public string ProcurementCategoryId { get; set; }
@@ -33,7 +32,7 @@ namespace Data.Entity
         /// Pembekal Id
         /// </summary>
         public string SupplierId { get; set; }
-        public Supplier Supplier { get; set; }
+        public virtual Supplier Supplier { get; set; }
         public string SupplierName { get; set; }
         public int RevisionNumber { get; set; }
         public string ProcessId { get; set; }

@@ -15,9 +15,77 @@
 <dx:PanelContent runat="server">
     <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
         <Items>
-            <dx:LayoutGroup Caption="Maklumat Pembelian" Width="100%" ColCount="4">
+            <dx:LayoutGroup Caption="Maklumat Pemohon" ColCount="4">
                 <Items>
-                    <dx:LayoutItem Caption="Perihal Belian" ColSpan="2" Width="50%">
+                    <dx:LayoutItem Caption="Nama" ColSpan="3">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxTextBox ID="txtOfficerName" runat="server" ReadOnly="True" Width="100%">
+                                </dx:ASPxTextBox>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                    <dx:LayoutItem Caption="Pusat Tanggungjawab" ColSpan="3">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxTextBox ID="txtPtjName" runat="server" OnTextChanged="txtPtjName_TextChanged" ReadOnly="True" Width="100%">
+                                </dx:ASPxTextBox>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                    <dx:LayoutItem Caption="Alamat 1" Width="25%" ColSpan="3">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxTextBox ID="txtPtjAddress1" runat="server" OnTextChanged="txtPtjAddress1_TextChanged" ReadOnly="True" Width="100%">
+                                </dx:ASPxTextBox>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                    <dx:LayoutItem Caption="Alamat 2" Width="25%" ColSpan="3">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxTextBox ID="txtPtjAddress2" runat="server" ReadOnly="True" Width="100%">
+                                </dx:ASPxTextBox>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                    <dx:LayoutItem Caption="Alamat 3" Width="25%" ColSpan="4">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxTextBox ID="txtPtjAddress3" runat="server" ReadOnly="True" Width="100%">
+                                </dx:ASPxTextBox>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                    <dx:LayoutItem Caption="Ptj Code">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxTextBox ID="txtPtjId" runat="server" Width="170px">
+                                </dx:ASPxTextBox>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                </Items>
+            </dx:LayoutGroup>
+            <dx:LayoutGroup Caption="Maklumat Pembelian" ColCount="4" Width="100%">
+                <Items>
+                    <dx:LayoutItem Caption="Tarikh Permohonan" ColSpan="2">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxDateEdit ID="ASPxFormLayout1_E1" runat="server">
+                                </dx:ASPxDateEdit>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                    <dx:LayoutItem Caption="Tarikh Bekalan" ColSpan="2">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server">
+                                <dx:ASPxDateEdit ID="ASPxFormLayout1_E2" runat="server">
+                                </dx:ASPxDateEdit>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+                    <dx:LayoutItem Width="50%" Caption="Perihal Belian" ColSpan="2">
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer runat="server">
                                 <dx:ASPxMemo ID="PRH_Purpose" runat="server" ClientInstanceName="PRH_Purpose" EnableClientSideAPI="True" Rows="4" Width="100%">
@@ -28,7 +96,7 @@
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
                     </dx:LayoutItem>
-                    <dx:LayoutItem Caption="Arahan" ColSpan="2" Width="50%">
+                    <dx:LayoutItem Width="50%" Caption="Arahan" ColSpan="2">
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer runat="server">
                                 <dx:ASPxMemo ID="PRH_DeliveryInstruction" runat="server" ClientInstanceName="PRH_DeliveryInstruction" EnableClientSideAPI="True" Rows="4" Width="100%">
@@ -39,139 +107,30 @@
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
                     </dx:LayoutItem>
-                    <dx:LayoutItem Caption="Dimohon Oleh" Width="25%">
+                    <dx:LayoutItem Caption="Jenis Perolehan" ColSpan="2" Width="25%">
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxGridLookup ID="PRH_RequestBy" runat="server" AutoGenerateColumns="False" ClientInstanceName="PRH_RequestBy" DataSourceID="odsRequestor" EnableClientSideAPI="True" Width="100%" TextFormatString="{0}" KeyFieldName="Id">
-                                    <GridViewProperties>
-                                        <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
-                                        <Settings ShowFilterRow="True" />
-                                    </GridViewProperties>
-                                    <Columns>
-                                        <dx:GridViewDataTextColumn FieldName="Name" ShowInCustomizationForm="True" VisibleIndex="0">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Code" ShowInCustomizationForm="True" VisibleIndex="1">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="2">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="3">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="4">
-                                        </dx:GridViewDataCheckColumn>
-                                        <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="5">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="6">
-                                        </dx:GridViewDataTextColumn>
-                                    </Columns>
-                                    <GridViewStyles>
-                                        <AlternatingRow Enabled="True">
-                                        </AlternatingRow>
-                                    </GridViewStyles>
-                                    <ClientSideEvents ValueChanged="function(s, e) {
-	PRH_RequestBy_ValueChanged(s, e);
-}" />
-                                </dx:ASPxGridLookup>
-                                <asp:ObjectDataSource ID="odsRequestor" runat="server" SelectMethod="FindAll" TypeName="Data.Models.RequestorModel"></asp:ObjectDataSource>
-                                <asp:SqlDataSource ID="RequestByDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_SAGAConnectionString %>" SelectCommand="SELECT * FROM [UT_Email] WHERE ([utem_code] IS NOT NULL) ORDER BY [utem_name]"></asp:SqlDataSource>
-                            </dx:LayoutItemNestedControlContainer>
-                        </LayoutItemNestedControlCollection>
-                    </dx:LayoutItem>
-                    <dx:LayoutItem Caption="Jenis Perolehan" Width="25%">
-                        <LayoutItemNestedControlCollection>
-                            <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxComboBox ID="PRH_ProcurementITypeId" runat="server" ClientInstanceName="PRH_ProcurementITypeId" EnableClientSideAPI="True" Width="100%" DataSourceID="odsProcurementType" TextField="Name" ValueField="Id">
+                                <dx:ASPxComboBox ID="PRH_ProcurementITypeId" runat="server" ClientInstanceName="PRH_ProcurementITypeId" DataSourceID="odsProcurementType" EnableClientSideAPI="True" TextField="Name" ValueField="Id" Width="100%">
                                 </dx:ASPxComboBox>
                                 <asp:ObjectDataSource ID="odsProcurementType" runat="server" SelectMethod="FindAll" TypeName="Data.Models.ProcurementTypeModel"></asp:ObjectDataSource>
-                                <asp:SqlDataSource ID="ProcurementTypeDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT * FROM [ProcurementType] ORDER BY [ProcurementTypeName]"></asp:SqlDataSource>
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
                     </dx:LayoutItem>
-                    <dx:LayoutItem Caption="Kategori Perolehan" Width="25%">
+                    <dx:LayoutItem Caption="Kategori Perolehan" ColSpan="2" Width="25%">
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxComboBox ID="PRH_ProcurementCatId" runat="server" ClientInstanceName="PRH_ProcurementCatId" EnableClientSideAPI="True" Width="100%" DataSourceID="odsProcurementCategory" TextField="Name" ValueField="Id">
+                                <dx:ASPxComboBox ID="PRH_ProcurementCatId" runat="server" ClientInstanceName="PRH_ProcurementCatId" DataSourceID="odsProcurementCategory" EnableClientSideAPI="True" TextField="Name" ValueField="Id" Width="100%">
                                 </dx:ASPxComboBox>
                                 <asp:ObjectDataSource ID="odsProcurementCategory" runat="server" SelectMethod="FindAll" TypeName="Data.Models.ProcurementCategoryModel"></asp:ObjectDataSource>
-                                <asp:SqlDataSource ID="ProcurementCatDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT * FROM [ProcurementCategory] ORDER BY [ProcurementCatName]"></asp:SqlDataSource>
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
                     </dx:LayoutItem>
-                    <dx:LayoutItem Caption="Kaedah Perolehan" Width="25%">
+                    <dx:LayoutItem Caption="Kaedah Perolehan" ColSpan="2" Width="25%">
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxComboBox ID="PRH_ProcurementMethodId" runat="server" ClientInstanceName="PRH_ProcurementMethodId" EnableClientSideAPI="True" Width="100%" DataSourceID="odsProcurementMethod" TextField="Name" ValueField="Id">
+                                <dx:ASPxComboBox ID="PRH_ProcurementMethodId" runat="server" ClientInstanceName="PRH_ProcurementMethodId" DataSourceID="odsProcurementMethod" EnableClientSideAPI="True" TextField="Name" ValueField="Id" Width="100%">
                                 </dx:ASPxComboBox>
                                 <asp:ObjectDataSource ID="odsProcurementMethod" runat="server" SelectMethod="FindAll" TypeName="Data.Models.ProcurementMethodModel"></asp:ObjectDataSource>
-                                <asp:SqlDataSource ID="ProcurementMethodDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT * FROM [ProcurementMethod] ORDER BY [ProcurementMethodName]"></asp:SqlDataSource>
-                            </dx:LayoutItemNestedControlContainer>
-                        </LayoutItemNestedControlCollection>
-                    </dx:LayoutItem>
-                </Items>
-            </dx:LayoutGroup>
-            <dx:LayoutGroup Caption="Hantar Kepada" ColCount="4">
-                <Items>
-                    <dx:LayoutItem Caption="Penerima" Width="25%">
-                        <LayoutItemNestedControlCollection>
-                            <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxGridLookup ID="PRH_PurchaserId" runat="server" EnableClientSideAPI="True" Width="100%" ClientInstanceName="PRH_PurchaserId" AutoGenerateColumns="False" DataSourceID="odsReceipient" TextFormatString="{0}" KeyFieldName="Id">
-                                    <GridViewProperties>
-                                        <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
-                                        <Settings ShowFilterRow="True" />
-                                    </GridViewProperties>
-                                    <Columns>
-                                        <dx:GridViewDataTextColumn FieldName="Code" ShowInCustomizationForm="True" VisibleIndex="0">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Name" ShowInCustomizationForm="True" VisibleIndex="1">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Address1" ShowInCustomizationForm="True" VisibleIndex="2">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Address2" ShowInCustomizationForm="True" VisibleIndex="3">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Address3" ShowInCustomizationForm="True" VisibleIndex="4">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="5">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="6">
-                                        </dx:GridViewDataCheckColumn>
-                                        <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="7">
-                                        </dx:GridViewDataTextColumn>
-                                        <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="8">
-                                        </dx:GridViewDataTextColumn>
-                                    </Columns>
-                                    <GridViewStyles>
-                                        <AlternatingRow Enabled="True">
-                                        </AlternatingRow>
-                                    </GridViewStyles>
-                                    <ClientSideEvents ValueChanged="function(s, e) {
-	PRH_PurchaserId_ValueChanged(s, e);
-}" />
-                                </dx:ASPxGridLookup>
-                                <asp:ObjectDataSource ID="odsReceipient" runat="server" SelectMethod="FindAll" TypeName="Data.Models.PuDeliveryAddressModel"></asp:ObjectDataSource>
-                                <asp:SqlDataSource ID="ReceipientDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_SAGAConnectionString %>" SelectCommand="SELECT * FROM [PU_Deliveryadd] ORDER BY [puda_purchaserid]"></asp:SqlDataSource>
-                            </dx:LayoutItemNestedControlContainer>
-                        </LayoutItemNestedControlCollection>
-                    </dx:LayoutItem>
-                    <dx:LayoutItem ShowCaption="False" Width="25%">
-                        <LayoutItemNestedControlCollection>
-                            <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxTextBox ID="PRH_DeliveryAdd1" ClientInstanceName="PRH_DeliveryAdd1" runat="server" EnableClientSideAPI="True" Width="100%" ClientEnabled="False">
-                                </dx:ASPxTextBox>
-                            </dx:LayoutItemNestedControlContainer>
-                        </LayoutItemNestedControlCollection>
-                    </dx:LayoutItem>
-                    <dx:LayoutItem ShowCaption="False" Width="25%">
-                        <LayoutItemNestedControlCollection>
-                            <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxTextBox ID="PRH_DeliveryAdd2" ClientInstanceName="PRH_DeliveryAdd2" runat="server" EnableClientSideAPI="True" Width="100%" ClientEnabled="False">
-                                </dx:ASPxTextBox>
-                            </dx:LayoutItemNestedControlContainer>
-                        </LayoutItemNestedControlCollection>
-                    </dx:LayoutItem>
-                    <dx:LayoutItem ShowCaption="False" Width="25%">
-                        <LayoutItemNestedControlCollection>
-                            <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxTextBox ID="PRH_DeliveryAdd3" ClientInstanceName="PRH_DeliveryAdd3" runat="server" EnableClientSideAPI="True" Width="100%" ClientEnabled="False">
-                                </dx:ASPxTextBox>
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
                     </dx:LayoutItem>
@@ -247,11 +206,6 @@
 }" />
                                 </dx:ASPxGridLookup>
                                 <asp:ObjectDataSource ID="odsSupplier" runat="server" SelectMethod="FindAll" TypeName="Data.Models.SupplierModel"></asp:ObjectDataSource>
-                                <asp:SqlDataSource ID="VendorDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_SAGAConnectionString %>" SelectCommand="SELECT [apsu_suppid], [apsu_lname], [apsu_address1], [apsu_address2], [apsu_address3], [apsu_address4], [apglc_controlglac], [glac_desc] FROM [AP_Supplier] WHERE (([apglc_controlglac] IS NOT NULL) AND ([apsu_status] = @apsu_status)) ORDER BY [apsu_suppid]">
-                                    <SelectParameters>
-                                        <asp:Parameter DefaultValue="O" Name="apsu_status" Type="String" />
-                                    </SelectParameters>
-                                </asp:SqlDataSource>
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
                     </dx:LayoutItem>

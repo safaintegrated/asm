@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="SagaInterface\Informix\Informix.cs" />
     <Compile Include="Services\AuthenticateService.cs" />
+    <Compile Include="Services\PurchaseRequestService.cs" />
     <Compile Include="Shared\KategoriSubKategori.cs" />
     <Compile Include="Shared\LembagaPemeriksa.cs" />
     <Compile Include="Shared\PermohonanBelian.cs" />

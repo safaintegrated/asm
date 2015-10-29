@@ -79,24 +79,24 @@ namespace Data
 
         private void InsertPtj(AsmContext context)
         {
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "01", SmpCode = "0100", Code = "PNC", FullName = "Pejabat Naib Canselor", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "05", SmpCode = "0200", Code = "HEAA", FullName = "Pejabat Timbalan Naib Canselor (Akademik dan Antarabangsa", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "04", SmpCode = "0300", Code = "HEPA", FullName = "Pejabat Timbalan Naib Canselor (Hal Ehwal Pelajar dan Alumni)", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "08", SmpCode = "0400", Code = "JPP", FullName = "Jabatan Pembangunan dan Penyelenggaraan", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "02", SmpCode = "0500", Code = "JP", FullName = "Jabatan Pendaftar", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "03", SmpCode = "0600", Code = "JB", FullName = "Jabatan Bendahari", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "07", SmpCode = "0700", Code = "PERP", FullName = "Perpustakaan", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "19", SmpCode = "1000", Code = "PPPI", FullName = "Pusat Pengurusan Penyelidikan dan Inovasi", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "09", SmpCode = "4000", Code = "ASP", FullName = "Pusat Asasi Pertahanan", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "06", SmpCode = "4100", Code = "PTMK", FullName = "Pusat Teknologi Maklumat dan Komunikasi", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "14", SmpCode = "4400", Code = "PB", FullName = "Pusat Bahasa", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "15", SmpCode = "4500", Code = "BKK", FullName = "Pejabat Timbalan Naib Canselor (Jaringan Industri dan Hubungan Korporat)", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "18", SmpCode = "4800", Code = "BPA", FullName = "Bahagian Pengurusan Akademik", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "11", SmpCode = "6000", Code = "FSTP", FullName = "Fakulti Sains dan Teknologi Pertahanan", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "12", SmpCode = "6100", Code = "FPPP", FullName = "Fakulti Pengajian dan Pengurusan Siswazah", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "10", SmpCode = "6200", Code = "FKJ", FullName = "Fakulti Kejuruteraan", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "13", SmpCode = "6300", Code = "PPS", FullName = "Pusat Pengajian Siswazah", });
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "17", SmpCode = "6600", Code = "FPKP", FullName = "Fakulti Perubatan dan Kesihatan Pertahanan", });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "01", SmpCode = "0100", Code = "PNC", FullName = "Pejabat Naib Canselor", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3="Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "05", SmpCode = "0200", Code = "HEAA", FullName = "Pejabat Timbalan Naib Canselor (Akademik dan Antarabangsa", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "04", SmpCode = "0300", Code = "HEPA", FullName = "Pejabat Timbalan Naib Canselor (Hal Ehwal Pelajar dan Alumni)", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "08", SmpCode = "0400", Code = "JPP", FullName = "Jabatan Pembangunan dan Penyelenggaraan", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "02", SmpCode = "0500", Code = "JP", FullName = "Jabatan Pendaftar", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "03", SmpCode = "0600", Code = "JB", FullName = "Jabatan Bendahari", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "07", SmpCode = "0700", Code = "PERP", FullName = "Perpustakaan", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "19", SmpCode = "1000", Code = "PPPI", FullName = "Pusat Pengurusan Penyelidikan dan Inovasi", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "09", SmpCode = "4000", Code = "ASP", FullName = "Pusat Asasi Pertahanan", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "06", SmpCode = "4100", Code = "PTMK", FullName = "Pusat Teknologi Maklumat dan Komunikasi", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "14", SmpCode = "4400", Code = "PB", FullName = "Pusat Bahasa", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "15", SmpCode = "4500", Code = "BKK", FullName = "Pejabat Timbalan Naib Canselor (Jaringan Industri dan Hubungan Korporat)", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "18", SmpCode = "4800", Code = "BPA", FullName = "Bahagian Pengurusan Akademik", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "11", SmpCode = "6000", Code = "FSTP", FullName = "Fakulti Sains dan Teknologi Pertahanan", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "12", SmpCode = "6100", Code = "FPPP", FullName = "Fakulti Pengajian dan Pengurusan Siswazah", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "10", SmpCode = "6200", Code = "FKJ", FullName = "Fakulti Kejuruteraan", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "13", SmpCode = "6300", Code = "PPS", FullName = "Pusat Pengajian Siswazah", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "17", SmpCode = "6600", Code = "FPKP", FullName = "Fakulti Perubatan dan Kesihatan Pertahanan", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
         }
 
         private void InsertDepartments(AsmContext context)

@@ -31,6 +31,78 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
         
         /// <summary>
+        /// txtOfficerName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtOfficerName;
+        
+        /// <summary>
+        /// txtPtjName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPtjName;
+        
+        /// <summary>
+        /// txtPtjAddress1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPtjAddress1;
+        
+        /// <summary>
+        /// txtPtjAddress2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPtjAddress2;
+        
+        /// <summary>
+        /// txtPtjAddress3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPtjAddress3;
+        
+        /// <summary>
+        /// txtPtjId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPtjId;
+        
+        /// <summary>
+        /// ASPxFormLayout1_E1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit ASPxFormLayout1_E1;
+        
+        /// <summary>
+        /// ASPxFormLayout1_E2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit ASPxFormLayout1_E2;
+        
+        /// <summary>
         /// PRH_Purpose control.
         /// </summary>
         /// <remarks>
@@ -47,33 +119,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxMemo PRH_DeliveryInstruction;
-        
-        /// <summary>
-        /// PRH_RequestBy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup PRH_RequestBy;
-        
-        /// <summary>
-        /// odsRequestor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsRequestor;
-        
-        /// <summary>
-        /// RequestByDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource RequestByDs;
         
         /// <summary>
         /// PRH_ProcurementITypeId control.
@@ -94,15 +139,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsProcurementType;
         
         /// <summary>
-        /// ProcurementTypeDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProcurementTypeDs;
-        
-        /// <summary>
         /// PRH_ProcurementCatId control.
         /// </summary>
         /// <remarks>
@@ -119,15 +155,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource odsProcurementCategory;
-        
-        /// <summary>
-        /// ProcurementCatDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProcurementCatDs;
         
         /// <summary>
         /// PRH_ProcurementMethodId control.
@@ -148,69 +175,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsProcurementMethod;
         
         /// <summary>
-        /// ProcurementMethodDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ProcurementMethodDs;
-        
-        /// <summary>
-        /// PRH_PurchaserId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup PRH_PurchaserId;
-        
-        /// <summary>
-        /// odsReceipient control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsReceipient;
-        
-        /// <summary>
-        /// ReceipientDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource ReceipientDs;
-        
-        /// <summary>
-        /// PRH_DeliveryAdd1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox PRH_DeliveryAdd1;
-        
-        /// <summary>
-        /// PRH_DeliveryAdd2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox PRH_DeliveryAdd2;
-        
-        /// <summary>
-        /// PRH_DeliveryAdd3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox PRH_DeliveryAdd3;
-        
-        /// <summary>
         /// PRH_SupplierCode control.
         /// </summary>
         /// <remarks>
@@ -227,15 +191,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource odsSupplier;
-        
-        /// <summary>
-        /// VendorDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource VendorDs;
         
         /// <summary>
         /// PRH_SupplierGLCode control.

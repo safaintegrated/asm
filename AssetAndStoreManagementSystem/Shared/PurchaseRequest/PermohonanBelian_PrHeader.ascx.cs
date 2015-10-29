@@ -41,11 +41,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
                 try
                 {
+                    UpdateUserInfo(ticket.Name);
+
                     PRH_ProcessId.Text = string.Empty;
                     PRH_Purpose.Text = string.Empty;
                     PRH_Status.Text = string.Empty;
                     PRH_Revision.Text = string.Empty;
-                    PRH_RequestBy.Value = DBNull.Value;
+                    //PRH_RequestBy.Value = DBNull.Value;
                     PRH_ProcurementMethodId.Value = DBNull.Value;
                     PRH_ProcurementITypeId.Value = DBNull.Value;
                     PRH_ProcurementCatId.Value = DBNull.Value;
@@ -56,10 +58,10 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     PRH_VendorAddress4.Text = string.Empty;
                     PRH_SupplierGLCode.Text = string.Empty;
                     PRH_SupplierGLDesc.Text = string.Empty;
-                    PRH_PurchaserId.Value = DBNull.Value;
-                    PRH_DeliveryAdd1.Text = string.Empty;
-                    PRH_DeliveryAdd2.Text = string.Empty;
-                    PRH_DeliveryAdd3.Text = string.Empty;
+                    //PRH_PurchaserId.Value = DBNull.Value;
+                    //PRH_DeliveryAdd1.Text = string.Empty;
+                    //PRH_DeliveryAdd2.Text = string.Empty;
+                    //PRH_DeliveryAdd3.Text = string.Empty;
                     PRH_DeliveryInstruction.Text = string.Empty;
                     PRH_PRnumber.Text = string.Empty;
                     PTJ_SagaCode.Text = string.Empty;
@@ -71,6 +73,20 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             }
             else
                 cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "Session Expired.";
+        }
+
+        private void UpdateUserInfo(string userName)
+        {
+            var employee = Data.Models.EmployeeModel.FindByUserId(userName);
+            txtOfficerName.Text = employee.FullName;
+            txtPtjName.Text = employee.PtjName;
+            txtPtjId.Text = employee.PtjCode;
+
+            var ptj = Data.Models.PusatTanggungjawabModel.FindByCode(employee.PtjCode);
+            txtPtjAddress1.Text = ptj.Address1;
+            txtPtjAddress2.Text = ptj.Address2;
+            txtPtjAddress3.Text = ptj.Address3;
+
         }
 
         void SaveSubmitCancelPRMode(int Mode)
@@ -92,16 +108,17 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     Data.Entity.PurchaseRequest pr = new Data.Entity.PurchaseRequest
 
                     {
+                        //RequestorUserName = ticket.Name,
                         Description = PRH_Purpose.Text.Trim(),
                         Instruction = PRH_DeliveryInstruction.Text.Trim(),
-                        RequesterId = PRH_RequestBy.Value.ToString(),
-                        RequestorName = PRH_RequestBy.Text,
+                        //RequesterId = PRH_RequestBy.Value.ToString(),
+                        //RequestorName = PRH_RequestBy.Text,
                         ProcurementCategoryId = PRH_ProcurementCatId.Value.ToString(),
                         ProcurementMethodId = PRH_ProcurementMethodId.Value.ToString(),
                         ProcurementTypeId = PRH_ProcurementITypeId.Value.ToString(),
                         SupplierId = PRH_SupplierCode.Value.ToString(),
                         SupplierName = PRH_SupplierCode.Text.Trim(),
-                        ReceiverId = PRH_PurchaserId.Value.ToString()
+                        //ReceiverId = PRH_PurchaserId.Value.ToString()
                     };
 
                     Data.Models.PurchaseRequestModel.Add(pr, ticket.Name);
@@ -168,11 +185,11 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             Dr["PRH_VendorAddress2"] = PRH_VendorAddress2.Text;
             Dr["PRH_VendorAddress3"] = PRH_VendorAddress3.Text;
             Dr["PRH_VendorAddress4"] = PRH_VendorAddress4.Text;
-            Dr["PRH_RequestBy"] = PRH_RequestBy.Value.ToString();
-            Dr["PRH_PurchaserId"] = PRH_PurchaserId.Text;
-            Dr["PRH_DeliveryAdd1"] = PRH_DeliveryAdd1.Text;
-            Dr["PRH_DeliveryAdd2"] = PRH_DeliveryAdd2.Text;
-            Dr["PRH_DeliveryAdd3"] = PRH_DeliveryAdd3.Text;
+            //Dr["PRH_RequestBy"] = PRH_RequestBy.Value.ToString();
+            //Dr["PRH_PurchaserId"] = PRH_PurchaserId.Text;
+            Dr["PRH_DeliveryAdd1"] = "";// PRH_DeliveryAdd1.Text;
+            Dr["PRH_DeliveryAdd2"] = "";//PRH_DeliveryAdd2.Text;
+            Dr["PRH_DeliveryAdd3"] = "";// PRH_DeliveryAdd3.Text;
             Dr["PRH_DeliveryInstruction"] = PRH_DeliveryInstruction.Text.Trim();
             Dr["PRH_ProcurementITypeId"] = Convert.ToInt32(PRH_ProcurementITypeId.Value);
             Dr["PRH_ProcurementMethodId"] = Convert.ToInt32(PRH_ProcurementMethodId.Value);
@@ -211,7 +228,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
                 PRH_Purpose.Text = pr.Description;// Dt.Rows[0]["PRH_Purpose"].ToString();
                 PRH_Status.Text = pr.StatusName;// Dt.Rows[0]["PRH_Status"].ToString();
-                PRH_RequestBy.Value = pr.RequesterId;// Dt.Rows[0]["PRH_RequestBy"].ToString();
+                //PRH_RequestBy.Value = pr.RequesterId;// Dt.Rows[0]["PRH_RequestBy"].ToString();
                 PRH_ProcurementMethodId.Value = pr.ProcurementMethodId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementMethodId"]);
                 PRH_ProcurementITypeId.Value = pr.ProcurementTypeId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementITypeId"]);
                 PRH_ProcurementCatId.Value = pr.ProcurementCategoryId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementCatId"]);
@@ -230,10 +247,10 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 Data.Entity.PuDeliveryAddress pda = Data.Models.PuDeliveryAddressModel.FindById(pr.ReceiverId);
                 if (pda != null)
                 {
-                    PRH_PurchaserId.Value = pda.Id;// Dt.Rows[0]["PRH_PurchaserId"].ToString();
-                    PRH_DeliveryAdd1.Text = pda.Address1;// Dt.Rows[0]["PRH_DeliveryAdd1"].ToString();
-                    PRH_DeliveryAdd2.Text = pda.Address2;// Dt.Rows[0]["PRH_DeliveryAdd2"].ToString();
-                    PRH_DeliveryAdd3.Text = pda.Address3;// Dt.Rows[0]["PRH_DeliveryAdd3"].ToString();
+                   // PRH_PurchaserId.Value = pda.Id;// Dt.Rows[0]["PRH_PurchaserId"].ToString();
+                    //PRH_DeliveryAdd1.Text = pda.Address1;// Dt.Rows[0]["PRH_DeliveryAdd1"].ToString();
+                    //PRH_DeliveryAdd2.Text = pda.Address2;// Dt.Rows[0]["PRH_DeliveryAdd2"].ToString();
+                    //PRH_DeliveryAdd3.Text = pda.Address3;// Dt.Rows[0]["PRH_DeliveryAdd3"].ToString();
                 }
                 
                 PRH_DeliveryInstruction.Text = pr.Instruction;// Dt.Rows[0]["PRH_DeliveryInstruction"].ToString();
@@ -273,6 +290,16 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             { cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = err.Message; }
             finally
             { Dt.Dispose(); }
+        }
+
+        protected void txtPtjName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtPtjAddress1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

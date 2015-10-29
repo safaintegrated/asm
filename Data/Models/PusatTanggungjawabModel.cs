@@ -35,5 +35,10 @@ namespace Data.Models
             _db.SaveChanges(user);
 
         }
+
+        public static PusatTanggungjawab FindByCode(string code)
+        {
+            return _db.PusatTanggungjawabList.Where(c => c.Code == code).FirstOrDefault();
+        }
     }
 }
