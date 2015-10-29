@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Data
-{
+{//
     public class AsmContext : DbContext
     {
         public AsmContext()
