@@ -34,6 +34,11 @@ namespace Data.Models
             _db.SaveChanges(user);
 
         }
+
+        public static ProcessType FindByCode(string code)
+        {
+            return _db.ProcessTypes.Where(c => c.Code == code).FirstOrDefault();
+        }
     }
 
 }

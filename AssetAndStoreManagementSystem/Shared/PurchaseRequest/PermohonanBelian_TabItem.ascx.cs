@@ -22,16 +22,16 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
         protected void cbp_FormNextItemNumber_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
         {
             cbp_FormNextItemNumber.JSProperties["cpPurchaseType"] = e.Parameter;
-
-            switch (e.Parameter)
-            {
-                case "1": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 1; break;   //Aset Baharu
-                case "2": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 2; break;   //Penyelenggaraan
-                case "3": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 3; break;   //Alat Ganti
-                case "4": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 4; break;   //Tambahan
-                case "5": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 5; break;   //Stok
-                case "6": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 6; break;   //Lain-lain
-            }
+            cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 1;
+            //switch (e.Parameter)
+            //{
+            //    case "1": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 1; break;   //Aset Baharu
+            //    case "2": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 2; break;   //Penyelenggaraan
+            //    case "3": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 3; break;   //Alat Ganti
+            //    case "4": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 4; break;   //Tambahan
+            //    case "5": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 5; break;   //Stok
+            //    case "6": cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 6; break;   //Lain-lain
+            //}
             //cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 1;
 
         }

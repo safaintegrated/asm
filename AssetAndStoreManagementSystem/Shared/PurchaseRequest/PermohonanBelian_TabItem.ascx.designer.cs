@@ -164,14 +164,5 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView GridItemList;
-        
-        /// <summary>
-        /// odsMainInfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsMainInfo;
     }
 }

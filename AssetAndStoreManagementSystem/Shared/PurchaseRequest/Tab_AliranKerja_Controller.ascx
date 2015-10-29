@@ -3,6 +3,11 @@
 
 
 
+<dx:ASPxButton ID="aspxRefresh" runat="server" OnClick="aspxRefresh_Click" Text="Refresh">
+</dx:ASPxButton>
+
+
+
 <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
     <Items>
         <dx:LayoutGroup Caption="Senarai Aliran Kerja Untuk Transaksi Ini" CssClass="FormGroupBoxStyle" Width="100%">
@@ -10,24 +15,27 @@
                 <dx:LayoutItem ShowCaption="False" Width="100%">
                     <LayoutItemNestedControlCollection>
                         <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
-                            <dx:ASPxGridView ID="GridPRWorkflow" runat="server" AutoGenerateColumns="False" Width="100%" ClientInstanceName="GridPRWorkflow" DataSourceID="WorkFlowDs" EnableCallbackAnimation="True" OnCustomCallback="GridPrWorkflow_CustomCallback">
+                            <dx:ASPxGridView ID="GridPRWorkflow" runat="server" AutoGenerateColumns="False" Width="100%" ClientInstanceName="GridPRWorkflow" DataSourceID="odsWorkFlow" EnableCallbackAnimation="True" OnCustomCallback="GridPrWorkflow_CustomCallback">
                                 <Columns>
-                                    <dx:GridViewDataTextColumn FieldName="PRWFD_RowId" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
+                                    <dx:GridViewDataTextColumn FieldName="ProcessId" ShowInCustomizationForm="True" VisibleIndex="0">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn FieldName="PR_ProcessId" ShowInCustomizationForm="True" VisibleIndex="6" Visible="False">
-                                        <EditFormSettings Visible="False" />
+                                    <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="1">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataDateColumn Caption="Tarikh" FieldName="PRWFD_Date" ShowInCustomizationForm="True" VisibleIndex="2">
+                                    <dx:GridViewDataDateColumn FieldName="DateTime" ShowInCustomizationForm="True" VisibleIndex="2">
                                     </dx:GridViewDataDateColumn>
-                                    <dx:GridViewDataTextColumn Caption="Aliran Kerja" FieldName="PRWFD_Workflow" ShowInCustomizationForm="True" VisibleIndex="3">
+                                    <dx:GridViewDataTextColumn FieldName="UserName" ShowInCustomizationForm="True" VisibleIndex="3">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Nama Pekerja" FieldName="PRWFD_EmployeeName" ShowInCustomizationForm="True" VisibleIndex="4">
+                                    <dx:GridViewDataTextColumn FieldName="FullName" ShowInCustomizationForm="True" VisibleIndex="4">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn FieldName="PRWFD_Status" ShowInCustomizationForm="True" Visible="False" VisibleIndex="7">
+                                    <dx:GridViewDataTextColumn FieldName="ProcessStateString" ShowInCustomizationForm="True" VisibleIndex="5" ReadOnly="True">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Nota" FieldName="PRWFD_Notes" ShowInCustomizationForm="True" VisibleIndex="5">
+                                    <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="6">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn Caption="Versi TB" FieldName="PRWFD_Version" ShowInCustomizationForm="True" VisibleIndex="1">
+                                    <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="7">
+                                    </dx:GridViewDataCheckColumn>
+                                    <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="8">
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="9">
                                     </dx:GridViewDataTextColumn>
                                 </Columns>
                                 <SettingsPager Mode="ShowAllRecords">
@@ -38,6 +46,7 @@
                                     </AlternatingRow>
                                 </Styles>
                             </dx:ASPxGridView>
+                            <asp:ObjectDataSource ID="odsWorkFlow" runat="server" SelectMethod="FindAll" TypeName="Data.Models.WorkflowModel"></asp:ObjectDataSource>
                             <asp:SqlDataSource ID="WorkFlowDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" OnSelecting="WorkFlowDs_Selecting" SelectCommand="SELECT * FROM [PermohonanBelian_WorkflowDiary]">
                             </asp:SqlDataSource>
                         </dx:LayoutItemNestedControlContainer>

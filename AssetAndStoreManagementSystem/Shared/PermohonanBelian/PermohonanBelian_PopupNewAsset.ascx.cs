@@ -36,10 +36,19 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian
         protected void cbp_LineItem_NewAsset_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
         {
             cbp_LineItem_NewAsset.JSProperties["cpMode"] = e.Parameter;
+            cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = string.Empty;
 
             switch (e.Parameter)
             {
-                case "NEW": NewMode(); break;
+                case "NEW_ASSET":
+                    NewMode(); 
+                    break;
+                case "NEW_MAINT": NewMode(); break;
+                case "NEW_SPARE_PART": NewMode(); break;
+                case "NEW_OTHERS": NewMode(); break;
+                case "NEW_ADDITIONAL": NewMode(); break;
+                case "NEW_STOCK": NewMode(); break;
+
                 case "SAVE": SaveMode(1); break;
                 case "DELETE": SaveMode(2); break;
                 case "ADDCOMPONENT": AddComponent(); break;

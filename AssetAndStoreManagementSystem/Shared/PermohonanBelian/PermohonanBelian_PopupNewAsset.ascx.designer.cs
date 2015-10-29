@@ -76,6 +76,33 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
+        /// Form_PermohonanBelian_LineItem_NewAsset_E2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridLookup Form_PermohonanBelian_LineItem_NewAsset_E2;
+        
+        /// <summary>
+        /// ObjectDataSource1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
+        
+        /// <summary>
+        /// LayoutItemNestedControlContainer7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer7;
+        
+        /// <summary>
         /// NewAsset_PRI_Desc control.
         /// </summary>
         /// <remarks>
@@ -85,13 +112,13 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::DevExpress.Web.ASPxTextBox NewAsset_PRI_Desc;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer2 control.
+        /// LayoutItemNestedControlContainer8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer2;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer8;
         
         /// <summary>
         /// NewAsset_PRI_UomId control.
@@ -112,13 +139,13 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::System.Web.UI.WebControls.SqlDataSource UOMds;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer3 control.
+        /// LayoutItemNestedControlContainer9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer3;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer9;
         
         /// <summary>
         /// NewAsset_PRI_CatId control.
@@ -139,13 +166,13 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::System.Web.UI.WebControls.SqlDataSource CatDs;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer4 control.
+        /// LayoutItemNestedControlContainer10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer4;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer10;
         
         /// <summary>
         /// NewAsset_PRI_SubCatId control.
@@ -166,13 +193,13 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::System.Web.UI.WebControls.SqlDataSource SubCatDs;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer5 control.
+        /// LayoutItemNestedControlContainer11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer5;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer11;
         
         /// <summary>
         /// NewAsset_PRI_TypeId control.
@@ -193,13 +220,13 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::System.Web.UI.WebControls.SqlDataSource TypeDs;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer6 control.
+        /// LayoutItemNestedControlContainer12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer6;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer12;
         
         /// <summary>
         /// NewAsset_PRI_TaxCode control.
@@ -220,13 +247,13 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::System.Web.UI.WebControls.SqlDataSource PRI_TaxCodeDs;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer7 control.
+        /// LayoutItemNestedControlContainer13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer7;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer13;
         
         /// <summary>
         /// NewAsset_PRI_Qty control.
@@ -238,13 +265,13 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::DevExpress.Web.ASPxSpinEdit NewAsset_PRI_Qty;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer8 control.
+        /// LayoutItemNestedControlContainer14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer8;
+        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer14;
         
         /// <summary>
         /// NewAsset_PRI_UnitPrice control.
@@ -256,15 +283,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::DevExpress.Web.ASPxSpinEdit NewAsset_PRI_UnitPrice;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer9 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer9;
-        
-        /// <summary>
         /// NewAsset_C control.
         /// </summary>
         /// <remarks>
@@ -272,15 +290,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxSpinEdit NewAsset_C;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer10;
         
         /// <summary>
         /// NewAsset_PRI_TaxRate control.
@@ -292,15 +301,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::DevExpress.Web.ASPxSpinEdit NewAsset_PRI_TaxRate;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer11 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer11;
-        
-        /// <summary>
         /// NewAsset_E control.
         /// </summary>
         /// <remarks>
@@ -308,15 +308,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxSpinEdit NewAsset_E;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer12 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer12;
         
         /// <summary>
         /// NewAsset_F control.
@@ -328,15 +319,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::DevExpress.Web.ASPxSpinEdit NewAsset_F;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer13;
-        
-        /// <summary>
         /// NewAsset_AddNewComponentHyperlink control.
         /// </summary>
         /// <remarks>
@@ -344,15 +326,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxHyperLink NewAsset_AddNewComponentHyperlink;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer14 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer14;
         
         /// <summary>
         /// NewAsset_ComponentGrid control.
@@ -364,15 +337,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::DevExpress.Web.ASPxGridView NewAsset_ComponentGrid;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer15 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer15;
-        
-        /// <summary>
         /// NewAsset_BtnAddProject control.
         /// </summary>
         /// <remarks>
@@ -380,15 +344,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton NewAsset_BtnAddProject;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer16 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer16;
         
         /// <summary>
         /// NewAsset_ProjectDistributionGrid control.
@@ -409,15 +364,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         protected global::System.Web.UI.WebControls.SqlDataSource NewAsset_ProjectDistributionGridDs;
         
         /// <summary>
-        /// LayoutItemNestedControlContainer17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer17;
-        
-        /// <summary>
         /// NewAsset_BtnAddGl control.
         /// </summary>
         /// <remarks>
@@ -425,15 +371,6 @@ namespace AssetAndStoreManagementSystem.Shared.PermohonanBelian {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton NewAsset_BtnAddGl;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer18 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer18;
         
         /// <summary>
         /// NewAsset_GLDistributionGrid control.

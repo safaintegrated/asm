@@ -205,11 +205,27 @@
                         <dx:PanelContent ID="PanelContent1" runat="server">
                             <dx:ASPxFormLayout ID="Form_PermohonanBelian_LineItem_NewAsset" runat="server" ClientInstanceName="Form_PermohonanBelian_LineItem_NewAsset" Width="100%">
                                 <Items>
+                                    <dx:LayoutGroup Caption="Maklumat Aset">
+                                        <Items>
+                                            <dx:LayoutItem Caption="Pilih Aset">
+                                                <LayoutItemNestedControlCollection>
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                                                        <dx:ASPxGridLookup ID="Form_PermohonanBelian_LineItem_NewAsset_E2" runat="server" DataSourceID="ObjectDataSource1">
+                                                            <GridViewProperties>
+                                                                <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
+                                                            </GridViewProperties>
+                                                        </dx:ASPxGridLookup>
+                                                        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
+                                                    </dx:LayoutItemNestedControlContainer>
+                                                </LayoutItemNestedControlCollection>
+                                            </dx:LayoutItem>
+                                        </Items>
+                                    </dx:LayoutGroup>
                                     <dx:LayoutGroup Caption="Maklumat Am Item" ColCount="5" Width="100%">
                                         <Items>
                                             <dx:LayoutItem Caption="Keterangan Item" Width="66%" ColSpan="5">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer7" runat="server">
                                                         <dx:ASPxTextBox ID="NewAsset_PRI_Desc" runat="server" ClientInstanceName="NewAsset_PRI_Desc" EnableClientSideAPI="True" Width="100%">
                                                         </dx:ASPxTextBox>
                                                     </dx:LayoutItemNestedControlContainer>
@@ -217,7 +233,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Unit Pengukuran" Width="20%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer2" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer8" runat="server">
                                                         <dx:ASPxComboBox ID="NewAsset_PRI_UomId" runat="server" ClientInstanceName="NewAsset_PRI_UomId" DataSourceID="UOMds" EnableClientSideAPI="True" TextField="UomDescription" ValueField="UomId" ValueType="System.Int32" Width="100%">
                                                         </dx:ASPxComboBox>
                                                         <asp:SqlDataSource ID="UOMds" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT [UomId], [UomDescription] FROM [MasterUnitOfMeasurement] ORDER BY [UomDescription]"></asp:SqlDataSource>
@@ -226,7 +242,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Kategori" Width="20%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer9" runat="server">
                                                         <dx:ASPxGridLookup ID="NewAsset_PRI_CatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_CatId" DataSourceID="CatDs" EnableClientSideAPI="True" KeyFieldName="CatId" TextFormatString="{1} - ({2})" Width="100%">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
@@ -239,12 +255,14 @@
                                                                 <dx:GridViewDataTextColumn Caption="Nama" FieldName="CatName" ShowInCustomizationForm="True" VisibleIndex="1" Width="80%">
                                                                     <Settings AutoFilterCondition="Contains" />
                                                                     <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                                                    <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"> </CellStyle>
+                                                                    <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                    </CellStyle>
                                                                 </dx:GridViewDataTextColumn>
                                                                 <dx:GridViewDataTextColumn Caption="VOT" FieldName="CatVot" ShowInCustomizationForm="True" VisibleIndex="2" Width="20%">
                                                                     <Settings AutoFilterCondition="Contains" />
                                                                     <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                                                    <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"> </CellStyle>
+                                                                    <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                    </CellStyle>
                                                                 </dx:GridViewDataTextColumn>
                                                             </Columns>
                                                             <GridViewStyles>
@@ -267,7 +285,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Sub-Kategori" Width="20%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer10" runat="server">
                                                         <dx:ASPxGridLookup ID="NewAsset_PRI_SubCatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_SubCatId" DataSourceID="SubCatDs" EnableClientSideAPI="True" KeyFieldName="SubCatId" TextFormatString="{1} - ({2})" Width="100%">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
@@ -276,16 +294,16 @@
                                                                 <dx:GridViewDataTextColumn FieldName="SubCatId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
                                                                 </dx:GridViewDataTextColumn>
                                                                 <dx:GridViewDataTextColumn Caption="Nama" FieldName="SubCatName" ShowInCustomizationForm="True" VisibleIndex="1" Width="80%">
+                                                                    <Settings AutoFilterCondition="Contains" />
                                                                     <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
                                                                     <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
                                                                     </CellStyle>
-                                                                    <Settings AutoFilterCondition="Contains" />
                                                                 </dx:GridViewDataTextColumn>
                                                                 <dx:GridViewDataTextColumn Caption="VOT" FieldName="SubCatGLAsset" ShowInCustomizationForm="True" VisibleIndex="2" Width="20%">
+                                                                    <Settings AutoFilterCondition="Contains" />
                                                                     <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
                                                                     <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
                                                                     </CellStyle>
-                                                                    <Settings AutoFilterCondition="Contains" />
                                                                 </dx:GridViewDataTextColumn>
                                                             </Columns>
                                                             <GridViewStyles>
@@ -308,7 +326,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Jenis" Width="20%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer5" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer11" runat="server">
                                                         <dx:ASPxGridLookup ID="NewAsset_PRI_TypeId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_TypeId" DataSourceID="TypeDs" EnableClientSideAPI="True" KeyFieldName="T_Id" Width="100%">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
@@ -341,7 +359,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Kod GST" Width="20%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer6" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer12" runat="server">
                                                         <dx:ASPxGridLookup ID="NewAsset_PRI_TaxCode" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_TaxCode" DataSourceID="PRI_TaxCodeDs" EnableClientSideAPI="True" KeyFieldName="uttxl_code" TextFormatString="{1} ({3} %)" Width="100%">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
@@ -397,11 +415,11 @@
                                             </dx:LayoutItem>
                                         </Items>
                                     </dx:LayoutGroup>
-                                    <dx:LayoutGroup Caption="Jumlah Kecil dan GST" ColCount="7" Width="100%">
+                                    <dx:LayoutGroup Caption="Jumlah Kecil dan GST" Width="100%" ColCount="7">
                                         <Items>
                                             <dx:LayoutItem Caption="Kuantiti (A)" Width="16%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer7" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer13" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_PRI_Qty" runat="server" ClientInstanceName="NewAsset_PRI_Qty" DisplayFormatString="n0" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
                                                             <SpinButtons ShowIncrementButtons="False">
                                                             </SpinButtons>
@@ -414,7 +432,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Kos Seunit (B)" Width="16%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer8" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer14" runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_PRI_UnitPrice" runat="server" ClientInstanceName="NewAsset_PRI_UnitPrice" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
                                                             <SpinButtons ShowIncrementButtons="False">
                                                             </SpinButtons>
@@ -427,7 +445,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="C = (A x B)" Width="16%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer9" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_C" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_C" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
                                                             <SpinButtons ShowIncrementButtons="False">
                                                             </SpinButtons>
@@ -437,7 +455,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="% GST (D)" Width="16%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer10" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_PRI_TaxRate" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_PRI_TaxRate" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
                                                             <SpinButtons ShowIncrementButtons="False">
                                                             </SpinButtons>
@@ -447,7 +465,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="E =(D x C)" Width="16%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer11" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_E" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_E" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
                                                             <SpinButtons ShowIncrementButtons="False">
                                                             </SpinButtons>
@@ -457,7 +475,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="F = (C + E)" Width="16%">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer12" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
                                                         <dx:ASPxSpinEdit ID="NewAsset_F" runat="server" ClientEnabled="False" ClientInstanceName="NewAsset_F" DisplayFormatString="n2" EnableClientSideAPI="True" HorizontalAlign="Right" Number="0" Width="100%">
                                                             <SpinButtons ShowIncrementButtons="False">
                                                             </SpinButtons>
@@ -473,7 +491,7 @@
                                         <Items>
                                             <dx:LayoutItem ShowCaption="False">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer13" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
                                                         <dx:ASPxHyperLink ID="NewAsset_AddNewComponentHyperlink" runat="server" ClientInstanceName="NewAsset_AddNewComponentHyperlink" EnableClientSideAPI="True" NavigateUrl="javascript: cbp_LineItem_NewAsset.PerformCallback('ADDCOMPONENT');" Text="tambah komponen / aksesori">
                                                         </dx:ASPxHyperLink>
                                                     </dx:LayoutItemNestedControlContainer>
@@ -481,7 +499,7 @@
                                             </dx:LayoutItem>
                                             <dx:LayoutItem ShowCaption="False">
                                                 <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer14" runat="server">
+                                                    <dx:LayoutItemNestedControlContainer runat="server">
                                                         <dx:ASPxGridView ID="NewAsset_ComponentGrid" runat="server" AutoGenerateColumns="False" KeyFieldName="PRIC_ProcessId" OnHtmlDataCellPrepared="NewAsset_ComponentGrid_HtmlDataCellPrepared" Width="100%">
                                                             <Columns>
                                                                 <dx:GridViewDataTextColumn FieldName="PRIC_ProcessId" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="7">
@@ -559,13 +577,13 @@
                                             </dx:LayoutItem>
                                         </Items>
                                     </dx:LayoutGroup>
-                                    <dx:LayoutGroup Caption="Distribusi Projek dan Lejar" Width="100%" ColCount="2">
+                                    <dx:LayoutGroup Caption="Distribusi Projek dan Lejar" ColCount="2" Width="100%">
                                         <Items>
                                             <dx:LayoutGroup Caption="Projek" Width="50%">
                                                 <Items>
                                                     <dx:LayoutItem ShowCaption="False" Width="100%">
                                                         <LayoutItemNestedControlCollection>
-                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer15" runat="server">
+                                                            <dx:LayoutItemNestedControlContainer runat="server">
                                                                 <dx:ASPxButton ID="NewAsset_BtnAddProject" runat="server" AutoPostBack="False" ClientInstanceName="NewAsset_BtnAddProject" EnableClientSideAPI="True" Text="Tambah">
                                                                     <ClientSideEvents Click="function(s, e) {
 	NewAsset_BtnAddProject_Click();
@@ -576,23 +594,26 @@
                                                     </dx:LayoutItem>
                                                     <dx:LayoutItem ShowCaption="False" Width="100%">
                                                         <LayoutItemNestedControlCollection>
-                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer16" runat="server">
-                                                                <dx:ASPxGridView ID="NewAsset_ProjectDistributionGrid" ClientInstanceName="NewAsset_ProjectDistributionGrid" runat="server" AutoGenerateColumns="False" Width="100%" DataSourceID="NewAsset_ProjectDistributionGridDs" OnCustomCallback="NewAsset_ProjectDistributionGrid_CustomCallback">
+                                                            <dx:LayoutItemNestedControlContainer runat="server">
+                                                                <dx:ASPxGridView ID="NewAsset_ProjectDistributionGrid" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_ProjectDistributionGrid" DataSourceID="NewAsset_ProjectDistributionGridDs" OnCustomCallback="NewAsset_ProjectDistributionGrid_CustomCallback" Width="100%">
                                                                     <Columns>
                                                                         <dx:GridViewDataTextColumn FieldName="PRPROJDIS_RowId" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
                                                                             <EditFormSettings Visible="False" />
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="Kod Projek" FieldName="PRPROJDIS_ProjectCode" ShowInCustomizationForm="True" VisibleIndex="1" Width="20%">
                                                                             <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="Keterangan" FieldName="PRPROJDIS_Desc" ShowInCustomizationForm="True" VisibleIndex="2" Width="60%">
                                                                             <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="Jumlah" FieldName="PRPROJDIS_Value" ShowInCustomizationForm="True" VisibleIndex="3" Width="20%">
                                                                             <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                     </Columns>
                                                                     <SettingsPager Mode="ShowAllRecords">
@@ -603,7 +624,7 @@
                                                                         </AlternatingRow>
                                                                     </Styles>
                                                                 </dx:ASPxGridView>
-                                                                <asp:SqlDataSource ID="NewAsset_ProjectDistributionGridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" SelectCommand="SELECT [PRPROJDIS_RowId], [PRPROJDIS_ProjectCode], [PRPROJDIS_Desc], [PRPROJDIS_Value] FROM [PR_ProjDistribution] WHERE (([PRPROJDIS_ProcessId] = @PRPROJDIS_ProcessId) AND ([PRPROJDIS_Rev] = @PRPROJDIS_Rev) AND ([PRPROJDIS_ItemNumber] = @PRPROJDIS_ItemNumber))" OnSelecting="NewAsset_ProjectDistributionGridDs_Selecting">
+                                                                <asp:SqlDataSource ID="NewAsset_ProjectDistributionGridDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" OnSelecting="NewAsset_ProjectDistributionGridDs_Selecting" SelectCommand="SELECT [PRPROJDIS_RowId], [PRPROJDIS_ProjectCode], [PRPROJDIS_Desc], [PRPROJDIS_Value] FROM [PR_ProjDistribution] WHERE (([PRPROJDIS_ProcessId] = @PRPROJDIS_ProcessId) AND ([PRPROJDIS_Rev] = @PRPROJDIS_Rev) AND ([PRPROJDIS_ItemNumber] = @PRPROJDIS_ItemNumber))">
                                                                     <SelectParameters>
                                                                         <asp:Parameter Name="PRPROJDIS_ProcessId" Type="String" />
                                                                         <asp:Parameter Name="PRPROJDIS_Rev" Type="Int32" />
@@ -619,7 +640,7 @@
                                                 <Items>
                                                     <dx:LayoutItem ShowCaption="False" Width="100%">
                                                         <LayoutItemNestedControlCollection>
-                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer17" runat="server">
+                                                            <dx:LayoutItemNestedControlContainer runat="server">
                                                                 <dx:ASPxButton ID="NewAsset_BtnAddGl" runat="server" AutoPostBack="False" ClientInstanceName="NewAsset_BtnAddGl" EnableClientSideAPI="True" Text="Tambah">
                                                                     <ClientSideEvents Click="function(s, e) {
 	NewAsset_BtnAddGl_Click();
@@ -630,31 +651,36 @@
                                                     </dx:LayoutItem>
                                                     <dx:LayoutItem ShowCaption="False" Width="100%">
                                                         <LayoutItemNestedControlCollection>
-                                                            <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer18" runat="server">
-                                                                <dx:ASPxGridView ID="NewAsset_GLDistributionGrid" ClientInstanceName="NewAsset_GLDistributionGrid" runat="server" AutoGenerateColumns="False" Width="100%" DataSourceID="NewAsset_GLDistGridDs" OnCustomCallback="NewAsset_GLDistributionGrid_CustomCallback">
+                                                            <dx:LayoutItemNestedControlContainer runat="server">
+                                                                <dx:ASPxGridView ID="NewAsset_GLDistributionGrid" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_GLDistributionGrid" DataSourceID="NewAsset_GLDistGridDs" OnCustomCallback="NewAsset_GLDistributionGrid_CustomCallback" Width="100%">
                                                                     <Columns>
                                                                         <dx:GridViewDataTextColumn FieldName="PRGLDIS_RowId" ReadOnly="True" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
                                                                             <EditFormSettings Visible="False" />
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="T" FieldName="PRGILDIS_GL_Type" ShowInCustomizationForm="True" VisibleIndex="1" Width="5%">
                                                                             <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="Dr/Cr" FieldName="PRGLDIS_TransType" ShowInCustomizationForm="True" VisibleIndex="4" Width="10%">
                                                                             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Center" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <CellStyle HorizontalAlign="Center" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="Kod GL" FieldName="PRGLDIS_GLCode" ShowInCustomizationForm="True" VisibleIndex="2" Width="20%">
-                                                                             <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="Keterangan" FieldName="PRGLDIS_Desc" ShowInCustomizationForm="True" VisibleIndex="3" Width="50%">
-                                                                             <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <HeaderStyle HorizontalAlign="Left" VerticalAlign="Bottom" Wrap="True" />
+                                                                            <CellStyle HorizontalAlign="Left" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                         <dx:GridViewDataTextColumn Caption="Jumlah" FieldName="PRGLDIS_Value" ShowInCustomizationForm="True" VisibleIndex="5" Width="15%">
-                                                                             <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
-                                                                            <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True"></CellStyle>
+                                                                            <HeaderStyle HorizontalAlign="Right" VerticalAlign="Bottom" Wrap="True" />
+                                                                            <CellStyle HorizontalAlign="Right" VerticalAlign="Top" Wrap="True">
+                                                                            </CellStyle>
                                                                         </dx:GridViewDataTextColumn>
                                                                     </Columns>
                                                                     <SettingsPager Mode="ShowAllRecords">

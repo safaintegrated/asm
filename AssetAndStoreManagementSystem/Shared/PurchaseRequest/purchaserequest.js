@@ -1,39 +1,89 @@
 ﻿function btnSelectPurchaseType_Click(s, e) {
-    if (CbPurchaseType.GetText() == '') {
-        popupMsg_Label.SetText('Sila pilih jenis pembelian terlebih dahulu.');
-        popupMsg.Show();
-    }
-    else {
-        //alert('purchaseType');
-        switch (CbPurchaseType.GetValue().toString()) {
-            case "1": cbp_FormNextItemNumber.PerformCallback('1'); break;   //Aset Baharu
-            case "2": cbp_FormNextItemNumber.PerformCallback('2'); break;   //Penyelenggaraan
-            case "3": cbp_FormNextItemNumber.PerformCallback('3'); break;   //Alat Ganti
-            case "4": cbp_FormNextItemNumber.PerformCallback('4'); break;   //Tambahan
-            case "5": cbp_FormNextItemNumber.PerformCallback('5'); break;   //Stok
-            case "6": cbp_FormNextItemNumber.PerformCallback('6'); break;   //Lain-lain
-        }
+    //alert(CbPurchaseType.GetText());
+
+    //if (CbPurchaseType.GetText() == '') {
+    //    popupMsg_Label.SetText('Sila pilih jenis pembelian terlebih dahulu.');
+    //    popupMsg.Show();
+    //}
+    //else {
+    switch (CbPurchaseType.GetText()) {
+        case "":
+            popupMsg_Label.SetText('Sila pilih jenis pembelian terlebih dahulu.');
+            popupMsg.Show();
+            break;
+        case "Aset Baharu":
+            cbp_FormNextItemNumber.PerformCallback('NEW_ASSET'); break;   //Aset Baharu
+        case "Penyelenggaraan": cbp_FormNextItemNumber.PerformCallback('NEW_MAINTENANCE'); break;   //Penyelenggaraan
+        case "Alat Ganti": cbp_FormNextItemNumber.PerformCallback('NEW_SPARE'); break;   //Alat Ganti
+        case "Tambahan": cbp_FormNextItemNumber.PerformCallback('NEW_ADDTIONAL'); break;   //Tambahan
+        case "Stok": cbp_FormNextItemNumber.PerformCallback('NEW_STOCK'); break;   //Stok
+        case "Lain-lain": cbp_FormNextItemNumber.PerformCallback('NEW_OTHERS'); break;   //Lain-lain
+            //}
     }
 }
 
 function cbp_FormNextItemNumber_EndCallback(s, e) {
+    //alert(s.cpPurchaseType.toString());
+    //NewAssetMode(s.cpNextItemNumber.toString());
+
     switch (s.cpPurchaseType.toString()) {
-        case "1": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Aset Baharu
-        case "2": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Penyelenggaraan
-        case "3": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Alat Ganti
-        case "4": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Tambahan
-        case "5": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Stok
-        case "6": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Lain-lain
+        case "ASSET_BAHARU": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Aset Baharu
+        case "NEW_MAINTENANCE": NewMaintenanceMode(s.cpNextItemNumber.toString()); break;   //Penyelenggaraan
+        case "NEW_SPARE": NewSparePartMode(s.cpNextItemNumber.toString()); break;   //Alat Ganti
+        case "NEW_ADDTIONAL": NewAdditionalMode(s.cpNextItemNumber.toString()); break;   //Tambahan
+        case "NEW_STOCK": NewStockMode(s.cpNextItemNumber.toString()); break;   //Stok
+        case "NEW_OTHERS": NewOthersMode(s.cpNextItemNumber.toString()); break;   //Lain-lain
 
     }
 }
 
 function NewAssetMode(num) {
-    NewAsset_PRI_ProcessId.SetText(TabItem_ProcessId.GetText());
-    NewAsset_PRI_ItemNumber.SetText(num.toString());
-    NewAsset_PRI_Revision.SetText(TabItem_RevNum.GetText());
-    txtPurchaseRequestId.SetText(TabItem_PurchaseRequestId.GetText());
-    cbp_LineItem_NewAsset.PerformCallback('NEW');
+    //NewAsset_PRI_ProcessId.SetText(TabItem_ProcessId.GetText());
+    //NewAsset_PRI_ItemNumber.SetText(num.toString());
+    //NewAsset_PRI_Revision.SetText(TabItem_RevNum.GetText());
+    //txtPurchaseRequestId.SetText(TabItem_PurchaseRequestId.GetText());
+    cbp_LineItem_NewAsset.PerformCallback('NEW_ASSET');
+}
+
+function NewMaintenanceMode(num) {
+    //NewAsset_PRI_ProcessId.SetText(TabItem_ProcessId.GetText());
+    //NewAsset_PRI_ItemNumber.SetText(num.toString());
+    //NewAsset_PRI_Revision.SetText(TabItem_RevNum.GetText());
+    //txtPurchaseRequestId.SetText(TabItem_PurchaseRequestId.GetText());
+    cbp_LineItem_NewAsset.PerformCallback('NEW_MAINT');
+}
+
+function NewSparePartMode(num) {
+    //NewAsset_PRI_ProcessId.SetText(TabItem_ProcessId.GetText());
+    //NewAsset_PRI_ItemNumber.SetText(num.toString());
+    //NewAsset_PRI_Revision.SetText(TabItem_RevNum.GetText());
+    //txtPurchaseRequestId.SetText(TabItem_PurchaseRequestId.GetText());
+    cbp_LineItem_NewAsset.PerformCallback('NEW_SPARE_PART');
+}
+
+
+function NewOthersMode(num) {
+    //NewAsset_PRI_ProcessId.SetText(TabItem_ProcessId.GetText());
+    //NewAsset_PRI_ItemNumber.SetText(num.toString());
+    //NewAsset_PRI_Revision.SetText(TabItem_RevNum.GetText());
+    //txtPurchaseRequestId.SetText(TabItem_PurchaseRequestId.GetText());
+    cbp_LineItem_NewAsset.PerformCallback('NEW_OTHERS');
+}
+
+function NewAdditionalMode(num) {
+    //NewAsset_PRI_ProcessId.SetText(TabItem_ProcessId.GetText());
+    //NewAsset_PRI_ItemNumber.SetText(num.toString());
+    //NewAsset_PRI_Revision.SetText(TabItem_RevNum.GetText());
+    //txtPurchaseRequestId.SetText(TabItem_PurchaseRequestId.GetText());
+    cbp_LineItem_NewAsset.PerformCallback('NEW_ADDITIONAL');
+}
+
+function NewStockMode(num) {
+    //NewAsset_PRI_ProcessId.SetText(TabItem_ProcessId.GetText());
+    //NewAsset_PRI_ItemNumber.SetText(num.toString());
+    //NewAsset_PRI_Revision.SetText(TabItem_RevNum.GetText());
+    //txtPurchaseRequestId.SetText(TabItem_PurchaseRequestId.GetText());
+    cbp_LineItem_NewAsset.PerformCallback('NEW_STOCK');
 }
 
 function EnableDisableItemForm(EnableDisable) {
@@ -181,23 +231,40 @@ function Item_NewAssetSave() {
 }
 
 function cbp_LineItem_NewAsset_EndCallback(s, e) {
+    alert(s.cpMode.toString());
+    alert(s.cpErrMsg.toString());
+
     LoadingPanel.Hide();
 
     if (s.cpErrMsg.toString() != '') {
         PopupMessageBox_Label.SetText(s.cpErrMsg.toString());
         PopupMessageBox.Show();
+        return;
     }
-    else {
-        if (s.cpMode.toString() == 'NEW') {
-            Popup_LineItem_NewAsset.SetWidth(screen.width * 0.85);
-            Popup_LineItem_NewAsset.Show();
-        }
-        else if (s.cpMode.toString() == 'SAVE') {
+    switch(s.cpMode.toString())
+    {
+        case 'SAVE':
             ItemGrid.PerformCallback();
             GLDistribution_Grid.PerformCallback();
             Popup_LineItem_NewAsset.Hide();
-        }
+            break;
+        default:
+            alert("[o[");
+            Popup_LineItem_NewAsset.SetWidth(screen.width * 0.85);
+            Popup_LineItem_NewAsset.Show();
+            break;
     }
+    //else {
+    //    if (s.cpMode.toString() == 'NEW') {
+    //        Popup_LineItem_NewAsset.SetWidth(screen.width * 0.85);
+    //        Popup_LineItem_NewAsset.Show();
+    //    }
+    //    else if (s.cpMode.toString() == 'SAVE') {
+    //        ItemGrid.PerformCallback();
+    //        GLDistribution_Grid.PerformCallback();
+    //        Popup_LineItem_NewAsset.Hide();
+    //    }
+    //}
 }
 
 function Manage_LineItem_NewAsset_Toolbar(btnSave, btnDelete) {
@@ -234,7 +301,16 @@ function TambahClicked() {
 function Toolbar_PopupPr_ItemClick(s, e) {
     switch (e.item.name) {
         case 'btnSave': Toolbar_SimpanClicked(); break;
+        case 'btnApprove': Toolbar_ApproveClicked(); break;
+        case 'btnReject': break;
     }
+}
+
+function Toolbar_SimpanClicked() {
+    //TODO: add validation before proceed with save
+    LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
+    LoadingPanel.Show();
+    cbp_PermohonanBelian_PrHeader.PerformCallback('APPROVED');
 }
 
 function Toolbar_SimpanClicked() {
@@ -260,21 +336,30 @@ function Toolbar_SimpanClicked() {
     //    popupMsg.Show();
     //}
     //else {
-        //alert('saving');
-        LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
-        LoadingPanel.Show();
-        cbp_PermohonanBelian_PrHeader.PerformCallback('SAVE');
+    //alert('saving');
+    //LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
+    //LoadingPanel.Show();
+    //cbp_PermohonanBelian_PrHeader.PerformCallback('SAVE');
     //}
 }
 
 function Manage_Toolbar_PopupPr(btnEdit, btnSave, btnSubmit, btnCancel, btnWithdraw, btnApprove, btnReject) {
-    Toolbar_PopupPr.GetItemByName('btnEdit').SetEnabled(btnEdit);
-    Toolbar_PopupPr.GetItemByName('btnSave').SetEnabled(btnSave);
-    Toolbar_PopupPr.GetItemByName('btnSubmit').SetEnabled(btnSubmit);
-    Toolbar_PopupPr.GetItemByName('btnCancel').SetEnabled(btnCancel);
-    Toolbar_PopupPr.GetItemByName('btnWithdraw').SetEnabled(btnWithdraw);
-    Toolbar_PopupPr.GetItemByName('btnApprove').SetEnabled(btnApprove);
-    Toolbar_PopupPr.GetItemByName('btnReject').SetEnabled(btnReject);
+    //Toolbar_PopupPr.GetItemByName('btnEdit').SetEnabled(btnEdit);
+    //Toolbar_PopupPr.GetItemByName('btnSave').SetEnabled(btnSave);
+    //Toolbar_PopupPr.GetItemByName('btnSubmit').SetEnabled(btnSubmit);
+    //Toolbar_PopupPr.GetItemByName('btnCancel').SetEnabled(btnCancel);
+    //Toolbar_PopupPr.GetItemByName('btnWithdraw').SetEnabled(btnWithdraw);
+    //Toolbar_PopupPr.GetItemByName('btnApprove').SetEnabled(btnApprove);
+    //Toolbar_PopupPr.GetItemByName('btnReject').SetEnabled(btnReject);
+
+    Toolbar_PopupPr.GetItemByName('btnEdit').SetEnabled(true);
+    Toolbar_PopupPr.GetItemByName('btnSave').SetEnabled(true);
+    Toolbar_PopupPr.GetItemByName('btnSubmit').SetEnabled(true);
+    Toolbar_PopupPr.GetItemByName('btnCancel').SetEnabled(true);
+    Toolbar_PopupPr.GetItemByName('btnWithdraw').SetEnabled(true);
+    Toolbar_PopupPr.GetItemByName('btnApprove').SetEnabled(true);
+    Toolbar_PopupPr.GetItemByName('btnReject').SetEnabled(true);
+
 }
 
 function ViewPr(p, r) {

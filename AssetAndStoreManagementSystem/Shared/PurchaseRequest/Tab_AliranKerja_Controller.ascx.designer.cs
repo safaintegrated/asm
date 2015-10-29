@@ -13,6 +13,15 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
     public partial class Tab_AliranKerja_Controller {
         
         /// <summary>
+        /// aspxRefresh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton aspxRefresh;
+        
+        /// <summary>
         /// ASPxFormLayout1 control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView GridPRWorkflow;
+        
+        /// <summary>
+        /// odsWorkFlow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsWorkFlow;
         
         /// <summary>
         /// WorkFlowDs control.

@@ -45,6 +45,8 @@ namespace Data
 
             InsertAssetType(context);
 
+            InsertSampleAssetRegistration(context);
+
             InserSampleSuppliers(context);
 
             InsertUnitOfMeasurements(context);
@@ -55,12 +57,37 @@ namespace Data
 
             InsertProcessType(context);
 
+            InsertProcessState(context);
+
             InsertSampleUser(context);
 
             InsertSamplePurchaseRequest(context);
 
             context.SaveChanges("system");
             base.Seed(context);
+        }
+
+        private void InsertSampleAssetRegistration(AsmContext context)
+        {
+            //PurchaseRequest pr = new PurchaseRequest
+            //{
+            //    PrNumber = "12345",
+            //    ReferenceNumber = DateTime.Now.ToString("yyMMdd-HHmmss"),
+            //    Description = "Membeli Komputer",
+            //    SupplierName = "Ajis Supplier",
+            //    RequestorName = "Haji Abu",
+            //    Status = ProcessStatus.New
+            //};
+            AssetRegistration a = new AssetRegistration
+            {
+                Description = "Dell PowerEdge R300 Rack-Mount Server",
+                Brand = "Dell PowerEdge R300 Rack-Mount Server",
+                Model = "Dell PowerEdge R300 Rack-Mount Server",
+                PONumber = "000727-00",
+                RegistrationNumber = "UPNM.09/PICT/A0492",
+
+            };
+            context.AssetRegistrationList.Add(a);
         }
 
         private void InsertSamplePurchaseRequest(AsmContext context)
@@ -79,7 +106,7 @@ namespace Data
 
         private void InsertPtj(AsmContext context)
         {
-            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "01", SmpCode = "0100", Code = "PNC", FullName = "Pejabat Naib Canselor", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3="Kuala Lumpur, Malaysia" });
+            context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "01", SmpCode = "0100", Code = "PNC", FullName = "Pejabat Naib Canselor", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
             context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "05", SmpCode = "0200", Code = "HEAA", FullName = "Pejabat Timbalan Naib Canselor (Akademik dan Antarabangsa", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
             context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "04", SmpCode = "0300", Code = "HEPA", FullName = "Pejabat Timbalan Naib Canselor (Hal Ehwal Pelajar dan Alumni)", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
             context.PusatTanggungjawabList.Add(new PusatTanggungjawab { SagaCode = "08", SmpCode = "0400", Code = "JPP", FullName = "Jabatan Pembangunan dan Penyelenggaraan", Address1 = "Tingkat 1", Address2 = "Universiti Pertahanan Nasional", Address3 = "Kuala Lumpur, Malaysia" });
@@ -1872,6 +1899,15 @@ namespace Data
         {
             context.ProcessTypes.Add(new ProcessType { Code = "01", Description = "Permohonan Belian" });
             context.ProcessTypes.Add(new ProcessType { Code = "02", Description = "Pendaftaran" });
+        }
+
+        private static void InsertProcessState(AsmContext context)
+        {
+            context.ProcessStateList.Add(new ProcessState { State = ProcessStateType.New, Description = "Baru" });
+            context.ProcessStateList.Add(new ProcessState { State = ProcessStateType.Lulus, Description = "Lulus" });
+            context.ProcessStateList.Add(new ProcessState { State = ProcessStateType.TidakLulus, Description = "Tidak Lulus" });
+            //context.ProcessTypes.Add(new ProcessType { Code = "01", Description = "Permohonan Belian" });
+            //context.ProcessTypes.Add(new ProcessType { Code = "02", Description = "Pendaftaran" });
         }
 
         private static void InsertPurchaseTypes(AsmContext context)

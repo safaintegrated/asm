@@ -54,43 +54,48 @@ namespace Data
         public DbSet<Workflow> Workflows { get; set; }
         public DbSet<Checklist> Checklists { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<MainRegistrationInfo> MainRegistrationInfos { get; set; }
+        public DbSet<AssetRegistration> AssetRegistrationList { get; set; }
         public DbSet<PurchaseRequestItem> PurchaseRequestItems { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<PusatTanggungjawab> PusatTanggungjawabList { get; set; }
+        public DbSet<ProcessState> ProcessStateList { get; set; }
 
         public int SaveChanges(string username)
         {
             var userName = string.IsNullOrEmpty(username) ? "amir@fa-bigdata.com" : username;
-
-            // Get all Added/Deleted/Modified entities (not Unmodified or Detached)
-            foreach (var entry in this.ChangeTracker.Entries().Where(p => p.State == EntityState.Added || p.State == EntityState.Deleted || p.State == EntityState.Modified))
+            try
             {
-                // For each changed record, get the audit record entries and add them
-                foreach (AuditLog x in GetAuditRecordsForChange(entry, userName))
+                // Get all Added/Deleted/Modified entities (not Unmodified or Detached)
+                foreach (var entry in this.ChangeTracker.Entries().Where(p => p.State == EntityState.Added || p.State == EntityState.Deleted || p.State == EntityState.Modified))
                 {
-                    this.AuditLogs.Add(x);
-                }
-
-                var entity = entry.Entity as EntityBase;
-                if (entity != null)
-                {
-                    if (entry.State == EntityState.Added)
+                    // For each changed record, get the audit record entries and add them
+                    foreach (AuditLog x in GetAuditRecordsForChange(entry, userName))
                     {
-                        entity.CreatedAt = DateTime.UtcNow;
-                        entity.CreatedBy = userName;
-                        entity.UpdatedAt = DateTime.UtcNow;
-                        entity.UpdatedBy = userName;
+                        this.AuditLogs.Add(x);
                     }
-                    else if (entry.State == EntityState.Modified || entry.State == EntityState.Deleted)
+
+                    var entity = entry.Entity as EntityBase;
+                    if (entity != null)
                     {
-                        entity.UpdatedAt = DateTime.UtcNow;
-                        entity.UpdatedBy = userName;
+                        if (entry.State == EntityState.Added)
+                        {
+                            entity.CreatedAt = DateTime.UtcNow;
+                            entity.CreatedBy = userName;
+                            entity.UpdatedAt = DateTime.UtcNow;
+                            entity.UpdatedBy = userName;
+                        }
+                        else if (entry.State == EntityState.Modified || entry.State == EntityState.Deleted)
+                        {
+                            entity.UpdatedAt = DateTime.UtcNow;
+                            entity.UpdatedBy = userName;
+                        }
                     }
                 }
             }
-
-
+            catch 
+            {
+            }
+        
             // Call the original SaveChanges(), which will save both the changes made and the audit records
             return base.SaveChanges();
         }

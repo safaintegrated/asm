@@ -26,5 +26,11 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             else
                 e.Command.Parameters["@PRH_ProcessId_ProcessId"].Value = Wf_ProcessId.Text;
         }
+
+        protected void aspxRefresh_Click(object sender, EventArgs e)
+        {
+            GridPRWorkflow.DataBind();
+
+        }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    public class ProcessState
+    public class ProcessState : EntityBase
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
         public ProcessStateType State { get; set; }
         public string Description { get; set; }
     }

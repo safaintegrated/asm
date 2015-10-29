@@ -13,7 +13,9 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 {
     public partial class PermohonanBelian_PrHeader : System.Web.UI.UserControl
     {
-         protected void Page_Load(object sender, EventArgs e)
+        Core.Services.PurchaseRequestService _prSvc = new Core.Services.PurchaseRequestService();
+
+        protected void Page_Load(object sender, EventArgs e)
         {
 
         }
@@ -27,7 +29,21 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 case "NEW": NewMode(); break;
                 case "SAVE": SaveSubmitCancelPRMode(1); break;
                 case "VIEW": ViewPRMode(); break;
+                case "APPROVED": ApprovedPr(); break;
             }
+        }
+
+        private void ApprovedPr()
+        {
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+
+            if (ticket.Expired)
+            {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "Session Expired.";
+                return;
+            }
+
         }
 
         void NewMode()
@@ -121,13 +137,14 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                         //ReceiverId = PRH_PurchaserId.Value.ToString()
                     };
 
-                    Data.Models.PurchaseRequestModel.Add(pr, ticket.Name);
+                    _prSvc.CreateNewPr(pr, ticket.Name);
+                    //Data.Models.PurchaseRequestModel.Add(pr, ticket.Name);
 
                     //DbErr = PermohonanBelianMethods.SP_PR_Header_SaveSubmitCancel(ticket.Name, Mode, ref Dt, ref ReturnProcessId, ref ReturnRevNumber);
-                    cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnProcessId"] =  pr.ProcessId;
+                    cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnProcessId"] = pr.ProcessId;
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnRevNumber"] = pr.RevisionNumber.ToString();
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnPurchaseRequestId"] = pr.Id.ToString();
-                    
+
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = DbErr;
                 }
                 catch (Exception err)
@@ -247,12 +264,12 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 Data.Entity.PuDeliveryAddress pda = Data.Models.PuDeliveryAddressModel.FindById(pr.ReceiverId);
                 if (pda != null)
                 {
-                   // PRH_PurchaserId.Value = pda.Id;// Dt.Rows[0]["PRH_PurchaserId"].ToString();
+                    // PRH_PurchaserId.Value = pda.Id;// Dt.Rows[0]["PRH_PurchaserId"].ToString();
                     //PRH_DeliveryAdd1.Text = pda.Address1;// Dt.Rows[0]["PRH_DeliveryAdd1"].ToString();
                     //PRH_DeliveryAdd2.Text = pda.Address2;// Dt.Rows[0]["PRH_DeliveryAdd2"].ToString();
                     //PRH_DeliveryAdd3.Text = pda.Address3;// Dt.Rows[0]["PRH_DeliveryAdd3"].ToString();
                 }
-                
+
                 PRH_DeliveryInstruction.Text = pr.Instruction;// Dt.Rows[0]["PRH_DeliveryInstruction"].ToString();
                 PRH_PRnumber.Text = pr.PrNumber;// Dt.Rows[0]["PRH_PRnumber"].ToString();
                 //PTJ_SagaCode.Text = pr. Dt.Rows[0]["PTJ_SagaCode"].ToString();

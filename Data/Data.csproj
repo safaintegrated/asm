@@ -65,7 +65,7 @@
     <Compile Include="Entity\GoodReceiveNote.cs" />
     <Compile Include="Entity\Ledger.cs" />
     <Compile Include="Entity\LedgerItem.cs" />
-    <Compile Include="Entity\MainRegistrationInfo.cs" />
+    <Compile Include="Entity\AssetRegistration.cs" />
     <Compile Include="Entity\ProcessType.cs" />
     <Compile Include="Entity\Project.cs" />
     <Compile Include="Entity\ProjectIte.cs" />
@@ -110,7 +110,8 @@
     <Compile Include="Models\EmployeeModel.cs" />
     <Compile Include="Models\LedgerModel.cs" />
     <Compile Include="Models\LedgerItemModel.cs" />
-    <Compile Include="Models\MainRegistrationInfoModel.cs" />
+    <Compile Include="Models\AssetRegistrationModel.cs" />
+    <Compile Include="Models\ProcessStateModel.cs" />
     <Compile Include="Models\ProcessTypeModel.cs" />
     <Compile Include="Models\ProcurementCategoryModel.cs" />
     <Compile Include="Models\ProcurementMethodModel.cs" />

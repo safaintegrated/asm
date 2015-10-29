@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace Data.Entity
 {
-    public class MainRegistrationInfo : EntityBase
+    public class AssetRegistration : EntityBase
     {
+        public AssetRegistration()
+        {
+            WarrantyStart = new DateTime(1753, 1, 1);
+            WarrantyEnd = new DateTime(1753, 1, 1);
+            PODate = new DateTime(1753, 1, 1);
+            VoucherDate = new DateTime(1753, 1, 1);
+            GRNDate = new DateTime(1753, 1, 1);
+
+        }
         //Maklumat Aset Alih
         public string Description { get; set; }
         public string Specification { get; set; }
@@ -53,5 +62,5 @@ namespace Data.Entity
         public string Qty { get; set; }
         public string PurchasePrice { get; set; }
     }
-    
+
 }
