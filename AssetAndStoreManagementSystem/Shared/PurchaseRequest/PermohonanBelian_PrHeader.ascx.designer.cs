@@ -85,22 +85,22 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxTextBox txtPtjId;
         
         /// <summary>
-        /// ASPxFormLayout1_E1 control.
+        /// deRequestDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit ASPxFormLayout1_E1;
+        protected global::DevExpress.Web.ASPxDateEdit deRequestDate;
         
         /// <summary>
-        /// ASPxFormLayout1_E2 control.
+        /// deRequriredDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit ASPxFormLayout1_E2;
+        protected global::DevExpress.Web.ASPxDateEdit deRequriredDate;
         
         /// <summary>
         /// PRH_Purpose control.

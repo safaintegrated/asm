@@ -136,7 +136,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     ProcurementCategoryId = PRH_ProcurementCatId.Value.ToString(),
                     ProcurementMethodId = PRH_ProcurementMethodId.Value.ToString(),
                     ProcurementTypeId = PRH_ProcurementITypeId.Value.ToString(),
-                    SupplierId = PRH_SupplierCode.Value.ToString()
+                    SupplierId = PRH_SupplierCode.Value.ToString(),
+                    
                 };
 
                 _prSvc.CreateNewPr(pr, ticket.Name);
@@ -239,15 +240,26 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 if (pr == null)
                     throw new Exception("Purchase Request Not Found");
 
-                Data.Entity.Employee e = Data.Models.EmployeeModel.FindByUserId(pr.RequestorUserName);
-                if (pr == null)
-                    throw new Exception("Requestor info not found");
-
                 PRH_Purpose.Text = pr.Description;
                 PRH_Status.Text = pr.StatusName;
                 PRH_ProcurementMethodId.Value = pr.ProcurementMethodId;
                 PRH_ProcurementITypeId.Value = pr.ProcurementTypeId;
                 PRH_ProcurementCatId.Value = pr.ProcurementCategoryId;
+                deRequestDate.Value = pr.RequestDate;
+                deRequriredDate.Value = pr.RequiredDate;
+
+                Data.Entity.Employee e = Data.Models.EmployeeModel.FindByUserId(pr.RequestorUserName);
+                if (pr == null)
+                    throw new Exception("Requestor info not found");
+
+                txtOfficerName.Text = e.FullName;
+                txtPtjName.Text = e.PtjName;
+                txtPtjId.Text = e.PtjCode;
+
+                var ptj = Data.Models.PusatTanggungjawabModel.FindByCode(e.PtjCode);
+                txtPtjAddress1.Text = ptj.Address1;
+                txtPtjAddress2.Text = ptj.Address2;
+                txtPtjAddress3.Text = ptj.Address3;
 
                 Data.Entity.Supplier s = Data.Models.SupplierModel.FindById(pr.SupplierId);
                 if (s == null)
@@ -260,14 +272,14 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 PRH_SupplierGLCode.Text = s.GlacControlCode;
                 PRH_SupplierGLDesc.Text = s.GlacDescription;
 
-                Data.Entity.PuDeliveryAddress pda = Data.Models.PuDeliveryAddressModel.FindById(pr.ReceiverId);
-                if (pda != null)
-                {
-                    // PRH_PurchaserId.Value = pda.Id;// Dt.Rows[0]["PRH_PurchaserId"].ToString();
-                    //PRH_DeliveryAdd1.Text = pda.Address1;// Dt.Rows[0]["PRH_DeliveryAdd1"].ToString();
-                    //PRH_DeliveryAdd2.Text = pda.Address2;// Dt.Rows[0]["PRH_DeliveryAdd2"].ToString();
-                    //PRH_DeliveryAdd3.Text = pda.Address3;// Dt.Rows[0]["PRH_DeliveryAdd3"].ToString();
-                }
+                //Data.Entity.PuDeliveryAddress pda = Data.Models.PuDeliveryAddressModel.FindById(pr.ReceiverId);
+                //if (pda != null)
+                //{
+                //    // PRH_PurchaserId.Value = pda.Id;// Dt.Rows[0]["PRH_PurchaserId"].ToString();
+                //    //PRH_DeliveryAdd1.Text = pda.Address1;// Dt.Rows[0]["PRH_DeliveryAdd1"].ToString();
+                //    //PRH_DeliveryAdd2.Text = pda.Address2;// Dt.Rows[0]["PRH_DeliveryAdd2"].ToString();
+                //    //PRH_DeliveryAdd3.Text = pda.Address3;// Dt.Rows[0]["PRH_DeliveryAdd3"].ToString();
+                //}
 
                 PRH_DeliveryInstruction.Text = pr.Instruction;
                 PRH_PRnumber.Text = pr.PrNumber;

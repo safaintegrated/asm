@@ -96,7 +96,13 @@ namespace Data.Entity
             ProcessId = DateTime.Now.ToString("yyMMdd-HHmmss");
             Status = ProcessStatus.New;
             StatusName = "Baru";
+            RequestDate = new DateTime(1753, 1, 1);
+            RequiredDate = new DateTime(1753, 1, 1);
         }
 
+
+        public DateTime RequestDate { get; set; }
+
+        public DateTime RequiredDate { get; set; }
     }
 }

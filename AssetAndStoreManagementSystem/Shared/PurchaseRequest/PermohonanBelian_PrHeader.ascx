@@ -72,7 +72,7 @@
                     <dx:LayoutItem Caption="Tarikh Permohonan" ColSpan="2">
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxDateEdit ID="ASPxFormLayout1_E1" runat="server">
+                                <dx:ASPxDateEdit ID="deRequestDate" runat="server">
                                 </dx:ASPxDateEdit>
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
@@ -80,7 +80,7 @@
                     <dx:LayoutItem Caption="Tarikh Bekalan" ColSpan="2">
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer runat="server">
-                                <dx:ASPxDateEdit ID="ASPxFormLayout1_E2" runat="server">
+                                <dx:ASPxDateEdit ID="deRequriredDate" runat="server">
                                 </dx:ASPxDateEdit>
                             </dx:LayoutItemNestedControlContainer>
                         </LayoutItemNestedControlCollection>
