@@ -92,7 +92,7 @@ namespace Data
                     }
                 }
             }
-            catch 
+            catch (Exception ex)
             {
             }
         

@@ -13,10 +13,29 @@ namespace Data
     //public class AsmContextInitializer : DropCreateDatabaseIfModelChanges<AsmContext>
     {
         public List<Supplier> _suppliers;
+        public List<Employee> _employees;
 
         public AsmContextInitializer()
         {
             InitalizeSupplier();
+            InitializeEmployees();
+        }
+
+        private void InitializeEmployees()
+        {
+            _employees = new List<Employee>();
+            _employees.Add(new Employee
+            {
+                UserId = "0002-07",
+                Salutation = "Prof Wan Mahzom Binti Ahmad Shah",
+                FullName = "Wan Mahzom Binti Ahmad Shah",
+                StatusCode = "1",
+                Password = "Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs=",
+                PtjCode = "JB",
+                PtjName = "Jabatan Bendahari",
+                DesignationGrade = "",
+            });
+
         }
 
         protected override void Seed(AsmContext context)
@@ -76,15 +95,6 @@ namespace Data
 
         private void InsertSampleAssetRegistration(AsmContext context)
         {
-            //PurchaseRequest pr = new PurchaseRequest
-            //{
-            //    PrNumber = "12345",
-            //    ReferenceNumber = DateTime.Now.ToString("yyMMdd-HHmmss"),
-            //    Description = "Membeli Komputer",
-            //    SupplierName = "Ajis Supplier",
-            //    RequestorName = "Haji Abu",
-            //    Status = ProcessStatus.New
-            //};
             AssetRegistration a = new AssetRegistration
             {
                 Description = "Dell PowerEdge R300 Rack-Mount Server",
@@ -100,16 +110,17 @@ namespace Data
         private void InsertSamplePurchaseRequest(AsmContext context)
         {
            var s = _suppliers.First();
-
+           var e = _employees.First();
             PurchaseRequest pr = new PurchaseRequest
             {
                 PrNumber = "12345",
                 ReferenceNumber = DateTime.Now.ToString("yyMMdd-HHmmss"),
                 Description = "Membeli Komputer",
-                SupplierName = "Ajis Supplier",
-                RequestorName = "Haji Abu",
+                //SupplierName = "Ajis Supplier",
+                Requestor = e,
                 Status = ProcessStatus.New,
-                Supplier = s
+                Supplier = s,
+                SupplierId = s.Id
             };
             context.PurchaseRequests.Add(pr);
         }
@@ -161,18 +172,19 @@ namespace Data
         private void InsertSampleUser(AsmContext context)
         {
             //2	0002-07	Prof Wan Mahzom Binti Ahmad Shah	Wan Mahzom Binti Ahmad Shah	510605075444	mahzom@upnm.edu.my	019-2183136	762 2524	No 18, USJ 5/4,	Subang Jaya	NULL	NULL	4700	1167	VK6	1	Aktif	4	Kontrak	1	Akademik	1	01	Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs=	NULL	NULL	Pejabat Naib Canselor	NULL	NULL	Timbalan Pengarah Akademik
-
-            context.Employees.Add(new Employee
-            {
-                UserId = "0002-07",
-                Salutation = "Prof Wan Mahzom Binti Ahmad Shah",
-                FullName = "Wan Mahzom Binti Ahmad Shah",
-                StatusCode = "1",
-                Password = "Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs=",
-                PtjCode = "JB",
-                PtjName = "Jabatan Bendahari",
-                DesignationGrade = "",
-            });
+            foreach(var e in _employees)
+                context.Employees.Add(e);
+            //.Employees.Add(new Employee
+            //{
+            //    UserId = "0002-07",
+            //    Salutation = "Prof Wan Mahzom Binti Ahmad Shah",
+            //    FullName = "Wan Mahzom Binti Ahmad Shah",
+            //    StatusCode = "1",
+            //    Password = "Lez5caKoZBia4vYF/7nJB6/mfrX0Q4iwpWQXRFs8YIs=",
+            //    PtjCode = "JB",
+            //    PtjName = "Jabatan Bendahari",
+            //    DesignationGrade = "",
+            //});
 
         }
 

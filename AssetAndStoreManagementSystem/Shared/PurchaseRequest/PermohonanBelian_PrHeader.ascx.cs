@@ -118,50 +118,40 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
             FormsAuthenticationTicket ticket = id.Ticket;
 
-            if (!ticket.Expired)
+            if (ticket.Expired)
             {
-                DataTable Dt = new DataTable();
-                string DbErr = string.Empty;
-                string ReturnProcessId = string.Empty;
-                int ReturnRevNumber = 0;
-
-                try
-                {
-                    //FormTVP(ref Dt);
-                    //PopulateTVP(ref Dt, ticket.Name);
-                    Data.Entity.PurchaseRequest pr = new Data.Entity.PurchaseRequest
-
-                    {
-                        //RequestorUserName = ticket.Name,
-                        Description = PRH_Purpose.Text.Trim(),
-                        Instruction = PRH_DeliveryInstruction.Text.Trim(),
-                        //RequesterId = PRH_RequestBy.Value.ToString(),
-                        //RequestorName = PRH_RequestBy.Text,
-                        ProcurementCategoryId = PRH_ProcurementCatId.Value.ToString(),
-                        ProcurementMethodId = PRH_ProcurementMethodId.Value.ToString(),
-                        ProcurementTypeId = PRH_ProcurementITypeId.Value.ToString(),
-                        SupplierId = PRH_SupplierCode.Value.ToString(),
-                        SupplierName = PRH_SupplierCode.Text.Trim(),
-                        //ReceiverId = PRH_PurchaserId.Value.ToString()
-                    };
-
-                    _prSvc.CreateNewPr(pr, ticket.Name);
-                    //Data.Models.PurchaseRequestModel.Add(pr, ticket.Name);
-
-                    //DbErr = PermohonanBelianMethods.SP_PR_Header_SaveSubmitCancel(ticket.Name, Mode, ref Dt, ref ReturnProcessId, ref ReturnRevNumber);
-                    cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnProcessId"] = pr.ProcessId;
-                    cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnRevNumber"] = pr.RevisionNumber.ToString();
-                    cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnPurchaseRequestId"] = pr.Id.ToString();
-                    cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = DbErr;
-                    _pr = pr;
-                }
-                catch (Exception err)
-                { cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = err.Message; }
-                finally
-                { Dt.Dispose(); }
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "Session Expired.";
+                return;
             }
-            else
-            { cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "Session Expired."; }
+
+            string DbErr = string.Empty;
+
+            try
+            {
+                Data.Entity.PurchaseRequest pr = new Data.Entity.PurchaseRequest
+                {
+                    RequestorId = Data.Models.EmployeeModel.FindByUserId(ticket.Name).Id,
+                    Description = PRH_Purpose.Text.Trim(),
+                    Instruction = PRH_DeliveryInstruction.Text.Trim(),
+                    ProcurementCategoryId = PRH_ProcurementCatId.Value.ToString(),
+                    ProcurementMethodId = PRH_ProcurementMethodId.Value.ToString(),
+                    ProcurementTypeId = PRH_ProcurementITypeId.Value.ToString(),
+                    SupplierId = PRH_SupplierCode.Value.ToString()
+                };
+
+                _prSvc.CreateNewPr(pr, ticket.Name);
+
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnProcessId"] = pr.ProcessId;
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnRevNumber"] = pr.RevisionNumber.ToString();
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnPurchaseRequestId"] = pr.Id.ToString();
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = DbErr;
+            }
+            catch (Exception err)
+            {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = err.Message;
+            }
+            finally
+            { }
         }
 
         void FormTVP(ref DataTable Dt)
@@ -248,6 +238,10 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindById(PRH_ProcessId.Text);
                 if (pr == null)
                     throw new Exception("Purchase Request Not Found");
+
+                Data.Entity.Employee e = Data.Models.EmployeeModel.FindByUserId(pr.RequestorUserName);
+                if (pr == null)
+                    throw new Exception("Requestor info not found");
 
                 PRH_Purpose.Text = pr.Description;
                 PRH_Status.Text = pr.StatusName;

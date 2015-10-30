@@ -11,7 +11,7 @@ namespace Data.Models
     {
         public static IEnumerable<Category> FindAll()
         {
-            return _db.Categories.AsEnumerable();
+            return _db.Categories.OrderBy(c => c.VotCode).AsEnumerable();
         }
         public static void Add(Category o, string user)
         {

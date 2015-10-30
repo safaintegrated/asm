@@ -34,6 +34,11 @@ namespace Data.Models
             _db.SaveChanges();
 
         }
+
+        public static ProcurementMethod FindById(string id)
+        {
+            return _db.ProcurementMethods.Where(c => c.Id == id).FirstOrDefault();
+        }
     }
 
   
