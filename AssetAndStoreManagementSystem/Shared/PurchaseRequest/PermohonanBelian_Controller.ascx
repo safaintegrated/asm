@@ -222,7 +222,7 @@
         </tr>
         <tr>
             <td style="padding-top:10px;">
-                <dx:ASPxPageControl ID="PageControl_PopupPr" runat="server" ActiveTabIndex="2" ClientInstanceName="PageControl_PopupPr" EnableClientSideAPI="True" Width="100%">
+                <dx:ASPxPageControl ID="PageControl_PopupPr" runat="server" ActiveTabIndex="0" ClientInstanceName="PageControl_PopupPr" EnableClientSideAPI="True" Width="100%">
                     <TabPages>
                         <dx:TabPage Text="Utama">
                             <ContentCollection>
