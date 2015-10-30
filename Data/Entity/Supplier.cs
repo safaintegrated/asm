@@ -8,6 +8,11 @@ namespace Data.Entity
 {
     public class Supplier : EntityBase
     {
+        public Supplier()
+        {
+            StartDate = new DateTime(1753,1,1);
+            EndDate = new DateTime(1753, 1, 1);
+        }
         public string Code { get; set; }
         public string Name { get; set; }
         public string Address1 { get; set; }

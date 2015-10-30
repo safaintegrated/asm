@@ -30,7 +30,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
         }
 
-        protected void MainGridDs_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        protected void gvPrListDs_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
             FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
             FormsAuthenticationTicket ticket = id.Ticket;
@@ -41,25 +41,25 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 e.Cancel = true;
         }
 
-        protected void MainGrid_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
+        protected void gvPrList_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
         {
-            MainGrid.DataBind();
+            gvPrList.DataBind();
         }
 
-        protected void MainGrid_HtmlDataCellPrepared(object sender, DevExpress.Web.ASPxGridViewTableDataCellEventArgs e)
+        protected void gvPrList_HtmlDataCellPrepared(object sender, DevExpress.Web.ASPxGridViewTableDataCellEventArgs e)
         {
-            if (e.DataColumn.FieldName == "Description")
-            {
-                ASPxHyperLink PRH_Purpose = (ASPxHyperLink)MainGrid.FindRowCellTemplateControl(e.VisibleIndex, MainGrid.DataColumns["Description"] as GridViewDataColumn, "ASPxHyperLink2");
+            //if (e.DataColumn.FieldName == "Description")
+            //{
+            //    ASPxHyperLink PRH_Purpose = (ASPxHyperLink)gvPrList.FindRowCellTemplateControl(e.VisibleIndex, gvPrList.DataColumns["Description"] as GridViewDataColumn, "ASPxHyperLink2");
 
-                if (PRH_Purpose != null)
-                {
-                    string PRH_ProcessId = MainGrid.GetRowValues(e.VisibleIndex, "ProcessId").ToString();
-                    string PRH_Revision = MainGrid.GetRowValues(e.VisibleIndex, "RevisionNumber").ToString();
-                    PRH_Purpose.Text = e.CellValue.ToString();
-                    PRH_Purpose.NavigateUrl = "javascript: ViewPr('" + PRH_ProcessId + "','" + PRH_Revision + "');";
-                }
-            }
+            //    if (PRH_Purpose != null)
+            //    {
+            //        string PRH_ProcessId = gvPrList.GetRowValues(e.VisibleIndex, "ProcessId").ToString();
+            //        string PRH_Revision = gvPrList.GetRowValues(e.VisibleIndex, "RevisionNumber").ToString();
+            //        PRH_Purpose.Text = e.CellValue.ToString();
+            //        PRH_Purpose.NavigateUrl = "javascript: ViewPr('" + PRH_ProcessId + "','" + PRH_Revision + "');";
+            //    }
+            //}
         }
     }
 }

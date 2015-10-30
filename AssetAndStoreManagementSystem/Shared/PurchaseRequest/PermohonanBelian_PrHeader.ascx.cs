@@ -241,33 +241,30 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             Dt.AcceptChanges();
         }
 
-        void ViewPRMode()
+        private void ViewPRMode()
         {
-            DataTable Dt = new DataTable();
-
             try
             {
-                Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindByProcessIdAndRevision(PRH_ProcessId.Text, PRH_Revision.Text);
+                Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindById(PRH_ProcessId.Text);
                 if (pr == null)
-                    throw new Exception("Not Found");
+                    throw new Exception("Purchase Request Not Found");
 
-                PRH_Purpose.Text = pr.Description;// Dt.Rows[0]["PRH_Purpose"].ToString();
-                PRH_Status.Text = pr.StatusName;// Dt.Rows[0]["PRH_Status"].ToString();
-                //PRH_RequestBy.Value = pr.RequesterId;// Dt.Rows[0]["PRH_RequestBy"].ToString();
-                PRH_ProcurementMethodId.Value = pr.ProcurementMethodId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementMethodId"]);
-                PRH_ProcurementITypeId.Value = pr.ProcurementTypeId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementITypeId"]);
-                PRH_ProcurementCatId.Value = pr.ProcurementCategoryId;// Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementCatId"]);
+                PRH_Purpose.Text = pr.Description;
+                PRH_Status.Text = pr.StatusName;
+                PRH_ProcurementMethodId.Value = pr.ProcurementMethodId;
+                PRH_ProcurementITypeId.Value = pr.ProcurementTypeId;
+                PRH_ProcurementCatId.Value = pr.ProcurementCategoryId;
 
                 Data.Entity.Supplier s = Data.Models.SupplierModel.FindById(pr.SupplierId);
                 if (s == null)
-                    throw new Exception("Not Found");
-                PRH_SupplierCode.Value = s.Id;// Dt.Rows[0]["PRH_SupplierCode"].ToString();
-                PRH_VendorAddress1.Text = s.Address1;//Dt.Rows[0]["PRH_VendorAddress1"].ToString();
-                PRH_VendorAddress2.Text = s.Address2;// Dt.Rows[0]["PRH_VendorAddress2"].ToString();
-                PRH_VendorAddress3.Text = s.Address3;// Dt.Rows[0]["PRH_VendorAddress3"].ToString();
-                PRH_VendorAddress4.Text = s.Address4;// Dt.Rows[0]["PRH_VendorAddress4"].ToString();
-                PRH_SupplierGLCode.Text = s.GlacControlCode;// Dt.Rows[0]["PRH_SupplierGLCode"].ToString();
-                PRH_SupplierGLDesc.Text = s.GlacDescription;// Dt.Rows[0]["PRH_SupplierGLDesc"].ToString();
+                    throw new Exception("Supplier Not Found");
+                PRH_SupplierCode.Value = s.Id;
+                PRH_VendorAddress1.Text = s.Address1;
+                PRH_VendorAddress2.Text = s.Address2;
+                PRH_VendorAddress3.Text = s.Address3;
+                PRH_VendorAddress4.Text = s.Address4;
+                PRH_SupplierGLCode.Text = s.GlacControlCode;
+                PRH_SupplierGLDesc.Text = s.GlacDescription;
 
                 Data.Entity.PuDeliveryAddress pda = Data.Models.PuDeliveryAddressModel.FindById(pr.ReceiverId);
                 if (pda != null)
@@ -278,43 +275,17 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     //PRH_DeliveryAdd3.Text = pda.Address3;// Dt.Rows[0]["PRH_DeliveryAdd3"].ToString();
                 }
 
-                PRH_DeliveryInstruction.Text = pr.Instruction;// Dt.Rows[0]["PRH_DeliveryInstruction"].ToString();
-                PRH_PRnumber.Text = pr.PrNumber;// Dt.Rows[0]["PRH_PRnumber"].ToString();
-                //PTJ_SagaCode.Text = pr. Dt.Rows[0]["PTJ_SagaCode"].ToString();
+                PRH_DeliveryInstruction.Text = pr.Instruction;
+                PRH_PRnumber.Text = pr.PrNumber;
                 cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = string.Empty;
-                //string DbErr = PermohonanBelianMethods.LoadPrUtamaRecord(PRH_ProcessId.Text, PRH_Revision.Text, ref Dt);
-
-                //if (DbErr == string.Empty)
-                //{
-                //    PRH_Purpose.Text = Dt.Rows[0]["PRH_Purpose"].ToString();
-                //    PRH_Status.Text = Dt.Rows[0]["PRH_Status"].ToString();
-                //    PRH_RequestBy.Value = Dt.Rows[0]["PRH_RequestBy"].ToString();
-                //    PRH_ProcurementMethodId.Value = Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementMethodId"]);
-                //    PRH_ProcurementITypeId.Value = Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementITypeId"]);
-                //    PRH_ProcurementCatId.Value = Convert.ToInt32(Dt.Rows[0]["PRH_ProcurementCatId"]);
-                //    PRH_SupplierCode.Value = Dt.Rows[0]["PRH_SupplierCode"].ToString();
-                //    PRH_VendorAddress1.Text = Dt.Rows[0]["PRH_VendorAddress1"].ToString();
-                //    PRH_VendorAddress2.Text = Dt.Rows[0]["PRH_VendorAddress2"].ToString();
-                //    PRH_VendorAddress3.Text = Dt.Rows[0]["PRH_VendorAddress3"].ToString();
-                //    PRH_VendorAddress4.Text = Dt.Rows[0]["PRH_VendorAddress4"].ToString();
-                //    PRH_SupplierGLCode.Text = Dt.Rows[0]["PRH_SupplierGLCode"].ToString();
-                //    PRH_SupplierGLDesc.Text = Dt.Rows[0]["PRH_SupplierGLDesc"].ToString();
-                //    PRH_PurchaserId.Value = Dt.Rows[0]["PRH_PurchaserId"].ToString();
-                //    PRH_DeliveryAdd1.Text = Dt.Rows[0]["PRH_DeliveryAdd1"].ToString();
-                //    PRH_DeliveryAdd2.Text = Dt.Rows[0]["PRH_DeliveryAdd2"].ToString();
-                //    PRH_DeliveryAdd3.Text = Dt.Rows[0]["PRH_DeliveryAdd3"].ToString();
-                //    PRH_DeliveryInstruction.Text = Dt.Rows[0]["PRH_DeliveryInstruction"].ToString();
-                //    PRH_PRnumber.Text = Dt.Rows[0]["PRH_PRnumber"].ToString();
-                //    PTJ_SagaCode.Text = Dt.Rows[0]["PTJ_SagaCode"].ToString();
-                //    cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = string.Empty;
-                //}
-                //else
-                //{ cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = DbErr; }
             }
             catch (Exception err)
-            { cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = err.Message; }
+            {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = err.Message;
+            }
             finally
-            { Dt.Dispose(); }
+            {
+            }
         }
 
         protected void txtPtjName_TextChanged(object sender, EventArgs e)

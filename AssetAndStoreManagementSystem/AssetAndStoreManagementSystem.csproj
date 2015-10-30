@@ -416,11 +416,6 @@
     <Content Include="Shared\LembagaPemeriksa\LembagaPemeriksa_Controller.ascx" />
     <Content Include="Shared\LembagaPemeriksa\Lookup\Index.aspx" />
     <Content Include="Shared\LembagaPemeriksa\Lookup\Lookup_Controller.ascx" />
-    <Content Include="Shared\PermohonanBelian\Index.aspx" />
-    <Content Include="Shared\PermohonanBelian\PermohonanBelian_Controller.ascx" />
-    <Content Include="Shared\PermohonanBelian\PermohonanBelian_PopupNewAsset.ascx" />
-    <Content Include="Shared\PermohonanBelian\PermohonanBelian_PrHeader.ascx" />
-    <Content Include="Shared\PermohonanBelian\PermohonanBelian_TabItem.ascx" />
     <Content Include="Shared\PurchaseRequest\Index.aspx" />
     <Content Include="Shared\PurchaseRequest\PermohonanBelian_Controller.ascx" />
     <Content Include="Shared\PurchaseRequest\PermohonanBelian_PopupNewAsset.ascx" />
@@ -1677,41 +1672,6 @@
     </Compile>
     <Compile Include="Shared\LembagaPemeriksa\Lookup\Lookup_Controller.ascx.designer.cs">
       <DependentUpon>Lookup_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_Controller.ascx.cs">
-      <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_Controller.ascx.designer.cs">
-      <DependentUpon>PermohonanBelian_Controller.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PopupNewAsset.ascx.cs">
-      <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PopupNewAsset.ascx.designer.cs">
-      <DependentUpon>PermohonanBelian_PopupNewAsset.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PrHeader.ascx.cs">
-      <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_PrHeader.ascx.designer.cs">
-      <DependentUpon>PermohonanBelian_PrHeader.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_TabItem.ascx.cs">
-      <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Shared\PermohonanBelian\PermohonanBelian_TabItem.ascx.designer.cs">
-      <DependentUpon>PermohonanBelian_TabItem.ascx</DependentUpon>
     </Compile>
     <Compile Include="Shared\PurchaseRequest\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

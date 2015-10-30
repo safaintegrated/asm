@@ -76,13 +76,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxTextBox txtPtjId;
         
         /// <summary>
-        /// MainGrid control.
+        /// gvPrList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView MainGrid;
+        protected global::DevExpress.Web.ASPxGridView gvPrList;
         
         /// <summary>
         /// odsPurchaseRequest control.

@@ -1,4 +1,18 @@
-﻿function btnSelectPurchaseType_Click(s, e) {
+﻿function gvPrListOnRowClick(s, e) {
+    gvPrList.GetRowValues(e.visibleIndex, 'Id', OpenPurchaseRequest);
+}
+
+function OpenPurchaseRequest(values) {
+    alert(values);
+    PRH_ProcessId.SetText(values.toString());
+    //PRH_Revision.SetText(r.toString());
+    LoadingPanel.SetText('Sistem sedang membuka maklumat permohonan belian yang dipilih.  Sila tunggu sebentar..');
+    LoadingPanel.Show();
+    cbp_PermohonanBelian_PrHeader.PerformCallback('VIEW');
+
+}
+
+function btnSelectPurchaseType_Click(s, e) {
     //alert(CbPurchaseType.GetText());
 
     //if (CbPurchaseType.GetText() == '') {
@@ -231,8 +245,6 @@ function Item_NewAssetSave() {
 }
 
 function cbp_LineItem_NewAsset_EndCallback(s, e) {
-    alert(s.cpMode.toString());
-    alert(s.cpErrMsg.toString());
 
     LoadingPanel.Hide();
 
@@ -249,7 +261,6 @@ function cbp_LineItem_NewAsset_EndCallback(s, e) {
             Popup_LineItem_NewAsset.Hide();
             break;
         default:
-            alert("[o[");
             Popup_LineItem_NewAsset.SetWidth(screen.width * 0.85);
             Popup_LineItem_NewAsset.Show();
             break;

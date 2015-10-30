@@ -44,6 +44,11 @@ namespace Data.Models
                          select r;
             return result.FirstOrDefault();
         }
+
+        public static PurchaseRequest FindById(string id)
+        {
+            return _db.PurchaseRequests.Where(c => c.Id == id).FirstOrDefault();
+        }
     }
 
 }

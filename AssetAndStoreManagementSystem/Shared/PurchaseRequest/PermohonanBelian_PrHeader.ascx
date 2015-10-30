@@ -268,15 +268,15 @@
         </Items>
     </dx:ASPxFormLayout>
 
-    <dx:ASPxTextBox ID="PRH_ProcessId" ClientInstanceName="PRH_ProcessId" ClientEnabled="false" runat="server" Width="170px" ClientVisible="False">
+    <dx:ASPxTextBox ID="PRH_ProcessId" ClientInstanceName="PRH_ProcessId" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
     </dx:ASPxTextBox> 
-    <dx:ASPxTextBox ID="PRH_Revision" ClientInstanceName="PRH_Revision" ClientEnabled="false" runat="server" Width="170px" ClientVisible="False">
+    <dx:ASPxTextBox ID="PRH_Revision" ClientInstanceName="PRH_Revision" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
     </dx:ASPxTextBox> 
-    <dx:ASPxTextBox ID="PTJ_SagaCode" ClientInstanceName="PTJ_SagaCode" ClientEnabled="false" runat="server" Width="170px" ClientVisible="False">
+    <dx:ASPxTextBox ID="PTJ_SagaCode" ClientInstanceName="PTJ_SagaCode" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
     </dx:ASPxTextBox> 
-    <dx:ASPxTextBox ID="PRH_Status" ClientInstanceName="PRH_Status" ClientEnabled="false" runat="server" Width="170px" ClientVisible="False">
+    <dx:ASPxTextBox ID="PRH_Status" ClientInstanceName="PRH_Status" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
     </dx:ASPxTextBox> 
-    <dx:ASPxTextBox ID="PRH_PRnumber" ClientInstanceName="PRH_PRnumber" ClientEnabled="false" runat="server" Width="170px" ClientVisible="False">
+    <dx:ASPxTextBox ID="PRH_PRnumber" ClientInstanceName="PRH_PRnumber" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
     </dx:ASPxTextBox> 
         </dx:PanelContent>
 </PanelCollection>
