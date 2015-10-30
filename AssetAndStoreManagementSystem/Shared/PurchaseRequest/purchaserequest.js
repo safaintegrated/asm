@@ -306,7 +306,7 @@ function Toolbar_PopupPr_ItemClick(s, e) {
     }
 }
 
-function Toolbar_SimpanClicked() {
+function Toolbar_ApproveClicked() {
     //TODO: add validation before proceed with save
     LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
     LoadingPanel.Show();

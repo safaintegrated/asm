@@ -31,3 +31,10 @@ D:\Programming\AssetAndStoreManagementSystem\SAGApumper\bin\Debug\Core.dll
 D:\Programming\AssetAndStoreManagementSystem\SAGApumper\obj\Debug\SAGApumper.csprojResolveAssemblyReference.cache
 D:\Programming\AssetAndStoreManagementSystem\SAGApumper\obj\Debug\SAGApumper.exe
 D:\Programming\AssetAndStoreManagementSystem\SAGApumper\obj\Debug\SAGApumper.pdb
+D:\github\asm\SAGApumper\bin\Debug\SAGApumper.exe.config
+D:\github\asm\SAGApumper\bin\Debug\SAGApumper.exe
+D:\github\asm\SAGApumper\bin\Debug\SAGApumper.pdb
+D:\github\asm\SAGApumper\bin\Debug\Core.dll
+D:\github\asm\SAGApumper\obj\Debug\SAGApumper.exe
+D:\github\asm\SAGApumper\obj\Debug\SAGApumper.pdb
+D:\github\asm\SAGApumper\obj\Debug\SAGApumper.csprojResolveAssemblyReference.cache

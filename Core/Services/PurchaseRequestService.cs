@@ -30,5 +30,25 @@ namespace Core.Services
             return pr;
         }
 
+
+        public PurchaseRequest ApprovedPr(PurchaseRequest pr, string userName)
+        {
+            //pr.Status;
+
+            Workflow wf = new Workflow
+            {
+                DateTime = DateTime.Now,
+                ProcessTypeEnum = ProcessTypeEnum.PurchaseRequest,
+                ProcessStateEnum = Data.Entity.ProcessStateEnum.Approved,
+                UserName = userName,
+                //FullName = pr.RequestorName,
+                Description = "",
+                ProcessId = pr.Id,
+                //ProcessState = Data.Models.ProcessStateModel.FindByType(Data.ProcessStateType.New),
+            };
+            Data.Models.WorkflowModel.Add(wf, userName);
+
+            return pr;
+        }
     }
 }

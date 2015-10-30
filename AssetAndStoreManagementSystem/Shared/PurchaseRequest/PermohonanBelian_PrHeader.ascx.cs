@@ -14,6 +14,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
     public partial class PermohonanBelian_PrHeader : System.Web.UI.UserControl
     {
         Core.Services.PurchaseRequestService _prSvc = new Core.Services.PurchaseRequestService();
+        Data.Entity.PurchaseRequest _pr;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -44,6 +45,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 return;
             }
 
+            try
+            {
+                _prSvc.ApprovedPr(_pr, ticket.Name);
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         void NewMode()
@@ -144,8 +152,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnProcessId"] = pr.ProcessId;
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnRevNumber"] = pr.RevisionNumber.ToString();
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpReturnPurchaseRequestId"] = pr.Id.ToString();
-
                     cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = DbErr;
+                    _pr = pr;
                 }
                 catch (Exception err)
                 { cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = err.Message; }
