@@ -46,7 +46,7 @@
                                             <dx:LayoutItem Caption="Pilih Aset">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
-                                                        <dx:ASPxGridLookup ID="Form_PermohonanBelian_LineItem_NewAsset_E3" runat="server" AutoGenerateColumns="False" DataSourceID="odsAssetRegistration">
+                                                        <dx:ASPxGridLookup ID="glAssetRegistration" runat="server" AutoGenerateColumns="False" DataSourceID="odsAssetRegistration" ClientInstanceName="glAssetRegistration" KeyFieldName="Id" Width="500px">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
                                                             </GridViewProperties>
@@ -148,6 +148,20 @@
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer7" runat="server">
                                                         <dx:ASPxTextBox ID="NewAsset_PRI_Desc" runat="server" ClientInstanceName="NewAsset_PRI_Desc" EnableClientSideAPI="True" Width="100%">
                                                         </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="txtNewPrItemRevision" runat="server" ClientInstanceName="txtNewPrItemRevision" EnableClientSideAPI="True" Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="txtNewPrItemProcessId" runat="server" ClientInstanceName="txtNewPrItemProcessId" EnableClientSideAPI="True" OnTextChanged="NewAsset_PRI_ProcessId_TextChanged" Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="txtNewPrItemPrId" runat="server" ClientInstanceName="txtNewPrItemPrId" EnableClientSideAPI="True"  Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="txtNewPrItemPrItemId" runat="server" ClientInstanceName="txtNewPrItemPrItemId" EnableClientSideAPI="True"  Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="NewAsset_PRI_ItemNumber" runat="server" ClientInstanceName="NewAsset_PRI_ItemNumber" EnableClientSideAPI="True" Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="NewAsset_TempDeleteComponent" runat="server" ClientInstanceName="NewAsset_TempDeleteComponent" EnableClientSideAPI="True" OnTextChanged="NewAsset_TempDeleteComponent_TextChanged" Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="txtPurchaseRequestId" runat="server" ClientInstanceName="NewAsset_TempDeleteComponent" EnableClientSideAPI="True" OnTextChanged="txtPurchaseRequestId_TextChanged" Width="170px">
+                                                        </dx:ASPxTextBox>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
@@ -164,7 +178,7 @@
                                             <dx:LayoutItem Caption="Kategori">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer9" runat="server">
-                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_CatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_CatId" DataSourceID="odsCategory">
+                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_CatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_CatId" DataSourceID="odsCategory" KeyFieldName="Id">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
                                                             </GridViewProperties>
@@ -192,7 +206,7 @@
                                             <dx:LayoutItem Caption="Sub-Kategori" Width="20%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer10" runat="server">
-                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_SubCatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_SubCatId" DataSourceID="odsSubCat" EnableClientSideAPI="True" TextFormatString="{1} - ({2})" Width="100%">
+                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_SubCatId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_SubCatId" DataSourceID="odsSubCat" EnableClientSideAPI="True" TextFormatString="{1} - ({2})" Width="100%" KeyFieldName="Id">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
                                                             </GridViewProperties>
@@ -233,18 +247,13 @@
 }" />
                                                         </dx:ASPxGridLookup>
                                                         <asp:ObjectDataSource ID="odsSubCat" runat="server" SelectMethod="FindAll" TypeName="Data.Models.SubCategoryModel"></asp:ObjectDataSource>
-                                                        <asp:SqlDataSource ID="SubCatDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" OnSelecting="SubCatDs_Selecting" SelectCommand="SELECT [SubCatId], [SubCatName], [SubCatGLAsset] FROM [SubCategory] WHERE ([CatId] = @CatId) ORDER BY [SubCatName], [SubCatGLAsset]">
-                                                            <SelectParameters>
-                                                                <asp:Parameter DefaultValue="1" Name="CatId" Type="Int32" />
-                                                            </SelectParameters>
-                                                        </asp:SqlDataSource>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Jenis" Width="20%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer11" runat="server">
-                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_TypeId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_TypeId" DataSourceID="odsTypes" EnableClientSideAPI="True" Width="100%">
+                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_TypeId" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_TypeId" DataSourceID="odsTypes" EnableClientSideAPI="True" Width="100%" KeyFieldName="Id">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
                                                             </GridViewProperties>
@@ -279,23 +288,37 @@
 }" />
                                                         </dx:ASPxGridLookup>
                                                         <asp:ObjectDataSource ID="odsTypes" runat="server" SelectMethod="FindAll" TypeName="Data.Models.AssetTypeModel"></asp:ObjectDataSource>
-                                                        <asp:SqlDataSource ID="TypeDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_MasterConnectionString %>" SelectCommand="SELECT [T_Id], [T_Desc] FROM [AssetStockType] WHERE (([T_CatId] = @T_CatId) AND ([T_SubCatId] = @T_SubCatId)) ORDER BY [T_Desc]">
-                                                            <SelectParameters>
-                                                                <asp:Parameter Name="T_CatId" Type="Int32" />
-                                                                <asp:Parameter Name="T_SubCatId" Type="Int32" />
-                                                            </SelectParameters>
-                                                        </asp:SqlDataSource>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
                                             <dx:LayoutItem Caption="Kod GST" Width="20%">
                                                 <LayoutItemNestedControlCollection>
                                                     <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer12" runat="server">
-                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_TaxCode" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_TaxCode" EnableClientSideAPI="True" TextFormatString="{1} ({3} %)" Width="100%">
+                                                        <dx:ASPxGridLookup ID="NewAsset_PRI_TaxCode" runat="server" AutoGenerateColumns="False" ClientInstanceName="NewAsset_PRI_TaxCode" EnableClientSideAPI="True" TextFormatString="{1} ({3} %)" Width="100%" DataSourceID="odsTaxCode" KeyFieldName="Id">
                                                             <GridViewProperties>
                                                                 <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
                                                                 <Settings ShowFilterRow="True" />
                                                             </GridViewProperties>
+                                                            <Columns>
+                                                                <dx:GridViewDataTextColumn FieldName="Company" ShowInCustomizationForm="True" VisibleIndex="0">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="Code" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="2">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="Percentage" ShowInCustomizationForm="True" VisibleIndex="3">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="GlCode" ShowInCustomizationForm="True" VisibleIndex="4">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="5">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="6">
+                                                                </dx:GridViewDataCheckColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="7">
+                                                                </dx:GridViewDataTextColumn>
+                                                                <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="8">
+                                                                </dx:GridViewDataTextColumn>
+                                                            </Columns>
                                                             <GridViewStyles>
                                                                 <AlternatingRow Enabled="True">
                                                                 </AlternatingRow>
@@ -307,23 +330,6 @@
 }" />
                                                         </dx:ASPxGridLookup>
                                                         <asp:ObjectDataSource ID="odsTaxCode" runat="server" SelectMethod="FindAll" TypeName="Data.Models.TaxCodeSagaModel"></asp:ObjectDataSource>
-                                                        <asp:SqlDataSource ID="PRI_TaxCodeDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_SAGAConnectionString %>" OnSelecting="PRI_TaxCodeDs_Selecting" SelectCommand="SP_UT_Taxtypeline" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
-                                                    </dx:LayoutItemNestedControlContainer>
-                                                </LayoutItemNestedControlCollection>
-                                            </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="Tarikh Permohonan">
-                                                <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer runat="server">
-                                                        <dx:ASPxDateEdit ID="Form_PermohonanBelian_LineItem_NewAsset_E1" runat="server">
-                                                        </dx:ASPxDateEdit>
-                                                    </dx:LayoutItemNestedControlContainer>
-                                                </LayoutItemNestedControlCollection>
-                                            </dx:LayoutItem>
-                                            <dx:LayoutItem Caption="Tarikh Bekalan">
-                                                <LayoutItemNestedControlCollection>
-                                                    <dx:LayoutItemNestedControlContainer runat="server">
-                                                        <dx:ASPxDateEdit ID="Form_PermohonanBelian_LineItem_NewAsset_E2" runat="server">
-                                                        </dx:ASPxDateEdit>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>
@@ -620,24 +626,6 @@
         </dx:PopupControlContentControl>
 </ContentCollection>
 </dx:ASPxPopupControl>
-
-
-<dx:ASPxTextBox ID="NewAsset_PRI_ProcessId" runat="server" ClientInstanceName="NewAsset_PRI_ProcessId" EnableClientSideAPI="True" Width="170px" ClientVisible="False">
-</dx:ASPxTextBox>
-<dx:ASPxTextBox ID="NewAsset_PRI_ItemNumber" runat="server" ClientInstanceName="NewAsset_PRI_ItemNumber" EnableClientSideAPI="True" Width="170px" ClientVisible="False">
-</dx:ASPxTextBox>
-<dx:ASPxTextBox ID="NewAsset_PRI_Revision" runat="server" ClientInstanceName="NewAsset_PRI_Revision" EnableClientSideAPI="True" Width="170px" ClientVisible="False">
-</dx:ASPxTextBox>
-
-
-
-<dx:ASPxTextBox ID="NewAsset_TempDeleteComponent" runat="server" ClientInstanceName="NewAsset_TempDeleteComponent" EnableClientSideAPI="True" Width="170px" ClientVisible="False">
-</dx:ASPxTextBox>
-
-
-
-<dx:ASPxTextBox ID="txtPurchaseRequestId" runat="server" ClientInstanceName="NewAsset_TempDeleteComponent" EnableClientSideAPI="True" Width="170px" ClientVisible="False" OnTextChanged="txtPurchaseRequestId_TextChanged">
-</dx:ASPxTextBox>
 
 
 <dx:ASPxPopupControl ID="NewAsset_DeleteCompConfirm" runat="server" ClientInstanceName="NewAsset_DeleteCompConfirm" CloseAction="None" CloseAnimationType="Fade" HeaderText="Notifikasi Sistem" PopupAnimationType="Fade" ShowCloseButton="False" Width="400px" EnableClientSideAPI="True" ShowFooter="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" Modal="True">

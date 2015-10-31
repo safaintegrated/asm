@@ -3,8 +3,8 @@
 }
 
 function OpenPurchaseRequest(values) {
-    alert(values);
     PRH_ProcessId.SetText(values.toString());
+    txtNewPrItemPrId.SetText(values.toString());
     //PRH_Revision.SetText(r.toString());
     LoadingPanel.SetText('Sistem sedang membuka maklumat permohonan belian yang dipilih.  Sila tunggu sebentar..');
     LoadingPanel.Show();
@@ -41,7 +41,7 @@ function cbp_FormNextItemNumber_EndCallback(s, e) {
     //NewAssetMode(s.cpNextItemNumber.toString());
 
     switch (s.cpPurchaseType.toString()) {
-        case "ASSET_BAHARU": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Aset Baharu
+        case "NEW_ASSET": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Aset Baharu
         case "NEW_MAINTENANCE": NewMaintenanceMode(s.cpNextItemNumber.toString()); break;   //Penyelenggaraan
         case "NEW_SPARE": NewSparePartMode(s.cpNextItemNumber.toString()); break;   //Alat Ganti
         case "NEW_ADDTIONAL": NewAdditionalMode(s.cpNextItemNumber.toString()); break;   //Tambahan
@@ -101,8 +101,8 @@ function NewStockMode(num) {
 }
 
 function EnableDisableItemForm(EnableDisable) {
-    CbPurchaseType.SetEnabled(EnableDisable);
-    btnSelectPurchaseType.SetEnabled(EnableDisable);
+    //CbPurchaseType.SetEnabled(EnableDisable);
+    //btnSelectPurchaseType.SetEnabled(EnableDisable);
 }
 
 function NewAsset_GLAC_Account_ValueChanged(s, e) {

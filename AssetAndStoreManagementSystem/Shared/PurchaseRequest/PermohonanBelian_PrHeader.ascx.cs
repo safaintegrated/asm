@@ -137,6 +137,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     ProcurementMethodId = PRH_ProcurementMethodId.Value.ToString(),
                     ProcurementTypeId = PRH_ProcurementITypeId.Value.ToString(),
                     SupplierId = PRH_SupplierCode.Value.ToString(),
+                    RequestDate = deRequestDate.Date,
+                    RequiredDate = deRequriredDate.Date
                     
                 };
 
@@ -245,8 +247,11 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 PRH_ProcurementMethodId.Value = pr.ProcurementMethodId;
                 PRH_ProcurementITypeId.Value = pr.ProcurementTypeId;
                 PRH_ProcurementCatId.Value = pr.ProcurementCategoryId;
+                PRH_DeliveryInstruction.Text = pr.Instruction;
                 deRequestDate.Value = pr.RequestDate;
                 deRequriredDate.Value = pr.RequiredDate;
+
+
 
                 Data.Entity.Employee e = Data.Models.EmployeeModel.FindByUserId(pr.RequestorUserName);
                 if (pr == null)

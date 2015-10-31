@@ -95,7 +95,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 PopulateTVP(ref Dt);
                 FormComponentTVP(ref Dtc);
                 PopulateComponentTVP(ref Dtc);
-                cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = PermohonanBelianMethods.SP_PR_Items_NewAsset_SaveDelete(NewAsset_PRI_ProcessId.Text, NewAsset_PRI_ItemNumber.Text, NewAsset_PRI_Revision.Text, ref Dt, ref Dtc); ;
+                cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = PermohonanBelianMethods.SP_PR_Items_NewAsset_SaveDelete( txtNewPrItemProcessId.Text, NewAsset_PRI_ItemNumber.Text, txtNewPrItemRevision.Text, ref Dt, ref Dtc); ;
             }
             catch (Exception err)
             { cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = err.Message; }
@@ -113,8 +113,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 PopulateComponentTVP(ref Dt);
 
                 DataRow Dr = Dt.NewRow();
-                Dr["PRIC_ProcessId"] = NewAsset_PRI_ProcessId.Text;
-                Dr["PRIC_Revision"] = Convert.ToInt32(NewAsset_PRI_Revision.Text);
+                Dr["PRIC_ProcessId"] = txtNewPrItemProcessId.Text;
+                Dr["PRIC_Revision"] = Convert.ToInt32( txtNewPrItemRevision.Text);
                 Dr["PRIC_ItemNumber"] = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
                 Dr["PRIC_ComponentNumber"] = UtilityMethods.FormNextSortingId(ref Dt, "PRIC_ComponentNumber");
                 Dr["PRIC_Desc"] = DBNull.Value;
@@ -260,7 +260,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
         void PopulateTVP(ref DataTable Dt)
         {
             DataRow Dr = Dt.NewRow();
-            Dr["PRI_ProcessId"] = NewAsset_PRI_ProcessId.Text;
+            Dr["PRI_ProcessId"] = txtNewPrItemProcessId.Text;
             Dr["PRI_ItemNumber"] = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
             Dr["PRI_PurchaseType"] = 1;
             Dr["PRI_ParentId"] = DBNull.Value;
@@ -327,7 +327,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             //    Dr["PRI_GLCodeDesc"] = DBNull.Value;
             //}
 
-            Dr["PRI_Revision"] = Convert.ToInt32(NewAsset_PRI_Revision.Text);
+            Dr["PRI_Revision"] = Convert.ToInt32(txtNewPrItemRevision.Text);
             Dt.Rows.Add(Dr);
             Dt.AcceptChanges();
         }
@@ -690,8 +690,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             //else
             //    Dr["PRPROJDIS_RowId"] = Convert.ToInt32(NewAsset_PCAC_RowId.Text);
 
-            //Dr["PRPROJDIS_ProcessId"] = NewAsset_PRI_ProcessId.Text;
-            //Dr["PRPROJDIS_Rev"] = Convert.ToInt32(NewAsset_PRI_Revision.Text);
+            //Dr["PRPROJDIS_ProcessId"] = txtNewPrItemProcessId.Text;
+            //Dr["PRPROJDIS_Rev"] = Convert.ToInt32(txtNewPrItemRevision.Text);
             //Dr["PRPROJDIS_ItemNumber"] = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
             //Dr["PRPROJDIS_ProjectCode"] = NewAsset_PCAC_Account.Value.ToString();
             //Dr["PRPROJDIS_GLCode"] = NewAsset_PCAC_Account.GridView.GetRowValues(NewAsset_PCAC_Account.GridView.FocusedRowIndex, "pcac_glac").ToString();
@@ -747,13 +747,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
         protected void NewAsset_GLDistGridDs_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            if (NewAsset_PRI_ProcessId.Text == "" || NewAsset_PRI_ItemNumber.Text == "" || NewAsset_PRI_Revision.Text == "")
+            if (txtNewPrItemProcessId.Text == "" || NewAsset_PRI_ItemNumber.Text == "" || txtNewPrItemRevision.Text == "")
                 e.Cancel = true;
             else
             {
-                e.Command.Parameters["@PRGLDIS_ProcessId"].Value = NewAsset_PRI_ProcessId.Text;
+                e.Command.Parameters["@PRGLDIS_ProcessId"].Value = txtNewPrItemProcessId.Text;
                 e.Command.Parameters["@PRGLDIS_ItemNumber"].Value = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
-                e.Command.Parameters["@PRGLDIS_Rev"].Value = Convert.ToInt32(NewAsset_PRI_Revision.Text);
+                e.Command.Parameters["@PRGLDIS_Rev"].Value = Convert.ToInt32(txtNewPrItemRevision.Text);
             }
         }
 
@@ -802,8 +802,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             else
                 Dr["PRPROJDIS_RowId"] = Convert.ToInt32(NewAsset_PCAC_RowId.Text);
 
-            Dr["PRPROJDIS_ProcessId"] = NewAsset_PRI_ProcessId.Text;
-            Dr["PRPROJDIS_Rev"] = Convert.ToInt32(NewAsset_PRI_Revision.Text);
+            Dr["PRPROJDIS_ProcessId"] = txtNewPrItemProcessId.Text;
+            Dr["PRPROJDIS_Rev"] = Convert.ToInt32(txtNewPrItemRevision.Text);
             Dr["PRPROJDIS_ItemNumber"] = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
             Dr["PRPROJDIS_ProjectCode"] = NewAsset_PCAC_Account.Value.ToString();
             Dr["PRPROJDIS_GLCode"] = NewAsset_PCAC_Account.GridView.GetRowValues(NewAsset_PCAC_Account.GridView.FocusedRowIndex, "pcac_glac").ToString();
@@ -822,8 +822,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             else
                 Dr["PRGLDIS_RowId"] = Convert.ToInt32(NewAsset_GLAC_RowId.Text);
 
-            Dr["PRGLDIS_ProcessId"] = NewAsset_PRI_ProcessId.Text;
-            Dr["PRGLDIS_Rev"] = Convert.ToInt32(NewAsset_PRI_Revision.Text);
+            Dr["PRGLDIS_ProcessId"] = txtNewPrItemProcessId.Text;
+            Dr["PRGLDIS_Rev"] = Convert.ToInt32(txtNewPrItemRevision.Text);
             Dr["PRGLDIS_Rev"] = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
             Dr["PRGLDIS_ProjectCode"] = DBNull.Value;
             Dr["PRGLDIS_GLCode"] = NewAsset_GLAC_Account.Value.ToString();
@@ -835,13 +835,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
         protected void NewAsset_ProjectDistributionGridDs_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            if (NewAsset_PRI_ProcessId.Text == "" || NewAsset_PRI_ItemNumber.Text == "" || NewAsset_PRI_Revision.Text == "")
+            if (txtNewPrItemProcessId.Text == "" || NewAsset_PRI_ItemNumber.Text == "" || txtNewPrItemRevision.Text == "")
                 e.Cancel = true;
             else
             {
-                e.Command.Parameters["@PRPROJDIS_ProcessId"].Value = NewAsset_PRI_ProcessId.Text;
+                e.Command.Parameters["@PRPROJDIS_ProcessId"].Value = txtNewPrItemProcessId.Text;
                 e.Command.Parameters["@PRPROJDIS_ItemNumber"].Value = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
-                e.Command.Parameters["@PRPROJDIS_Rev"].Value = Convert.ToInt32(NewAsset_PRI_Revision.Text);
+                e.Command.Parameters["@PRPROJDIS_Rev"].Value = Convert.ToInt32(txtNewPrItemRevision.Text);
             }
         }
 
@@ -893,6 +893,16 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
         }
 
         protected void txtPurchaseRequestId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void NewAsset_PRI_ProcessId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void NewAsset_TempDeleteComponent_TextChanged(object sender, EventArgs e)
         {
 
         }

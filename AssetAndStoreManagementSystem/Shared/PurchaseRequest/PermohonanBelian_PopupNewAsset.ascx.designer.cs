@@ -76,13 +76,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
-        /// Form_PermohonanBelian_LineItem_NewAsset_E3 control.
+        /// glAssetRegistration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup Form_PermohonanBelian_LineItem_NewAsset_E3;
+        protected global::DevExpress.Web.ASPxGridLookup glAssetRegistration;
         
         /// <summary>
         /// odsAssetRegistration control.
@@ -110,6 +110,69 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox NewAsset_PRI_Desc;
+        
+        /// <summary>
+        /// txtNewPrItemRevision control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtNewPrItemRevision;
+        
+        /// <summary>
+        /// txtNewPrItemProcessId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtNewPrItemProcessId;
+        
+        /// <summary>
+        /// txtNewPrItemPrId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtNewPrItemPrId;
+        
+        /// <summary>
+        /// txtNewPrItemPrItemId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtNewPrItemPrItemId;
+        
+        /// <summary>
+        /// NewAsset_PRI_ItemNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox NewAsset_PRI_ItemNumber;
+        
+        /// <summary>
+        /// NewAsset_TempDeleteComponent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox NewAsset_TempDeleteComponent;
+        
+        /// <summary>
+        /// txtPurchaseRequestId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtPurchaseRequestId;
         
         /// <summary>
         /// LayoutItemNestedControlContainer8 control.
@@ -202,15 +265,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsSubCat;
         
         /// <summary>
-        /// SubCatDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SubCatDs;
-        
-        /// <summary>
         /// LayoutItemNestedControlContainer11 control.
         /// </summary>
         /// <remarks>
@@ -238,15 +292,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::System.Web.UI.WebControls.ObjectDataSource odsTypes;
         
         /// <summary>
-        /// TypeDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource TypeDs;
-        
-        /// <summary>
         /// LayoutItemNestedControlContainer12 control.
         /// </summary>
         /// <remarks>
@@ -272,33 +317,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ObjectDataSource odsTaxCode;
-        
-        /// <summary>
-        /// PRI_TaxCodeDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource PRI_TaxCodeDs;
-        
-        /// <summary>
-        /// Form_PermohonanBelian_LineItem_NewAsset_E1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit Form_PermohonanBelian_LineItem_NewAsset_E1;
-        
-        /// <summary>
-        /// Form_PermohonanBelian_LineItem_NewAsset_E2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit Form_PermohonanBelian_LineItem_NewAsset_E2;
         
         /// <summary>
         /// LayoutItemNestedControlContainer13 control.
@@ -461,51 +479,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource NewAsset_GLDistGridDs;
-        
-        /// <summary>
-        /// NewAsset_PRI_ProcessId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox NewAsset_PRI_ProcessId;
-        
-        /// <summary>
-        /// NewAsset_PRI_ItemNumber control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox NewAsset_PRI_ItemNumber;
-        
-        /// <summary>
-        /// NewAsset_PRI_Revision control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox NewAsset_PRI_Revision;
-        
-        /// <summary>
-        /// NewAsset_TempDeleteComponent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox NewAsset_TempDeleteComponent;
-        
-        /// <summary>
-        /// txtPurchaseRequestId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox txtPurchaseRequestId;
         
         /// <summary>
         /// NewAsset_DeleteCompConfirm control.

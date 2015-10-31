@@ -14,11 +14,37 @@ namespace Data
     {
         public List<Supplier> _suppliers;
         public List<Employee> _employees;
+        public List<ProcurementCategory> _procumentCategory;
+        public List<ProcurementMethod> _procumentMethod;
+        public List<ProcurementType> _procumrentType;
 
         public AsmContextInitializer()
         {
             InitalizeSupplier();
             InitializeEmployees();
+            InitializeProcurement();
+        }
+
+        private void InitializeProcurement()
+        {
+            _procumrentType = new List<ProcurementType>();
+            _procumrentType.Add(new ProcurementType { Code = "1", Name = "Pesanan Belian" });
+            _procumrentType.Add(new ProcurementType { Code = "2", Name = "Indent" });
+            _procumrentType.Add(new ProcurementType { Code = "3", Name = "Kontrak" });
+
+            _procumentCategory = new List<ProcurementCategory>();
+            _procumentCategory.Add(new ProcurementCategory { Code = "1", Name = "Bekalan" });
+            _procumentCategory.Add(new ProcurementCategory { Code = "2", Name = "Perkhidmatan" });
+            _procumentCategory.Add(new ProcurementCategory { Code = "3", Name = "Kerja" });
+
+            _procumentMethod = new List<ProcurementMethod>();
+            _procumentMethod.Add(new ProcurementMethod { Code = "1", Name = "Rundingan Terus" });
+            _procumentMethod.Add(new ProcurementMethod { Code = "2", Name = "Pembelian Terus" });
+            _procumentMethod.Add(new ProcurementMethod { Code = "3", Name = "Sebutharga A" });
+            _procumentMethod.Add(new ProcurementMethod { Code = "4", Name = "Sebutharga B" });
+            _procumentMethod.Add(new ProcurementMethod { Code = "5", Name = "Tender A" });
+            _procumentMethod.Add(new ProcurementMethod { Code = "6", Name = "Tender B" });
+        
         }
 
         private void InitializeEmployees()
@@ -40,30 +66,18 @@ namespace Data
 
         protected override void Seed(AsmContext context)
         {
-            context.RequestorList.Add(new Requestor { Name = "BENDAHARI", Code = "BENDAHARI", Description = "BENDAHARI" });
-            context.RequestorList.Add(new Requestor { Name = "DEKAN FSTP", Code = "DEKAN FSTP", Description = "DEKAN FSTP" });
-            context.RequestorList.Add(new Requestor { Name = "DEKAN PERUBATAN", Code = "DEKAN PERUBATAN", Description = "DEKAN PERUBATAN" });
+            //context.RequestorList.Add(new Requestor { Name = "BENDAHARI", Code = "BENDAHARI", Description = "BENDAHARI" });
+            //context.RequestorList.Add(new Requestor { Name = "DEKAN FSTP", Code = "DEKAN FSTP", Description = "DEKAN FSTP" });
+            //context.RequestorList.Add(new Requestor { Name = "DEKAN PERUBATAN", Code = "DEKAN PERUBATAN", Description = "DEKAN PERUBATAN" });
 
-            context.UtemInfos.Add(new UtemInfo { Name = "DKN FKJ", Description = "Dekan Fakulti Kejuruteraan", Code = "10" });
-            context.UtemInfos.Add(new UtemInfo { Name = "TNC HEAA", Description = "Bahagian Hal Ehwal Akademik & Antarabangsa", Code = "05" });
+            //context.UtemInfos.Add(new UtemInfo { Name = "DKN FKJ", Description = "Dekan Fakulti Kejuruteraan", Code = "10" });
+            //context.UtemInfos.Add(new UtemInfo { Name = "TNC HEAA", Description = "Bahagian Hal Ehwal Akademik & Antarabangsa", Code = "05" });
 
-            context.ProcurementTypes.Add(new ProcurementType { Code = "1", Name = "Pesanan Belian" });
-            context.ProcurementTypes.Add(new ProcurementType { Code = "2", Name = "Indent" });
-            context.ProcurementTypes.Add(new ProcurementType { Code = "3", Name = "Kontrak" });
+ 
+            //context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST1", Name = "STOR 1", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
+            //context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST2", Name = "STOR 2", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
 
-            context.ProcurementCategories.Add(new ProcurementCategory { Code = "1", Name = "Bekalan" });
-            context.ProcurementCategories.Add(new ProcurementCategory { Code = "2", Name = "Perkhidmatan" });
-            context.ProcurementCategories.Add(new ProcurementCategory { Code = "3", Name = "Kerja" });
-
-            context.ProcurementMethods.Add(new ProcurementMethod { Code = "1", Name = "Rundingan Terus" });
-            context.ProcurementMethods.Add(new ProcurementMethod { Code = "2", Name = "Pembelian Terus" });
-            context.ProcurementMethods.Add(new ProcurementMethod { Code = "3", Name = "Sebutharga A" });
-            context.ProcurementMethods.Add(new ProcurementMethod { Code = "4", Name = "Sebutharga B" });
-            context.ProcurementMethods.Add(new ProcurementMethod { Code = "5", Name = "Tender A" });
-            context.ProcurementMethods.Add(new ProcurementMethod { Code = "6", Name = "Tender B" });
-
-            context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST1", Name = "STOR 1", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
-            context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST2", Name = "STOR 2", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
+            InsertProcurement(context);
 
             InsertDepartments(context);
 
@@ -93,6 +107,16 @@ namespace Data
             base.Seed(context);
         }
 
+        private void InsertProcurement(AsmContext context)
+        {
+            foreach (var p in _procumentCategory)
+                context.ProcurementCategories.Add(p);
+            foreach (var p in _procumentMethod)
+                context.ProcurementMethods.Add(p);
+            foreach (var p in _procumrentType)
+                context.ProcurementTypes.Add(p);
+        }
+
         private void InsertSampleAssetRegistration(AsmContext context)
         {
             AssetRegistration a = new AssetRegistration
@@ -119,8 +143,11 @@ namespace Data
                 //SupplierName = "Ajis Supplier",
                 Requestor = e,
                 Status = ProcessStatus.New,
-                Supplier = s,
-                SupplierId = s.Id
+                //Supplier = s,
+                SupplierId = s.Id,
+                ProcurementCategoryId = _procumentCategory.First().Id,
+                ProcurementMethodId = _procumentMethod.First().Id,
+                ProcurementTypeId = _procumrentType.First().Id
             };
             context.PurchaseRequests.Add(pr);
         }
