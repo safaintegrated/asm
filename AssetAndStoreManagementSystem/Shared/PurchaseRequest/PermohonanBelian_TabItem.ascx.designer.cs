@@ -13,6 +13,15 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
     public partial class PermohonanBelian_TabItem {
         
         /// <summary>
+        /// cbpRefreshList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel cbpRefreshList;
+        
+        /// <summary>
         /// ASPxFormLayout1 control.
         /// </summary>
         /// <remarks>
@@ -94,22 +103,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxGridView TabItemGrid;
         
         /// <summary>
-        /// odsPurchaseItem control.
+        /// odPrItem control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource odsPurchaseItem;
-        
-        /// <summary>
-        /// PrItemDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource PrItemDs;
+        protected global::System.Web.UI.WebControls.ObjectDataSource odPrItem;
         
         /// <summary>
         /// TabItem_ProcessId control.
@@ -130,13 +130,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxTextBox TabItem_RevNum;
         
         /// <summary>
-        /// TabItem_RevNum0 control.
+        /// txtPrItemListPrId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox TabItem_RevNum0;
+        protected global::DevExpress.Web.ASPxTextBox txtPrItemListPrId;
         
         /// <summary>
         /// cbp_FormNextItemNumber control.

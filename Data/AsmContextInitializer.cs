@@ -17,12 +17,49 @@ namespace Data
         public List<ProcurementCategory> _procumentCategory;
         public List<ProcurementMethod> _procumentMethod;
         public List<ProcurementType> _procumrentType;
+        public List<PurchaseRequest> _purchaseRequest;
+        public List<PurchaseRequestItem> _purchaseRequestItem;
 
         public AsmContextInitializer()
         {
             InitalizeSupplier();
             InitializeEmployees();
             InitializeProcurement();
+            InitializePurchaseRequest();
+        }
+
+        private void InitializePurchaseRequest()
+        {
+            var s = _suppliers.First();
+            var e = _employees.First();
+            PurchaseRequest pr = new PurchaseRequest
+            {
+                PrNumber = "12345",
+                ReferenceNumber = DateTime.Now.ToString("yyMMdd-HHmmss"),
+                Description = "Membeli Komputer",
+                //SupplierName = "Ajis Supplier",
+                Requestor = e,
+                Status = ProcessStatus.New,
+                //Supplier = s,
+                SupplierId = s.Id,
+                ProcurementCategoryId = _procumentCategory.First().Id,
+                ProcurementMethodId = _procumentMethod.First().Id,
+                ProcurementTypeId = _procumrentType.First().Id
+            };
+            _purchaseRequest = new List<PurchaseRequest>();
+            _purchaseRequest.Add(pr);
+
+            PurchaseRequestItem pri = new PurchaseRequestItem
+            {
+                PurchaseRequestId = pr.Id,
+                Description = "Komputer",
+                Qty = 2,
+                PricePerUnit = 2000
+            };
+
+            _purchaseRequestItem = new List<PurchaseRequestItem>();
+            _purchaseRequestItem.Add(pri);
+
         }
 
         private void InitializeProcurement()
@@ -133,23 +170,28 @@ namespace Data
 
         private void InsertSamplePurchaseRequest(AsmContext context)
         {
-           var s = _suppliers.First();
-           var e = _employees.First();
-            PurchaseRequest pr = new PurchaseRequest
-            {
-                PrNumber = "12345",
-                ReferenceNumber = DateTime.Now.ToString("yyMMdd-HHmmss"),
-                Description = "Membeli Komputer",
-                //SupplierName = "Ajis Supplier",
-                Requestor = e,
-                Status = ProcessStatus.New,
-                //Supplier = s,
-                SupplierId = s.Id,
-                ProcurementCategoryId = _procumentCategory.First().Id,
-                ProcurementMethodId = _procumentMethod.First().Id,
-                ProcurementTypeId = _procumrentType.First().Id
-            };
-            context.PurchaseRequests.Add(pr);
+            foreach (var pr in _purchaseRequest)
+                context.PurchaseRequests.Add(pr);
+            foreach (var pri in _purchaseRequestItem)
+                context.PurchaseRequestItems.Add(pri);
+
+           //var s = _suppliers.First();
+           //var e = _employees.First();
+           // PurchaseRequest pr = new PurchaseRequest
+           // {
+           //     PrNumber = "12345",
+           //     ReferenceNumber = DateTime.Now.ToString("yyMMdd-HHmmss"),
+           //     Description = "Membeli Komputer",
+           //     //SupplierName = "Ajis Supplier",
+           //     Requestor = e,
+           //     Status = ProcessStatus.New,
+           //     //Supplier = s,
+           //     SupplierId = s.Id,
+           //     ProcurementCategoryId = _procumentCategory.First().Id,
+           //     ProcurementMethodId = _procumentMethod.First().Id,
+           //     ProcurementTypeId = _procumrentType.First().Id
+           // };
+           // context.PurchaseRequests.Add(pr);
         }
 
         private void InsertPtj(AsmContext context)

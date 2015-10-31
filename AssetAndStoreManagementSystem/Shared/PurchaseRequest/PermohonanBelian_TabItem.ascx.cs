@@ -35,5 +35,16 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             //cbp_FormNextItemNumber.JSProperties["cpNextItemNumber"] = 1;
 
         }
+
+        protected void TabItemGrid_CustomCallback1(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e)
+        {
+            TabItemGrid.DataBind();
+
+        }
+
+        protected void cbpRefreshList_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
+        {
+            TabItemGrid.DataBind();
+        }
     }
 }

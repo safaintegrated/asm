@@ -8,6 +8,11 @@
 
 
 
+<dx:ASPxCallbackPanel ID="cbpWorkFlowList" runat="server" ClientInstanceName="cbpWorkFlowList" OnCallback="cbpWorkFlowList_Callback" Width="200px">
+</dx:ASPxCallbackPanel>
+
+
+
 <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
     <Items>
         <dx:LayoutGroup Caption="Senarai Aliran Kerja Untuk Transaksi Ini" CssClass="FormGroupBoxStyle" Width="100%">
@@ -47,8 +52,6 @@
                                 </Styles>
                             </dx:ASPxGridView>
                             <asp:ObjectDataSource ID="odsWorkFlow" runat="server" SelectMethod="FindAll" TypeName="Data.Models.WorkflowModel"></asp:ObjectDataSource>
-                            <asp:SqlDataSource ID="WorkFlowDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" OnSelecting="WorkFlowDs_Selecting" SelectCommand="SELECT * FROM [PermohonanBelian_WorkflowDiary]">
-                            </asp:SqlDataSource>
                         </dx:LayoutItemNestedControlContainer>
                     </LayoutItemNestedControlCollection>
                 </dx:LayoutItem>

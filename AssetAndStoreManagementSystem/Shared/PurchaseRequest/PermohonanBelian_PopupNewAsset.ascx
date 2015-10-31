@@ -160,7 +160,9 @@
                                                         </dx:ASPxTextBox>
                                                         <dx:ASPxTextBox ID="NewAsset_TempDeleteComponent" runat="server" ClientInstanceName="NewAsset_TempDeleteComponent" EnableClientSideAPI="True" OnTextChanged="NewAsset_TempDeleteComponent_TextChanged" Width="170px">
                                                         </dx:ASPxTextBox>
-                                                        <dx:ASPxTextBox ID="txtPurchaseRequestId" runat="server" ClientInstanceName="NewAsset_TempDeleteComponent" EnableClientSideAPI="True" OnTextChanged="txtPurchaseRequestId_TextChanged" Width="170px">
+                                                        <dx:ASPxTextBox ID="txtPurchaseRequestId" runat="server" ClientInstanceName="txtPurchaseRequestId" EnableClientSideAPI="True" OnTextChanged="txtPurchaseRequestId_TextChanged" Width="170px">
+                                                        </dx:ASPxTextBox>
+                                                        <dx:ASPxTextBox ID="txtItemType" runat="server" ClientInstanceName="txtItemType" EnableClientSideAPI="True" OnTextChanged="txtPurchaseRequestId_TextChanged" Width="170px">
                                                         </dx:ASPxTextBox>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
@@ -329,7 +331,7 @@
 	NewAsset_PRI_TaxCode_ValueChanged(s, e);
 }" />
                                                         </dx:ASPxGridLookup>
-                                                        <asp:ObjectDataSource ID="odsTaxCode" runat="server" SelectMethod="FindAll" TypeName="Data.Models.TaxCodeSagaModel"></asp:ObjectDataSource>
+                                                        <asp:ObjectDataSource ID="odsTaxCode" runat="server" SelectMethod="FindAll" TypeName="Data.Models.TaxCodeSagaModel" OldValuesParameterFormatString="original_{0}"></asp:ObjectDataSource>
                                                     </dx:LayoutItemNestedControlContainer>
                                                 </LayoutItemNestedControlCollection>
                                             </dx:LayoutItem>

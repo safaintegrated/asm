@@ -4,7 +4,9 @@
 
 function OpenPurchaseRequest(values) {
     PRH_ProcessId.SetText(values.toString());
-    txtNewPrItemPrId.SetText(values.toString());
+    txtPurchaseRequestId.SetText(values.toString());
+    txtPrItemListPrId.SetText(values.toString());
+
     //PRH_Revision.SetText(r.toString());
     LoadingPanel.SetText('Sistem sedang membuka maklumat permohonan belian yang dipilih.  Sila tunggu sebentar..');
     LoadingPanel.Show();
@@ -13,13 +15,6 @@ function OpenPurchaseRequest(values) {
 }
 
 function btnSelectPurchaseType_Click(s, e) {
-    //alert(CbPurchaseType.GetText());
-
-    //if (CbPurchaseType.GetText() == '') {
-    //    popupMsg_Label.SetText('Sila pilih jenis pembelian terlebih dahulu.');
-    //    popupMsg.Show();
-    //}
-    //else {
     switch (CbPurchaseType.GetText()) {
         case "":
             popupMsg_Label.SetText('Sila pilih jenis pembelian terlebih dahulu.');
@@ -32,14 +27,10 @@ function btnSelectPurchaseType_Click(s, e) {
         case "Tambahan": cbp_FormNextItemNumber.PerformCallback('NEW_ADDTIONAL'); break;   //Tambahan
         case "Stok": cbp_FormNextItemNumber.PerformCallback('NEW_STOCK'); break;   //Stok
         case "Lain-lain": cbp_FormNextItemNumber.PerformCallback('NEW_OTHERS'); break;   //Lain-lain
-            //}
     }
 }
 
 function cbp_FormNextItemNumber_EndCallback(s, e) {
-    //alert(s.cpPurchaseType.toString());
-    //NewAssetMode(s.cpNextItemNumber.toString());
-
     switch (s.cpPurchaseType.toString()) {
         case "NEW_ASSET": NewAssetMode(s.cpNextItemNumber.toString()); break;   //Aset Baharu
         case "NEW_MAINTENANCE": NewMaintenanceMode(s.cpNextItemNumber.toString()); break;   //Penyelenggaraan
@@ -227,37 +218,38 @@ function NewAsset_PRI_SubCatId_ValueChanged(s, e) {
 
 function Toolbar_PermohonanBelian_LineItem_NewAsset_ItemClick(s, e) {
     switch (e.item.name) {
-        case "btnSave": Item_NewAssetSave(); break;
+        case "btnSave": SaveNewPrItem(); break;
         case "btnDelete": Item_NewAssetDelete(); break;
     }
 }
 
-function Item_NewAssetSave() {
-    if (NewAsset_PRI_Desc.GetText() == '') {
-        PopupMessageBox_Label.SetText('Keterangan belum diisi.<br>Sila semak dan cuba sekali lagi.');
-        PopupMessageBox.Show();
-    }
-    else {
-        LoadingPanel.SetText('sistem sedang menyimpan item aset baharu anda.  sila tunggu sebentar..');
-        LoadingPanel.Show();
-        cbp_LineItem_NewAsset.PerformCallback('SAVE');
-    }
+function SaveNewPrItem() {
+    LoadingPanel.SetText('sistem sedang menyimpan item aset baharu anda.  sila tunggu sebentar..');
+    LoadingPanel.Show();
+    cbp_LineItem_NewAsset.PerformCallback('SAVE');
+
+    //if (NewAsset_PRI_Desc.GetText() == '') {
+    //    PopupMessageBox_Label.SetText('Keterangan belum diisi.<br>Sila semak dan cuba sekali lagi.');
+    //    PopupMessageBox.Show();
+    //}
+    //else {
+    //    LoadingPanel.SetText('sistem sedang menyimpan item aset baharu anda.  sila tunggu sebentar..');
+    //    LoadingPanel.Show();
+    //    cbp_LineItem_NewAsset.PerformCallback('SAVE');
+    //}
 }
 
 function cbp_LineItem_NewAsset_EndCallback(s, e) {
 
     LoadingPanel.Hide();
-
     if (s.cpErrMsg.toString() != '') {
         PopupMessageBox_Label.SetText(s.cpErrMsg.toString());
         PopupMessageBox.Show();
         return;
     }
-    switch(s.cpMode.toString())
-    {
+    switch (s.cpMode.toString()) {
         case 'SAVE':
-            ItemGrid.PerformCallback();
-            GLDistribution_Grid.PerformCallback();
+            cbpRefreshList.PerformCallback();
             Popup_LineItem_NewAsset.Hide();
             break;
         default:
@@ -314,6 +306,7 @@ function Toolbar_PopupPr_ItemClick(s, e) {
         case 'btnSave': Toolbar_SimpanClicked(); break;
         case 'btnApprove': Toolbar_ApproveClicked(); break;
         case 'btnReject': break;
+        case 'btnSubmit': Toolbar_SubmitClicked(); break;
     }
 }
 
@@ -322,6 +315,13 @@ function Toolbar_ApproveClicked() {
     LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
     LoadingPanel.Show();
     cbp_PermohonanBelian_PrHeader.PerformCallback('APPROVED');
+}
+
+function Toolbar_SubmitClicked() {
+    //TODO: add validation before proceed with save
+    LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
+    LoadingPanel.Show();
+    cbp_PermohonanBelian_PrHeader.PerformCallback('SUBMITTED');
 }
 
 function Toolbar_SimpanClicked() {
@@ -389,6 +389,7 @@ function cbp_PermohonanBelian_PrHeader_EndCallback(s, e) {
         popupMsg.Show();
     }
     else {
+        cbpWorkFlowList.PerformCallback();
         if (s.cpMode.toString() == 'NEW') {
             //tab management
             PageControl_PopupPr.GetTab(1).SetVisible(false);  //hide item tab

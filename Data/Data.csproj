@@ -86,6 +86,7 @@
     <Compile Include="Entity\UtemInfo.cs" />
     <Compile Include="Entity\Workflow.cs" />
     <Compile Include="Enum\LoginStatus.cs" />
+    <Compile Include="Enum\PrItemType.cs" />
     <Compile Include="IDescribableEntity.cs" />
     <Compile Include="Entity\KenyataanJualanLelonganStokAlih.cs" />
     <Compile Include="Entity\KenyataanTawaranSebutharga.cs" />

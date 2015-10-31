@@ -32,5 +32,11 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             GridPRWorkflow.DataBind();
 
         }
+
+        protected void cbpWorkFlowList_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
+        {
+            GridPRWorkflow.DataBind();
+
+        }
     }
 }

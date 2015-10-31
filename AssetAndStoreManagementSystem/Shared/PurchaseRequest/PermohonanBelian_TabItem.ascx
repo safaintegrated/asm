@@ -4,6 +4,8 @@
 <script>
 
 </script>
+<dx:ASPxCallbackPanel ID="cbpRefreshList" runat="server" ClientInstanceName="cbpRefreshList" OnCallback="cbpRefreshList_Callback" Width="200px">
+</dx:ASPxCallbackPanel>
 <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%">
                                         <Items>
                                             <dx:LayoutGroup Caption="Item untuk Permohonan Belian Ini" ColCount="2" Width="100%">
@@ -33,51 +35,54 @@
                                                     <dx:LayoutItem ColSpan="2" ShowCaption="False">
                                                         <LayoutItemNestedControlCollection>
                                                             <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server">
-                                                                <dx:ASPxGridView ID="TabItemGrid" runat="server" ClientInstanceName="TabItemGrid" Width="100%" AutoGenerateColumns="False" DataSourceID="odsPurchaseItem">
+                                                                <dx:ASPxGridView ID="TabItemGrid"  runat="server" ClientInstanceName="TabItemGrid" Width="100%" AutoGenerateColumns="False" DataSourceID="odPrItem" OnCustomCallback="TabItemGrid_CustomCallback1">
+                                                                    <clientsideevents endcallback="function(s, e) {
+	s.Refresh();
+}" />
                                                                     <Columns>
-                                                                        <dx:GridViewDataTextColumn FieldName="PurchaseRequestId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="0">
+                                                                        <dx:GridViewDataTextColumn FieldName="PurchaseRequestId" ShowInCustomizationForm="True" VisibleIndex="0">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn Caption="Keterangan" FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="1">
+                                                                        <dx:GridViewDataTextColumn FieldName="Description" ShowInCustomizationForm="True" VisibleIndex="1">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="2">
+                                                                        <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementId" ShowInCustomizationForm="True" VisibleIndex="2">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="3">
+                                                                        <dx:GridViewDataTextColumn FieldName="UnitOfMeasurementName" ShowInCustomizationForm="True" VisibleIndex="3">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="CategoryId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="4">
+                                                                        <dx:GridViewDataTextColumn FieldName="CategoryId" ShowInCustomizationForm="True" VisibleIndex="4">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="CategoryName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="5">
+                                                                        <dx:GridViewDataTextColumn FieldName="CategoryName" ShowInCustomizationForm="True" VisibleIndex="5">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="SubCategoryId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="6">
+                                                                        <dx:GridViewDataTextColumn FieldName="SubCategoryId" ShowInCustomizationForm="True" VisibleIndex="6">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn Caption="Sub-Kategori" FieldName="SubCategoryName" ShowInCustomizationForm="True" VisibleIndex="7">
+                                                                        <dx:GridViewDataTextColumn FieldName="SubCategoryName" ShowInCustomizationForm="True" VisibleIndex="7">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="AssetTypeId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="8">
+                                                                        <dx:GridViewDataTextColumn FieldName="AssetTypeId" ShowInCustomizationForm="True" VisibleIndex="8">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="AssetTypeName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="9">
+                                                                        <dx:GridViewDataTextColumn FieldName="AssetTypeName" ShowInCustomizationForm="True" VisibleIndex="9">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="TaxCodeSagaId" ShowInCustomizationForm="True" Visible="False" VisibleIndex="10">
+                                                                        <dx:GridViewDataTextColumn FieldName="TaxCodeSagaId" ShowInCustomizationForm="True" VisibleIndex="10">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="TaxCodeSagaName" ShowInCustomizationForm="True" Visible="False" VisibleIndex="11">
+                                                                        <dx:GridViewDataTextColumn FieldName="TaxCodeSagaName" ShowInCustomizationForm="True" VisibleIndex="11">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn Caption="Kuantiti" FieldName="Qty" ShowInCustomizationForm="True" VisibleIndex="12">
+                                                                        <dx:GridViewDataTextColumn FieldName="Qty" ShowInCustomizationForm="True" VisibleIndex="12">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn Caption="Harga Seunit" FieldName="PricePerUnit" ShowInCustomizationForm="True" VisibleIndex="13">
+                                                                        <dx:GridViewDataTextColumn FieldName="PricePerUnit" ShowInCustomizationForm="True" VisibleIndex="13">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="TotalC" ShowInCustomizationForm="True" Visible="False" VisibleIndex="14">
+                                                                        <dx:GridViewDataTextColumn FieldName="TotalC" ShowInCustomizationForm="True" VisibleIndex="14">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="TotalD" ShowInCustomizationForm="True" Visible="False" VisibleIndex="15">
+                                                                        <dx:GridViewDataTextColumn FieldName="TotalD" ShowInCustomizationForm="True" VisibleIndex="15">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="TotalE" ShowInCustomizationForm="True" Visible="False" VisibleIndex="16">
+                                                                        <dx:GridViewDataTextColumn FieldName="TotalE" ShowInCustomizationForm="True" VisibleIndex="16">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn Caption="Sub-Total" FieldName="SubTotal" ShowInCustomizationForm="True" VisibleIndex="17">
+                                                                        <dx:GridViewDataTextColumn FieldName="SubTotal" ShowInCustomizationForm="True" VisibleIndex="17">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" Visible="False" VisibleIndex="18">
+                                                                        <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="18">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" Visible="False" VisibleIndex="19">
+                                                                        <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="19">
                                                                         </dx:GridViewDataCheckColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" Visible="False" VisibleIndex="20">
+                                                                        <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="20">
                                                                         </dx:GridViewDataTextColumn>
-                                                                        <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" Visible="False" VisibleIndex="21">
+                                                                        <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="21">
                                                                         </dx:GridViewDataTextColumn>
                                                                     </Columns>
                                                                     <SettingsPager Mode="ShowAllRecords">
@@ -89,13 +94,7 @@
                                                                         </AlternatingRow>
                                                                     </Styles>
                                                                 </dx:ASPxGridView>
-                                                                <asp:ObjectDataSource ID="odsPurchaseItem" runat="server" SelectMethod="FindAll" TypeName="Data.Models.PurchaseRequestItemModel"></asp:ObjectDataSource>
-                                                                <asp:SqlDataSource ID="PrItemDs" runat="server" ConnectionString="<%$ ConnectionStrings:AMS_TransactionConnectionString %>" SelectCommand="SELECT * FROM [V_PR_ItemListing] WHERE (([PRI_ProcessId] = @PRI_ProcessId) AND ([PRI_Revision] = @PRI_Revision)) ORDER BY [PRI_ItemNumber]">
-                                                                    <SelectParameters>
-                                                                        <asp:Parameter Name="PRI_ProcessId" Type="String" />
-                                                                        <asp:Parameter Name="PRI_Revision" Type="Int32" />
-                                                                    </SelectParameters>
-                                                                </asp:SqlDataSource>
+                                                                <asp:ObjectDataSource ID="odPrItem" runat="server" SelectMethod="FindAll" TypeName="Data.Models.PurchaseRequestItemModel"></asp:ObjectDataSource>
                                                             </dx:LayoutItemNestedControlContainer>
                                                         </LayoutItemNestedControlCollection>
                                                     </dx:LayoutItem>
@@ -112,7 +111,7 @@
                                                             <dx:LayoutItemNestedControlContainer runat="server">
                                                                 <dx:ASPxTextBox ID="TabItem_RevNum" runat="server" ClientEnabled="False" ClientInstanceName="TabItem_RevNum" EnableClientSideAPI="True" Width="170px">
                                                                 </dx:ASPxTextBox>
-                                                                <dx:ASPxTextBox ID="TabItem_RevNum0" runat="server" ClientEnabled="False" ClientInstanceName="TabItem_RevNum" EnableClientSideAPI="True" Width="170px">
+                                                                <dx:ASPxTextBox ID="txtPrItemListPrId" runat="server" ClientInstanceName="txtPrItemListPrId" EnableClientSideAPI="True" Width="170px">
                                                                 </dx:ASPxTextBox>
                                                             </dx:LayoutItemNestedControlContainer>
                                                         </LayoutItemNestedControlCollection>

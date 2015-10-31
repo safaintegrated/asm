@@ -175,6 +175,15 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxTextBox txtPurchaseRequestId;
         
         /// <summary>
+        /// txtItemType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtItemType;
+        
+        /// <summary>
         /// LayoutItemNestedControlContainer8 control.
         /// </summary>
         /// <remarks>

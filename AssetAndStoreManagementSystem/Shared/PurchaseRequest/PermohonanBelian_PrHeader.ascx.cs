@@ -14,7 +14,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
     public partial class PermohonanBelian_PrHeader : System.Web.UI.UserControl
     {
         Core.Services.PurchaseRequestService _prSvc = new Core.Services.PurchaseRequestService();
-        Data.Entity.PurchaseRequest _pr;
+        //Data.Entity.PurchaseRequest _pr;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,8 +31,33 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 case "SAVE": SaveSubmitCancelPRMode(1); break;
                 case "VIEW": ViewPRMode(); break;
                 case "APPROVED": ApprovedPr(); break;
+                case "SUBMITTED": SubmitedPr(); break;
             }
         }
+
+        private void SubmitedPr()
+        {
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+
+            if (ticket.Expired)
+            {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "Session Expired.";
+                return;
+            }
+
+            try
+            {
+                Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindById(PRH_ProcessId.Text);
+                _prSvc.SubmitPr(pr, ticket.Name);
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "";
+            }
+            catch (Exception ex)
+            {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = ex.Message;
+            }
+        }
+
 
         private void ApprovedPr()
         {
@@ -47,10 +72,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
             try
             {
-                _prSvc.ApprovedPr(_pr, ticket.Name);
+                Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindById(PRH_ProcessId.Text);
+                _prSvc.ApprovedPr(pr, ticket.Name);
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "";
             }
             catch (Exception ex)
             {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = ex.Message;
             }
         }
 
@@ -139,7 +167,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     SupplierId = PRH_SupplierCode.Value.ToString(),
                     RequestDate = deRequestDate.Date,
                     RequiredDate = deRequriredDate.Date
-                    
+
                 };
 
                 _prSvc.CreateNewPr(pr, ticket.Name);

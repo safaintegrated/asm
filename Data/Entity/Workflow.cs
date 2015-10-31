@@ -32,12 +32,18 @@ namespace Data.Entity
             {
                 switch (ProcessStateEnum)
                 {
-                    case ProcessStateEnum.New:
+                    case ProcessStateEnum.Draft:
+                        return "Draf";
+                    case ProcessStateEnum.Submited:
                         return "Baru";
+                    case ProcessStateEnum.Updated:
+                        return "Kemaskini";
                     case ProcessStateEnum.Approved:
                         return "Diluluskan";
                     case ProcessStateEnum.NotApproved:
                         return "Tidak Lulus";
+                    case ProcessStateEnum.Submitted:
+                        return "Posted";
                     default:
                         return "";
                 }
@@ -52,9 +58,12 @@ namespace Data.Entity
 
     public enum ProcessStateEnum
     {
-        New,
+        Draft,
+        Submited,
+        NotApproved,
+        Updated,
         Approved,
-        NotApproved
+        Submitted
     }
 
 }

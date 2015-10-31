@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Data.Enum
 {
-    public enum LoginStatus
+    public enum PrItemType
     {
-        Success,
-        InvalidPassword,
-        InActive,
-        NoRecord,
-        Failed,
-        DatabaseError
+        NewAsset,
+        Maintenance,
+        SparePart,
+        Additional,
+        Stock,
+        Others
     }
-
 }

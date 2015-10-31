@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,13 @@ namespace Data.Entity
 {
     public class PurchaseRequestItem : EntityBase
     {
+        public PurchaseRequestItem()
+        {
+            ItemType = PrItemType.NewAsset;
+        }
+        public PrItemType ItemType { get; set; }
         public string PurchaseRequestId { get; set; }
+
         public string Description { get; set; }
         
         public string UnitOfMeasurementId { get; set; }
@@ -24,8 +31,8 @@ namespace Data.Entity
         public string TaxCodeSagaName { get; set; }
 
         //Total
-        public string Qty { get; set; }
-        public string PricePerUnit { get; set; }
+        public int Qty { get; set; }
+        public decimal PricePerUnit { get; set; }
         public string TotalC { get; set; }
         public string TotalD { get; set; }
         public string TotalE { get; set; }

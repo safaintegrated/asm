@@ -14,11 +14,15 @@ using System.Data.SqlClient;
 using Core.Utility;
 using Core.Common;
 using Data.Entity;
+using Core.Services;
+using Data.Enum;
 
 namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 {
     public partial class PermohonanBelian_PopupNewAsset : System.Web.UI.UserControl
     {
+        PurchaseRequestService _prs = new PurchaseRequestService();
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -42,13 +46,24 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             switch (e.Parameter)
             {
                 case "NEW_ASSET":
+                    txtItemType.Text = PrItemType.NewAsset.ToString();
                     NewMode();
                     break;
-                case "NEW_MAINT": NewMode(); break;
-                case "NEW_SPARE_PART": NewMode(); break;
-                case "NEW_OTHERS": NewMode(); break;
-                case "NEW_ADDITIONAL": NewMode(); break;
-                case "NEW_STOCK": NewMode(); break;
+                case "NEW_MAINT": 
+                    txtItemType.Text = PrItemType.Maintenance.ToString();
+                    NewMode(); break;
+                case "NEW_SPARE_PART": 
+                    txtItemType.Text = PrItemType.SparePart.ToString();
+                    NewMode(); break;
+                case "NEW_OTHERS": 
+                    txtItemType.Text = PrItemType.Others.ToString();
+                    NewMode(); break;
+                case "NEW_ADDITIONAL": 
+                    txtItemType.Text = PrItemType.Additional.ToString();
+                    NewMode(); break;
+                case "NEW_STOCK": 
+                    txtItemType.Text = PrItemType.Stock.ToString();
+                    NewMode(); break;
 
                 case "SAVE": SaveMode(1); break;
                 case "DELETE": SaveMode(2); break;
@@ -72,7 +87,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             NewAsset_PRI_Desc.Text = string.Empty;
             NewAsset_PRI_CatId.Value = DBNull.Value;
             NewAsset_PRI_SubCatId.Value = DBNull.Value;
-            NewAsset_PRI_SubCatId.ClientEnabled = false;
+            //NewAsset_PRI_SubCatId.ClientEnabled = false;
             NewAsset_PRI_UomId.Value = DBNull.Value;
             NewAsset_PRI_TypeId.Value = DBNull.Value;
             NewAsset_PRI_Qty.Value = 0;
@@ -84,23 +99,81 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = string.Empty;
         }
 
-        void SaveMode(int Action)
+        private void SaveMode(int Action)
         {
-            DataTable Dt = new DataTable();
-            DataTable Dtc = new DataTable();
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+            string errMsg = "";
+
+            if (ticket.Expired)
+            {
+                cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = "Session Expired.";
+                return;
+            }
 
             try
             {
-                FormTVP(ref Dt);
-                PopulateTVP(ref Dt);
-                FormComponentTVP(ref Dtc);
-                PopulateComponentTVP(ref Dtc);
-                cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = PermohonanBelianMethods.SP_PR_Items_NewAsset_SaveDelete( txtNewPrItemProcessId.Text, NewAsset_PRI_ItemNumber.Text, txtNewPrItemRevision.Text, ref Dt, ref Dtc); ;
+                string purchaseRequestId = txtPurchaseRequestId.Text;
+                PurchaseRequestItem pri = new PurchaseRequestItem
+                {
+                    ItemType = (PrItemType)Enum.Parse(typeof(PrItemType), txtItemType.Text),
+                    Description = NewAsset_PRI_Desc.Text,
+                    UnitOfMeasurementId = NewAsset_PRI_UomId.Value == null ? "" : NewAsset_PRI_UomId.Value.ToString(),
+                    CategoryId = NewAsset_PRI_CatId.Value == null ? "" : NewAsset_PRI_CatId.Value.ToString(),
+                    SubCategoryId = NewAsset_PRI_SubCatId.Value == null ? "" : NewAsset_PRI_SubCatId.Value.ToString(),
+                    AssetTypeId = NewAsset_PRI_TypeId.Value == null ? "" : NewAsset_PRI_TypeId.Value.ToString(),
+                    //TaxCodeSagaId = NewAsset_PRI_TaxCode.Value == null ? "" : NewAsset_PRI_TaxCode.Value.ToString(),
+                    Qty = int.Parse(NewAsset_PRI_Qty.Text),
+                    PricePerUnit = decimal.Parse(NewAsset_PRI_UnitPrice.Text),
+                    PurchaseRequestId = purchaseRequestId,
+                };
+
+                _prs.AddPrItem(pri, ticket.Name);
+                //cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = "";
+                //                Dr["PRIC_ProcessId"] = txtNewPrItemProcessId.Text;
+                //Dr["PRIC_Revision"] = Convert.ToInt32(txtNewPrItemRevision.Text);
+                //Dr["PRIC_ItemNumber"] = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
+                //Dr["PRIC_ComponentNumber"] = UtilityMethods.FormNextSortingId(ref Dt, "PRIC_ComponentNumber");
+                //Dr["PRIC_Desc"] = DBNull.Value;
+                //Dr["PRIC_Brand"] = DBNull.Value;
+                //Dr["PRIC_Model"] = DBNull.Value;
+                //Dr["PRIC_Qty"] = 0;
+                //Dr["PRIC_UnitCost"] = 0;
+
+                //FormTVP(ref Dt);
+                //PopulateTVP(ref Dt);
+                //FormComponentTVP(ref Dtc);
+                //PopulateComponentTVP(ref Dtc);
+                //cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = PermohonanBelianMethods.SP_PR_Items_NewAsset_SaveDelete( txtNewPrItemProcessId.Text, NewAsset_PRI_ItemNumber.Text, txtNewPrItemRevision.Text, ref Dt, ref Dtc); ;
             }
             catch (Exception err)
-            { cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = err.Message; }
+            {
+                errMsg = err.ToString();
+            }
             finally
-            { Dt.Dispose(); }
+            {
+            }
+
+            cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = errMsg;
+
+            return;
+
+            //DataTable Dt = new DataTable();
+            //DataTable Dtc = new DataTable();
+
+
+            //try
+            //{
+            //    //FormTVP(ref Dt);
+            //    //PopulateTVP(ref Dt);
+            //    //FormComponentTVP(ref Dtc);
+            //    //PopulateComponentTVP(ref Dtc);
+            //    //cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = PermohonanBelianMethods.SP_PR_Items_NewAsset_SaveDelete( txtNewPrItemProcessId.Text, NewAsset_PRI_ItemNumber.Text, txtNewPrItemRevision.Text, ref Dt, ref Dtc); ;
+            //}
+            //catch (Exception err)
+            //{ cbp_LineItem_NewAsset.JSProperties["cpErrMsg"] = err.Message; }
+            //finally
+            //{ Dt.Dispose(); }
         }
 
         void AddComponent()
@@ -114,7 +187,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
                 DataRow Dr = Dt.NewRow();
                 Dr["PRIC_ProcessId"] = txtNewPrItemProcessId.Text;
-                Dr["PRIC_Revision"] = Convert.ToInt32( txtNewPrItemRevision.Text);
+                Dr["PRIC_Revision"] = Convert.ToInt32(txtNewPrItemRevision.Text);
                 Dr["PRIC_ItemNumber"] = Convert.ToInt32(NewAsset_PRI_ItemNumber.Text);
                 Dr["PRIC_ComponentNumber"] = UtilityMethods.FormNextSortingId(ref Dt, "PRIC_ComponentNumber");
                 Dr["PRIC_Desc"] = DBNull.Value;
@@ -680,8 +753,8 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             ProjectItem li = new ProjectItem
             {
                 PurchaseRequestId = txtPurchaseRequestId.Text,
-                 ProjectCode = NewAsset_PCAC_Account.Value.ToString(),
-                  Description = NewAsset_PCAC_Desc.Text,
+                ProjectCode = NewAsset_PCAC_Account.Value.ToString(),
+                Description = NewAsset_PCAC_Desc.Text,
                 Jumlah = Convert.ToInt32(NewAsset_GLAC_Value.Value)
             };
 
