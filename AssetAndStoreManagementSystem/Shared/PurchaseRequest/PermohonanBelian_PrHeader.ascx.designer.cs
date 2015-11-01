@@ -283,6 +283,15 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.ASPxTextBox PRH_Status;
         
         /// <summary>
+        /// txtStateDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtStateDetail;
+        
+        /// <summary>
         /// PRH_PRnumber control.
         /// </summary>
         /// <remarks>

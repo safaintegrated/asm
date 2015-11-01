@@ -11,7 +11,7 @@ namespace Data.Models
     {
         public static IEnumerable<Workflow> FindAll()
         {
-            return _db.Workflows.AsEnumerable();
+            return _db.Workflows.AsEnumerable().OrderByDescending(c => c.DateTime);
         }
         public static void Add(Workflow o, string user)
         {

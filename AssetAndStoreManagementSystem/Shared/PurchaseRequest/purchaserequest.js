@@ -1,4 +1,40 @@
-﻿function gvPrListOnRowClick(s, e) {
+﻿function gvCheckListMandatory_RowClick(s, e) {
+    gvCheckListMandatory.GetRowValues(e.visibleIndex, 'Id', UpdateCheckList);
+}
+function UpdateCheckList(values) {
+    if (values == "")
+        return;
+    cbpUpdateCheckList.PerformCallback("UPDATE|" + values);
+}
+
+function cbpUpdateCheckList_EndCallBack(s, e) {
+    gvCheckListMandatory.Refresh();
+    gvCheckListNotMandatory.Refresh();
+}
+
+
+function cbpChecklist_EndCallBack(s, e) {
+    //if (s.cpErrMsg.toString() != '') {
+    //    PopupMessageBox_Label.SetText(s.cpErrMsg.toString());
+    //    PopupMessageBox.Show();
+    //    return;
+    //}
+    switch (s.cpMode.toString()) {
+        case 'REFRESH':
+            gvCheckListMandatory.Refresh();
+            gvCheckListNotMandatory.Refresh();
+            break;
+        case 'UPDATE':
+            gvCheckListMandatory.Refresh();
+            gvCheckListNotMandatory.Refresh();
+            break;
+        default:
+            break;
+    }
+}
+
+
+function gvPrListOnRowClick(s, e) {
     gvPrList.GetRowValues(e.visibleIndex, 'Id', OpenPurchaseRequest);
 }
 
@@ -6,6 +42,7 @@ function OpenPurchaseRequest(values) {
     PRH_ProcessId.SetText(values.toString());
     txtPurchaseRequestId.SetText(values.toString());
     txtPrItemListPrId.SetText(values.toString());
+    txtCheckListPrId.SetText(values.toString());
 
     //PRH_Revision.SetText(r.toString());
     LoadingPanel.SetText('Sistem sedang membuka maklumat permohonan belian yang dipilih.  Sila tunggu sebentar..');
@@ -387,86 +424,124 @@ function cbp_PermohonanBelian_PrHeader_EndCallback(s, e) {
     if (s.cpErrMsg.toString() != '') {
         popupMsg_Label.SetText(s.cpErrMsg.toString());
         popupMsg.Show();
+        return;
     }
-    else {
-        cbpWorkFlowList.PerformCallback();
-        if (s.cpMode.toString() == 'NEW') {
-            //tab management
-            PageControl_PopupPr.GetTab(1).SetVisible(false);  //hide item tab
-            PageControl_PopupPr.GetTab(2).SetVisible(false);  //hide senarai semak tab
-            PageControl_PopupPr.GetTab(3).SetVisible(false);  //hide aliran kerja tab
-            PageControl_PopupPr.SetActiveTab(PageControl_PopupPr.GetTab(0));  //focus on utama tab
 
-            //popup toolbar management
-            Manage_Toolbar_PopupPr(false, true, true, false, false, false, false);
-
-            //popup management
-            PopupPr.SetWidth(screen.width * 0.9);
-            PopupPr.SetHeight(screen.height * 0.8);
-            PopupPr.SetHeaderText('Permohonan Belian - Rekod Baharu');
-            PopupPr.Show();
-            PRH_Purpose.Focus();
-        }
-        else if (s.cpMode.toString() == 'SAVE') {
-            //tab management
-            PageControl_PopupPr.GetTab(1).SetVisible(true);  //hide item tab
-            PageControl_PopupPr.GetTab(2).SetVisible(true);  //hide senarai semak tab
-            PageControl_PopupPr.GetTab(3).SetVisible(true);  //hide aliran kerja tab
-
-            //main grid management
-            MainGrid.PerformCallback();
-
-            //screen management
-            if (PRH_ProcessId.GetText() == '')  //new PR mode
-            {
-                //tab utama
-                PRH_ProcessId.SetText(s.cpReturnProcessId.toString());
-                PRH_Revision.SetText(s.cpReturnRevNumber.toString());
-
-                //tab item
-                TabItem_ProcessId.SetText(s.cpReturnProcessId.toString());
-                TabItem_RevNum.SetText(s.cpReturnRevNumber.toString());
-                TabItem_RevNum.SetText(s.cpReturnPurchaseRequestId.toString());
-                TabItemGrid.PerformCallback();
-                EnableDisableItemForm(true);
-
-                //show notifications
-                popupMsg_Label.SetText('Rekod Permohonan Belian telah disimpan dengan jayanya.<br>Anda kini boleh memasukkan maklumat item untuk permohonan ini.');
-                popupMsg.Show();
-            }
-            else //existing PR is being viewed
-            {
-                //show notifications
-                popupMsg_Label.SetText('Rekod Permohonan Belian telah disimpan dengan jayanya.');
-                popupMsg.Show();
-
-                //tab utama
-                EnableDisableUtamaForm(false);
-            }
-        }
-        else if (s.cpMode.toString() == 'VIEW') {
-            //tab utama
-            PageControl_PopupPr.SetActiveTab(PageControl_PopupPr.GetTab(0));  //focus on utama tab
-            EnableDisableUtamaForm(false);
-
-            //tab item
-            PageControl_PopupPr.GetTab(1).SetVisible(true);  //hide item tab
-            TabItem_ProcessId.SetText(PRH_ProcessId.GetText());
-            TabItem_RevNum.SetText(PRH_Revision.GetText());
-            TabItemGrid.PerformCallback();
-            EnableDisableItemForm(false);
-
-            PageControl_PopupPr.GetTab(2).SetVisible(true);  //hide senarai semak tab
-            PageControl_PopupPr.GetTab(3).SetVisible(true);  //hide aliran kerja tab
-
-            //popup management
-            PopupPr.SetWidth(screen.width * 0.9);
-            PopupPr.SetHeight(screen.height * 0.8);
-            PopupPr.SetHeaderText('Permohonan Belian - No. Transaksi: ' + PRH_ProcessId.GetText());
-            PopupPr.Show();
-            PRH_Purpose.Focus();
-        }
+    switch (s.cpMode.toString()) {
+        case 'NEW':
+            ProcessNew();
+            break;
+        case 'SAVE':
+            ProcessSave();
+            break;
+        case 'VIEW':
+            ProcessView();
+            break;
+        case 'APPROVED':
+        case 'SUBMITTED':
+            cbpWorkFlowList.PerformCallback();
+            break;
+        default:
+            break;
     }
+}
+
+function cbpWorkFlowList_EndCallBack(s, e) {
+    gvPrList.Refresh();
+    GridPRWorkflow.Refresh();
+    //alert('refresh');
+}
+
+
+function ProcessView()
+{
+    //alert('here');
+    //tab utama
+    PageControl_PopupPr.SetActiveTab(PageControl_PopupPr.GetTab(0));  //focus on utama tab
+    EnableDisableUtamaForm(false);
+
+    //tab item
+    PageControl_PopupPr.GetTab(1).SetVisible(true);  //hide item tab
+    TabItem_ProcessId.SetText(PRH_ProcessId.GetText());
+    TabItem_RevNum.SetText(PRH_Revision.GetText());
+    TabItemGrid.PerformCallback();
+    EnableDisableItemForm(false);
+
+    PageControl_PopupPr.GetTab(2).SetVisible(true);  //hide senarai semak tab
+    PageControl_PopupPr.GetTab(3).SetVisible(true);  //hide aliran kerja tab
+
+    //popup management
+    PopupPr.SetWidth(screen.width * 0.9);
+    PopupPr.SetHeight(screen.height * 0.8);
+
+    //alert(screen.height);
+    //PopupPr.SetHeight(screen.height * 0.2);
+
+    PopupPr.SetHeaderText('Permohonan Belian - No. Transaksi: ' + PRH_ProcessId.GetText());
+    PopupPr.Show();
+    PRH_Purpose.Focus();
+
+    cbpChecklist.PerformCallback('REFRESH');
+    //gvCheckListMandatory.Refresh();
+    //gvCheckListNotMandatory.Refresh();
+}
+
+
+
+function ProcessSave(){
+    //tab management
+    PageControl_PopupPr.GetTab(1).SetVisible(true);  //hide item tab
+    PageControl_PopupPr.GetTab(2).SetVisible(true);  //hide senarai semak tab
+    PageControl_PopupPr.GetTab(3).SetVisible(true);  //hide aliran kerja tab
+
+    //main grid management
+    MainGrid.PerformCallback();
+
+    //screen management
+    if (PRH_ProcessId.GetText() == '')  //new PR mode
+    {
+        //tab utama
+        PRH_ProcessId.SetText(s.cpReturnProcessId.toString());
+        PRH_Revision.SetText(s.cpReturnRevNumber.toString());
+
+        //tab item
+        TabItem_ProcessId.SetText(s.cpReturnProcessId.toString());
+        TabItem_RevNum.SetText(s.cpReturnRevNumber.toString());
+        TabItem_RevNum.SetText(s.cpReturnPurchaseRequestId.toString());
+        TabItemGrid.PerformCallback();
+        EnableDisableItemForm(true);
+
+        //show notifications
+        popupMsg_Label.SetText('Rekod Permohonan Belian telah disimpan dengan jayanya.<br>Anda kini boleh memasukkan maklumat item untuk permohonan ini.');
+        popupMsg.Show();
+    }
+    else //existing PR is being viewed
+    {
+        //show notifications
+        popupMsg_Label.SetText('Rekod Permohonan Belian telah disimpan dengan jayanya.');
+        popupMsg.Show();
+
+        //tab utama
+        EnableDisableUtamaForm(false);
+    }
+}
+
+function ProcessNew() {
+    //tab management
+    PageControl_PopupPr.GetTab(1).SetVisible(false);  //hide item tab
+    PageControl_PopupPr.GetTab(2).SetVisible(false);  //hide senarai semak tab
+    PageControl_PopupPr.GetTab(3).SetVisible(false);  //hide aliran kerja tab
+    PageControl_PopupPr.SetActiveTab(PageControl_PopupPr.GetTab(0));  //focus on utama tab
+
+    //popup toolbar management
+    Manage_Toolbar_PopupPr(false, true, true, false, false, false, false);
+
+    //popup management
+    PopupPr.SetWidth(screen.width * 0.9);
+    PopupPr.SetHeight(screen.height * 0.8);
+    PopupPr.SetHeaderText('Permohonan Belian - Rekod Baharu');
+    PopupPr.Show();
+    PRH_Purpose.Focus();
 }
 
 function PRH_SupplierCode_ValueChanged(s, e) {

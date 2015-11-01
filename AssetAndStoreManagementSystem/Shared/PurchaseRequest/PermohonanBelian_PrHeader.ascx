@@ -276,8 +276,10 @@
     </dx:ASPxTextBox> 
     <dx:ASPxTextBox ID="PRH_Status" ClientInstanceName="PRH_Status" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
     </dx:ASPxTextBox> 
-    <dx:ASPxTextBox ID="PRH_PRnumber" ClientInstanceName="PRH_PRnumber" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
+    <dx:ASPxTextBox ID="txtStateDetail" ClientInstanceName="txtStateDetail" ClientEnabled="true" runat="server" Width="170px" ClientVisible="true">
     </dx:ASPxTextBox> 
+        <dx:ASPxTextBox ID="PRH_PRnumber" runat="server" ClientInstanceName="PRH_PRnumber" Width="170px">
+    </dx:ASPxTextBox>
         </dx:PanelContent>
 </PanelCollection>
 </dx:ASPxCallbackPanel>

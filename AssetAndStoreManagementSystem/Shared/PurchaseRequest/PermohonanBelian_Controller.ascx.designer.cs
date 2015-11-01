@@ -229,13 +229,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
-        /// pCOMMENTS control.
+        /// mmStateDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxMemo pCOMMENTS;
+        protected global::DevExpress.Web.ASPxMemo mmStateDetail;
         
         /// <summary>
         /// LayoutItemNestedControlContainer4 control.

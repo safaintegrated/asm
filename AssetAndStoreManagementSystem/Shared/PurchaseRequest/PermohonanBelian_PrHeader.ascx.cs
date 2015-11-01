@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Web.Security;
 using Core.Shared;
+using Data.Enum;
 
 namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 {
@@ -30,8 +31,12 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                 case "NEW": NewMode(); break;
                 case "SAVE": SaveSubmitCancelPRMode(1); break;
                 case "VIEW": ViewPRMode(); break;
-                case "APPROVED": ApprovedPr(); break;
-                case "SUBMITTED": SubmitedPr(); break;
+                case "APPROVED":
+                    ApprovedPr();
+                    break;
+                case "SUBMITTED": 
+                    SubmitedPr(); 
+                    break;
             }
         }
 
@@ -49,7 +54,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             try
             {
                 Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindById(PRH_ProcessId.Text);
-                _prSvc.SubmitPr(pr, ticket.Name);
+                _prSvc.UpdatePrState(pr, ProcessStateEnum.SubmittedByRequestor, txtStateDetail.Text, ticket.Name);
                 cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "";
             }
             catch (Exception ex)
@@ -73,7 +78,24 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             try
             {
                 Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindById(PRH_ProcessId.Text);
-                _prSvc.ApprovedPr(pr, ticket.Name);
+
+                switch (pr.Status)
+                {
+                    case Data.Enum.ProcessStateEnum.SubmittedByRequestor:
+                        _prSvc.UpdatePrState(pr, ProcessStateEnum.ApprovedByPtj, txtStateDetail.Text, ticket.Name);
+                        break;
+                    case Data.Enum.ProcessStateEnum.ApprovedByFinance1:
+                        _prSvc.UpdatePrState(pr, ProcessStateEnum.ApprovedByFinance2, txtStateDetail.Text, ticket.Name);
+                        break;
+                    default:
+                        throw new Exception("Proses tidak dibenarkan");
+                }
+
+                //if(pr.Status == Data.Enum.ProcessStateEnum.Submitted)
+                //    _prSvc.UpdatePrState(PRH_ProcessId.Text, Data.Enum.ProcessStateEnum.ApprovedByPtj, "", ticket.Name);
+                ////_prSvc.ApprovedPrByPtj(pr, ticket.Name);
+                //if (pr.Status == Data.Enum.ProcessStateEnum.ApprovedByFinance)
+                //    _prSvc.ApprovedPrByFinance(pr, ticket.Name);
                 cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "";
             }
             catch (Exception ex)
@@ -271,7 +293,7 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
                     throw new Exception("Purchase Request Not Found");
 
                 PRH_Purpose.Text = pr.Description;
-                PRH_Status.Text = pr.StatusName;
+                PRH_Status.Text = pr.ProcessStateString;
                 PRH_ProcurementMethodId.Value = pr.ProcurementMethodId;
                 PRH_ProcurementITypeId.Value = pr.ProcurementTypeId;
                 PRH_ProcurementCatId.Value = pr.ProcurementCategoryId;

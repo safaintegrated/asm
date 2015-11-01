@@ -61,5 +61,10 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             //    }
             //}
         }
+
+        protected void pApprove_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

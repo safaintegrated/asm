@@ -9,6 +9,12 @@
 
 
 <dx:ASPxCallbackPanel ID="cbpWorkFlowList" runat="server" ClientInstanceName="cbpWorkFlowList" OnCallback="cbpWorkFlowList_Callback" Width="200px">
+    <clientsideevents endcallback="function(s, e) {
+	cbpWorkFlowList_EndCallBack(s,e);
+}" />
+    <PanelCollection>
+<dx:PanelContent runat="server"></dx:PanelContent>
+</PanelCollection>
 </dx:ASPxCallbackPanel>
 
 
@@ -28,19 +34,21 @@
                                     </dx:GridViewDataTextColumn>
                                     <dx:GridViewDataDateColumn FieldName="DateTime" ShowInCustomizationForm="True" VisibleIndex="2">
                                     </dx:GridViewDataDateColumn>
-                                    <dx:GridViewDataTextColumn FieldName="UserName" ShowInCustomizationForm="True" VisibleIndex="3">
+                                    <dx:GridViewDataTextColumn FieldName="DateTimeView" ShowInCustomizationForm="True" VisibleIndex="3" ReadOnly="True">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn FieldName="FullName" ShowInCustomizationForm="True" VisibleIndex="4">
+                                    <dx:GridViewDataTextColumn FieldName="UserName" ShowInCustomizationForm="True" VisibleIndex="4">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn FieldName="ProcessStateString" ShowInCustomizationForm="True" VisibleIndex="5" ReadOnly="True">
+                                    <dx:GridViewDataTextColumn FieldName="FullName" ShowInCustomizationForm="True" VisibleIndex="5">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="6">
+                                    <dx:GridViewDataTextColumn FieldName="ProcessStateString" ShowInCustomizationForm="True" VisibleIndex="6" ReadOnly="True">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="7">
+                                    <dx:GridViewDataTextColumn FieldName="Id" ShowInCustomizationForm="True" VisibleIndex="7">
+                                    </dx:GridViewDataTextColumn>
+                                    <dx:GridViewDataCheckColumn FieldName="Deleted" ShowInCustomizationForm="True" VisibleIndex="8">
                                     </dx:GridViewDataCheckColumn>
-                                    <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="8">
+                                    <dx:GridViewDataTextColumn FieldName="CreatedBy" ShowInCustomizationForm="True" VisibleIndex="9">
                                     </dx:GridViewDataTextColumn>
-                                    <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="9">
+                                    <dx:GridViewDataTextColumn FieldName="UpdatedBy" ShowInCustomizationForm="True" VisibleIndex="10">
                                     </dx:GridViewDataTextColumn>
                                 </Columns>
                                 <SettingsPager Mode="ShowAllRecords">

@@ -21,4 +21,3 @@ D:\github\asm\Data\bin\Debug\EntityFramework.SqlServer.xml
 D:\github\asm\Data\bin\Debug\Newtonsoft.Json.xml
 D:\github\asm\Data\obj\Debug\Data.dll
 D:\github\asm\Data\obj\Debug\Data.pdb
-D:\github\asm\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache

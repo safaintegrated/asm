@@ -9,6 +9,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Migrations;
 
 namespace Data
 {
@@ -59,6 +60,7 @@ namespace Data
         public DbSet<Department> Departments { get; set; }
         public DbSet<PusatTanggungjawab> PusatTanggungjawabList { get; set; }
         public DbSet<ProcessState> ProcessStateList { get; set; }
+        public DbSet<PurchaseRequestCheckList> PurchaseRequestCheckListList { get; set; }
 
         public int SaveChanges(string username)
         {

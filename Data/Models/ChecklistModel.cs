@@ -35,5 +35,10 @@ namespace Data.Models
 
         }
 
+
+        public static List<Checklist> FindAllByProcessCategory(ProcessDetailCategory pdc)
+        {
+            return _db.Checklists.Where(c => c.ProcessCategory == pdc).ToList();
+        }
     }
 }

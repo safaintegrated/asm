@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="AsmContext.cs" />
     <Compile Include="AsmContextInitializer.cs" />
+    <Compile Include="Constant.cs" />
     <Compile Include="Entity\AssetType.cs" />
     <Compile Include="Entity\AuditLog.cs" />
     <Compile Include="Entity\Category.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Entity\ProcessType.cs" />
     <Compile Include="Entity\Project.cs" />
     <Compile Include="Entity\ProjectIte.cs" />
+    <Compile Include="Entity\PurchaseRequestCheckList.cs" />
     <Compile Include="Entity\PurchaseRequestItem.cs" />
     <Compile Include="Entity\PurchaseType.cs" />
     <Compile Include="Entity\PusatTanggungjawab.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Entity\Workflow.cs" />
     <Compile Include="Enum\LoginStatus.cs" />
     <Compile Include="Enum\PrItemType.cs" />
+    <Compile Include="Enum\ProcessStateEnum.cs" />
     <Compile Include="IDescribableEntity.cs" />
     <Compile Include="Entity\KenyataanJualanLelonganStokAlih.cs" />
     <Compile Include="Entity\KenyataanTawaranSebutharga.cs" />
@@ -120,6 +123,7 @@
     <Compile Include="Models\ProjectItemModel.cs" />
     <Compile Include="Models\ProjectModel.cs" />
     <Compile Include="Models\PuDeliveryAddressModel.cs" />
+    <Compile Include="Models\PurchaseRequestCheckListModel.cs" />
     <Compile Include="Models\PurchaseRequestItemModel.cs" />
     <Compile Include="Models\PurchaseRequestModel.cs" />
     <Compile Include="Models\PurchaseTypeModel.cs" />

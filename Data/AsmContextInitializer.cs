@@ -17,15 +17,61 @@ namespace Data
         public List<ProcurementCategory> _procumentCategory;
         public List<ProcurementMethod> _procumentMethod;
         public List<ProcurementType> _procumrentType;
+
+        public List<Checklist> _checkList;
         public List<PurchaseRequest> _purchaseRequest;
         public List<PurchaseRequestItem> _purchaseRequestItem;
+        public List<Workflow> _workFlow;
+        public List<PurchaseRequestCheckList> _prc;
 
         public AsmContextInitializer()
         {
+            //Preset Data
+            InitializeProcurement();
+            InitializeCheckList();
+
+            //Actual Data
             InitalizeSupplier();
             InitializeEmployees();
-            InitializeProcurement();
+
+            //Sample Data - To remove during production
             InitializePurchaseRequest();
+
+        }
+
+        private void InitializeCheckList()
+        {
+            _checkList = new List<Checklist>();
+
+            // For below 1k
+            _checkList.Add(new Checklist { 
+                ProcessCategory = ProcessDetailCategory.PrValueUnder1k, 
+                Index = 1, 
+                Code = "A01", 
+                IsMandatory = true, 
+                Description = "BEND006: Syor Setuju Terima Sebut Harga Sehingga RM 1,000.00" });
+            _checkList.Add(new Checklist { 
+                ProcessCategory = ProcessDetailCategory.PrValueUnder1k, 
+                Index = 2, 
+                Code = "A02", 
+                IsMandatory = true, 
+                Description = "Sebutharga (Quotation): sekurang-kurangnya satu (1) syarikat yang telah berdaftar dengan UPNM" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder1k, Index = 3, Code = "A03", IsMandatory = false, Description = "Sebutharga (Quotation) penginapan hotel yang lengkap dengan jumlah pengiraan" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder1k, Index = 4, Code = "A04", IsMandatory = false, Description = "Kertas kerja program/aktiviti atau kertas kelulusan pembelian" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder1k, Index = 5, Code = "A05", IsMandatory = false, Description = "Senarai nama, jawatan, dan kelayakan bagi permohonan penginapan" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder1k, Index = 6, Code = "A06", IsMandatory = false, Description = "Surat perakuan pembekal tunggal (Sole Agent / Distributor)" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder1k, Index = 7, Code = "A07", IsMandatory = false, Description = "Lain-lain dokumen yang berkaitan" });
+
+
+            
+            //_checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 1, Code = "A01", IsMandatory = true, Description = "BEND006: Syor Setuju Terima Sebut Harga Sehingga RM 1,000.00" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 1, Code = "B01", IsMandatory = true, Description = "BEND007: Syor setuju terima sebut harga RM 1,000.00 sehingga RM50,0000.00" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 2, Code = "B02", IsMandatory = true, Description = "Sebutharga (Quotation) : sekurang-kurangnya tiga (3) syarikat yang telah berdaftar dengan UPNM" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 3, Code = "B03", IsMandatory = false, Description = "Sebutharga (Quotation) penginapan hotel yang lengkap dengan jumlah pengiraan" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 4, Code = "B04", IsMandatory = false, Description = "Kertas kerja program/aktiviti atau kertas kelulusan pembelian" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 5, Code = "B05", IsMandatory = false, Description = "Senarai nama, jawatan, dan kelayakan bagi permohonan penginapan" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 6, Code = "B06", IsMandatory = false, Description = "Surat perakuan pembekal tunggal (Sole Agent / Distributor)" });
+            _checkList.Add(new Checklist { ProcessCategory = ProcessDetailCategory.PrValueUnder20k, Index = 7, Code = "B07", IsMandatory = false, Description = "Lain-lain dokumen yang berkaitan" });
         }
 
         private void InitializePurchaseRequest()
@@ -39,15 +85,25 @@ namespace Data
                 Description = "Membeli Komputer",
                 //SupplierName = "Ajis Supplier",
                 Requestor = e,
-                Status = ProcessStatus.New,
+                Status =  Enum.ProcessStateEnum.DraftByRequestor,
                 //Supplier = s,
                 SupplierId = s.Id,
                 ProcurementCategoryId = _procumentCategory.First().Id,
                 ProcurementMethodId = _procumentMethod.First().Id,
-                ProcurementTypeId = _procumrentType.First().Id
+                ProcurementTypeId = _procumrentType.First().Id,
+                TotalPrice = 250000,
+                ProcessCategory = ProcessDetailCategory.PrValueUnder20k,
+                 //Checklist = _checkList.Where(c => c.ProcessCategory == ProcessDetailCategory.PrValueUnder20k).ToList()
             };
             _purchaseRequest = new List<PurchaseRequest>();
             _purchaseRequest.Add(pr);
+            
+            _workFlow = new List<Workflow>();
+            _workFlow.Add(new Workflow { DateTime = DateTime.Now, ProcessId = pr.Id, UserName = e.UserId });
+
+            _prc = new List<PurchaseRequestCheckList>();
+            foreach (var p in _checkList.Where(c => c.ProcessCategory == pr.ProcessCategory))
+                _prc.Add(new PurchaseRequestCheckList { PurchaseRequestId = pr.Id, CheckListId = p.Id, CheckList = p });
 
             PurchaseRequestItem pri = new PurchaseRequestItem
             {
@@ -59,6 +115,7 @@ namespace Data
 
             _purchaseRequestItem = new List<PurchaseRequestItem>();
             _purchaseRequestItem.Add(pri);
+
 
         }
 
@@ -103,32 +160,19 @@ namespace Data
 
         protected override void Seed(AsmContext context)
         {
-            //context.RequestorList.Add(new Requestor { Name = "BENDAHARI", Code = "BENDAHARI", Description = "BENDAHARI" });
-            //context.RequestorList.Add(new Requestor { Name = "DEKAN FSTP", Code = "DEKAN FSTP", Description = "DEKAN FSTP" });
-            //context.RequestorList.Add(new Requestor { Name = "DEKAN PERUBATAN", Code = "DEKAN PERUBATAN", Description = "DEKAN PERUBATAN" });
-
-            //context.UtemInfos.Add(new UtemInfo { Name = "DKN FKJ", Description = "Dekan Fakulti Kejuruteraan", Code = "10" });
-            //context.UtemInfos.Add(new UtemInfo { Name = "TNC HEAA", Description = "Bahagian Hal Ehwal Akademik & Antarabangsa", Code = "05" });
-
- 
-            //context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST1", Name = "STOR 1", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
-            //context.PuDeliveryAddresses.Add(new PuDeliveryAddress { Code = "ST2", Name = "STOR 2", Address1 = "Address1", Address2 = "Address2", Address3 = "Address3" });
-
+            //Preset Data
             InsertProcurement(context);
-
             InsertDepartments(context);
-
             InsertPtj(context);
-
             InsertAssetType(context);
+            InsertUnitOfMeasurements(context);
+            InsertCategories(context);
+            InsertCheckList(context);
 
             InsertSampleAssetRegistration(context);
 
             InserSampleSuppliers(context);
 
-            InsertUnitOfMeasurements(context);
-
-            InsertCategories(context);
 
             InsertPurchaseTypes(context);
 
@@ -139,9 +183,29 @@ namespace Data
             InsertSampleUser(context);
 
             InsertSamplePurchaseRequest(context);
+            InsertSampleWorkflow(context);
+            InsertSamplePurchaseRequestChecklist(context);
 
             context.SaveChanges("system");
             base.Seed(context);
+        }
+
+        private void InsertSamplePurchaseRequestChecklist(AsmContext context)
+        {
+            foreach (var c in _prc)
+                context.PurchaseRequestCheckListList.Add(c);
+        }
+
+        private void InsertCheckList(AsmContext context)
+        {
+            foreach (var c in _checkList)
+                context.Checklists.Add(c);
+        }
+
+        private void InsertSampleWorkflow(AsmContext context)
+        {
+            foreach (var w in _workFlow)
+                context.Workflows.Add(w);
         }
 
         private void InsertProcurement(AsmContext context)

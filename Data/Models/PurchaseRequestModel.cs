@@ -1,6 +1,7 @@
 ﻿using Data.Entity;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,20 @@ namespace Data.Models
         {
             return _db.PurchaseRequests.Where(c => c.Id == id).FirstOrDefault();
         }
+
+        public static void AddOrUpdate(PurchaseRequest pr, string userName)
+        {
+            _db.Entry(pr).State = string.IsNullOrEmpty(pr.Id) ? EntityState.Added : EntityState.Modified;
+            _db.SaveChanges(userName);
+        }
+
+        //public static IEnumerable<Checklist> FindCheckListByPrId(string prId)
+        //{
+        //    var pr = _db.PurchaseRequests.Where(c => c.Id == prId).FirstOrDefault();
+        //    if (pr == null)
+        //        return null;
+        //    return pr.Checklist.AsEnumerable();
+        //}
     }
 
 }

@@ -13,13 +13,13 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
     public partial class Tab_SenaraiSemak_Controller {
         
         /// <summary>
-        /// cbp_Checklist control.
+        /// cbpChecklist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel cbp_Checklist;
+        protected global::DevExpress.Web.ASPxCallbackPanel cbpChecklist;
         
         /// <summary>
         /// PanelContent1 control.
@@ -31,13 +31,49 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.PanelContent PanelContent1;
         
         /// <summary>
-        /// ASPxFormLayout1 control.
+        /// cbpUpdateCheckList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
+        protected global::DevExpress.Web.ASPxCallbackPanel cbpUpdateCheckList;
+        
+        /// <summary>
+        /// flMainForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxFormLayout flMainForm;
+        
+        /// <summary>
+        /// txtCheckListPrId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txtCheckListPrId;
+        
+        /// <summary>
+        /// gvCheckListMandatory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView gvCheckListMandatory;
+        
+        /// <summary>
+        /// odsPurchaseRequestChecklist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsPurchaseRequestChecklist;
         
         /// <summary>
         /// LayoutItemNestedControlContainer1 control.
@@ -49,13 +85,22 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer1;
         
         /// <summary>
-        /// GridChecklist control.
+        /// gvCheckListNotMandatory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView GridChecklist;
+        protected global::DevExpress.Web.ASPxGridView gvCheckListNotMandatory;
+        
+        /// <summary>
+        /// odsPurchaseRequestChecklistNotMandatory control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource odsPurchaseRequestChecklistNotMandatory;
         
         /// <summary>
         /// LayoutItemNestedControlContainer2 control.
@@ -92,42 +137,6 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btnDeclare;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer4;
-        
-        /// <summary>
-        /// CHK_CheckedBy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox CHK_CheckedBy;
-        
-        /// <summary>
-        /// LayoutItemNestedControlContainer5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.LayoutItemNestedControlContainer LayoutItemNestedControlContainer5;
-        
-        /// <summary>
-        /// CHK_CheckedDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit CHK_CheckedDate;
         
         /// <summary>
         /// chkList_ProcessId control.

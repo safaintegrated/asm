@@ -154,7 +154,7 @@
                         </dx:GridViewDataTextColumn>
                         <dx:GridViewDataTextColumn FieldName="PrNumber" ShowInCustomizationForm="True" VisibleIndex="17">
                         </dx:GridViewDataTextColumn>
-                         <dx:GridViewDataTextColumn FieldName="StatusName" ShowInCustomizationForm="True" VisibleIndex="18">
+                         <dx:GridViewDataTextColumn FieldName="ProcessStateString" ShowInCustomizationForm="True" VisibleIndex="18" ReadOnly="True">
                          </dx:GridViewDataTextColumn>
                          <dx:GridViewDataDateColumn FieldName="RequestDate" ShowInCustomizationForm="True" VisibleIndex="19">
                          </dx:GridViewDataDateColumn>
@@ -190,7 +190,7 @@
 </PanelCollection>
 </dx:ASPxRoundPanel>
 
-<dx:ASPxPopupControl ID="PopupPr" runat="server" ClientInstanceName="PopupPr" CloseAction="CloseButton" EnableClientSideAPI="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" AllowDragging="True" MinHeight="600px" MinWidth="800px" Modal="True">
+<dx:ASPxPopupControl ID="PopupPr" runat="server" ClientInstanceName="PopupPr" CloseAction="CloseButton" EnableClientSideAPI="True" PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" AllowDragging="True" MinHeight="600px" MinWidth="800px" Modal="True" MaxHeight="768px" MaxWidth="1024px" ScrollBars="Both">
     <ContentCollection>
 <dx:PopupControlContentControl runat="server">
     <table class="DefaultMainContainerTable">
@@ -309,7 +309,7 @@
                                         <dx:LayoutItem Caption="Komen Pemeriksa" ColSpan="2">
                                             <LayoutItemNestedControlCollection>
                                                 <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
-                                                    <dx:ASPxMemo ID="pCOMMENTS" runat="server" ClientInstanceName="pCOMMENTS" EnableClientSideAPI="True" Height="71px" Width="100%">
+                                                    <dx:ASPxMemo ID="mmStateDetail" runat="server" ClientInstanceName="mmStateDetail" EnableClientSideAPI="True" Height="71px" Width="100%">
                                                     </dx:ASPxMemo>
                                                 </dx:LayoutItemNestedControlContainer>
                                             </LayoutItemNestedControlCollection>
@@ -319,7 +319,7 @@
                                 <dx:LayoutItem ShowCaption="False">
                                     <LayoutItemNestedControlCollection>
                                         <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer4" runat="server">
-                                            <dx:ASPxTextBox ID="pApprove" runat="server" ClientInstanceName="pApprove" ClientVisible="False" EnableClientSideAPI="True" Width="170px">
+                                            <dx:ASPxTextBox ID="pApprove" runat="server" ClientInstanceName="pApprove" ClientVisible="False" EnableClientSideAPI="True" Width="170px" OnTextChanged="pApprove_TextChanged">
                                             </dx:ASPxTextBox>
                                         </dx:LayoutItemNestedControlContainer>
                                     </LayoutItemNestedControlCollection>
