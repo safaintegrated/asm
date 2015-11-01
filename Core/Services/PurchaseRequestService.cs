@@ -16,12 +16,19 @@ namespace Core.Services
 
             Data.Models.PurchaseRequestModel.Add(pr, userName);
 
+            var e = Data.Models.EmployeeModel.FindByUserId(userName);
+
             Workflow wf = new Workflow
              {
                  DateTime = dt,
                  ProcessTypeEnum = ProcessTypeEnum.PurchaseRequest,
                  ProcessStateEnum =ProcessStateEnum.DraftByRequestor,
-                 UserName = userName,
+                 //UserName = userName,
+                 //Employee = e,
+                 EmployeeId = e.Id,
+                 EmployeePtjCode = e.PtjCode,
+                  EmployeeUserName = e.UserId,
+                   EmployeeFullName = e.FullName,
                  Description = "",
                  ProcessId = pr.Id,
              };
@@ -34,7 +41,17 @@ namespace Core.Services
             pr.Status = e;
             if (e == ProcessStateEnum.SubmittedByRequestor)
             {
-                if ( (0 >= pr.TotalPrice) && (pr.TotalPrice <= 2000000))
+                if ((0 >= pr.TotalPrice) && (pr.TotalPrice <= 100000))
+                {
+                    pr.ProcessCategory = ProcessDetailCategory.PrValueUnder1k;
+                    var pcs = Data.Models.ChecklistModel.FindAllByProcessCategory(pr.ProcessCategory);
+                    foreach (var pc in pcs)
+                    {
+                        //Data.Models
+                    }
+                    //pr.Checklist.Add(pc);
+                }
+                if ((100000 > pr.TotalPrice) && (pr.TotalPrice <= 2000000))
                 {
                     pr.ProcessCategory = ProcessDetailCategory.PrValueUnder20k;
                     var pcs = Data.Models.ChecklistModel.FindAllByProcessCategory(pr.ProcessCategory);
@@ -54,13 +71,18 @@ namespace Core.Services
                 }
             }
             Data.Models.PurchaseRequestModel.AddOrUpdate(pr, userName);
-
+            Employee employee = Data.Models.EmployeeModel.FindByUserId(userName);
             Workflow wf = new Workflow
             {
                 DateTime = DateTime.Now,
                 ProcessTypeEnum = ProcessTypeEnum.PurchaseRequest,
                 ProcessStateEnum = pr.Status,
-                UserName = userName,
+                //UserName = userName,
+                //Employee = employee,
+                EmployeeFullName = employee.FullName,
+                EmployeeUserName = employee.UserId,
+                EmployeePtjCode = employee.PtjCode,
+                EmployeeId = employee.Id,
                 Description = "",
                 ProcessId = pr.Id,
             };

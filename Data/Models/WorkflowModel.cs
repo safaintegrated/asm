@@ -9,6 +9,10 @@ namespace Data.Models
 {
     public class WorkflowModel : BaseModel<WorkflowModel>
     {
+        public static IEnumerable<Workflow> FindAllByPrId(string id)
+        {
+            return _db.Workflows.Where(c => c.ProcessId == id).OrderByDescending(c => c.DateTime).AsEnumerable();
+        }
         public static IEnumerable<Workflow> FindAll()
         {
             return _db.Workflows.AsEnumerable().OrderByDescending(c => c.DateTime);

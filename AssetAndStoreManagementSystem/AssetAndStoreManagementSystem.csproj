@@ -111,10 +111,6 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Sybase.AdoNet4.AseClient, Version=16.0.0.2, Culture=neutral, PublicKeyToken=95d94fac46c88e1e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Sybase.AdoNet4.AseClient.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -209,12 +205,6 @@
     <Content Include="Aset\Tender\Index.aspx" />
     <Content Include="Aset\Tender\Tab_Maklumat.ascx" />
     <Content Include="Aset\Tender\Tender_Controller.ascx" />
-    <Content Include="bin\AssetAndStoreManagementSystem.dll" />
-    <Content Include="bin\AssetAndStoreManagementSystem.pdb" />
-    <Content Include="bin\Core.dll" />
-    <Content Include="bin\Core.pdb" />
-    <Content Include="bin\SPThemeAssembly.dll" />
-    <Content Include="bin\Sybase.AdoNet4.AseClient.dll" />
     <Content Include="Components\AttachementWindow\AttachmentWindow_Controller.ascx" />
     <Content Include="Components\AttachementWindow\Index.aspx" />
     <Content Include="Components\Ribbon\Index.aspx" />

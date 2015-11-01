@@ -99,7 +99,14 @@ namespace Data
             _purchaseRequest.Add(pr);
             
             _workFlow = new List<Workflow>();
-            _workFlow.Add(new Workflow { DateTime = DateTime.Now, ProcessId = pr.Id, UserName = e.UserId });
+            _workFlow.Add(new Workflow { 
+                DateTime = DateTime.Now, 
+                ProcessId = pr.Id, 
+                //Employee = e, 
+                EmployeeFullName = e.FullName,
+                 EmployeePtjCode = e.PtjCode,
+                  EmployeeUserName = e.UserId,
+                EmployeeId = e.Id });
 
             _prc = new List<PurchaseRequestCheckList>();
             foreach (var p in _checkList.Where(c => c.ProcessCategory == pr.ProcessCategory))

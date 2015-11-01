@@ -1,4 +1,20 @@
-﻿function gvCheckListMandatory_RowClick(s, e) {
+﻿function btnChecked_Click(s, e) {
+    LoadingPanel.SetText('Sistem sedang menyimpan rekod permohonan belian.  Sila tunggu sebentar..');
+    LoadingPanel.Show();
+    cbp_PermohonanBelian_PrHeader.PerformCallback('CHECKED');
+}
+
+function gvCheckListNonMandatory_RowClick(s, e) {
+    gvCheckListNotMandatory.GetRowValues(e.visibleIndex, 'Id', UpdateNonMandatoryCheckList);
+
+}
+function UpdateNonMandatoryCheckList(values) {
+    if (values == "")
+        return;
+    cbpUpdateCheckList.PerformCallback("UPDATE|" + values);
+}
+
+function gvCheckListMandatory_RowClick(s, e) {
     gvCheckListMandatory.GetRowValues(e.visibleIndex, 'Id', UpdateCheckList);
 }
 function UpdateCheckList(values) {
@@ -8,8 +24,7 @@ function UpdateCheckList(values) {
 }
 
 function cbpUpdateCheckList_EndCallBack(s, e) {
-    gvCheckListMandatory.Refresh();
-    gvCheckListNotMandatory.Refresh();
+    RefreshGrid();
 }
 
 
@@ -21,12 +36,14 @@ function cbpChecklist_EndCallBack(s, e) {
     //}
     switch (s.cpMode.toString()) {
         case 'REFRESH':
-            gvCheckListMandatory.Refresh();
-            gvCheckListNotMandatory.Refresh();
+            RefreshGrid();
+            //gvCheckListMandatory.Refresh();
+            //gvCheckListNotMandatory.Refresh();
             break;
         case 'UPDATE':
-            gvCheckListMandatory.Refresh();
-            gvCheckListNotMandatory.Refresh();
+            RefreshGrid();
+            //gvCheckListMandatory.Refresh();
+            //gvCheckListNotMandatory.Refresh();
             break;
         default:
             break;
@@ -43,6 +60,7 @@ function OpenPurchaseRequest(values) {
     txtPurchaseRequestId.SetText(values.toString());
     txtPrItemListPrId.SetText(values.toString());
     txtCheckListPrId.SetText(values.toString());
+    txtWorkFlowPrId.SetText(values.toString());
 
     //PRH_Revision.SetText(r.toString());
     LoadingPanel.SetText('Sistem sedang membuka maklumat permohonan belian yang dipilih.  Sila tunggu sebentar..');
@@ -436,7 +454,9 @@ function cbp_PermohonanBelian_PrHeader_EndCallback(s, e) {
             break;
         case 'VIEW':
             ProcessView();
+            cbpWorkFlowList.PerformCallback();
             break;
+        case 'CHECKED':
         case 'APPROVED':
         case 'SUBMITTED':
             cbpWorkFlowList.PerformCallback();
@@ -447,9 +467,15 @@ function cbp_PermohonanBelian_PrHeader_EndCallback(s, e) {
 }
 
 function cbpWorkFlowList_EndCallBack(s, e) {
-    gvPrList.Refresh();
+    RefreshGrid();
+}
+
+function RefreshGrid()
+{
     GridPRWorkflow.Refresh();
-    //alert('refresh');
+    gvPrList.Refresh();
+    gvCheckListMandatory.Refresh();
+    gvCheckListNotMandatory.Refresh();
 }
 
 

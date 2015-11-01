@@ -24,6 +24,7 @@ namespace Data.Entity
                     return Requestor.UserId;
             }
         }
+
         [NotMapped]
         public string RequestorName
         {
@@ -33,6 +34,18 @@ namespace Data.Entity
                     return "";
                 else
                     return Requestor.FullName;
+            }
+        }
+
+        [NotMapped]
+        public string RequestorPtj
+        {
+            get
+            {
+                if (Requestor == null)
+                    return "";
+                else
+                    return Requestor.PtjCode;
             }
         }
 

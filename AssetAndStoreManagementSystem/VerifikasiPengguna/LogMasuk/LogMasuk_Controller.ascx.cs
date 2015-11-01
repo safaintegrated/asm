@@ -188,5 +188,9 @@ namespace AssetAndStoreManagementSystem.VerifikasiPengguna.LogMasuk
                 ErrorPopupMessageBox.ShowOnPageLoad = true;
             }
         }
+
+        protected void ASPxButton1_Click(object sender, EventArgs e)
+        {
+         }
     }
 }

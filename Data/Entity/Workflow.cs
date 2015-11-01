@@ -27,8 +27,17 @@ namespace Data.Entity
                 return DateTime.ToString("dd/MM/yyyy HH:mm:ss");
             }
         }
-        public string UserName { get; set; }
-        public string FullName { get; set; }
+
+        //public virtual Employee Employee { get; set; }
+
+        public string EmployeeId { get; set; }
+
+        public string EmployeeUserName { get; set; }
+
+        public string EmployeePtjCode { get; set; }
+
+        public string EmployeeFullName { get; set; }
+
         public ProcessTypeEnum ProcessTypeEnum { get; set; }
         public ProcessStateEnum ProcessStateEnum { get; set; }
 

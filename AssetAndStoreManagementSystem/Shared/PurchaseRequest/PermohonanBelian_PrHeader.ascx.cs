@@ -30,7 +30,11 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             {
                 case "NEW": NewMode(); break;
                 case "SAVE": SaveSubmitCancelPRMode(1); break;
-                case "VIEW": ViewPRMode(); break;
+                case "VIEW": ViewPRMode(); 
+                    break;
+                case "CHECKED":
+                    CheckedPr();
+                    break;
                 case "APPROVED":
                     ApprovedPr();
                     break;
@@ -63,6 +67,43 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
             }
         }
 
+        private void CheckedPr()
+        {
+            FormsIdentity id = (FormsIdentity)HttpContext.Current.User.Identity;
+            FormsAuthenticationTicket ticket = id.Ticket;
+
+            if (ticket.Expired)
+            {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "Session Expired.";
+                return;
+            }
+
+            try
+            {
+                Data.Entity.PurchaseRequest pr = Data.Models.PurchaseRequestModel.FindById(PRH_ProcessId.Text);
+
+                switch (pr.Status)
+                {
+                    case Data.Enum.ProcessStateEnum.ApprovedByPtj:
+                        _prSvc.UpdatePrState(pr, ProcessStateEnum.CheckedByFinance1, txtStateDetail.Text, ticket.Name);
+                        break;
+                    default:
+                        throw new Exception("Proses tidak dibenarkan");
+                }
+
+                //if(pr.Status == Data.Enum.ProcessStateEnum.Submitted)
+                //    _prSvc.UpdatePrState(PRH_ProcessId.Text, Data.Enum.ProcessStateEnum.ApprovedByPtj, "", ticket.Name);
+                ////_prSvc.ApprovedPrByPtj(pr, ticket.Name);
+                //if (pr.Status == Data.Enum.ProcessStateEnum.ApprovedByFinance)
+                //    _prSvc.ApprovedPrByFinance(pr, ticket.Name);
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = "";
+            }
+            catch (Exception ex)
+            {
+                cbp_PermohonanBelian_PrHeader.JSProperties["cpErrMsg"] = ex.Message;
+            }
+
+        }
 
         private void ApprovedPr()
         {
@@ -81,6 +122,9 @@ namespace AssetAndStoreManagementSystem.Shared.PurchaseRequest
 
                 switch (pr.Status)
                 {
+                    case ProcessStateEnum.CheckedByFinance1:
+                        _prSvc.UpdatePrState(pr, ProcessStateEnum.ApprovedByFinance1, txtStateDetail.Text, ticket.Name);
+                        break;
                     case Data.Enum.ProcessStateEnum.SubmittedByRequestor:
                         _prSvc.UpdatePrState(pr, ProcessStateEnum.ApprovedByPtj, txtStateDetail.Text, ticket.Name);
                         break;

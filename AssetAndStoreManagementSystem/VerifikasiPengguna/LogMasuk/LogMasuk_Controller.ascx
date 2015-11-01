@@ -76,13 +76,15 @@
         </tr>
         <tr>
             <td style="width:auto; vertical-align:middle;text-align:center; padding-top:10px;padding-bottom:7px;">
-                <dx:ASPxTextBox ID="txtUserId" runat="server" ClientInstanceName="txtUserId" EnableClientSideAPI="True" NullText="Masukkan ID Pengguna Anda" Width="100%" HorizontalAlign="Center">
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="User/Password: 0002-07/510605075444">
+                </dx:ASPxLabel>
+                <dx:ASPxTextBox ID="txtUserId" runat="server" ClientInstanceName="txtUserId" EnableClientSideAPI="True" NullText="Masukkan ID Pengguna Anda" Width="100%" HorizontalAlign="Center" Text="0002-07">
                 </dx:ASPxTextBox>
             </td>
         </tr>
         <tr>
             <td style="width:auto; vertical-align:middle;text-align:center;">
-                <dx:ASPxTextBox ID="txtPassword" runat="server" NullText="Masukkan Kata Laluan Anda" Password="True" Width="100%" ClientInstanceName="txtPassword" EnableClientSideAPI="True" HorizontalAlign="Center">
+                <dx:ASPxTextBox ID="txtPassword" runat="server" NullText="Masukkan Kata Laluan Anda" Password="True" Width="100%" ClientInstanceName="txtPassword" EnableClientSideAPI="True" HorizontalAlign="Center" Text="510605075444">
                 </dx:ASPxTextBox>
             </td>
         </tr>

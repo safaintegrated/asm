@@ -127,6 +127,9 @@
                         <LayoutItemNestedControlCollection>
                             <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer1" runat="server">
                                 <dx:ASPxGridView ID="gvCheckListNotMandatory" runat="server" AutoGenerateColumns="False" ClientInstanceName="gvCheckListNotMandatory" Width="100%" DataSourceID="odsPurchaseRequestChecklistNotMandatory">
+                                    <clientsideevents rowclick="function(s, e) {
+	gvCheckListNonMandatory_RowClick(s,e);
+}" />
                                     <Columns>
                                         <dx:GridViewDataTextColumn FieldName="PurchaseRequestId" ShowInCustomizationForm="True" VisibleIndex="1" Visible="False">
                                         </dx:GridViewDataTextColumn>
@@ -183,7 +186,7 @@
                             <dx:LayoutItemNestedControlContainer ID="LayoutItemNestedControlContainer3" runat="server" CssClass="AddBottomPadding">
                                 <dx:ASPxButton ID="btnDeclare" runat="server" AutoPostBack="False" Text="Ok" Width="100px" ClientInstanceName="btnDeclare" EnableClientSideAPI="True">
                                     <ClientSideEvents Click="function(s, e) {
-	SaveCheckList();
+	btnChecked_Click(s,e);
 }" />
                                 </dx:ASPxButton>
                             </dx:LayoutItemNestedControlContainer>
